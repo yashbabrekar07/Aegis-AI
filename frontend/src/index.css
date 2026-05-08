@@ -310,3 +310,66 @@ p { margin: 0; color: var(--text-muted); font-size: 16px; line-height: 1.5; }
 .animate-slide-up {
   animation: slideUpFade 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
+
+@keyframes flashGreen {
+  0%, 100% { background-color: var(--card-bg); }
+  50% { background-color: rgba(16, 185, 129, 0.2); }
+}
+
+@keyframes flashRed {
+  0%, 100% { background-color: var(--card-bg); }
+  50% { background-color: rgba(239, 68, 68, 0.2); }
+}
+
+.flash-green {
+  animation: flashGreen 0.6s ease-out;
+}
+
+.flash-red {
+  animation: flashRed 0.6s ease-out;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+.xp-bar-container {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #10b981);
+  transition: width 0.4s ease-out;
+}
+
+.chat-bubble {
+  padding: 12px 16px;
+  border-radius: 16px;
+  max-width: 80%;
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.chat-bubble.scammer {
+  background: #1e293b;
+  border-bottom-left-radius: 4px;
+  align-self: flex-start;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+}
