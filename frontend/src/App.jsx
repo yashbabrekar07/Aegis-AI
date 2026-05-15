@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { supabase } from './supabaseClient';
+import { syncUserFromSession } from './utils/userStorage';
 import Layout from './components/Layout';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
@@ -16,12 +17,14 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
+      if (session) await syncUserFromSession(session);
       setSession(session);
       setLoading(false);
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
+      if (session) await syncUserFromSession(session);
       setSession(session);
     });
 

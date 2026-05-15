@@ -127,6 +127,59 @@ p { margin: 0; color: var(--text-muted); font-size: 16px; line-height: 1.5; }
 .sidebar-bottom {
   width: 100%;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.sidebar-profile-bar {
+  cursor: default;
+  margin-bottom: 4px;
+  padding: 10px 0 !important;
+  border-radius: 12px;
+}
+
+.sidebar-profile-bar:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sidebar-profile-avatar {
+  width: 40px;
+  height: 40px;
+  min-width: 40px !important;
+  border-radius: 50%;
+  background-size: cover !important;
+  background-position: center;
+  border: 2px solid rgba(16, 185, 129, 0.35);
+}
+
+.sidebar-profile-text {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  line-height: 1.2;
+  overflow: hidden;
+}
+
+.sidebar-profile-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-main);
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-profile-email {
+  font-size: 12px;
+  color: var(--text-muted);
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .nav-icon {

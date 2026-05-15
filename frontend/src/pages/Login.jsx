@@ -1,7 +1,10 @@
-import { useNavigate } from 'react-router-dom';
+﻿import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Apple, Shield } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import { supabase } from '../supabaseClient';
+import { saveUsername } from '../utils/userStorage';
+import appleLogo from '../assets/apple-sign-in.svg';
+import '../styles/login.css';
 
 export default function Login({ isSignup }) {
   const navigate = useNavigate();
@@ -56,6 +59,8 @@ export default function Login({ isSignup }) {
       if (error) {
         setErrorMsg(error.message);
       } else {
+        if (email.trim()) localStorage.setItem('aegis_user_email', email.trim());
+        saveUsername(username);
         setSuccessMsg('Account created successfully! Please check your email inbox to confirm your email address before logging in.');
       }
     } else {
@@ -69,12 +74,13 @@ export default function Login({ isSignup }) {
       } else {
         if (email.trim()) localStorage.setItem('aegis_user_email', email.trim());
         const userMeta = data.user?.user_metadata;
-        if (userMeta && userMeta.first_name) {
-          localStorage.setItem('aegis_user_name', `${userMeta.first_name} ${userMeta.last_name || ''}`);
-        } else if (!localStorage.getItem('aegis_user_name') && email.trim()) {
+        if (userMeta?.username) {
+          saveUsername(userMeta.username);
+        } else if (userMeta?.first_name) {
+          saveUsername(`${userMeta.first_name} ${userMeta.last_name || ''}`.trim());
+        } else if (email.trim()) {
           const derived = email.split('@')[0];
-          const formatted = derived.charAt(0).toUpperCase() + derived.slice(1);
-          localStorage.setItem('aegis_user_name', formatted);
+          saveUsername(derived.charAt(0).toUpperCase() + derived.slice(1));
         }
 
         // Ensure profile is inserted
@@ -90,85 +96,10 @@ export default function Login({ isSignup }) {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', background: '#0a0a0a', fontFamily: 'Inter, sans-serif' }}>
+    <div className="login-root">
 
       {/* Left Branding Panel - Dribbble Style */}
-      <div
-        style={{
-          flex: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          background: 'linear-gradient(135deg, #059669 0%, #047857 100%)',
-          position: 'relative',
-          overflow: 'hidden',
-          padding: '40px',
-        }}
-        className="hide-on-mobile"
-      >
-        <style>
-          {`
-            @media (max-width: 900px) {
-              .hide-on-mobile {
-                display: none !important;
-              }
-            }
-            .input-field-dribbble {
-              width: 100%;
-              min-height: 48px;
-              padding: 14px 16px;
-              border-radius: 12px;
-              border: 1px solid rgba(255,255,255,0.1);
-              background: rgba(255,255,255,0.03);
-              color: white;
-              font-size: 15px;
-              transition: all 0.2s ease;
-              box-sizing: border-box;
-            }
-            .input-field-dribbble:focus {
-              outline: none;
-              border-color: #10b981;
-              background: rgba(255,255,255,0.08);
-              box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
-            }
-            .social-btn {
-              background: #fff;
-              color: #000;
-              border: none;
-              display: flex;
-              gap: 12px;
-              padding: 16px;
-              border-radius: 30px;
-              font-weight: 600;
-              font-size: 15px;
-              justify-content: center;
-              align-items: center;
-              transition: all 0.2s;
-              cursor: pointer;
-              width: 100%;
-            }
-            .social-btn:hover {
-              transform: translateY(-2px);
-              box-shadow: 0 4px 12px rgba(255,255,255,0.1);
-            }
-            .social-btn.apple {
-              background: #111;
-              color: #fff;
-              border: 1px solid rgba(255,255,255,0.15);
-            }
-            .social-btn.apple:hover {
-              background: #1a1a1a;
-            }
-            .label-text {
-              display: block;
-              font-size: 14px;
-              margin-bottom: 8px;
-              font-weight: 600;
-              color: #eee;
-            }
-          `}
-        </style>
-
+      <div className="login-brand-panel login-hide-mobile">
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'white', zIndex: 10 }}>
           <Shield size={36} />
           <span style={{ fontSize: '26px', fontWeight: '800', letterSpacing: '-0.5px' }}>Aegis AI</span>
@@ -183,21 +114,11 @@ export default function Login({ isSignup }) {
           </p>
         </div>
 
-        {/* Decorative elements */}
-        <div style={{ position: 'absolute', top: '-20%', right: '-20%', width: '80%', height: '80%', background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%)', borderRadius: '50%' }}></div>
-        <div style={{ position: 'absolute', bottom: '-10%', left: '-10%', width: '50%', height: '50%', background: 'radial-gradient(circle, rgba(0,0,0,0.2) 0%, transparent 60%)', borderRadius: '50%' }}></div>
+        <div className="login-orb login-orb-a" />
+        <div className="login-orb login-orb-b" />
       </div>
 
-      {/* Right Form Panel */}
-      <div style={{
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '40px 24px',
-        position: 'relative'
-      }}>
+      <div className="login-form-panel">
 
         <div style={{ position: 'absolute', top: '40px', right: '40px', fontSize: '14px' }}>
           {isSignup ? "Already a member? " : "Not a member? "}
@@ -209,19 +130,19 @@ export default function Login({ isSignup }) {
           </span>
         </div>
 
-        <div style={{ width: '100%', maxWidth: '420px', marginTop: '60px' }}>
+        <div className="login-form-inner">
           <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '32px', color: '#fff', letterSpacing: '-0.5px' }}>
             {isSignup ? "Sign up to Aegis" : "Sign in to Aegis"}
           </h1>
 
           {/* OAuth Buttons */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
-            <button type="button" onClick={() => handleOAuthLogin('google')} className="social-btn">
+            <button type="button" onClick={() => handleOAuthLogin('google')} className="login-social-btn login-oauth-btn">
               <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" style={{ width: '20px' }} />
               Sign {isSignup ? 'up' : 'in'} with Google
             </button>
-            <button type="button" onClick={() => handleOAuthLogin('apple')} className="social-btn apple">
-              <Apple size={22} fill="white" />
+            <button type="button" onClick={() => handleOAuthLogin('apple')} className="login-social-btn login-social-btn apple login-oauth-btn">
+              <img src={appleLogo} alt="" className="apple-logo-img" aria-hidden="true" />
               Sign {isSignup ? 'up' : 'in'} with Apple
             </button>
           </div>
@@ -242,23 +163,23 @@ export default function Login({ isSignup }) {
             {isSignup && (
               <div style={{ display: 'flex', gap: '16px' }}>
                 <div style={{ flex: 1 }}>
-                  <label className="label-text">First Name</label>
+                  <label className="label-text login-field">First Name</label>
                   <input
                     type="text"
                     required
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="input-field-dribbble"
+                    className="login-input-dribbble login-field"
                   />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <label className="label-text">Last Name</label>
+                  <label className="label-text login-field">Last Name</label>
                   <input
                     type="text"
                     required
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                    className="input-field-dribbble"
+                    className="login-input-dribbble login-field"
                   />
                 </div>
               </div>
@@ -266,31 +187,31 @@ export default function Login({ isSignup }) {
 
             {isSignup && (
               <div>
-                <label className="label-text">Username</label>
+                <label className="label-text login-field">Username</label>
                 <input
                   type="text"
                   required
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="input-field-dribbble"
+                  className="login-input-dribbble login-field"
                 />
               </div>
             )}
 
             <div>
-              <label className="label-text">Email Address</label>
+              <label className="label-text login-field">Email Address</label>
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="input-field-dribbble"
+                className="login-input-dribbble login-field"
               />
             </div>
 
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <label className="label-text">Password</label>
+                <label className="label-text login-field">Password</label>
                 {!isSignup && (
                   <span style={{ fontSize: '13px', color: '#10b981', cursor: 'pointer', fontWeight: 500 }}>
                     Forgot password?
@@ -302,13 +223,14 @@ export default function Login({ isSignup }) {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="input-field-dribbble"
+                className="login-input-dribbble login-field"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
+              className="login-submit-btn login-field"
               style={{
                 marginTop: '12px',
                 background: 'linear-gradient(135deg, #10b981, #059669)',
@@ -318,51 +240,14 @@ export default function Login({ isSignup }) {
                 borderRadius: '30px',
                 fontSize: '16px',
                 fontWeight: '700',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
+                cursor: loading ? 'wait' : 'pointer',
+                transition: 'all 0.25s ease',
                 opacity: loading ? 0.7 : 1,
-                boxShadow: '0 8px 20px rgba(16, 185, 129, 0.25)'
-              }}
-              onMouseOver={(e) => {
-                if (!loading) e.currentTarget.style.transform = 'translateY(-2px)';
-                if (!loading) e.currentTarget.style.boxShadow = '0 12px 24px rgba(16, 185, 129, 0.35)';
-              }}
-              onMouseOut={(e) => {
-                if (!loading) e.currentTarget.style.transform = 'translateY(0)';
-                if (!loading) e.currentTarget.style.boxShadow = '0 8px 20px rgba(16, 185, 129, 0.25)';
+                boxShadow: '0 8px 20px rgba(16, 185, 129, 0.25)',
+                width: '100%',
               }}
             >
-              {loading ? "Please wait..." : (isSignup ? "Create account" : "Sign In")}
-            </button>
-
-            <button
-              type="button"
-              onClick={() => {
-                if (supabase.auth.signInDemo) {
-                  supabase.auth.signInDemo();
-                  navigate('/home');
-                }
-              }}
-              style={{
-                marginTop: '8px',
-                background: 'transparent',
-                color: '#10b981',
-                border: '1px solid #10b981',
-                padding: '14px',
-                borderRadius: '30px',
-                fontSize: '14px',
-                fontWeight: '600',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.background = 'rgba(16, 185, 129, 0.05)';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.background = 'transparent';
-              }}
-            >
-              Continue in Demo Mode (No Setup Required)
+              {loading ? 'Please wait...' : isSignup ? 'Create account' : 'Sign In'}
             </button>
           </form>
 

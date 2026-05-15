@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Shield, Home, Clock, Activity, Settings, LogOut, Mail, LayoutDashboard } from 'lucide-react';
 import { supabase } from '../supabaseClient';
+import { getStoredUsername, getStoredEmail, getEmailLocalPart } from '../utils/userStorage';
 
 export default function Sidebar() {
   const [expanded, setExpanded] = useState(false);
+  const displayUsername = getStoredUsername();
+  const emailLocal = getEmailLocalPart(getStoredEmail());
 
   return (
     <nav className={`sidebar ${expanded ? 'expanded' : ''}`} onMouseEnter={() => setExpanded(true)} onMouseLeave={() => setExpanded(false)}>
@@ -41,6 +44,18 @@ export default function Sidebar() {
       </div>
 
       <div className="sidebar-bottom">
+        <div className="sidebar-profile-bar nav-item">
+          <div
+            className="nav-icon sidebar-profile-avatar"
+            style={{
+              backgroundImage: `url("https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(displayUsername)}&backgroundColor=10b981")`,
+            }}
+          />
+          <div className="nav-text sidebar-profile-text">
+            <span className="sidebar-profile-name">{displayUsername}</span>
+            <span className="sidebar-profile-email">{emailLocal ? `${emailLocal}@…` : '—'}</span>
+          </div>
+        </div>
         <div onClick={() => supabase.auth.signOut()} className="nav-item logout-btn">
           <div className="nav-icon"><LogOut size={22} /></div>
           <span className="nav-text">Log Out</span>

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { getRankFromXp } from './Simulate';
 import { apiUrl } from '../lib/api';
+import { getStoredUsername, getStoredEmail, getEmailLocalPart } from '../utils/userStorage';
 
 export default function Dashboard() {
-  const userName = localStorage.getItem('aegis_user_name') || 'Guest';
-  const userEmail = localStorage.getItem('aegis_user_email') || 'Not provided';
+  const displayUsername = getStoredUsername();
+  const emailLocal = getEmailLocalPart(getStoredEmail());
+  const userEmail = getStoredEmail() || 'Not provided';
   
   // Load rank from training xp
   const xp = parseInt(localStorage.getItem('aegis_training_xp')) || 0;
@@ -35,7 +37,7 @@ export default function Dashboard() {
 
   return (
     <div>
-      <h1 style={{ marginBottom: '8px' }}>Hi {userName}! Welcome Home</h1>
+      <h1 style={{ marginBottom: '8px' }}>Hi {displayUsername}! Welcome Home</h1>
       <p style={{ marginBottom: '40px' }}>Your personal security and awareness overview.</p>
       
       <div className="dashboard-grid">
@@ -45,9 +47,11 @@ export default function Dashboard() {
             <div style={{ background: 'var(--accent-primary)', color: 'white', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>!</div>
           </div>
           <div style={{ textAlign: 'center' }}>
-            <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: '#ccc', margin: '0 auto 16px', backgroundImage: `url("https://api.dicebear.com/7.x/initials/svg?seed=${userName}&backgroundColor=10b981")`, backgroundSize: 'cover' }}></div>
-            <div style={{ fontSize: '18px', fontWeight: 600 }}>{userName}</div>
-            <div style={{ color: 'var(--text-muted)', fontSize: '14px', marginTop: '4px' }}>{userEmail}</div>
+            <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: '#ccc', margin: '0 auto 16px', backgroundImage: `url("https://api.dicebear.com/7.x/initials/svg?seed=${displayUsername}&backgroundColor=10b981")`, backgroundSize: 'cover' }}></div>
+            <div style={{ fontSize: '18px', fontWeight: 600 }}>{displayUsername}</div>
+            <div style={{ color: 'var(--text-muted)', fontSize: '14px', marginTop: '4px' }}>
+              {emailLocal ? `${emailLocal}@…` : 'No email linked'}
+            </div>
           </div>
         </div>
 
