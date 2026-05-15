@@ -1,0 +1,18 @@
+# Render Blueprint — Web Service (Docker)
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: aegis-ai-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: WHISPER_MODEL
+        value: tiny
+      - key: VIRUSTOTAL_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false

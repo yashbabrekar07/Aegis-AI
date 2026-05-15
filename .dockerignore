@@ -1,0 +1,9 @@
+frontend/
+android/
+.git/
+**/__pycache__
+**/.env
+**/*.csv
+temp_audio/
+*.md
+.vscode/
