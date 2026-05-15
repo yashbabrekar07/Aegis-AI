@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getRankFromXp } from './Simulate';
+import { apiUrl } from '../lib/api';
 
 export default function Dashboard() {
   const userName = localStorage.getItem('aegis_user_name') || 'Guest';
@@ -22,7 +23,7 @@ export default function Dashboard() {
   const [chartLoaded, setChartLoaded] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/user/profile?email=${encodeURIComponent(userEmail)}`)
+    fetch(apiUrl(`/api/user/profile?email=${encodeURIComponent(userEmail)}`))
       .then(res => res.json())
       .then(data => setProfile({ userId: data.user_id, phone: data.phone }))
       .catch(err => setProfile({ userId: 'Error', phone: 'Error' }));

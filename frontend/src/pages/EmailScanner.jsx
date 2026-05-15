@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Mail, ShieldAlert, CheckCircle, AlertTriangle, RefreshCw, ChevronDown, ChevronUp, Link as LinkIcon, Key } from 'lucide-react';
+import { apiUrl } from '../lib/api';
 
 const MOCK_DATASET = [
   {
@@ -60,7 +61,7 @@ export default function EmailScanner() {
 
       try {
         const payload = `${pendingEmail.from}\n${pendingEmail.subject}\n\n${pendingEmail.body}`;
-        const response = await fetch('http://localhost:8000/api/scan', {
+        const response = await fetch(apiUrl('/api/scan'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ text: payload })

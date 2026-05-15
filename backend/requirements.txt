@@ -10,3 +10,4 @@ openai-whisper
 python-dotenv
 nltk
 deep-translator
+imageio-ffmpeg

@@ -359,7 +359,6 @@ p { margin: 0; color: var(--text-muted); font-size: 16px; line-height: 1.5; }
   animation: slideUpFade 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-<<<<<<< HEAD
 /* --- Responsive Media Queries --- */
 
 @media (max-width: 1024px) {
@@ -486,7 +485,8 @@ p { margin: 0; color: var(--text-muted); font-size: 16px; line-height: 1.5; }
   10% { opacity: 1; }
   90% { opacity: 1; }
   100% { top: 100%; opacity: 0; }
-=======
+}
+
 @keyframes flashGreen {
   0%, 100% { background-color: var(--card-bg); }
   50% { background-color: rgba(16, 185, 129, 0.2); }
@@ -548,5 +548,4 @@ p { margin: 0; color: var(--text-muted); font-size: 16px; line-height: 1.5; }
 .chat-container {
   display: flex;
   flex-direction: column;
->>>>>>> 8f923a97ea60ceef49352d79e82eff8770dd452e
 }

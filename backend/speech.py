@@ -34,8 +34,8 @@ def process_audio(audio_file_path):
         import warnings
         warnings.filterwarnings("ignore")
         if _whisper_model is None:
-            # Switched from "base.en" (English only) to "base" (Multilingual)
-            _whisper_model = whisper.load_model("base")
+            model_name = os.getenv("WHISPER_MODEL", "base")
+            _whisper_model = whisper.load_model(model_name)
             
         # fp16=False is CRITICAL for preventing silent freezing on non-CUDA CPUs
         # task="translate" forces Whisper to detect Hindi/Marathi and output English text

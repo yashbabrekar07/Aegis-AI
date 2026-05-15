@@ -12,10 +12,16 @@ from speech import process_audio, save_uploaded_audio
 
 app = FastAPI(title="Aegis AI Backend")
 
-# Allow CORS for React frontend
+_origins_raw = os.getenv("ALLOWED_ORIGINS", "*")
+_allow_origins = (
+    ["*"]
+    if _origins_raw.strip() == "*"
+    else [o.strip() for o in _origins_raw.split(",") if o.strip()]
+)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins for dev
+    allow_origins=_allow_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

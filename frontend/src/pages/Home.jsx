@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { ShieldAlert, CheckCircle, FileAudio, AlertTriangle } from 'lucide-react';
 import { playSound } from '../utils/audio';
+import { apiUrl } from '../lib/api';
 
 export default function Home() {
   const [input, setInput] = useState('');
@@ -16,7 +17,7 @@ export default function Home() {
     playSound('scan');
 
     try {
-      const response = await fetch('http://localhost:8000/api/scan', {
+      const response = await fetch(apiUrl('/api/scan'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: input })
@@ -64,7 +65,7 @@ export default function Home() {
     formData.append('file', file);
     
     try {
-      const response = await fetch('http://localhost:8000/api/scan-audio', {
+      const response = await fetch(apiUrl('/api/scan-audio'), {
         method: 'POST',
         body: formData
       });
