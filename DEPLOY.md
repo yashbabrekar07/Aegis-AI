@@ -1,4 +1,4 @@
-# Deploy Aegis AI (Vercel + Render + Cloudflare)
+ # Deploy Aegis AI (Vercel + Render + Cloudflare)
 
 **Budget:** $0/month using free tiers (Vercel + Render free).  
 **Custom domain (optional):** ~$10–15/year via Cloudflare — recommended name: **`aegisai.app`** or **`getaegis.ai`**.
@@ -75,7 +75,9 @@ Commit the deployment files (`Dockerfile`, `render.yaml`, `frontend/src/lib/api.
 
 5. Deploy. Open `https://<project>.vercel.app`.
 
-`frontend/vercel.json` already enables SPA routing for React Router.
+`frontend/vercel.json` proxies `/api/*` to your Render service (so scans work even before `VITE_API_URL` is set) and enables SPA routing for React Router.
+
+Optional: set `VITE_API_URL` to your Render URL if you prefer calling the API directly (then set `ALLOWED_ORIGINS` on Render).
 
 ---
 

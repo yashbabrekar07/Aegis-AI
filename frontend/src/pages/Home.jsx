@@ -22,6 +22,9 @@ export default function Home() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: input })
       });
+      if (!response.ok) {
+        throw new Error(`API returned ${response.status}`);
+      }
       const data = await response.json();
       setResult(data);
       
@@ -69,6 +72,9 @@ export default function Home() {
         method: 'POST',
         body: formData
       });
+      if (!response.ok) {
+        throw new Error(`API returned ${response.status}`);
+      }
       const data = await response.json();
       if (data.error) {
         setInput(`Error: ${data.error}`);
