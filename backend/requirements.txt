@@ -8,3 +8,5 @@ cryptography
 SpeechRecognition
 openai-whisper
 python-dotenv
+nltk
+deep-translator

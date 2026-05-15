@@ -18,11 +18,11 @@ export default function Config() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', padding: '20px' }}>
-      <div className="card" style={{ width: '450px', textAlign: 'center', padding: '48px 32px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '20px' }}>
+      <div className="card" style={{ width: '100%', maxWidth: '450px', textAlign: 'center', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 32px)' }}>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '32px' }}>
           {[1,2,3].map(s => (
-            <div key={s} style={{ width: '40px', height: '6px', borderRadius: '4px', background: s <= step ? 'var(--accent-primary)' : '#eee' }}></div>
+            <div key={s} style={{ flex: 1, height: '6px', borderRadius: '4px', background: s <= step ? 'var(--accent-primary)' : '#eee' }}></div>
           ))}
         </div>
         
@@ -35,7 +35,7 @@ export default function Config() {
         </div>
       </div>
       
-      <div style={{ marginTop: '40px', maxWidth: '450px', textAlign: 'center' }}>
+      <div style={{ marginTop: '40px', width: '100%', maxWidth: '450px', textAlign: 'center' }}>
         <p style={{ fontSize: '13px' }}>
           <strong>Manual Fallback:</strong> Even if you deny permissions, you can always paste text or upload audio files manually in the app later.
         </p>

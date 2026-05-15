@@ -76,7 +76,7 @@ export default function Login({ isSignup }) {
           const formatted = derived.charAt(0).toUpperCase() + derived.slice(1);
           localStorage.setItem('aegis_user_name', formatted);
         }
-        
+
         // Ensure profile is inserted
         const username_from_meta = userMeta?.username || email.split('@')[0];
         if (data.user) {
@@ -91,19 +91,19 @@ export default function Login({ isSignup }) {
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', background: '#0a0a0a', fontFamily: 'Inter, sans-serif' }}>
-      
+
       {/* Left Branding Panel - Dribbble Style */}
-      <div 
-        style={{ 
-          flex: 1, 
-          display: 'flex', 
+      <div
+        style={{
+          flex: 1,
+          display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
           background: 'linear-gradient(135deg, #059669 0%, #047857 100%)',
           position: 'relative',
           overflow: 'hidden',
           padding: '40px',
-        }} 
+        }}
         className="hide-on-mobile"
       >
         <style>
@@ -168,40 +168,40 @@ export default function Login({ isSignup }) {
             }
           `}
         </style>
-        
+
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'white', zIndex: 10 }}>
           <Shield size={36} />
           <span style={{ fontSize: '26px', fontWeight: '800', letterSpacing: '-0.5px' }}>Aegis AI</span>
         </div>
-        
+
         <div style={{ color: 'white', zIndex: 10, maxWidth: '500px', marginBottom: '10%' }}>
           <h2 style={{ fontSize: '48px', fontWeight: '800', lineHeight: 1.1, marginBottom: '24px', letterSpacing: '-1px' }}>
-            Detect. Prevent.<br/>Secure.
+            Detect. Prevent.<br />Secure.
           </h2>
           <p style={{ fontSize: '18px', opacity: 0.9, lineHeight: 1.5, fontWeight: 400 }}>
             Advanced multi-channel phishing detection powered by real-time artificial intelligence. Join thousands protecting their digital footprint today.
           </p>
         </div>
-        
+
         {/* Decorative elements */}
         <div style={{ position: 'absolute', top: '-20%', right: '-20%', width: '80%', height: '80%', background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%)', borderRadius: '50%' }}></div>
         <div style={{ position: 'absolute', bottom: '-10%', left: '-10%', width: '50%', height: '50%', background: 'radial-gradient(circle, rgba(0,0,0,0.2) 0%, transparent 60%)', borderRadius: '50%' }}></div>
       </div>
 
       {/* Right Form Panel */}
-      <div style={{ 
-        flex: 1, 
-        display: 'flex', 
+      <div style={{
+        flex: 1,
+        display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center', 
+        alignItems: 'center',
         justifyContent: 'center',
         padding: '40px 24px',
         position: 'relative'
       }}>
-        
+
         <div style={{ position: 'absolute', top: '40px', right: '40px', fontSize: '14px' }}>
           {isSignup ? "Already a member? " : "Not a member? "}
-          <span 
+          <span
             style={{ color: '#10b981', cursor: 'pointer', fontWeight: 600, textDecoration: 'underline' }}
             onClick={() => navigate(isSignup ? '/login' : '/signup')}
           >
@@ -237,15 +237,15 @@ export default function Login({ isSignup }) {
           {/* Error/Success Messages */}
           {errorMsg && <div style={{ color: '#ef4444', marginBottom: '24px', fontSize: '14px', background: 'rgba(239, 68, 68, 0.1)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(239, 68, 68, 0.2)' }}>{errorMsg}</div>}
           {successMsg && <div style={{ color: '#10b981', marginBottom: '24px', fontSize: '14px', background: 'rgba(16, 185, 129, 0.1)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>{successMsg}</div>}
-          
+
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {isSignup && (
               <div style={{ display: 'flex', gap: '16px' }}>
                 <div style={{ flex: 1 }}>
                   <label className="label-text">First Name</label>
-                  <input 
-                    type="text" 
-                    required 
+                  <input
+                    type="text"
+                    required
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     className="input-field-dribbble"
@@ -253,9 +253,9 @@ export default function Login({ isSignup }) {
                 </div>
                 <div style={{ flex: 1 }}>
                   <label className="label-text">Last Name</label>
-                  <input 
-                    type="text" 
-                    required 
+                  <input
+                    type="text"
+                    required
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
                     className="input-field-dribbble"
@@ -263,31 +263,31 @@ export default function Login({ isSignup }) {
                 </div>
               </div>
             )}
-            
+
             {isSignup && (
               <div>
                 <label className="label-text">Username</label>
-                <input 
-                  type="text" 
-                  required 
+                <input
+                  type="text"
+                  required
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   className="input-field-dribbble"
                 />
               </div>
             )}
-            
+
             <div>
               <label className="label-text">Email Address</label>
-              <input 
-                type="email" 
-                required 
+              <input
+                type="email"
+                required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="input-field-dribbble"
               />
             </div>
-            
+
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                 <label className="label-text">Password</label>
@@ -297,26 +297,26 @@ export default function Login({ isSignup }) {
                   </span>
                 )}
               </div>
-              <input 
-                type="password" 
-                required 
+              <input
+                type="password"
+                required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="input-field-dribbble" 
+                className="input-field-dribbble"
               />
             </div>
-            
-            <button 
-              type="submit" 
-              disabled={loading} 
-              style={{ 
-                marginTop: '12px', 
-                background: 'linear-gradient(135deg, #10b981, #059669)', 
+
+            <button
+              type="submit"
+              disabled={loading}
+              style={{
+                marginTop: '12px',
+                background: 'linear-gradient(135deg, #10b981, #059669)',
                 color: 'white',
-                border: 'none', 
-                padding: '18px', 
-                borderRadius: '30px', 
-                fontSize: '16px', 
+                border: 'none',
+                padding: '18px',
+                borderRadius: '30px',
+                fontSize: '16px',
                 fontWeight: '700',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
@@ -324,18 +324,48 @@ export default function Login({ isSignup }) {
                 boxShadow: '0 8px 20px rgba(16, 185, 129, 0.25)'
               }}
               onMouseOver={(e) => {
-                if(!loading) e.currentTarget.style.transform = 'translateY(-2px)';
-                if(!loading) e.currentTarget.style.boxShadow = '0 12px 24px rgba(16, 185, 129, 0.35)';
+                if (!loading) e.currentTarget.style.transform = 'translateY(-2px)';
+                if (!loading) e.currentTarget.style.boxShadow = '0 12px 24px rgba(16, 185, 129, 0.35)';
               }}
               onMouseOut={(e) => {
-                if(!loading) e.currentTarget.style.transform = 'translateY(0)';
-                if(!loading) e.currentTarget.style.boxShadow = '0 8px 20px rgba(16, 185, 129, 0.25)';
+                if (!loading) e.currentTarget.style.transform = 'translateY(0)';
+                if (!loading) e.currentTarget.style.boxShadow = '0 8px 20px rgba(16, 185, 129, 0.25)';
               }}
             >
               {loading ? "Please wait..." : (isSignup ? "Create account" : "Sign In")}
             </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                if (supabase.auth.signInDemo) {
+                  supabase.auth.signInDemo();
+                  navigate('/home');
+                }
+              }}
+              style={{
+                marginTop: '8px',
+                background: 'transparent',
+                color: '#10b981',
+                border: '1px solid #10b981',
+                padding: '14px',
+                borderRadius: '30px',
+                fontSize: '14px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = 'rgba(16, 185, 129, 0.05)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = 'transparent';
+              }}
+            >
+              Continue in Demo Mode (No Setup Required)
+            </button>
           </form>
-          
+
         </div>
       </div>
     </div>

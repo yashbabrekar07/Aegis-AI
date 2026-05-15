@@ -49,9 +49,28 @@ def load_encrypted_dataset():
     decrypted_str = decrypt_file_to_memory(ENCRYPTED_DATA_FILE)
     df = pd.read_csv(StringIO(decrypted_str))
     
-    # Preprocess text
-    df['cleaned_text'] = df['text'].apply(preprocess_text)
-    return df
+    # Balance the dataset to prevent False Positives (Class Imbalance) BEFORE preprocessing
+    df_safe = df[df['label'] == 'safe']
+    df_phishing = df[df['label'] == 'phishing']
+    
+    # Find the smaller class size
+    min_size = min(len(df_safe), len(df_phishing))
+    
+    # Cap training at 15,000 per class so training is fast and perfectly 50/50 balanced
+    target_size = min(min_size, 15000)
+    
+    if len(df_safe) > target_size:
+        df_safe = df_safe.sample(target_size, random_state=42)
+    if len(df_phishing) > target_size:
+        df_phishing = df_phishing.sample(target_size, random_state=42)
+        
+    # Combine and shuffle
+    df_balanced = pd.concat([df_safe, df_phishing]).sample(frac=1, random_state=42)
+    print(f"Dataset Balanced: {len(df_safe)} Safe, {len(df_phishing)} Phishing. Preprocessing...")
+    
+    # Preprocess text ONLY for the balanced dataset to save massive amounts of CPU time
+    df_balanced['cleaned_text'] = df_balanced['text'].apply(preprocess_text)
+    return df_balanced
 
 def train_model():
     """Trains the NLP Phishing Detection Model and saves it."""
@@ -80,7 +99,11 @@ def predict_text(text):
     with open(MODEL_FILE, "rb") as f:
         model = pickle.load(f)
         
-    clean_text = preprocess_text(text)
+    # Translate Hindi/Marathi/foreign languages to English before scanning
+    from preprocess import translate_to_english
+    translated_text = translate_to_english(text)
+    
+    clean_text = preprocess_text(translated_text)
     
     prediction = model.predict([clean_text])[0]
     probabilities = model.predict_proba([clean_text])[0]

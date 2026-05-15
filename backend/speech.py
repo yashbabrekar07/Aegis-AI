@@ -3,11 +3,21 @@ import uuid
 
 try:
     import imageio_ffmpeg
-    ffmpeg_dir = os.path.dirname(imageio_ffmpeg.get_ffmpeg_exe())
+    import shutil
+    ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
+    ffmpeg_dir = os.path.dirname(ffmpeg_exe)
+    
+    # Whisper explicitly looks for "ffmpeg.exe" in the PATH, but imageio_ffmpeg 
+    # names it something like "ffmpeg-win-x86_64-v7.1.exe". 
+    # We must create a copy named exactly "ffmpeg.exe" so Whisper can find it.
+    target_exe = os.path.join(ffmpeg_dir, "ffmpeg.exe")
+    if not os.path.exists(target_exe):
+        shutil.copy(ffmpeg_exe, target_exe)
+        
     if ffmpeg_dir not in os.environ.get("PATH", ""):
         os.environ["PATH"] += os.pathsep + ffmpeg_dir
-except Exception:
-    pass
+except Exception as e:
+    print(f"Failed to setup ffmpeg: {e}")
 
 ALLOWED_EXTENSIONS = {'wav', 'mp3', 'm4a', 'ogg', 'flac'}
 _whisper_model = None
@@ -24,11 +34,13 @@ def process_audio(audio_file_path):
         import warnings
         warnings.filterwarnings("ignore")
         if _whisper_model is None:
-            _whisper_model = whisper.load_model("base.en")
+            # Switched from "base.en" (English only) to "base" (Multilingual)
+            _whisper_model = whisper.load_model("base")
             
         # fp16=False is CRITICAL for preventing silent freezing on non-CUDA CPUs
-        result = _whisper_model.transcribe(audio_file_path, fp16=False)
-        return result["text"], "Whisper (Local)"
+        # task="translate" forces Whisper to detect Hindi/Marathi and output English text
+        result = _whisper_model.transcribe(audio_file_path, fp16=False, task="translate")
+        return result["text"], "Whisper (Multilingual)"
             
     except Exception as whisper_err:
         import speech_recognition as sr

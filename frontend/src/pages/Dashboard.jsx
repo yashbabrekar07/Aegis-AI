@@ -49,7 +49,7 @@ export default function Dashboard() {
   const [chartLoaded, setChartLoaded] = useState(false);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/user/profile?email=${encodeURIComponent(userEmail)}`)
+    fetch(`http://localhost:8000/api/user/profile?email=${encodeURIComponent(userEmail)}`)
       .then(res => res.json())
       .then(data => setProfile({ userId: data.user_id, phone: data.phone }))
       .catch(err => setProfile({ userId: 'Error', phone: 'Error' }));

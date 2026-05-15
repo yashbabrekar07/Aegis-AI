@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { ShieldAlert, CheckCircle, FileAudio, AlertTriangle } from 'lucide-react';
+import { playSound } from '../utils/audio';
 
 export default function Home() {
   const [input, setInput] = useState('');
@@ -12,15 +13,22 @@ export default function Home() {
     if (!input.trim()) return;
     setLoading(true);
     setResult(null);
+    playSound('scan');
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/scan', {
+      const response = await fetch('http://localhost:8000/api/scan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: input })
       });
       const data = await response.json();
       setResult(data);
+      
+      if (data.risk === 'SAFE') {
+        playSound('safe');
+      } else {
+        playSound('scam');
+      }
       
       // Save to History
       const safeData = {
@@ -37,6 +45,7 @@ export default function Home() {
     } catch (err) {
       console.error(err);
       setResult({ risk: 'ERROR', confidence: 0, label: 'error', reason: 'Failed to connect to backend server.' });
+      playSound('scam');
     } finally {
       setLoading(false);
     }
@@ -49,12 +58,13 @@ export default function Home() {
     setLoading(true);
     setResult(null);
     setInput("Processing audio file...");
+    playSound('scan');
     
     const formData = new FormData();
     formData.append('file', file);
     
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/scan-audio', {
+      const response = await fetch('http://localhost:8000/api/scan-audio', {
         method: 'POST',
         body: formData
       });
@@ -62,6 +72,7 @@ export default function Home() {
       if (data.error) {
         setInput(`Error: ${data.error}`);
         setResult({ risk: 'ERROR', confidence: 0, label: 'upload_failed', reason: data.error });
+        playSound('scam');
         return;
       }
       
@@ -69,6 +80,12 @@ export default function Home() {
         setInput(data.transcription);
       }
       setResult(data);
+      
+      if (data.risk === 'SAFE') {
+        playSound('safe');
+      } else {
+        playSound('scam');
+      }
       
       // Save to History
       const safeData = {
@@ -86,6 +103,7 @@ export default function Home() {
       console.error(err);
       setInput('Error: Connection failed. The backend server might be offline.');
       setResult({ risk: 'ERROR', confidence: 0, label: 'error', reason: 'Failed to connect to backend server.' });
+      playSound('scam');
     } finally {
       setLoading(false);
     }
@@ -98,16 +116,20 @@ export default function Home() {
       </h1>
       <p style={{ marginBottom: '40px' }}>Analyze any message, email, or audio file for social engineering threats.</p>
       
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '32px' }}>
+      <div className="home-grid">
         <div className="card">
           <h2 className="card-title">New Scan</h2>
-          <textarea 
-            className="input-field" 
-            placeholder="Paste suspicious text, SMS, or email here..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            disabled={loading}
-          ></textarea>
+          <div className="scanner-container">
+            {loading && <div className="scanner-laser"></div>}
+            <textarea 
+              className="input-field" 
+              placeholder="Paste suspicious text, SMS, or email here..."
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              disabled={loading}
+              style={{ border: loading ? '1px solid var(--accent-primary)' : '' }}
+            ></textarea>
+          </div>
           
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px' }}>
             <input 
