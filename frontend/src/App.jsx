@@ -12,56 +12,117 @@ import History from './pages/History';
 import Simulate from './pages/Simulate';
 import Dashboard from './pages/Dashboard';
 
-function App() {
+function ProtectedRoute({ session, children }) {
+  if (!session) {
+    return <Navigate to="/login" replace />;
+  }
+  return children;
+}
+
+export default function App() {
   const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
-      if (session) await syncUserFromSession(session);
-      setSession(session);
-      setLoading(false);
+    let mounted = true;
+
+    const finishLoading = () => {
+      if (mounted) setLoading(false);
+    };
+
+    // Safety: never stay on "Loading..." forever (e.g. hung network)
+    const timeout = window.setTimeout(finishLoading, 8000);
+
+    supabase.auth
+      .getSession()
+      .then(({ data: { session: initialSession } }) => {
+        if (!mounted) return;
+        setSession(initialSession);
+        if (initialSession) syncUserFromSession(initialSession);
+      })
+      .catch(() => {
+        if (mounted) setSession(null);
+      })
+      .finally(finishLoading);
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, nextSession) => {
+      if (!mounted) return;
+      setSession(nextSession);
+      finishLoading();
+      if (nextSession) syncUserFromSession(nextSession);
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
-      if (session) await syncUserFromSession(session);
-      setSession(session);
-    });
-
-    return () => subscription.unsubscribe();
+    return () => {
+      mounted = false;
+      window.clearTimeout(timeout);
+      subscription.unsubscribe();
+    };
   }, []);
 
   if (loading) {
-    return <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading...</div>;
+    return (
+      <div
+        style={{
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '16px',
+          background: '#0a0a0a',
+          color: '#fff',
+          fontFamily: 'Inter, sans-serif',
+        }}
+      >
+        <div
+          style={{
+            width: 40,
+            height: 40,
+            border: '3px solid rgba(16,185,129,0.25)',
+            borderTopColor: '#10b981',
+            borderRadius: '50%',
+            animation: 'spin 0.8s linear infinite',
+          }}
+        />
+        <span style={{ opacity: 0.7, fontSize: 14 }}>Signing you in…</span>
+        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      </div>
+    );
   }
-
-  const ProtectedRoute = ({ children }) => {
-    if (!session) {
-      return <Navigate to="/login" replace />;
-    }
-    return children;
-  };
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/login" element={!session ? <Login /> : <Navigate to="/home" replace />} />
-        <Route path="/signup" element={!session ? <Login isSignup={true} /> : <Navigate to="/home" replace />} />
-        <Route path="/config" element={<ProtectedRoute><Config /></ProtectedRoute>} />
-        
-        <Route element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+        <Route path="/login" element={!session ? <Login /> : <Navigate to="/config" replace />} />
+        <Route path="/signup" element={!session ? <Login isSignup={true} /> : <Navigate to="/config" replace />} />
+        <Route
+          path="/config"
+          element={
+            <ProtectedRoute session={session}>
+              <Config />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          element={
+            <ProtectedRoute session={session}>
+              <Layout />
+            </ProtectedRoute>
+          }
+        >
           <Route path="/home" element={<Home />} />
           <Route path="/email" element={<EmailScanner />} />
           <Route path="/history" element={<History />} />
           <Route path="/simulate" element={<Simulate />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
-        
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;

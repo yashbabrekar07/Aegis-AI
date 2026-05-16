@@ -11,9 +11,9 @@ export default function Config() {
   const [usernameError, setUsernameError] = useState('');
 
   useEffect(() => {
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
       if (!session) return;
-      await syncUserFromSession(session);
+      syncUserFromSession(session);
       const email = session.user.email || '';
       setUserEmail(email);
       const existing = localStorage.getItem('aegis_user_username');
@@ -41,13 +41,15 @@ export default function Config() {
       return;
     }
     setUsernameError('');
-    const { data: { session } } = await supabase.auth.getSession();
-    if (session?.user?.id) {
-      await supabase
-        .from('profiles')
-        .upsert({ id: session.user.id, username: username.trim() }, { onConflict: 'id' })
-        .catch(() => null);
-    }
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user?.id && typeof supabase.from === 'function') {
+        supabase
+          .from('profiles')
+          .upsert({ id: session.user.id, username: username.trim() }, { onConflict: 'id' })
+          .then(() => null)
+          .catch(() => null);
+      }
+    });
     setStep(1);
   };
 

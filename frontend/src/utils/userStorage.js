@@ -37,14 +37,16 @@ export async function syncUserFromSession(session) {
     localStorage.setItem('aegis_user_name', suggested.trim());
   }
 
-  if (email && session.user.id) {
+  if (email && session.user.id && typeof supabase.from === 'function') {
     const username =
       localStorage.getItem('aegis_user_username') ||
       meta.username ||
       getEmailLocalPart(email);
-    await supabase
+    // Never block login — profiles upsert can hang under RLS or slow networks
+    supabase
       .from('profiles')
       .upsert({ id: session.user.id, username }, { onConflict: 'id' })
+      .then(() => null)
       .catch(() => null);
   }
 }

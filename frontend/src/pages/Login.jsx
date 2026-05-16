@@ -17,10 +17,10 @@ export default function Login({ isSignup }) {
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
 
-  // Auto redirect if already logged in
+  // Auto redirect if already logged in (OAuth returns to /config; email login goes there too)
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session) navigate('/home');
+      if (session) navigate('/config');
     });
   }, [navigate]);
 
