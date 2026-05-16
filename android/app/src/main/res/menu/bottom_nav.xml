@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/scanFragment"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/nav_scan" />
+    <item
+        android:id="@+id/vishingFragment"
+        android:icon="@android:drawable/ic_btn_speak_now"
+        android:title="@string/nav_vishing" />
+    <item
+        android:id="@+id/trainingFragment"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:title="@string/nav_training" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="@string/nav_profile" />
+</menu>

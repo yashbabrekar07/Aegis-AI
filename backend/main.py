@@ -1,6 +1,7 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from typing import Optional
 import os
 import io
 import hashlib
@@ -30,6 +31,11 @@ app.add_middleware(
 class ScanRequest(BaseModel):
     text: str
 
+
+class VishingTranscriptRequest(BaseModel):
+    transcript: str
+    phone_number: Optional[str] = None
+
 @app.get("/")
 def read_root():
     return {"status": "Aegis AI Backend is running securely."}
@@ -56,6 +62,18 @@ def get_user_profile(email: str = "guest@example.com"):
 @app.post("/api/scan")
 def scan_text(req: ScanRequest):
     return analyze_text(req.text, scan_links=True)
+
+@app.post("/api/vishing/analyze-transcript")
+def analyze_vishing_transcript(req: VishingTranscriptRequest):
+    """Analyze call transcript for vishing (mobile-friendly, no large audio upload)."""
+    t = (req.transcript or "").strip()
+    if len(t) < 3:
+        return {"error": "Transcript too short", "status": 400}
+    result = analyze_text(t, scan_links=False)
+    result["phone_number"] = req.phone_number
+    result["source"] = "vishing_transcript"
+    return result
+
 
 @app.post("/api/scan-audio")
 async def scan_audio(file: UploadFile = File(...)):

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aegis AI</string>
+    <string name="nav_scan">Scan</string>
+    <string name="nav_vishing">Vishing</string>
+    <string name="nav_training">Training</string>
+    <string name="nav_profile">Profile</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_in_google">Sign in with Google</string>
+    <string name="scan_text">Scan text</string>
+    <string name="scan_audio">Scan audio</string>
+    <string name="backend_url_hint">API URL (change for LAN testing)</string>
+</resources>

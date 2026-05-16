@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AegisAI" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/aegis_green</item>
+        <item name="colorPrimaryVariant">@color/aegis_green_dark</item>
+        <item name="android:statusBarColor">@color/aegis_bg</item>
+        <item name="android:navigationBarColor">@color/aegis_bg</item>
+        <item name="android:windowBackground">@color/aegis_bg</item>
+    </style>
+</resources>
