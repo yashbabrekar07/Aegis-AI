@@ -40,10 +40,41 @@ export default function Config() {
       >
         <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '32px' }}>
           {[1, 2, 3].map((s) => (
-            <motionConfigShell />
+                <div
+              key={s}
+              style={{
+                flex: 1,
+                height: '6px',
+                borderRadius: '4px',
+                background: s <= step ? 'var(--accent-primary)' : 'rgba(255,255,255,0.12)',
+              }}
+            />
           ))}
         </div>
-      </motionConfigShell>
-    </motionConfigShell>
+
+        <h2 style={{ fontSize: '24px', marginBottom: '16px' }}>{titles[step - 1]}</h2>
+        <p style={{ marginBottom: '40px', lineHeight: 1.6 }}>{descriptions[step - 1]}</p>
+
+        <div style={{ display: 'flex', gap: '16px', flexDirection: 'column' }}>
+          <button type="button" className="btn btn-primary" onClick={handleNext}>
+            Grant Permission
+          </button>
+          <button
+            type="button"
+            className="btn"
+            style={{ background: 'transparent', color: 'var(--text-muted)' }}
+            onClick={handleNext}
+          >
+            Skip for now
+          </button>
+        </div>
+      </div>
+
+      <div style={{ marginTop: '40px', width: '100%', maxWidth: '450px', textAlign: 'center' }}>
+        <p style={{ fontSize: '13px' }}>
+          <strong>Manual Fallback:</strong> Even if you deny permissions, you can always paste text or upload audio files manually in the app later.
+        </p>
+      </div>
+    </div>
   );
 }

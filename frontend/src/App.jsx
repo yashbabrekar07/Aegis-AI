@@ -11,6 +11,8 @@ import EmailScanner from './pages/EmailScanner';
 import History from './pages/History';
 import Simulate from './pages/Simulate';
 import Dashboard from './pages/Dashboard';
+import VerifyEmail from './pages/VerifyEmail';
+import { isEmailVerified, isOAuthSession } from './utils/authHelpers';
 
 function ProtectedRoute({ session, children }) {
   if (!session) {
@@ -96,8 +98,31 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/login" element={!session ? <Login /> : <Navigate to="/config" replace />} />
-        <Route path="/signup" element={!session ? <Login isSignup={true} /> : <Navigate to="/config" replace />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route
+          path="/login"
+          element={
+            !session ? (
+              <Login />
+            ) : !isOAuthSession(session) && !isEmailVerified(session) ? (
+              <Navigate to="/verify-email" state={{ email: session.user?.email, username: session.user?.user_metadata?.username }} replace />
+            ) : (
+              <Navigate to="/config" replace />
+            )
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            !session ? (
+              <Login isSignup={true} />
+            ) : !isOAuthSession(session) && !isEmailVerified(session) ? (
+              <Navigate to="/verify-email" state={{ email: session.user?.email, username: session.user?.user_metadata?.username }} replace />
+            ) : (
+              <Navigate to="/config" replace />
+            )
+          }
+        />
         <Route
           path="/config"
           element={

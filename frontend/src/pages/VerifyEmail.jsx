@@ -43,11 +43,21 @@ export default function VerifyEmail() {
     }
 
     setLoading(true);
-    const { data, error } = await supabase.auth.verifyOtp({
+    let { data, error } = await supabase.auth.verifyOtp({
       email,
       token,
       type: 'email',
     });
+
+    if (error) {
+      const fallback = await supabase.auth.verifyOtp({
+        email,
+        token,
+        type: 'signup',
+      });
+      data = fallback.data;
+      error = fallback.error;
+    }
 
     if (error) {
       setErrorMsg(mapAuthError(error.message));

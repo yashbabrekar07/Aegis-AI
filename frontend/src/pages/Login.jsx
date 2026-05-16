@@ -3,35 +3,41 @@ import { useState, useEffect } from 'react';
 import { Shield } from 'lucide-react';
 import { supabase } from '../supabaseClient';
 import { saveUsername } from '../utils/userStorage';
+import { isGmailAddress, mapAuthError, isEmailVerified, getPostLoginPath } from '../utils/authHelpers';
 import appleLogo from '../assets/apple-sign-in.svg';
 import '../styles/login.css';
 
 export default function Login({ isSignup }) {
   const navigate = useNavigate();
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
 
-  // Auto redirect if already logged in (OAuth returns to /config; email login goes there too)
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session) navigate('/config');
+      if (!session) return;
+      const path = getPostLoginPath(session, session.user?.email || '');
+      if (path === '/verify-email') {
+        navigate(path, { state: { email: session.user?.email, username: session.user?.user_metadata?.username } });
+      } else {
+        navigate(path);
+      }
     });
   }, [navigate]);
 
   const handleOAuthLogin = async (provider) => {
     setLoading(true);
     setErrorMsg('');
+    localStorage.setItem('aegis_auth_method', 'oauth');
     const { error } = await supabase.auth.signInWithOAuth({
       provider: provider,
       options: {
-        redirectTo: window.location.origin + '/config'
-      }
+        redirectTo: `${window.location.origin}/config`,
+      },
     });
     if (error) setErrorMsg(error.message);
     setLoading(false);
@@ -43,50 +49,77 @@ export default function Login({ isSignup }) {
     setSuccessMsg('');
     setLoading(true);
 
+    const normalizedEmail = email.trim().toLowerCase();
+
     if (isSignup) {
+      if (!isGmailAddress(normalizedEmail)) {
+        setErrorMsg('Please use a Gmail address (@gmail.com or @googlemail.com). One account per Gmail.');
+        setLoading(false);
+        return;
+      }
+      if (!username.trim()) {
+        setErrorMsg('Please choose a username.');
+        setLoading(false);
+        return;
+      }
+      if (password.length < 8) {
+        setErrorMsg('Password must be at least 8 characters.');
+        setLoading(false);
+        return;
+      }
+      if (password !== confirmPassword) {
+        setErrorMsg('Passwords do not match.');
+        setLoading(false);
+        return;
+      }
+
       const { data, error } = await supabase.auth.signUp({
-        email: email,
+        email: normalizedEmail,
         password: password,
         options: {
-          data: {
-            first_name: firstName,
-            last_name: lastName,
-            username: username,
-          }
-        }
+          data: { username: username.trim() },
+        },
       });
 
       if (error) {
-        setErrorMsg(error.message);
+        setErrorMsg(mapAuthError(error.message));
       } else {
-        if (email.trim()) localStorage.setItem('aegis_user_email', email.trim());
-        saveUsername(username);
-        setSuccessMsg('Account created successfully! Please check your email inbox to confirm your email address before logging in.');
+        localStorage.setItem('aegis_auth_method', 'email');
+        setSuccessMsg('');
+        navigate('/verify-email', {
+          state: { email: normalizedEmail, username: username.trim() },
+        });
       }
     } else {
       const { data, error } = await supabase.auth.signInWithPassword({
-        email: email,
+        email: normalizedEmail,
         password: password,
       });
 
       if (error) {
-        setErrorMsg(error.message);
-      } else {
-        if (email.trim()) localStorage.setItem('aegis_user_email', email.trim());
+        setErrorMsg(mapAuthError(error.message));
+      } else if (data.session && !isEmailVerified(data.session)) {
+        navigate('/verify-email', {
+          state: {
+            email: normalizedEmail,
+            username: data.user?.user_metadata?.username,
+          },
+        });
+      } else if (data.session) {
+        localStorage.setItem('aegis_user_email', normalizedEmail);
+        localStorage.setItem('aegis_auth_method', 'email');
         const userMeta = data.user?.user_metadata;
-        if (userMeta?.username) {
-          saveUsername(userMeta.username);
-        } else if (userMeta?.first_name) {
-          saveUsername(`${userMeta.first_name} ${userMeta.last_name || ''}`.trim());
-        } else if (email.trim()) {
-          const derived = email.split('@')[0];
-          saveUsername(derived.charAt(0).toUpperCase() + derived.slice(1));
-        }
+        if (userMeta?.username) saveUsername(userMeta.username);
 
-        // Ensure profile is inserted
-        const username_from_meta = userMeta?.username || email.split('@')[0];
-        if (data.user) {
-          await supabase.from('profiles').insert([{ id: data.user.id, username: username_from_meta }]).catch(() => null);
+        if (data.user?.id && typeof supabase.from === 'function') {
+          supabase
+            .from('profiles')
+            .upsert(
+              { id: data.user.id, username: userMeta?.username || username.trim() },
+              { onConflict: 'id' }
+            )
+            .then(() => null)
+            .catch(() => null);
         }
 
         navigate('/config');
@@ -135,7 +168,11 @@ export default function Login({ isSignup }) {
             {isSignup ? "Sign up to Aegis" : "Sign in to Aegis"}
           </h1>
 
-          {/* OAuth Buttons */}
+          {isSignup && (
+            <p style={{ fontSize: 13, color: '#888', marginBottom: 12, lineHeight: 1.5 }}>
+              Sign up with Google or Apple — no username needed. Use the Gmail form below to pick a username and verify by code.
+            </p>
+          )}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
             <button type="button" onClick={() => handleOAuthLogin('google')} className="login-social-btn login-oauth-btn">
               <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" style={{ width: '20px' }} />
@@ -150,7 +187,7 @@ export default function Login({ isSignup }) {
           <div style={{ display: 'flex', alignItems: 'center', margin: '32px 0', color: '#666' }}>
             <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.1)' }}></div>
             <span style={{ padding: '0 16px', fontSize: '13px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
-              or sign in with email
+              {isSignup ? 'or sign up with Gmail' : 'or sign in with email'}
             </span>
             <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.1)' }}></div>
           </div>
@@ -161,31 +198,6 @@ export default function Login({ isSignup }) {
 
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {isSignup && (
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <div style={{ flex: 1 }}>
-                  <label className="label-text login-field">First Name</label>
-                  <input
-                    type="text"
-                    required
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    className="login-input-dribbble login-field"
-                  />
-                </div>
-                <div style={{ flex: 1 }}>
-                  <label className="label-text login-field">Last Name</label>
-                  <input
-                    type="text"
-                    required
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    className="login-input-dribbble login-field"
-                  />
-                </div>
-              </div>
-            )}
-
-            {isSignup && (
               <div>
                 <label className="label-text login-field">Username</label>
                 <input
@@ -194,19 +206,27 @@ export default function Login({ isSignup }) {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   className="login-input-dribbble login-field"
+                  maxLength={32}
+                  placeholder="Your display name on Aegis"
                 />
               </div>
             )}
 
             <div>
-              <label className="label-text login-field">Email Address</label>
+              <label className="label-text login-field">{isSignup ? 'Gmail address' : 'Email Address'}</label>
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="login-input-dribbble login-field"
+                placeholder="you@gmail.com"
               />
+              {isSignup && (
+                <p style={{ fontSize: 12, color: '#888', marginTop: 6 }}>
+                  We send a 6-digit code to verify your Gmail. One account per address.
+                </p>
+              )}
             </div>
 
             <div>
@@ -226,6 +246,19 @@ export default function Login({ isSignup }) {
                 className="login-input-dribbble login-field"
               />
             </div>
+
+            {isSignup && (
+              <div>
+                <label className="label-text login-field">Confirm password</label>
+                <input
+                  type="password"
+                  required
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="login-input-dribbble login-field"
+                />
+              </div>
+            )}
 
             <button
               type="submit"
@@ -247,7 +280,7 @@ export default function Login({ isSignup }) {
                 width: '100%',
               }}
             >
-              {loading ? 'Please wait...' : isSignup ? 'Create account' : 'Sign In'}
+              {loading ? 'Please wait...' : isSignup ? 'Send verification code' : 'Sign In'}
             </button>
           </form>
 

@@ -1,4 +1,5 @@
 import { supabase } from '../supabaseClient';
+import { isOAuthSession } from './authHelpers';
 
 /** Local part of email (e.g. ayush from ayush@gmail.com) */
 export function getEmailLocalPart(email) {
@@ -33,8 +34,15 @@ export async function syncUserFromSession(session) {
     (meta.first_name ? `${meta.first_name} ${meta.last_name || ''}`.trim() : '') ||
     getEmailLocalPart(email);
 
-  if (suggested && !localStorage.getItem('aegis_user_username')) {
-    localStorage.setItem('aegis_user_name', suggested.trim());
+  if (isOAuthSession(session)) {
+    localStorage.setItem('aegis_auth_method', 'oauth');
+    const display = meta.full_name || meta.name || suggested;
+    if (display) localStorage.setItem('aegis_user_name', display.trim());
+  } else {
+    localStorage.setItem('aegis_auth_method', 'email');
+    if (suggested && !localStorage.getItem('aegis_user_username')) {
+      localStorage.setItem('aegis_user_name', suggested.trim());
+    }
   }
 
   if (email && session.user.id && typeof supabase.from === 'function') {

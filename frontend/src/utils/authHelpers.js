@@ -19,6 +19,14 @@ export function isEmailVerified(session) {
   return Boolean(session.user.email_confirmed_at);
 }
 
+export function getPostLoginPath(session, emailForVerify = '') {
+  if (!session) return '/login';
+  if (!isOAuthSession(session) && !isEmailVerified(session)) {
+    return emailForVerify ? '/verify-email' : '/login';
+  }
+  return '/config';
+}
+
 export function mapAuthError(message) {
   const m = (message || '').toLowerCase();
   if (m.includes('already registered') || m.includes('already been registered')) {
