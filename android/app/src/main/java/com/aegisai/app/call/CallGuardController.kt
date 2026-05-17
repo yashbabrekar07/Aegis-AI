@@ -49,6 +49,5 @@ object CallGuardController {
         }
         receiver = null
         appContext.stopService(Intent(appContext, CallGuardWatchService::class.java))
-        appContext.stopService(Intent(appContext, CallRecordService::class.java))
     }
 }

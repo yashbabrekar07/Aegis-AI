@@ -54,11 +54,6 @@
         <service
             android:name=".call.CallGuardWatchService"
             android:exported="false"
-            android:foregroundServiceType="dataSync" />
-
-        <service
-            android:name=".call.CallRecordService"
-            android:exported="false"
             android:foregroundServiceType="microphone|dataSync" />
     </application>
 </manifest>

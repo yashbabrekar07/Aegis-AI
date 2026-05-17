@@ -11,9 +11,11 @@ class IncomingCallReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent?) {
         if (intent?.action != TelephonyManager.ACTION_PHONE_STATE_CHANGED) return
         if (!AegisApp.get(context).prefs.callGuardEnabled) return
+        if (!CallGuardPermissions.canRunCallGuard(context)) return
 
         val state = intent.getStringExtra(TelephonyManager.EXTRA_STATE) ?: return
         val number = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER)
+        val appContext = context.applicationContext
 
         when (state) {
             TelephonyManager.EXTRA_STATE_RINGING -> {
@@ -24,19 +26,19 @@ class IncomingCallReceiver : BroadcastReceiver() {
                 if (CallGuardState.callPhase == CallGuardState.PHASE_OFFHOOK) return
                 CallGuardState.callPhase = CallGuardState.PHASE_OFFHOOK
                 val phone = number?.takeIf { it.isNotBlank() } ?: CallGuardState.lastCaller
-                val start = Intent(context, CallRecordService::class.java).apply {
-                    action = CallRecordService.ACTION_START
-                    putExtra(CallRecordService.EXTRA_PHONE, phone)
+                val start = Intent(appContext, CallGuardWatchService::class.java).apply {
+                    action = CallGuardWatchService.ACTION_START_RECORDING
+                    putExtra(CallGuardWatchService.EXTRA_PHONE, phone)
                 }
-                startCallService(context, start)
+                dispatchToWatch(appContext, start)
             }
             TelephonyManager.EXTRA_STATE_IDLE -> {
                 if (CallGuardState.callPhase != CallGuardState.PHASE_OFFHOOK) return
                 CallGuardState.callPhase = CallGuardState.PHASE_IDLE
-                val analyze = Intent(context, CallRecordService::class.java).apply {
-                    action = CallRecordService.ACTION_ANALYZE
+                val analyze = Intent(appContext, CallGuardWatchService::class.java).apply {
+                    action = CallGuardWatchService.ACTION_ANALYZE
                 }
-                startCallService(context, analyze)
+                dispatchToWatch(appContext, analyze)
             }
         }
     }
@@ -52,12 +54,21 @@ object CallGuardState {
 
     @Volatile
     var callPhase: Int = PHASE_IDLE
+
+    @Volatile
+    var watchServiceRunning: Boolean = false
 }
 
-private fun startCallService(context: Context, intent: Intent) {
+private fun dispatchToWatch(context: Context, intent: Intent) {
     try {
-        ContextCompat.startForegroundService(context, intent)
+        if (CallGuardState.watchServiceRunning) {
+            context.startService(intent)
+        } else {
+            ContextCompat.startForegroundService(context, intent)
+        }
     } catch (_: Exception) {
-        // Background FGS restrictions on some Android 12+ builds
+        try {
+            ContextCompat.startForegroundService(context, intent)
+        } catch (_: Exception) { }
     }
 }
