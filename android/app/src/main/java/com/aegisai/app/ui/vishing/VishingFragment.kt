@@ -104,7 +104,7 @@ class VishingFragment : Fragment() {
         }
         if (missing.isEmpty()) {
             val ctx = requireContext().applicationContext
-            prefs.callGuardEnabled = true
+            AegisApp.get(ctx).prefs.callGuardEnabled = true
             CallGuardController.enable(ctx)
             Toast.makeText(requireContext(), "Call Guard enabled — you will get an alert after each call", Toast.LENGTH_LONG).show()
         } else {

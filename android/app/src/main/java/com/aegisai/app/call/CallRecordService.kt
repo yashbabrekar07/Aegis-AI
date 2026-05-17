@@ -46,13 +46,13 @@ class CallRecordService : Service() {
         try {
             val file = File(cacheDir, "call_${System.currentTimeMillis()}.m4a")
             outputFile = file
-            recorder = createRecorder().apply {
-                setAudioSource(MediaRecorder.AudioSource.MIC)
-                setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
-                setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
-                setOutputFile(file.absolutePath)
-                prepare()
-                start()
+            recorder = createRecorder()
+            try {
+                configureRecorder(recorder!!, file, MediaRecorder.AudioSource.VOICE_RECOGNITION)
+            } catch (_: Exception) {
+                recorder?.release()
+                recorder = createRecorder()
+                configureRecorder(recorder!!, file, MediaRecorder.AudioSource.MIC)
             }
             isRecording = true
         } catch (e: Exception) {
@@ -75,7 +75,7 @@ class CallRecordService : Service() {
         val file = stopRecorderQuietly()
         val phone = currentPhone
 
-        startForeground(ANALYZE_NOTIFICATION_ID, buildAnalyzingNotification())
+        startForeground(ANALYZE_NOTIFICATION_ID, buildAnalyzingNotification("Waking server…"))
 
         scope.launch {
             try {
@@ -87,15 +87,26 @@ class CallRecordService : Service() {
                     )
                     return@launch
                 }
+                if (file.length() > MAX_BYTES) {
+                    CallAnalysisNotifier.showError(
+                        applicationContext,
+                        phone,
+                        "Recording is very long — server may time out. Try a shorter call or paste transcript in Vishing."
+                    )
+                    return@launch
+                }
 
-                val prefs = AegisApp.get(applicationContext).prefs
-                val result = ApiClient(prefs.apiBaseUrl).scanAudio(file)
+                val api = ApiClient(AegisApp.get(applicationContext).prefs.apiBaseUrl)
+                withContext(Dispatchers.Main) {
+                    updateAnalyzingNotification("Transcribing call audio… (can take 1–3 min)")
+                }
+                val result = api.scanAudio(file)
                 CallAnalysisNotifier.showResult(applicationContext, phone, result)
             } catch (e: Exception) {
                 CallAnalysisNotifier.showError(
                     applicationContext,
                     phone,
-                    e.message ?: "Analysis failed — check internet and backend."
+                    ApiClient.friendlyError(e)
                 )
             } finally {
                 file?.delete()
@@ -131,6 +142,19 @@ class CallRecordService : Service() {
         }
     }
 
+    private fun configureRecorder(recorder: MediaRecorder, file: File, source: Int) {
+        recorder.apply {
+            setAudioSource(source)
+            setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
+            setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
+            setAudioSamplingRate(16_000)
+            setAudioEncodingBitRate(48_000)
+            setOutputFile(file.absolutePath)
+            prepare()
+            start()
+        }
+    }
+
     override fun onBind(intent: Intent?): IBinder? = null
 
     private fun buildRecordingNotification(): Notification {
@@ -143,14 +167,19 @@ class CallRecordService : Service() {
             .build()
     }
 
-    private fun buildAnalyzingNotification(): Notification {
+    private fun buildAnalyzingNotification(text: String = "Checking for voice phishing…"): Notification {
         ensureChannel("call_guard_analyze", "Call analysis")
         return NotificationCompat.Builder(this, "call_guard_analyze")
             .setContentTitle("Aegis — analyzing call")
-            .setContentText("Checking for voice phishing…")
+            .setContentText(text)
             .setSmallIcon(R.drawable.ic_shield)
             .setOngoing(true)
             .build()
+    }
+
+    private fun updateAnalyzingNotification(text: String) {
+        val nm = getSystemService(NotificationManager::class.java)
+        nm.notify(ANALYZE_NOTIFICATION_ID, buildAnalyzingNotification(text))
     }
 
     private fun ensureChannel(id: String, name: String) {
@@ -167,5 +196,6 @@ class CallRecordService : Service() {
         private const val RECORDING_NOTIFICATION_ID = 4102
         private const val ANALYZE_NOTIFICATION_ID = 4103
         private const val MIN_BYTES = 8_000L
+        private const val MAX_BYTES = 12 * 1024 * 1024L
     }
 }
