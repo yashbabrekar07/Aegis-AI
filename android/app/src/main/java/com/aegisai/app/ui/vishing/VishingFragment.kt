@@ -15,6 +15,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.aegisai.app.AegisApp
+import com.aegisai.app.call.CallGuardController
 import com.aegisai.app.data.ApiClient
 import com.aegisai.app.data.ScanResult
 import com.aegisai.app.databinding.FragmentVishingBinding
@@ -40,9 +41,11 @@ class VishingFragment : Fragment() {
     ) { results ->
         val allGranted = results.values.all { it }
         if (allGranted) {
-            AegisApp.get(requireContext()).prefs.callGuardEnabled = true
+            val ctx = requireContext().applicationContext
+            AegisApp.get(ctx).prefs.callGuardEnabled = true
+            CallGuardController.enable(ctx)
             binding.callGuardSwitch.isChecked = true
-            Toast.makeText(requireContext(), "Call Guard enabled", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Call Guard enabled for all calls", Toast.LENGTH_LONG).show()
         } else {
             binding.callGuardSwitch.isChecked = false
             Toast.makeText(requireContext(), "Phone, mic and notification permissions required", Toast.LENGTH_LONG).show()
@@ -62,10 +65,7 @@ class VishingFragment : Fragment() {
         AnimUtil.fadeInUp(binding.callGuardCard)
         binding.callGuardSwitch.isChecked = prefs.callGuardEnabled
         binding.callGuardSwitch.setOnCheckedChangeListener { _, checked ->
-            if (checked) enableCallGuard() else {
-                prefs.callGuardEnabled = false
-                Toast.makeText(requireContext(), "Call Guard disabled", Toast.LENGTH_SHORT).show()
-            }
+            if (checked) enableCallGuard() else disableCallGuard()
         }
 
         binding.analyzeTranscriptBtn.setOnClickListener {
@@ -103,12 +103,21 @@ class VishingFragment : Fragment() {
             ContextCompat.checkSelfPermission(requireContext(), it) != PackageManager.PERMISSION_GRANTED
         }
         if (missing.isEmpty()) {
-            AegisApp.get(requireContext()).prefs.callGuardEnabled = true
-            Toast.makeText(requireContext(), "Call Guard enabled — works during your next call", Toast.LENGTH_LONG).show()
+            val ctx = requireContext().applicationContext
+            prefs.callGuardEnabled = true
+            CallGuardController.enable(ctx)
+            Toast.makeText(requireContext(), "Call Guard enabled — you will get an alert after each call", Toast.LENGTH_LONG).show()
         } else {
             binding.callGuardSwitch.isChecked = false
             callGuardPermissions.launch(missing.toTypedArray())
         }
+    }
+
+    private fun disableCallGuard() {
+        val ctx = requireContext().applicationContext
+        AegisApp.get(ctx).prefs.callGuardEnabled = false
+        CallGuardController.disable(ctx)
+        Toast.makeText(requireContext(), "Call Guard disabled", Toast.LENGTH_SHORT).show()
     }
 
     private fun startRecording() {

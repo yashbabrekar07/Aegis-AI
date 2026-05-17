@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.aegisai.app.AegisApp
+import com.aegisai.app.call.CallGuardController
 import com.aegisai.app.data.SessionHelper
 import com.aegisai.app.databinding.ActivityMainBinding
 import com.aegisai.app.ui.login.LoginActivity
@@ -38,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             SessionHelper.refreshUserFromToken(this@MainActivity)
         }
+
+        CallGuardController.sync(this)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

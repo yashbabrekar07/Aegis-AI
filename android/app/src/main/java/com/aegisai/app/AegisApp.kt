@@ -23,6 +23,9 @@ class AegisApp : Application() {
     override fun onCreate() {
         super.onCreate()
         prefs = Prefs(this)
+        if (prefs.callGuardEnabled) {
+            com.aegisai.app.call.CallGuardController.enable(this)
+        }
     }
 
     companion object {

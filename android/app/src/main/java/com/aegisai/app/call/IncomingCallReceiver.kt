@@ -4,12 +4,9 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.telephony.TelephonyManager
+import androidx.core.content.ContextCompat
 import com.aegisai.app.AegisApp
 
-/**
- * Listens for call state changes. When Call Guard is enabled, starts mic-based
- * recording during active calls (see [CallRecordService]).
- */
 class IncomingCallReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent?) {
         if (intent?.action != TelephonyManager.ACTION_PHONE_STATE_CHANGED) return
@@ -20,16 +17,27 @@ class IncomingCallReceiver : BroadcastReceiver() {
 
         when (state) {
             TelephonyManager.EXTRA_STATE_RINGING -> {
-                CallRecordService.lastCaller = number
+                CallGuardState.lastCaller = number?.takeIf { it.isNotBlank() }
             }
             TelephonyManager.EXTRA_STATE_OFFHOOK -> {
-                val svc = Intent(context, CallRecordService::class.java)
-                    .putExtra(CallRecordService.EXTRA_PHONE, number ?: CallRecordService.lastCaller)
-                context.startForegroundService(svc)
+                val phone = number?.takeIf { it.isNotBlank() } ?: CallGuardState.lastCaller
+                val start = Intent(context, CallRecordService::class.java).apply {
+                    action = CallRecordService.ACTION_START
+                    putExtra(CallRecordService.EXTRA_PHONE, phone)
+                }
+                ContextCompat.startForegroundService(context, start)
             }
             TelephonyManager.EXTRA_STATE_IDLE -> {
-                context.stopService(Intent(context, CallRecordService::class.java))
+                val analyze = Intent(context, CallRecordService::class.java).apply {
+                    action = CallRecordService.ACTION_ANALYZE
+                }
+                ContextCompat.startForegroundService(context, analyze)
             }
         }
     }
+}
+
+object CallGuardState {
+    @Volatile
+    var lastCaller: String? = null
 }

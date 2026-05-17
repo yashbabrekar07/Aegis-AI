@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:lineSpacingMultiplier="1.35"
-                    android:text="When enabled, Aegis records via your mic during phone calls and scans for scams after the call ends. You will be notified."
+                    android:text="When enabled, Aegis listens via your mic during each call and alerts you when the call ends. Use speakerphone for better capture. One notification per call."
                     android:textColor="@color/aegis_text_muted"
                     android:textSize="13sp" />
 
