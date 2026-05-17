@@ -59,6 +59,6 @@
         <service
             android:name=".call.CallRecordService"
             android:exported="false"
-            android:foregroundServiceType="microphone" />
+            android:foregroundServiceType="microphone|dataSync" />
     </application>
 </manifest>

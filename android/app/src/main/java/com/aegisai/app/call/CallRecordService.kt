@@ -5,14 +5,15 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.Service
 import android.content.Intent
+import android.content.pm.ServiceInfo
 import android.media.MediaRecorder
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
+import androidx.core.app.ServiceCompat
 import com.aegisai.app.AegisApp
 import com.aegisai.app.R
 import com.aegisai.app.data.ApiClient
-import com.aegisai.app.data.ScanResult
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -32,17 +33,25 @@ class CallRecordService : Service() {
         when (intent?.action) {
             ACTION_START -> handleStart(intent)
             ACTION_ANALYZE -> handleAnalyze()
+            else -> finishService()
         }
         return START_NOT_STICKY
     }
 
     private fun handleStart(intent: Intent) {
-        if (isAnalyzing) return
+        promoteForeground(
+            RECORDING_NOTIFICATION_ID,
+            buildRecordingNotification(),
+            ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE
+        )
+        if (isAnalyzing) {
+            finishService()
+            return
+        }
         if (isRecording) {
             stopRecorderQuietly()
         }
         currentPhone = intent.getStringExtra(EXTRA_PHONE) ?: CallGuardState.lastCaller
-        startForeground(RECORDING_NOTIFICATION_ID, buildRecordingNotification())
         try {
             val file = File(cacheDir, "call_${System.currentTimeMillis()}.m4a")
             outputFile = file
@@ -62,20 +71,25 @@ class CallRecordService : Service() {
                 currentPhone,
                 "Could not start recording: ${e.message ?: "mic busy"}"
             )
-            stopForeground(STOP_FOREGROUND_REMOVE)
-            stopSelf()
+            finishService()
         }
     }
 
     private fun handleAnalyze() {
-        if (isAnalyzing) return
+        promoteForeground(
+            ANALYZE_NOTIFICATION_ID,
+            buildAnalyzingNotification("Waking server…"),
+            ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC
+        )
+        if (isAnalyzing) {
+            finishService()
+            return
+        }
         isAnalyzing = true
         isRecording = false
 
         val file = stopRecorderQuietly()
         val phone = currentPhone
-
-        startForeground(ANALYZE_NOTIFICATION_ID, buildAnalyzingNotification("Waking server…"))
 
         scope.launch {
             try {
@@ -113,11 +127,19 @@ class CallRecordService : Service() {
                 outputFile = null
                 isAnalyzing = false
                 withContext(Dispatchers.Main) {
-                    stopForeground(STOP_FOREGROUND_REMOVE)
-                    stopSelf()
+                    finishService()
                 }
             }
         }
+    }
+
+    private fun finishService() {
+        stopForeground(STOP_FOREGROUND_REMOVE)
+        stopSelf()
+    }
+
+    private fun promoteForeground(notificationId: Int, notification: Notification, fgsType: Int) {
+        ServiceCompat.startForeground(this, notificationId, notification, fgsType)
     }
 
     private fun stopRecorderQuietly(): File? {
@@ -147,8 +169,10 @@ class CallRecordService : Service() {
             setAudioSource(source)
             setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
             setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
-            setAudioSamplingRate(16_000)
-            setAudioEncodingBitRate(48_000)
+            try {
+                setAudioSamplingRate(16_000)
+                setAudioEncodingBitRate(48_000)
+            } catch (_: Exception) { }
             setOutputFile(file.absolutePath)
             prepare()
             start()

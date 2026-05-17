@@ -17,27 +17,47 @@ class IncomingCallReceiver : BroadcastReceiver() {
 
         when (state) {
             TelephonyManager.EXTRA_STATE_RINGING -> {
+                CallGuardState.callPhase = CallGuardState.PHASE_RINGING
                 CallGuardState.lastCaller = number?.takeIf { it.isNotBlank() }
             }
             TelephonyManager.EXTRA_STATE_OFFHOOK -> {
+                if (CallGuardState.callPhase == CallGuardState.PHASE_OFFHOOK) return
+                CallGuardState.callPhase = CallGuardState.PHASE_OFFHOOK
                 val phone = number?.takeIf { it.isNotBlank() } ?: CallGuardState.lastCaller
                 val start = Intent(context, CallRecordService::class.java).apply {
                     action = CallRecordService.ACTION_START
                     putExtra(CallRecordService.EXTRA_PHONE, phone)
                 }
-                ContextCompat.startForegroundService(context, start)
+                startCallService(context, start)
             }
             TelephonyManager.EXTRA_STATE_IDLE -> {
+                if (CallGuardState.callPhase != CallGuardState.PHASE_OFFHOOK) return
+                CallGuardState.callPhase = CallGuardState.PHASE_IDLE
                 val analyze = Intent(context, CallRecordService::class.java).apply {
                     action = CallRecordService.ACTION_ANALYZE
                 }
-                ContextCompat.startForegroundService(context, analyze)
+                startCallService(context, analyze)
             }
         }
     }
 }
 
 object CallGuardState {
+    const val PHASE_IDLE = 0
+    const val PHASE_RINGING = 1
+    const val PHASE_OFFHOOK = 2
+
     @Volatile
     var lastCaller: String? = null
+
+    @Volatile
+    var callPhase: Int = PHASE_IDLE
+}
+
+private fun startCallService(context: Context, intent: Intent) {
+    try {
+        ContextCompat.startForegroundService(context, intent)
+    } catch (_: Exception) {
+        // Background FGS restrictions on some Android 12+ builds
+    }
 }

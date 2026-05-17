@@ -35,7 +35,9 @@ object CallGuardController {
             }
         }
         val watch = Intent(appContext, CallGuardWatchService::class.java)
-        ContextCompat.startForegroundService(appContext, watch)
+        try {
+            ContextCompat.startForegroundService(appContext, watch)
+        } catch (_: Exception) { }
     }
 
     fun disable(context: Context) {

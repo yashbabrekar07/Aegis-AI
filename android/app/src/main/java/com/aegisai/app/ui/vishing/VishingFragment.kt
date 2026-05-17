@@ -39,6 +39,7 @@ class VishingFragment : Fragment() {
     private val callGuardPermissions = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { results ->
+        if (!isAdded || _binding == null) return@registerForActivityResult
         val allGranted = results.values.all { it }
         if (allGranted) {
             val ctx = requireContext().applicationContext
