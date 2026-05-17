@@ -34,6 +34,11 @@ class Prefs(context: Context) {
         get() = sp.getBoolean(KEY_PHONE_VERIFIED, false)
         set(v) = sp.edit().putBoolean(KEY_PHONE_VERIFIED, v).apply()
 
+    /** User chose "Skip for now" on the phone verification screen. */
+    var phoneVerificationSkipped: Boolean
+        get() = sp.getBoolean(KEY_PHONE_SKIPPED, false)
+        set(v) = sp.edit().putBoolean(KEY_PHONE_SKIPPED, v).apply()
+
     var callGuardEnabled: Boolean
         get() = sp.getBoolean(KEY_CALL_GUARD, false)
         set(v) = sp.edit().putBoolean(KEY_CALL_GUARD, v).apply()
@@ -46,12 +51,14 @@ class Prefs(context: Context) {
             .remove(KEY_USERNAME)
             .remove(KEY_PHONE)
             .remove(KEY_PHONE_VERIFIED)
+            .remove(KEY_PHONE_SKIPPED)
             .apply()
     }
 
     fun isLoggedIn(): Boolean = !accessToken.isNullOrBlank()
 
-    fun needsPhoneVerification(): Boolean = isLoggedIn() && !phoneVerified
+    fun needsPhoneVerification(): Boolean =
+        isLoggedIn() && !phoneVerified && !phoneVerificationSkipped
 
     companion object {
         private const val KEY_API = "api_base"
@@ -61,6 +68,7 @@ class Prefs(context: Context) {
         private const val KEY_REFRESH = "refresh_token"
         private const val KEY_PHONE = "phone"
         private const val KEY_PHONE_VERIFIED = "phone_verified"
+        private const val KEY_PHONE_SKIPPED = "phone_verification_skipped"
         private const val KEY_CALL_GUARD = "call_guard_enabled"
     }
 }
