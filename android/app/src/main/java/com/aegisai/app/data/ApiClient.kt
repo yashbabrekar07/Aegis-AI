@@ -27,6 +27,9 @@ data class ScanResult(
 @JsonClass(generateAdapter = true)
 data class ProfileResponse(val user_id: String?, val phone: String?)
 
+@JsonClass(generateAdapter = true)
+data class OtpResponse(val ok: Boolean = false, val message: String? = null, val dev_otp: String? = null, val error: String? = null)
+
 class ApiClient(private val baseUrl: String) {
     private val client = OkHttpClient.Builder()
         .connectTimeout(120, TimeUnit.SECONDS)
@@ -37,6 +40,7 @@ class ApiClient(private val baseUrl: String) {
     private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
     private val scanAdapter = moshi.adapter(ScanResult::class.java)
     private val profileAdapter = moshi.adapter(ProfileResponse::class.java)
+    private val otpAdapter = moshi.adapter(OtpResponse::class.java)
     private val jsonType = "application/json; charset=utf-8".toMediaType()
 
     fun scanText(text: String): ScanResult {
@@ -67,15 +71,40 @@ class ApiClient(private val baseUrl: String) {
         return executeScan(req)
     }
 
-    fun fetchProfile(email: String): ProfileResponse? {
-        val req = Request.Builder()
-            .url("$baseUrl/api/user/profile?email=${java.net.URLEncoder.encode(email, "UTF-8")}")
-            .get()
-            .build()
+    fun fetchProfile(email: String, phone: String? = null): ProfileResponse? {
+        var url = "$baseUrl/api/user/profile?email=${java.net.URLEncoder.encode(email, "UTF-8")}"
+        if (!phone.isNullOrBlank()) {
+            url += "&phone=${java.net.URLEncoder.encode(phone, "UTF-8")}"
+        }
+        val req = Request.Builder().url(url).get().build()
         client.newCall(req).execute().use { resp ->
             if (!resp.isSuccessful) return null
             val json = resp.body?.string() ?: return null
             return profileAdapter.fromJson(json)
+        }
+    }
+
+    fun sendPhoneOtp(phone: String, email: String?): OtpResponse {
+        val json = org.json.JSONObject().put("phone", phone)
+        if (!email.isNullOrBlank()) json.put("email", email)
+        return postOtp("$baseUrl/api/auth/send-phone-otp", json.toString())
+    }
+
+    fun verifyPhoneOtp(phone: String, otp: String, email: String?): OtpResponse {
+        val json = org.json.JSONObject().put("phone", phone).put("otp", otp)
+        if (!email.isNullOrBlank()) json.put("email", email)
+        return postOtp("$baseUrl/api/auth/verify-phone-otp", json.toString())
+    }
+
+    private fun postOtp(url: String, body: String): OtpResponse {
+        val req = Request.Builder().url(url).post(body.toRequestBody(jsonType)).build()
+        client.newCall(req).execute().use { resp ->
+            val parsed = otpAdapter.fromJson(resp.body?.string() ?: "{}")
+                ?: OtpResponse(error = "Invalid response")
+            if (!resp.isSuccessful && parsed.error == null) {
+                return parsed.copy(error = "HTTP ${resp.code}")
+            }
+            return parsed
         }
     }
 

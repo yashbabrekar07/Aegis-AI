@@ -2,9 +2,49 @@
 <resources>
     <style name="Theme.AegisAI" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/aegis_green</item>
-        <item name="colorPrimaryVariant">@color/aegis_green_dark</item>
+        <item name="colorOnPrimary">@color/aegis_text_main</item>
+        <item name="colorSurface">@color/aegis_bg</item>
+        <item name="colorOnSurface">@color/aegis_text_main</item>
         <item name="android:statusBarColor">@color/aegis_bg</item>
         <item name="android:navigationBarColor">@color/aegis_bg</item>
         <item name="android:windowBackground">@color/aegis_bg</item>
+        <item name="textInputStyle">@style/AegisTextInput</item>
+        <item name="materialButtonStyle">@style/AegisButton</item>
+        <item name="android:windowAnimationStyle">@style/AegisWindowAnimation</item>
+    </style>
+
+    <style name="AegisWindowAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_left</item>
+    </style>
+
+    <style name="AegisTextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/aegis_green</item>
+        <item name="hintTextColor">@color/aegis_text_muted</item>
+        <item name="boxBackgroundColor">@color/aegis_sidebar</item>
+    </style>
+
+    <style name="AegisButton" parent="Widget.Material3.Button">
+        <item name="cornerRadius">14dp</item>
+    </style>
+
+    <style name="AegisPageTitle">
+        <item name="android:textSize">@dimen/page_title_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/aegis_text_main</item>
+    </style>
+
+    <style name="AegisPageSubtitle">
+        <item name="android:textSize">@dimen/page_subtitle_size</item>
+        <item name="android:textColor">@color/aegis_text_muted</item>
+        <item name="android:lineSpacingMultiplier">1.35</item>
+    </style>
+
+    <style name="AegisCardTitle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/aegis_text_main</item>
     </style>
 </resources>

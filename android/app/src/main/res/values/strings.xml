@@ -8,6 +8,11 @@
     <string name="sign_in">Sign in</string>
     <string name="sign_up">Sign up</string>
     <string name="sign_in_google">Sign in with Google</string>
+    <string name="sign_up_google">Sign up with Google</string>
+    <string name="login_switch_signup">Not a member? Sign up</string>
+    <string name="login_switch_signin">Already a member? Sign in</string>
+    <string name="login_signin_subtitle">Sign in with your Gmail and password.</string>
+    <string name="login_signup_subtitle">Pick a username. We verify Gmail with a 6-digit code, then your mobile number.</string>
     <string name="scan_text">Scan text</string>
     <string name="scan_audio">Scan audio</string>
     <string name="backend_url_hint">API URL (change for LAN testing)</string>

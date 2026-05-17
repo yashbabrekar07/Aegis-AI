@@ -7,15 +7,26 @@
     <fragment
         android:id="@+id/scanFragment"
         android:name="com.aegisai.app.ui.scan.ScanFragment"
-        android:label="@string/nav_scan" />
+        android:label="@string/nav_scan">
+        <action
+            android:id="@+id/action_scan_to_vishing"
+            app:destination="@id/vishingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
     <fragment
         android:id="@+id/vishingFragment"
         android:name="com.aegisai.app.ui.vishing.VishingFragment"
         android:label="@string/nav_vishing" />
+
     <fragment
         android:id="@+id/trainingFragment"
         android:name="com.aegisai.app.ui.training.TrainingFragment"
         android:label="@string/nav_training" />
+
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.aegisai.app.ui.profile.ProfileFragment"

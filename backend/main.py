@@ -5,6 +5,8 @@ from typing import Optional
 import os
 import io
 import hashlib
+import random
+import time
 
 from preprocess import translate_to_english
 from model import predict_text
@@ -36,28 +38,78 @@ class VishingTranscriptRequest(BaseModel):
     transcript: str
     phone_number: Optional[str] = None
 
+
+class PhoneOtpSendRequest(BaseModel):
+    phone: str
+    email: Optional[str] = None
+
+
+class PhoneOtpVerifyRequest(BaseModel):
+    phone: str
+    otp: str
+    email: Optional[str] = None
+
+
+# In-memory OTP store (use Redis/Supabase in production)
+_phone_otp_store: dict[str, tuple[str, float]] = {}
+
+
 @app.get("/")
 def read_root():
     return {"status": "Aegis AI Backend is running securely."}
 
 @app.get("/api/user/profile")
-def get_user_profile(email: str = "guest@example.com"):
-    # Generate a consistent "genuine" looking user id and phone number based on email
+def get_user_profile(email: str = "guest@example.com", phone: Optional[str] = None):
     hash_obj = hashlib.md5(email.encode())
     hash_int = int(hash_obj.hexdigest(), 16)
-    
-    user_id = str(hash_int)[:9] # 9 digit user ID
-    
-    # Generate a phone number based on another part of the hash
-    phone_part = str(hash_int)[9:19]
-    if len(phone_part) < 10:
-        phone_part = phone_part.ljust(10, '0')
-    phone = f"(+1) {phone_part[:3]}-{phone_part[3:6]}-{phone_part[6:10]}"
-    
-    return {
-        "user_id": user_id,
-        "phone": phone
-    }
+    user_id = str(hash_int)[:9]
+
+    if phone and phone.strip():
+        display_phone = phone.strip()
+    else:
+        phone_part = str(hash_int)[9:19]
+        if len(phone_part) < 10:
+            phone_part = phone_part.ljust(10, "0")
+        display_phone = f"(+1) {phone_part[:3]}-{phone_part[3:6]}-{phone_part[6:10]}"
+
+    return {"user_id": user_id, "phone": display_phone}
+
+
+@app.post("/api/auth/send-phone-otp")
+def send_phone_otp(req: PhoneOtpSendRequest):
+    phone = (req.phone or "").strip()
+    if len(phone) < 10:
+        return {"ok": False, "error": "Invalid phone number"}
+
+    code = f"{random.randint(100000, 999999)}"
+    _phone_otp_store[phone] = (code, time.time() + 600)
+
+    # TODO: integrate Twilio / MSG91 when credentials are set
+    twilio_sid = os.getenv("TWILIO_ACCOUNT_SID")
+    if twilio_sid:
+        pass  # send_sms(phone, f"Your Aegis AI code is {code}")
+
+    resp = {"ok": True, "message": "OTP sent"}
+    if os.getenv("OTP_DEV_MODE", "true").lower() in ("1", "true", "yes"):
+        resp["dev_otp"] = code
+    return resp
+
+
+@app.post("/api/auth/verify-phone-otp")
+def verify_phone_otp(req: PhoneOtpVerifyRequest):
+    phone = (req.phone or "").strip()
+    otp = (req.otp or "").strip()
+    stored = _phone_otp_store.get(phone)
+    if not stored:
+        return {"ok": False, "error": "No OTP requested for this number"}
+    code, expires = stored
+    if time.time() > expires:
+        del _phone_otp_store[phone]
+        return {"ok": False, "error": "OTP expired"}
+    if otp != code:
+        return {"ok": False, "error": "Invalid OTP"}
+    del _phone_otp_store[phone]
+    return {"ok": True, "message": "Phone verified", "phone": phone}
 
 @app.post("/api/scan")
 def scan_text(req: ScanRequest):

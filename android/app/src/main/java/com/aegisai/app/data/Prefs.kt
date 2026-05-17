@@ -26,15 +26,32 @@ class Prefs(context: Context) {
         get() = sp.getString(KEY_REFRESH, null)
         set(v) = sp.edit().putString(KEY_REFRESH, v).apply()
 
+    var phone: String?
+        get() = sp.getString(KEY_PHONE, null)
+        set(v) = sp.edit().putString(KEY_PHONE, v).apply()
+
+    var phoneVerified: Boolean
+        get() = sp.getBoolean(KEY_PHONE_VERIFIED, false)
+        set(v) = sp.edit().putBoolean(KEY_PHONE_VERIFIED, v).apply()
+
+    var callGuardEnabled: Boolean
+        get() = sp.getBoolean(KEY_CALL_GUARD, false)
+        set(v) = sp.edit().putBoolean(KEY_CALL_GUARD, v).apply()
+
     fun clearSession() {
         sp.edit()
             .remove(KEY_ACCESS)
             .remove(KEY_REFRESH)
             .remove(KEY_EMAIL)
+            .remove(KEY_USERNAME)
+            .remove(KEY_PHONE)
+            .remove(KEY_PHONE_VERIFIED)
             .apply()
     }
 
     fun isLoggedIn(): Boolean = !accessToken.isNullOrBlank()
+
+    fun needsPhoneVerification(): Boolean = isLoggedIn() && !phoneVerified
 
     companion object {
         private const val KEY_API = "api_base"
@@ -42,5 +59,8 @@ class Prefs(context: Context) {
         private const val KEY_EMAIL = "email"
         private const val KEY_ACCESS = "access_token"
         private const val KEY_REFRESH = "refresh_token"
+        private const val KEY_PHONE = "phone"
+        private const val KEY_PHONE_VERIFIED = "phone_verified"
+        private const val KEY_CALL_GUARD = "call_guard_enabled"
     }
 }

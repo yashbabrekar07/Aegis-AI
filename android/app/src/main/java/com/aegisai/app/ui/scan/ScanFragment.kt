@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.aegisai.app.R
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
@@ -13,6 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import com.aegisai.app.AegisApp
 import com.aegisai.app.data.ApiClient
 import com.aegisai.app.databinding.FragmentScanBinding
+import com.aegisai.app.util.AnimUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -35,9 +37,16 @@ class ScanFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        api = ApiClient(AegisApp.get(requireContext()).prefs.apiBaseUrl)
+        val prefs = AegisApp.get(requireContext()).prefs
+        api = ApiClient(prefs.apiBaseUrl)
+        val name = prefs.username
+        binding.scanTitle.text = if (!name.isNullOrBlank()) "Welcome, $name" else "Scan Center"
+
+        AnimUtil.fadeInUp(binding.scanTitle)
+        binding.root.findViewById<View>(R.id.scanResultCard)?.let { AnimUtil.fadeInUp(it) }
 
         binding.scanTextBtn.setOnClickListener {
+            AnimUtil.pulse(binding.scanTextBtn)
             val text = binding.scanInput.text?.toString()?.trim().orEmpty()
             if (text.isBlank()) {
                 Toast.makeText(requireContext(), "Enter text to scan", Toast.LENGTH_SHORT).show()
@@ -53,7 +62,7 @@ class ScanFragment : Fragment() {
 
     private fun runScan(block: suspend () -> com.aegisai.app.data.ScanResult) {
         binding.scanProgress.isVisible = true
-        binding.scanResult.isVisible = false
+        binding.scanResultCard.isVisible = false
         lifecycleScope.launch {
             try {
                 val result = withContext(Dispatchers.IO) { block() }
@@ -67,7 +76,8 @@ class ScanFragment : Fragment() {
     }
 
     private fun showResult(result: com.aegisai.app.data.ScanResult) {
-        binding.scanResult.isVisible = true
+        binding.scanResultCard.isVisible = true
+        AnimUtil.fadeInUp(binding.scanResultCard)
         if (result.error != null) {
             binding.scanResult.text = "Error: ${result.error}"
             return
@@ -99,7 +109,6 @@ class ScanFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        recorder?.release()
         _binding = null
     }
 }

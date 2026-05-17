@@ -18,6 +18,7 @@ import com.aegisai.app.AegisApp
 import com.aegisai.app.data.ApiClient
 import com.aegisai.app.data.ScanResult
 import com.aegisai.app.databinding.FragmentVishingBinding
+import com.aegisai.app.util.AnimUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -34,6 +35,20 @@ class VishingFragment : Fragment() {
         if (granted) startRecording() else Toast.makeText(requireContext(), "Microphone permission required", Toast.LENGTH_LONG).show()
     }
 
+    private val callGuardPermissions = registerForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) { results ->
+        val allGranted = results.values.all { it }
+        if (allGranted) {
+            AegisApp.get(requireContext()).prefs.callGuardEnabled = true
+            binding.callGuardSwitch.isChecked = true
+            Toast.makeText(requireContext(), "Call Guard enabled", Toast.LENGTH_SHORT).show()
+        } else {
+            binding.callGuardSwitch.isChecked = false
+            Toast.makeText(requireContext(), "Phone, mic and notification permissions required", Toast.LENGTH_LONG).show()
+        }
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentVishingBinding.inflate(inflater, container, false)
         return binding.root
@@ -42,8 +57,19 @@ class VishingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         api = ApiClient(AegisApp.get(requireContext()).prefs.apiBaseUrl)
+        val prefs = AegisApp.get(requireContext()).prefs
+
+        AnimUtil.fadeInUp(binding.callGuardCard)
+        binding.callGuardSwitch.isChecked = prefs.callGuardEnabled
+        binding.callGuardSwitch.setOnCheckedChangeListener { _, checked ->
+            if (checked) enableCallGuard() else {
+                prefs.callGuardEnabled = false
+                Toast.makeText(requireContext(), "Call Guard disabled", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         binding.analyzeTranscriptBtn.setOnClickListener {
+            AnimUtil.pulse(binding.analyzeTranscriptBtn)
             val t = binding.transcriptInput.text?.toString()?.trim().orEmpty()
             if (t.length < 3) {
                 Toast.makeText(requireContext(), "Transcript too short", Toast.LENGTH_SHORT).show()
@@ -62,6 +88,27 @@ class VishingFragment : Fragment() {
         }
 
         binding.stopRecordBtn.setOnClickListener { stopAndScan() }
+    }
+
+    private fun enableCallGuard() {
+        val needed = mutableListOf(
+            Manifest.permission.RECORD_AUDIO,
+            Manifest.permission.READ_PHONE_STATE,
+            Manifest.permission.READ_CALL_LOG
+        )
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            needed.add(Manifest.permission.POST_NOTIFICATIONS)
+        }
+        val missing = needed.filter {
+            ContextCompat.checkSelfPermission(requireContext(), it) != PackageManager.PERMISSION_GRANTED
+        }
+        if (missing.isEmpty()) {
+            AegisApp.get(requireContext()).prefs.callGuardEnabled = true
+            Toast.makeText(requireContext(), "Call Guard enabled — works during your next call", Toast.LENGTH_LONG).show()
+        } else {
+            binding.callGuardSwitch.isChecked = false
+            callGuardPermissions.launch(missing.toTypedArray())
+        }
     }
 
     private fun startRecording() {
@@ -95,7 +142,7 @@ class VishingFragment : Fragment() {
 
     private fun runJob(block: suspend () -> ScanResult) {
         binding.vishingProgress.isVisible = true
-        binding.vishingResult.isVisible = false
+        binding.vishingResultCard.isVisible = false
         lifecycleScope.launch {
             try {
                 val result = withContext(Dispatchers.IO) { block() }
@@ -109,7 +156,7 @@ class VishingFragment : Fragment() {
     }
 
     private fun showResult(result: ScanResult) {
-        binding.vishingResult.isVisible = true
+        binding.vishingResultCard.isVisible = true
         if (result.error != null) {
             binding.vishingResult.text = "Error: ${result.error}"
             return

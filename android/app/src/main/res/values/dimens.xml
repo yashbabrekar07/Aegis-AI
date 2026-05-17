@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding_h">20dp</dimen>
+    <dimen name="screen_padding_v">20dp</dimen>
+    <dimen name="content_bottom_inset">88dp</dimen>
+    <dimen name="card_radius">20dp</dimen>
+    <dimen name="card_padding">20dp</dimen>
+    <dimen name="bottom_nav_height">72dp</dimen>
+    <dimen name="page_title_size">26sp</dimen>
+    <dimen name="page_subtitle_size">15sp</dimen>
+    <dimen name="nav_rail_width">80dp</dimen>
+</resources>

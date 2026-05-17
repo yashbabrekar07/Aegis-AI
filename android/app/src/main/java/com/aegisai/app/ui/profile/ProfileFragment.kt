@@ -9,8 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.aegisai.app.AegisApp
 import com.aegisai.app.data.ApiClient
+import com.aegisai.app.data.SessionHelper
 import com.aegisai.app.databinding.FragmentProfileBinding
 import com.aegisai.app.ui.login.LoginActivity
+import io.github.jan.supabase.gotrue.auth
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -26,37 +28,78 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.logoutBtn.setOnClickListener { logout() }
+        loadProfile()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        loadProfile()
+    }
+
+    private fun loadProfile() {
         val prefs = AegisApp.get(requireContext()).prefs
-        val username = prefs.username ?: "Guest"
-        val email = prefs.email ?: "Not linked"
-        binding.profileUsername.text = username
-        binding.profileEmail.text = if (email.contains("@")) {
-            email.substringBefore("@") + "@…"
-        } else {
-            email
-        }
-
-        binding.logoutBtn.setOnClickListener {
-            prefs.clearSession()
-            lifecycleScope.launch {
-                try {
-                    AegisApp.get(requireContext()).supabase.auth.signOut()
-                } catch (_: Exception) { }
-            }
-            startActivity(Intent(requireContext(), LoginActivity::class.java))
-            requireActivity().finish()
-        }
-
         lifecycleScope.launch {
+            SessionHelper.refreshUserFromToken(requireContext())
+
+            val username = prefs.username ?: "Guest"
+            val email = prefs.email
+            val emailDisplay = SessionHelper.emailLocalPart(email)?.let { "$it@…" }
+                ?: "No email linked"
+
+            binding.profileGreeting.text = "Hi $username!"
+            binding.profileUsername.text = username
+            binding.profileEmail.text = emailDisplay
+            binding.profileAvatar.text = username.take(2).uppercase()
+
+            val xp = requireContext()
+                .getSharedPreferences("aegis_training", android.content.Context.MODE_PRIVATE)
+                .getInt("xp", 0)
+            binding.profileRank.text = when {
+                xp >= 100 -> "Expert defender · $xp XP"
+                xp >= 50 -> "Alert guardian · $xp XP"
+                xp > 0 -> "Security trainee · $xp XP"
+                else -> "Complete training to establish your rank."
+            }
+
             val api = ApiClient(prefs.apiBaseUrl)
             val profile = withContext(Dispatchers.IO) {
-                if (email.contains("@")) api.fetchProfile(email) else null
+                if (!email.isNullOrBlank() && email.contains("@")) {
+                    api.fetchProfile(email, if (prefs.phoneVerified) prefs.phone else null)
+                } else {
+                    null
+                }
             }
-            profile?.let {
-                binding.profileUserId.text = "User ID: ${it.user_id ?: "—"}"
-                binding.profilePhone.text = "Phone: ${it.phone ?: "—"}"
+
+            if (prefs.phoneVerified && !prefs.phone.isNullOrBlank()) {
+                binding.profilePhone.text = prefs.phone
+            }
+
+            if (profile != null) {
+                binding.profileUserId.text = profile.user_id ?: "—"
+                if (!prefs.phoneVerified) {
+                    binding.profilePhone.text = profile.phone ?: "—"
+                }
+            } else if (!email.isNullOrBlank()) {
+                binding.profileUserId.text = "—"
+                binding.profilePhone.text = "—"
+            } else {
+                binding.profileUserId.text = "Sign in with Google or email to link"
+                binding.profilePhone.text = "—"
             }
         }
+    }
+
+    private fun logout() {
+        val prefs = AegisApp.get(requireContext()).prefs
+        prefs.clearSession()
+        lifecycleScope.launch {
+            try {
+                AegisApp.get(requireContext()).supabase.auth.signOut()
+            } catch (_: Exception) { }
+        }
+        startActivity(Intent(requireContext(), LoginActivity::class.java))
+        requireActivity().finish()
     }
 
     override fun onDestroyView() {

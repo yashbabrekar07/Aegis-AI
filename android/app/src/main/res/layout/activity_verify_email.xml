@@ -3,32 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="false"
-    android:scrollbars="none">
+    android:background="@color/aegis_bg"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="24dp">
+        android:padding="@dimen/screen_padding_h">
 
         <TextView
             style="@style/AegisPageTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Training simulation" />
+            android:text="Verify your Gmail" />
 
         <TextView
+            android:id="@+id/verifyEmailHint"
             style="@style/AegisPageSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="20dp"
-            android:text="Practice spotting scams and earn awareness XP." />
+            android:layout_marginTop="8dp"
+            android:text="Enter the 6-digit code we sent to your inbox." />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             app:cardBackgroundColor="@color/aegis_card"
             app:cardCornerRadius="@dimen/card_radius"
             app:cardElevation="0dp"
@@ -41,47 +42,33 @@
                 android:orientation="vertical"
                 android:padding="@dimen/card_padding">
 
-                <TextView
-                    android:id="@+id/xpText"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/aegis_green"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:hint="6-digit code">
 
-                <TextView
-                    android:id="@+id/scenarioText"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otpInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textColor="@color/aegis_text_main" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/verifyBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/bg_card"
-                    android:lineSpacingMultiplier="1.4"
-                    android:padding="16dp"
-                    android:textColor="@color/aegis_text_main"
-                    android:textSize="15sp" />
+                    android:text="Verify &amp; continue" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/scamBtn"
+                    android:id="@+id/resendBtn"
+                    style="@style/Widget.Material3.Button.TextButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="This is a SCAM" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/safeBtn"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="This is SAFE" />
-
-                <TextView
-                    android:id="@+id/trainingFeedback"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:textColor="@color/aegis_text_muted"
-                    android:textSize="15sp" />
+                    android:text="Resend code" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
