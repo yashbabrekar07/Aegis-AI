@@ -19,9 +19,9 @@ Until you buy a domain, use:
 | `.env` | **Never** |
 | `secret.key` | **Never** |
 | `dataset.csv.enc` | **Never** (only needed to *retrain* the model) |
-| `phishing_model.pkl` | **Never** — upload to Render **Secret Files** instead |
+| `phishing_model.pkl` | **Never** — built automatically in the Docker image (do **not** add as a Render secret) |
 
-You already have a trained `phishing_model.pkl` locally. That is enough for production scans. The encrypted dataset is only required if you retrain on the server.
+The Docker build trains `phishing_model.pkl` from a public spam dataset. You do **not** upload it to Render. Render Secret Files are limited to **500KiB** each; most trained models are larger and will fail deploy if added as a secret.
 
 ---
 
@@ -45,15 +45,22 @@ Commit the deployment files (`Dockerfile`, `render.yaml`, `frontend/src/lib/api.
    | `WHISPER_MODEL` | `tiny` (required on free 512MB RAM) |
    | `ALLOWED_ORIGINS` | `https://YOUR-APP.vercel.app` (add custom domain later, comma-separated) |
 
-6. **Secret Files** (Render dashboard → your service → **Secret Files**):
+6. **Secret Files** — **optional**, only if you retrain on the server (each file must be **under 500KiB**):
 
-   | Filename | Local path |
-   |----------|------------|
-   | `phishing_model.pkl` | `backend/phishing_model.pkl` |
-   | `secret.key` | `backend/secret.key` (optional if only using `.pkl`) |
-   | `dataset.csv.enc` | only if you have it and plan to retrain |
+   | Filename | When needed |
+   |----------|-------------|
+   | `secret.key` | Only for custom encrypted dataset retraining |
+   | `dataset.csv.enc` | Only for custom retraining |
 
-7. Deploy. First build may take **15–25 min** (Whisper + dependencies).  
+   **Do not** add `phishing_model.pkl` here — remove it if you already added it (that causes the `max size 500KiB` error).
+
+   Optional env var for a large custom model hosted elsewhere (GitHub release, S3, etc.):
+
+   | Key | Example |
+   |-----|---------|
+   | `PHISHING_MODEL_URL` | `https://example.com/phishing_model.pkl` |
+
+7. Deploy. First build may take **20–30 min** (Whisper + model training).  
 8. Copy your live API URL, e.g. `https://aegis-ai-api.onrender.com`.
 
 **Note:** Free Render services **sleep after ~15 min idle**. First request after sleep can take 30–60s. Audio scan uses Whisper `tiny` + FFmpeg; if it fails, the app falls back to Google Speech.
@@ -123,6 +130,7 @@ If you use a custom domain later, add `https://aegisai.app/**` as well.
 |-------|-----|
 | CORS error | Set `ALLOWED_ORIGINS` on Render to exact Vercel URL (https, no trailing slash). |
 | API timeout | Render free tier waking up; retry after 60s. |
+| `secret … too big. max size 500KiB` | Remove `phishing_model.pkl` from Render Secret Files; redeploy (model is built in Docker). |
 | Audio fails / OOM | Keep `WHISPER_MODEL=tiny`; upgrade Render plan later. |
 | Login redirect fails | Add Vercel URL to Supabase redirect URLs. |
 | Black screen | Check `VITE_SUPABASE_*` in Vercel env and redeploy. |
