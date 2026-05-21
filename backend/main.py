@@ -11,7 +11,8 @@ import time
 from preprocess import translate_to_english
 from model import predict_text
 from utils import detect_scam_keywords, extract_links, flag_suspicious_links
-from speech import process_audio, save_uploaded_audio
+from speech import process_audio
+from audio_io import save_upload_async, cleanup_temp_dir
 
 app = FastAPI(title="Aegis AI Backend")
 
@@ -113,7 +114,10 @@ def verify_phone_otp(req: PhoneOtpVerifyRequest):
 
 @app.post("/api/scan")
 def scan_text(req: ScanRequest):
-    return analyze_text(req.text, scan_links=True)
+    try:
+        return analyze_text(req.text, scan_links=True)
+    except Exception as e:
+        return {"error": f"Scan failed: {e}", "risk": "ERROR", "label": "error", "confidence": 0}
 
 @app.post("/api/vishing/analyze-transcript")
 def analyze_vishing_transcript(req: VishingTranscriptRequest):
@@ -129,47 +133,73 @@ def analyze_vishing_transcript(req: VishingTranscriptRequest):
 
 @app.post("/api/scan-audio")
 async def scan_audio(file: UploadFile = File(...)):
-    # Save the uploaded file temporarily using async read
-    temp_path = f"temp_{file.filename}"
-    with open(temp_path, "wb") as f:
-        content = await file.read()
-        f.write(content)
-        
+    temp_dir = None
+    temp_path = None
     try:
-        # Prevent Thread Blocking! 
-        # Whisper transcription is extremely CPU heavy and synchronous. 
-        # If we run it directly in an `async def` route, it freezes the entire FastAPI event loop,
-        # which causes the UI fetch to hang indefinitely!
+        temp_path, temp_dir = await save_upload_async(file)
         import asyncio
+
         loop = asyncio.get_running_loop()
         transcribed_text, method = await loop.run_in_executor(None, process_audio, temp_path)
+    except ValueError as e:
+        return {
+            "error": str(e),
+            "risk": "ERROR",
+            "label": "error",
+            "confidence": 0,
+            "status": 400,
+        }
     except Exception as e:
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
-        return {"error": str(e), "status": 500}
-        
-    if os.path.exists(temp_path):
-        os.remove(temp_path)
-        
-    if transcribed_text and not transcribed_text.startswith("Error"):
-        # Text analysis is fast enough, but we should probably background it too
-        result = analyze_text(transcribed_text, scan_links=False)
+        return {
+            "error": f"Audio processing failed: {e}",
+            "risk": "ERROR",
+            "label": "error",
+            "confidence": 0,
+            "status": 500,
+        }
+    finally:
+        if temp_dir:
+            cleanup_temp_dir(temp_dir)
+
+    if transcribed_text and not str(transcribed_text).startswith("Error"):
+        try:
+            result = analyze_text(transcribed_text, scan_links=False)
+        except Exception as e:
+            return {
+                "error": f"Analysis failed after transcription: {e}",
+                "transcription": transcribed_text,
+                "method": method,
+                "risk": "ERROR",
+                "label": "error",
+                "confidence": 0,
+            }
         result["transcription"] = transcribed_text
         result["method"] = method
         return result
-    else:
-        return {"error": transcribed_text, "status": 500}
+
+    err_msg = transcribed_text or "No speech detected in audio."
+    if str(err_msg).startswith("Error:"):
+        err_msg = str(err_msg)[6:].strip()
+    return {
+        "error": err_msg,
+        "risk": "ERROR",
+        "label": "error",
+        "confidence": 0,
+        "status": 400,
+    }
 
         
 
 def analyze_text(text: str, scan_links=False):
-    if not text.strip():
-        return {"error": "Empty text"}
-        
+    if not text or not str(text).strip():
+        return {"error": "Empty text", "risk": "ERROR", "label": "error", "confidence": 0}
+
     english_text = translate_to_english(text)
     is_translated = (english_text != text)
-    
-    # 1. ML Prediction
+
+    if not english_text or not str(english_text).strip():
+        return {"error": "Could not process text", "risk": "ERROR", "label": "error", "confidence": 0}
+
     prediction_label, confidence = predict_text(english_text)
     
     # 2. Keyword detection

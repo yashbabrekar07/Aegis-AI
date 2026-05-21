@@ -14,8 +14,10 @@ RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/wh
     && python -c "import nltk; nltk.download('stopwords', quiet=True); nltk.download('punkt', quiet=True); nltk.download('punkt_tab', quiet=True)"
 
 COPY backend/ .
-# Train model in the image — Render Secret Files are limited to 500KiB per file.
-RUN python -c "from model import train_model; train_model()"
+COPY scripts/ /app/scripts/
+# ISDD v1.0 training (legacy dataset.csv.enc kept for DATASET_SOURCE=legacy)
+RUN python /app/scripts/generate_isdd_dataset.py --total 4000 \
+    && DATASET_SOURCE=isdd python -c "from model import train_model; train_model()"
 
 COPY scripts/render-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

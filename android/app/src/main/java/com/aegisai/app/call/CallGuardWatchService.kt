@@ -210,7 +210,8 @@ class CallGuardWatchService : Service() {
         const val EXTRA_PHONE = "phone"
         private const val CHANNEL_ID = "call_guard_watch"
         private const val NOTIFICATION_ID = 4101
-        private const val MIN_BYTES = 8_000L
+        /** ~1s AAC at 16kHz; below this Whisper often returns empty / "end of input". */
+        private const val MIN_BYTES = 12_000L
         private const val MAX_BYTES = 12 * 1024 * 1024L
     }
 }

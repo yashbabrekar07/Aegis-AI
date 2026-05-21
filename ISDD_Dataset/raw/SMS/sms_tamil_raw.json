@@ -1,0 +1,5267 @@
+[
+  {
+    "message_id": "ISDD_EMAIL_01734",
+    "timestamp": "2026-05-12T10:14:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v1734]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v1734]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00664",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v664]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v664]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01404",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v1404]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v1404]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00244",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v244]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v244]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03254",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v3254]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v3254]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01684",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v1684]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v1684]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03804",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v3804]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v3804]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02254",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v2254]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v2254]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03624",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v3624]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v3624]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00414",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v414]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v414]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00094",
+    "timestamp": "2026-05-12T10:09:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v94]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v94]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02014",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v2014]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v2014]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02384",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v2384]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v2384]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01234",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v1234]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v1234]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01844",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v1844]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v1844]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03134",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v3134]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v3134]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02534",
+    "timestamp": "2026-05-12T10:14:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v2534]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v2534]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03614",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v3614]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v3614]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01054",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v1054]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v1054]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03574",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v3574]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v3574]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03984",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v3984]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v3984]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01224",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v1224]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v1224]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01764",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v1764]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v1764]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00734",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v734]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v734]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02144",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v2144]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v2144]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01264",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v1264]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v1264]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01214",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v1214]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v1214]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03924",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v3924]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v3924]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00724",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v724]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v724]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00484",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v484]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v484]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02204",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v2204]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v2204]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01174",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v1174]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v1174]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02944",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v2944]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v2944]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01724",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v1724]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v1724]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03684",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v3684]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v3684]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02484",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v2484]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v2484]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01674",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v1674]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v1674]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03324",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v3324]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v3324]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03654",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v3654]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v3654]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00434",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v434]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v434]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02524",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v2524]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v2524]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02894",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v2894]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v2894]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00084",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v84]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v84]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00964",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v964]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v964]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00054",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v54]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v54]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02034",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v2034]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v2034]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00874",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v874]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v874]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02324",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v2324]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v2324]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01894",
+    "timestamp": "2026-05-12T10:01:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v1894]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v1894]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03054",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v3054]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v3054]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03444",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v3444]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v3444]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02454",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v2454]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v2454]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00564",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v564]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v564]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00124",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v124]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v124]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03584",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v3584]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v3584]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03334",
+    "timestamp": "2026-05-12T10:14:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v3334]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v3334]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03744",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v3744]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v3744]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00454",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v454]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v454]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02334",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v2334]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v2334]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00074",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v74]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v74]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00924",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v924]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v924]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01984",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v1984]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v1984]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02774",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v2774]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v2774]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03854",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v3854]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v3854]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03864",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v3864]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v3864]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01534",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v1534]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v1534]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03494",
+    "timestamp": "2026-05-12T10:01:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v3494]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v3494]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00424",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v424]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v424]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02164",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v2164]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v2164]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01654",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v1654]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v1654]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00254",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v254]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v254]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02864",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v2864]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v2864]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03274",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v3274]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v3274]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02564",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v2564]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v2564]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00384",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v384]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v384]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00494",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v494]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v494]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02834",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v2834]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v2834]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02094",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v2094]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v2094]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00654",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v654]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v654]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02694",
+    "timestamp": "2026-05-12T10:01:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v2694]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v2694]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00604",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v604]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v604]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03294",
+    "timestamp": "2026-05-12T10:09:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v3294]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v3294]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02884",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v2884]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v2884]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03934",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v3934]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v3934]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00374",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v374]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v374]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03634",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v3634]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v3634]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01524",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v1524]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v1524]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02264",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v2264]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v2264]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02814",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v2814]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v2814]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00894",
+    "timestamp": "2026-05-12T10:09:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v894]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v894]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03284",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v3284]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v3284]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03694",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v3694]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v3694]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01694",
+    "timestamp": "2026-05-12T10:09:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v1694]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v1694]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01364",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v1364]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v1364]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02054",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v2054]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v2054]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01184",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v1184]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v1184]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03764",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v3764]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v3764]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00934",
+    "timestamp": "2026-05-12T10:14:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v934]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v934]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00884",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v884]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v884]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01284",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v1284]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v1284]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00464",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v464]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v464]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00854",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v854]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v854]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02494",
+    "timestamp": "2026-05-12T10:09:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v2494]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v2494]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02084",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v2084]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v2084]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03454",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v3454]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v3454]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00294",
+    "timestamp": "2026-05-12T10:01:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v294]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v294]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03004",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v3004]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v3004]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02024",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v2024]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v2024]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01464",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v1464]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v1464]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02854",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v2854]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v2854]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01344",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v1344]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v1344]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02064",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v2064]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v2064]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02964",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v2964]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v2964]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00784",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v784]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v784]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03184",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v3184]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v3184]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02474",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v2474]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v2474]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01854",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v1854]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v1854]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00134",
+    "timestamp": "2026-05-12T10:14:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v134]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v134]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02644",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v2644]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v2644]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01294",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v1294]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v1294]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03364",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v3364]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v3364]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01584",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v1584]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v1584]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01044",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v1044]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v1044]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00164",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v164]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v164]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01454",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v1454]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v1454]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01094",
+    "timestamp": "2026-05-12T10:01:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v1094]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v1094]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03064",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v3064]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v3064]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02824",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v2824]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v2824]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01974",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v1974]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v1974]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03124",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (24) [v3124]",
+      "transliteration_roman": "Naalai meeting 3 mani (24)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (24) [v3124]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01254",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v1254]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v1254]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03664",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (14) [v3664]",
+      "transliteration_roman": "Naalai meeting 3 mani (14)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (14) [v3664]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00544",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (44) [v544]",
+      "transliteration_roman": "Naalai meeting 3 mani (44)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (44) [v544]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02784",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (34) [v2784]",
+      "transliteration_roman": "Naalai meeting 3 mani (34)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (34) [v2784]"
+    },
+    "metadata": {
+      "message_length": 40,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02654",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "tamil",
+    "message_content": {
+      "original": "நாளை கூட்டம் 3 மணிக்கு. வருவீர்களா? (4) [v2654]",
+      "transliteration_roman": "Naalai meeting 3 mani (4)",
+      "english_translation": "Meeting tomorrow at 3 PM. Will you come? (4) [v2654]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  }
+]

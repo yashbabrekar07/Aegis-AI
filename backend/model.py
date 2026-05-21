@@ -41,41 +41,49 @@ def create_and_encrypt_dataset():
         os.remove(DATA_FILE)
     print("Dataset securely generated and encrypted.")
 
-def load_encrypted_dataset():
-    """Load and decrypt the dataset directly into memory."""
-    if not os.path.exists(ENCRYPTED_DATA_FILE):
-        create_and_encrypt_dataset()
-        
-    decrypted_str = decrypt_file_to_memory(ENCRYPTED_DATA_FILE)
-    df = pd.read_csv(StringIO(decrypted_str))
-    
-    # Balance the dataset to prevent False Positives (Class Imbalance) BEFORE preprocessing
-    df_safe = df[df['label'] == 'safe']
-    df_phishing = df[df['label'] == 'phishing']
-    
-    # Find the smaller class size
+def load_training_dataset():
+    """Load training data: ISDD when DATASET_SOURCE=isdd, else legacy encrypted SMS spam set."""
+    source = os.getenv("DATASET_SOURCE", "legacy").strip().lower()
+    if source == "isdd":
+        from isdd_loader import load_isdd_training_frame
+
+        df = load_isdd_training_frame()
+        print(f"ISDD training set: {len(df)} rows")
+        return _balance_and_preprocess(df)
+    return load_encrypted_dataset()
+
+
+def _balance_and_preprocess(df):
+    """Balance safe/phishing and add cleaned_text column."""
+    df_safe = df[df["label"] == "safe"]
+    df_phishing = df[df["label"] == "phishing"]
     min_size = min(len(df_safe), len(df_phishing))
-    
-    # Cap training at 15,000 per class so training is fast and perfectly 50/50 balanced
     target_size = min(min_size, 15000)
-    
     if len(df_safe) > target_size:
         df_safe = df_safe.sample(target_size, random_state=42)
     if len(df_phishing) > target_size:
         df_phishing = df_phishing.sample(target_size, random_state=42)
-        
-    # Combine and shuffle
     df_balanced = pd.concat([df_safe, df_phishing]).sample(frac=1, random_state=42)
-    print(f"Dataset Balanced: {len(df_safe)} Safe, {len(df_phishing)} Phishing. Preprocessing...")
-    
-    # Preprocess text ONLY for the balanced dataset to save massive amounts of CPU time
-    df_balanced['cleaned_text'] = df_balanced['text'].apply(preprocess_text)
+    print(f"Dataset balanced: {len(df_safe)} safe, {len(df_phishing)} phishing. Preprocessing...")
+    df_balanced = df_balanced.copy()
+    df_balanced["cleaned_text"] = df_balanced["text"].apply(preprocess_text)
     return df_balanced
+
+
+def load_encrypted_dataset():
+    """Load and decrypt the legacy dataset directly into memory."""
+    if not os.path.exists(ENCRYPTED_DATA_FILE):
+        create_and_encrypt_dataset()
+
+    decrypted_str = decrypt_file_to_memory(ENCRYPTED_DATA_FILE)
+    df = pd.read_csv(StringIO(decrypted_str))
+    
+    return _balance_and_preprocess(df)
 
 def train_model():
     """Trains the NLP Phishing Detection Model and saves it."""
     print("Loading data...")
-    df = load_encrypted_dataset()
+    df = load_training_dataset()
     
     print("Training model...")
     # Using TF-IDF and Multinomial NB Pipeline
@@ -93,24 +101,26 @@ def train_model():
 
 def predict_text(text):
     """Predicts whether text is safe or phishing, returns label & confidence."""
-    if not os.path.exists(MODEL_FILE):
-        train_model()
-        
-    with open(MODEL_FILE, "rb") as f:
-        model = pickle.load(f)
-        
-    # Translate Hindi/Marathi/foreign languages to English before scanning
-    from preprocess import translate_to_english
-    translated_text = translate_to_english(text)
-    
-    clean_text = preprocess_text(translated_text)
-    
-    prediction = model.predict([clean_text])[0]
-    probabilities = model.predict_proba([clean_text])[0]
-    
-    classes = model.classes_
-    prob_dict = dict(zip(classes, probabilities))
-    
-    # Calculate confidence as percentage
-    confidence = round(prob_dict[prediction] * 100, 2)
-    return prediction, confidence
+    try:
+        if not os.path.exists(MODEL_FILE):
+            train_model()
+
+        with open(MODEL_FILE, "rb") as f:
+            model = pickle.load(f)
+
+        from preprocess import translate_to_english
+
+        translated_text = translate_to_english(text)
+        clean_text = preprocess_text(translated_text)
+        if not clean_text.strip():
+            return "safe", 50.0
+
+        prediction = model.predict([clean_text])[0]
+        probabilities = model.predict_proba([clean_text])[0]
+        classes = model.classes_
+        prob_dict = dict(zip(classes, probabilities))
+        confidence = round(prob_dict[prediction] * 100, 2)
+        return prediction, confidence
+    except Exception as e:
+        print(f"predict_text error: {e}")
+        return "safe", 50.0

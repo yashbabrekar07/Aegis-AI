@@ -1,0 +1,5462 @@
+[
+  {
+    "message_id": "ISDD_EMAIL_01145",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v1145]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v1145]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03515",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v3515]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v3515]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00025",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v25]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v25]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02935",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v2935]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v2935]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01165",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v1165]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v1165]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02985",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v2985]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v2985]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00925",
+    "timestamp": "2026-05-12T10:54:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v925]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v925]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03815",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v3815]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v3815]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02885",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v2885]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v2885]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01725",
+    "timestamp": "2026-05-12T10:54:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v1725]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v1725]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02135",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v2135]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v2135]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00225",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v225]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v225]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00585",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v585]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v585]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02515",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v2515]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v2515]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00405",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (5) [v405]",
+      "transliteration_roman": "Repu lunch kaluddama (5)",
+      "english_translation": "Shall we meet for lunch tomorrow? (5) [v405]"
+    },
+    "metadata": {
+      "message_length": 24,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03615",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v3615]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v3615]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03225",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v3225]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v3225]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00575",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v575]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v575]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02415",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v2415]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v2415]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01285",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v1285]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v1285]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03605",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (5) [v3605]",
+      "transliteration_roman": "Repu lunch kaluddama (5)",
+      "english_translation": "Shall we meet for lunch tomorrow? (5) [v3605]"
+    },
+    "metadata": {
+      "message_length": 24,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02565",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v2565]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v2565]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00415",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v415]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v415]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00675",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v675]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v675]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03015",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v3015]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v3015]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03295",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v3295]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v3295]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01625",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v1625]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v1625]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00315",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v315]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v315]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02675",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v2675]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v2675]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03325",
+    "timestamp": "2026-05-12T10:54:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v3325]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v3325]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01565",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v1565]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v1565]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01935",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v1935]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v1935]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03775",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v3775]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v3775]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01875",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v1875]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v1875]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02185",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v2185]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v2185]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01075",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v1075]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v1075]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01135",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v1135]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v1135]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00165",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v165]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v165]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00335",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v335]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v335]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01715",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v1715]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v1715]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00095",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v95]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v95]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00145",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v145]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v145]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03475",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v3475]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v3475]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00125",
+    "timestamp": "2026-05-12T10:54:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v125]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v125]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01615",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v1615]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v1615]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01945",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v1945]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v1945]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01765",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v1765]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v1765]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03165",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v3165]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v3165]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02715",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v2715]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v2715]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02005",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (5) [v2005]",
+      "transliteration_roman": "Repu lunch kaluddama (5)",
+      "english_translation": "Shall we meet for lunch tomorrow? (5) [v2005]"
+    },
+    "metadata": {
+      "message_length": 24,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01205",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (5) [v1205]",
+      "transliteration_roman": "Repu lunch kaluddama (5)",
+      "english_translation": "Shall we meet for lunch tomorrow? (5) [v1205]"
+    },
+    "metadata": {
+      "message_length": 24,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01535",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v1535]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v1535]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00495",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v495]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v495]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00895",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v895]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v895]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03965",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v3965]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v3965]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00945",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v945]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v945]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01735",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v1735]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v1735]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02095",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v2095]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v2095]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02815",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v2815]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v2815]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02765",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v2765]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v2765]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00735",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v735]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v735]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01385",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v1385]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v1385]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03645",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v3645]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v3645]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03545",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v3545]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v3545]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00615",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v615]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v615]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00765",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v765]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v765]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02705",
+    "timestamp": "2026-05-12T10:47:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (5) [v2705]",
+      "transliteration_roman": "Repu lunch kaluddama (5)",
+      "english_translation": "Shall we meet for lunch tomorrow? (5) [v2705]"
+    },
+    "metadata": {
+      "message_length": 24,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00275",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v275]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v275]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03765",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v3765]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v3765]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02015",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v2015]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v2015]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00825",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v825]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v825]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03695",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v3695]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v3695]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02335",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v2335]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v2335]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02425",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v2425]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v2425]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03735",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v3735]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v3735]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02525",
+    "timestamp": "2026-05-12T10:54:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v2525]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v2525]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00015",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v15]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v15]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01825",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v1825]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v1825]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02805",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (5) [v2805]",
+      "transliteration_roman": "Repu lunch kaluddama (5)",
+      "english_translation": "Shall we meet for lunch tomorrow? (5) [v2805]"
+    },
+    "metadata": {
+      "message_length": 24,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02845",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v2845]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v2845]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00445",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v445]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v445]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01475",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v1475]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v1475]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01745",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v1745]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v1745]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01105",
+    "timestamp": "2026-05-12T10:47:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (5) [v1105]",
+      "transliteration_roman": "Repu lunch kaluddama (5)",
+      "english_translation": "Shall we meet for lunch tomorrow? (5) [v1105]"
+    },
+    "metadata": {
+      "message_length": 24,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00345",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v345]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v345]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02495",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v2495]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v2495]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02735",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v2735]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v2735]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01025",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v1025]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v1025]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02535",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v2535]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v2535]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02085",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v2085]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v2085]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03875",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v3875]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v3875]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01335",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v1335]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v1335]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00565",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v565]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v565]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03215",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v3215]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v3215]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00115",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v115]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v115]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03785",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v3785]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v3785]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00935",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v935]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v935]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00915",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v915]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v915]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02975",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v2975]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v2975]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00535",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v535]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v535]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02895",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v2895]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v2895]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02365",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v2365]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v2365]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03535",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v3535]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v3535]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01415",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v1415]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v1415]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03345",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v3345]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v3345]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01905",
+    "timestamp": "2026-05-12T10:47:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (5) [v1905]",
+      "transliteration_roman": "Repu lunch kaluddama (5)",
+      "english_translation": "Shall we meet for lunch tomorrow? (5) [v1905]"
+    },
+    "metadata": {
+      "message_length": 24,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03685",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v3685]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v3685]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00485",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v485]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v485]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03315",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v3315]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v3315]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01965",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v1965]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v1965]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03075",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v3075]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v3075]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00365",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v365]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v365]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02045",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v2045]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v2045]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03425",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v3425]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v3425]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01215",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v1215]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v1215]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_03335",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v3335]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v3335]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02165",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v2165]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v2165]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02275",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v2275]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v2275]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03565",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v3565]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v3565]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01295",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v1295]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v1295]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00305",
+    "timestamp": "2026-05-12T10:47:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (5) [v305]",
+      "transliteration_roman": "Repu lunch kaluddama (5)",
+      "english_translation": "Shall we meet for lunch tomorrow? (5) [v305]"
+    },
+    "metadata": {
+      "message_length": 24,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01115",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v1115]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v1115]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00815",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v815]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v815]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01375",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v1375]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v1375]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01365",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v1365]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v1365]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03365",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v3365]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v3365]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03935",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v3935]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v3935]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_02175",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v2175]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v2175]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02625",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (25) [v2625]",
+      "transliteration_roman": "Repu lunch kaluddama (25)",
+      "english_translation": "Shall we meet for lunch tomorrow? (25) [v2625]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01915",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v1915]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v1915]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02215",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v2215]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v2215]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01695",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v1695]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v1695]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_02965",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v2965]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v2965]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_03135",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v3135]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v3135]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00965",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (15) [v965]",
+      "transliteration_roman": "Repu lunch kaluddama (15)",
+      "english_translation": "Shall we meet for lunch tomorrow? (15) [v965]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02545",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v2545]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v2545]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01245",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v1245]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v1245]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_02745",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (45) [v2745]",
+      "transliteration_roman": "Repu lunch kaluddama (45)",
+      "english_translation": "Shall we meet for lunch tomorrow? (45) [v2745]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_03505",
+    "timestamp": "2026-05-12T10:47:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (5) [v3505]",
+      "transliteration_roman": "Repu lunch kaluddama (5)",
+      "english_translation": "Shall we meet for lunch tomorrow? (5) [v3505]"
+    },
+    "metadata": {
+      "message_length": 24,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00135",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "channel": "SMS",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "telugu",
+    "message_content": {
+      "original": "రేపు లంచ్ కలుద్దామా? (35) [v135]",
+      "transliteration_roman": "Repu lunch kaluddama (35)",
+      "english_translation": "Shall we meet for lunch tomorrow? (35) [v135]"
+    },
+    "metadata": {
+      "message_length": 25,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  }
+]

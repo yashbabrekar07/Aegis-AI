@@ -15,11 +15,7 @@ class CallGuardRecorder(private val context: Context) {
     fun start(): File? {
         stop()
         val file = File(context.cacheDir, "call_${System.currentTimeMillis()}.m4a")
-        val sources = intArrayOf(
-            MediaRecorder.AudioSource.MIC,
-            MediaRecorder.AudioSource.VOICE_COMMUNICATION,
-            MediaRecorder.AudioSource.VOICE_RECOGNITION
-        )
+        val sources = buildAudioSources()
         for (source in sources) {
             try {
                 val r = newRecorder()
@@ -35,6 +31,21 @@ class CallGuardRecorder(private val context: Context) {
             }
         }
         return null
+    }
+
+    /** Prefer call/communication sources; MIC last (often captures little on earpiece calls). */
+    private fun buildAudioSources(): IntArray {
+        val list = mutableListOf<Int>()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            list.add(MediaRecorder.AudioSource.VOICE_COMMUNICATION)
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            @Suppress("DEPRECATION")
+            list.add(MediaRecorder.AudioSource.VOICE_CALL)
+        }
+        list.add(MediaRecorder.AudioSource.VOICE_RECOGNITION)
+        list.add(MediaRecorder.AudioSource.MIC)
+        return list.distinct().toIntArray()
     }
 
     fun stop(): File? {
@@ -63,6 +74,8 @@ class CallGuardRecorder(private val context: Context) {
         recorder.setAudioSource(source)
         recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
         recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
+        recorder.setAudioSamplingRate(16_000)
+        recorder.setAudioEncodingBitRate(64_000)
         recorder.setOutputFile(file.absolutePath)
         recorder.prepare()
         recorder.start()

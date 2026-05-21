@@ -42,15 +42,27 @@ def preprocess_text(text):
 
 def translate_to_english(text):
     """
-    Translates any foreign language into English. 
-    If already English or translation fails, returns original text.
+    Translates any foreign language into English.
+    Retries once on failure; returns original text if translation is unavailable.
     """
     if not isinstance(text, str) or not text.strip():
         return text
-    try:
-        translator = GoogleTranslator(source='auto', target='en')
-        translated = translator.translate(text)
-        return translated if translated else text
-    except Exception as e:
-        print(f"Translation failed: {e}")
+
+    # Skip network call for short ASCII-only snippets (faster, fewer failures)
+    if len(text) < 280 and text.isascii():
         return text
+
+    last_err = None
+    for attempt in range(2):
+        try:
+            translator = GoogleTranslator(source="auto", target="en")
+            translated = translator.translate(text[:5000])
+            if translated and str(translated).strip():
+                return translated
+            return text
+        except Exception as e:
+            last_err = e
+            if attempt == 0:
+                continue
+    print(f"Translation failed after retry: {last_err}")
+    return text

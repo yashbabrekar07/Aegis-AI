@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "scam_types": {
+    "UPI_FRAUD": {
+      "description": "Indian UPI_FRAUD scam patterns"
+    },
+    "KYC_FRAUD": {
+      "description": "Indian KYC_FRAUD scam patterns"
+    },
+    "FAKE_JOB_OFFER": {
+      "description": "Indian FAKE_JOB_OFFER scam patterns"
+    },
+    "LOTTERY_PRIZE_SCAM": {
+      "description": "Indian LOTTERY_PRIZE_SCAM scam patterns"
+    },
+    "BANK_IMPERSONATION": {
+      "description": "Indian BANK_IMPERSONATION scam patterns"
+    },
+    "OTP_PASSWORD_THEFT": {
+      "description": "Indian OTP_PASSWORD_THEFT scam patterns"
+    }
+  },
+  "languages": [
+    "hindi",
+    "marathi",
+    "hinglish",
+    "tamil",
+    "telugu",
+    "english"
+  ]
+}
