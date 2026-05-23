@@ -96,7 +96,6 @@ class VishingFragment : Fragment() {
         val needed = mutableListOf(
             Manifest.permission.RECORD_AUDIO,
             Manifest.permission.READ_PHONE_STATE,
-            Manifest.permission.READ_CALL_LOG
         )
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             needed.add(Manifest.permission.POST_NOTIFICATIONS)
@@ -125,14 +124,29 @@ class VishingFragment : Fragment() {
     private fun startRecording() {
         val file = File(requireContext().cacheDir, "vishing_${System.currentTimeMillis()}.m4a")
         recordingFile = file
-        recorder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) MediaRecorder(requireContext()) else @Suppress("DEPRECATION") MediaRecorder()
-        recorder?.apply {
-            setAudioSource(MediaRecorder.AudioSource.MIC)
-            setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
-            setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
-            setOutputFile(file.absolutePath)
-            prepare()
-            start()
+        try {
+            recorder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                MediaRecorder(requireContext())
+            } else {
+                @Suppress("DEPRECATION")
+                MediaRecorder()
+            }
+            recorder?.apply {
+                setAudioSource(MediaRecorder.AudioSource.MIC)
+                setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
+                setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
+                setAudioSamplingRate(16_000)
+                setAudioEncodingBitRate(64_000)
+                setOutputFile(file.absolutePath)
+                prepare()
+                start()
+            }
+        } catch (e: Exception) {
+            recorder?.release()
+            recorder = null
+            recordingFile = null
+            Toast.makeText(requireContext(), "Could not start recording: ${e.message}", Toast.LENGTH_LONG).show()
+            return
         }
         binding.recordBtn.isEnabled = false
         binding.stopRecordBtn.isVisible = true
