@@ -16,4 +16,8 @@ class CallGuardRecorder(private val context: Context) {
     fun stop(): File? = wavRecorder.stop()
 
     fun recordedDurationMs(): Long = wavRecorder.recordedDurationMs()
+
+    fun hasAudibleSignal(): Boolean = wavRecorder.hasAudibleSignal()
+
+    fun peakLevel(): Int = wavRecorder.peakLevel()
 }

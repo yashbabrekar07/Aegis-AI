@@ -192,6 +192,7 @@ async def call_guard_analyze(
             "label": "error",
             "confidence": 0,
             "status": 400,
+            "transcription": None,
         }
     result = analyze_text(text, scan_links=False)
     result["transcription"] = text

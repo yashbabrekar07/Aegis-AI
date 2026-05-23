@@ -262,8 +262,12 @@ class ApiClient(private val baseUrl: String) {
             ) {
                 return "Recording was empty or cut off. Turn on speakerphone during calls so the mic captures speech."
             }
-            if (m.contains("No speech", ignoreCase = true)) {
-                return "No speech detected in the recording. Use speakerphone and speak clearly for a few seconds."
+            if (m.contains("No speech", ignoreCase = true) ||
+                m.contains("silent", ignoreCase = true) ||
+                m.contains("peak=", ignoreCase = true) ||
+                m.contains("speakerphone", ignoreCase = true)
+            ) {
+                return m.removePrefix("Error:").trim()
             }
             return m.removePrefix("Error:").trim()
         }

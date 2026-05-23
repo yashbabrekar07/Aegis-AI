@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.app.Service
 import android.content.Intent
 import android.content.pm.ServiceInfo
+import android.media.AudioManager
 import android.os.Build
 import android.os.IBinder
 import android.util.Log
@@ -29,6 +30,7 @@ class CallGuardWatchService : Service() {
     private val callRecorder by lazy { CallGuardRecorder(this) }
     private var currentPhone: String? = null
     private var isAnalyzing = false
+    private var previousAudioMode: Int = AudioManager.MODE_NORMAL
 
     override fun onCreate() {
         super.onCreate()
@@ -75,6 +77,11 @@ class CallGuardWatchService : Service() {
         if (isAnalyzing || callRecorder.isActive) return
 
         currentPhone = intent.getStringExtra(EXTRA_PHONE) ?: CallGuardState.lastCaller
+        try {
+            val am = getSystemService(AUDIO_SERVICE) as AudioManager
+            previousAudioMode = am.mode
+            am.mode = AudioManager.MODE_IN_COMMUNICATION
+        } catch (_: Exception) { }
         val file = callRecorder.start()
         if (file == null) {
             CallAnalysisNotifier.showError(
@@ -102,6 +109,11 @@ class CallGuardWatchService : Service() {
         Thread.sleep(350)
         val file = callRecorder.stop()
         val durationMs = callRecorder.recordedDurationMs()
+        val peak = callRecorder.peakLevel()
+        try {
+            val am = getSystemService(AUDIO_SERVICE) as AudioManager
+            am.mode = previousAudioMode
+        } catch (_: Exception) { }
         promoteIdle()
 
         scope.launch {
@@ -118,8 +130,17 @@ class CallGuardWatchService : Service() {
                     CallAnalysisNotifier.showError(
                         applicationContext,
                         phone,
-                        "Call too short or no speech captured (${durationMs / 1000}s). " +
-                            "Use speakerphone during the call so the mic can hear both sides."
+                        "Call too short (${durationMs / 1000}s). Talk for at least 5 seconds with speakerphone on."
+                    )
+                    return@launch
+                }
+                if (!callRecorder.hasAudibleSignal()) {
+                    CallAnalysisNotifier.showError(
+                        applicationContext,
+                        phone,
+                        "Microphone captured only silence during this call (peak=$peak). " +
+                            "Your phone may block mic access during cellular calls — use speakerphone, " +
+                            "or after the call paste what was said in Vishing → Analyze transcript."
                     )
                     return@launch
                 }
