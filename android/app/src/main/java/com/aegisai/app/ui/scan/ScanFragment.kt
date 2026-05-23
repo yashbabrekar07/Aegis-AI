@@ -79,15 +79,23 @@ class ScanFragment : Fragment() {
         binding.scanResultCard.isVisible = true
         AnimUtil.fadeInUp(binding.scanResultCard)
         if (result.error != null) {
-            binding.scanResult.text = "Error: ${result.error}"
+            binding.scanResult.text = getString(R.string.error_prefix, result.error)
             return
         }
         val conf = ((result.confidence ?: 0.0) * 100).toInt()
         val sb = StringBuilder()
-        sb.append("Risk: ${result.risk}\n")
-        sb.append("Confidence: $conf%\n")
+        sb.append(getString(R.string.vishing_risk, result.risk))
+        sb.append("\n")
+        sb.append(getString(R.string.vishing_confidence, conf))
+        sb.append("\n")
         sb.append("Reason: ${result.reason}\n")
-        result.transcription?.let { sb.append("\nTranscription:\n$it\n") }
+        result.transcription?.let {
+            sb.append("\n")
+            sb.append(getString(R.string.vishing_transcription_label))
+            sb.append("\n")
+            sb.append(it)
+            sb.append("\n")
+        }
         result.detected_keywords?.takeIf { it.isNotEmpty() }?.let {
             sb.append("\nKeywords: ${it.joinToString()}")
         }

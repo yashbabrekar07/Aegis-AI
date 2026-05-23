@@ -16,4 +16,8 @@
     <string name="scan_text">Scan text</string>
     <string name="scan_audio">Scan audio</string>
     <string name="backend_url_hint">API URL (change for LAN testing)</string>
+    <string name="error_prefix">Error: %1$s</string>
+    <string name="vishing_risk">Risk: %1$s</string>
+    <string name="vishing_confidence">Confidence: %1$d%%</string>
+    <string name="vishing_transcription_label">Transcription:</string>
 </resources>
