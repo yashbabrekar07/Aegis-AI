@@ -29,7 +29,30 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.logoutBtn.setOnClickListener { logout() }
+        binding.editProfileBtn.setOnClickListener { showEditProfileDialog() }
         loadProfile()
+    }
+
+    private fun showEditProfileDialog() {
+        val prefs = AegisApp.get(requireContext()).prefs
+        val input = android.widget.EditText(requireContext()).apply {
+            setText(prefs.username)
+            setTextColor(android.graphics.Color.WHITE)
+            setHintTextColor(android.graphics.Color.GRAY)
+            hint = "Enter new username"
+        }
+        android.app.AlertDialog.Builder(requireContext(), android.R.style.Theme_DeviceDefault_Dialog_Alert)
+            .setTitle("Edit Username")
+            .setView(input)
+            .setPositiveButton("Save") { _, _ ->
+                val newName = input.text.toString().trim()
+                if (newName.isNotEmpty()) {
+                    prefs.username = newName
+                    loadProfile()
+                }
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
     }
 
     override fun onResume() {

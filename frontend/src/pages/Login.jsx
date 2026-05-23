@@ -1,4 +1,4 @@
-﻿import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Shield } from 'lucide-react';
 import { supabase } from '../supabaseClient';
@@ -20,6 +20,12 @@ export default function Login({ isSignup }) {
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (!session) return;
+      
+      // Store the user's email from OAuth login (like Google)
+      if (session.user?.email) {
+        localStorage.setItem('aegis_user_email', session.user.email);
+      }
+      
       const path = getPostLoginPath(session, session.user?.email || '');
       if (path === '/verify-email') {
         navigate(path, { state: { email: session.user?.email, username: session.user?.user_metadata?.username } });
