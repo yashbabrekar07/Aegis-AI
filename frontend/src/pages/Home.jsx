@@ -3,6 +3,18 @@ import { ShieldAlert, CheckCircle, FileAudio, AlertTriangle } from 'lucide-react
 import { playSound } from '../utils/audio';
 import { apiUrl } from '../lib/api';
 
+async function parseApiJson(response) {
+  const raw = await response.text();
+  if (!raw || !raw.trim()) {
+    throw new Error('Empty response from server (API may be waking up — retry in 60s).');
+  }
+  try {
+    return JSON.parse(raw);
+  } catch {
+    throw new Error('Invalid server response. Retry in a moment.');
+  }
+}
+
 export default function Home() {
   const [input, setInput] = useState('');
   const [result, setResult] = useState(null);
@@ -22,10 +34,10 @@ export default function Home() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: input })
       });
-      if (!response.ok) {
-        throw new Error(`API returned ${response.status}`);
+      const data = await parseApiJson(response);
+      if (data.error && !data.risk) {
+        throw new Error(data.error);
       }
-      const data = await response.json();
       setResult(data);
       
       if (data.risk === 'SAFE') {
@@ -72,10 +84,7 @@ export default function Home() {
         method: 'POST',
         body: formData
       });
-      if (!response.ok) {
-        throw new Error(`API returned ${response.status}`);
-      }
-      const data = await response.json();
+      const data = await parseApiJson(response);
       if (data.error) {
         setInput(`Error: ${data.error}`);
         setResult({ risk: 'ERROR', confidence: 0, label: 'upload_failed', reason: data.error });
@@ -84,7 +93,9 @@ export default function Home() {
       }
       
       if (data.transcription) {
-        setInput(data.transcription);
+        const langNote = data.detected_language ? ` [${data.detected_language}]` : '';
+        const methodNote = data.method ? ` (${data.method})` : '';
+        setInput(`${data.transcription}${langNote}${methodNote}`);
       }
       setResult(data);
       

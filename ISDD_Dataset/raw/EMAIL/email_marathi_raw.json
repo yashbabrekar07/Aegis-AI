@@ -1,0 +1,4955 @@
+[
+  {
+    "message_id": "ISDD_WHATSAPP_00142",
+    "timestamp": "2026-05-12T10:00:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v142]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v142]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00412",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v412]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v412]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01202",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v1202]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v1202]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01816",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v1816]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v1816]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01112",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v1112]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v1112]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01185",
+    "timestamp": "2026-05-12T10:23:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v1185]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v1185]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00242",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v242]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v242]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00932",
+    "timestamp": "2026-05-12T10:47:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (38) [v932]",
+      "transliteration_roman": "Tujha project changla aahe (38)",
+      "english_translation": "I saw your project. It looks great! (38) [v932]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01025",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (31) [v1025]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (31)",
+      "english_translation": "I will meet you this evening. OK? (31) [v1025]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01696",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v1696]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v1696]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01889",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (1) [v1889]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (1)",
+      "english_translation": "I will meet you this evening. OK? (1) [v1889]"
+    },
+    "metadata": {
+      "message_length": 44,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00985",
+    "timestamp": "2026-05-12T10:54:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v985]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v985]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00385",
+    "timestamp": "2026-05-12T10:40:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v385]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v385]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00305",
+    "timestamp": "2026-05-12T10:53:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (11) [v305]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (11)",
+      "english_translation": "I will meet you this evening. OK? (11) [v305]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01956",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v1956]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v1956]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01619",
+    "timestamp": "2026-05-12T10:05:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (31) [v1619]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (31)",
+      "english_translation": "I will meet you this evening. OK? (31) [v1619]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00212",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v212]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v212]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01709",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v1709]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v1709]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01929",
+    "timestamp": "2026-05-12T10:40:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v1929]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v1929]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01245",
+    "timestamp": "2026-05-12T10:20:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (1) [v1245]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (1)",
+      "english_translation": "I will meet you this evening. OK? (1) [v1245]"
+    },
+    "metadata": {
+      "message_length": 44,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00075",
+    "timestamp": "2026-05-12T10:05:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (31) [v75]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (31)",
+      "english_translation": "I will meet you this evening. OK? (31) [v75]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01849",
+    "timestamp": "2026-05-12T10:53:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (11) [v1849]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (11)",
+      "english_translation": "I will meet you this evening. OK? (11) [v1849]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01606",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v1606]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v1606]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01746",
+    "timestamp": "2026-05-12T10:31:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v1746]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v1746]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01876",
+    "timestamp": "2026-05-12T10:33:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (38) [v1876]",
+      "transliteration_roman": "Tujha project changla aahe (38)",
+      "english_translation": "I saw your project. It looks great! (38) [v1876]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00332",
+    "timestamp": "2026-05-12T10:33:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (38) [v332]",
+      "transliteration_roman": "Tujha project changla aahe (38)",
+      "english_translation": "I saw your project. It looks great! (38) [v332]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01312",
+    "timestamp": "2026-05-12T10:53:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v1312]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v1312]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00062",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v62]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v62]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00165",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v165]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v165]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00372",
+    "timestamp": "2026-05-12T10:33:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v372]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v372]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01205",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (11) [v1205]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (11)",
+      "english_translation": "I will meet you this evening. OK? (11) [v1205]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00355",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (11) [v355]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (11)",
+      "english_translation": "I will meet you this evening. OK? (11) [v355]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01989",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (1) [v1989]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (1)",
+      "english_translation": "I will meet you this evening. OK? (1) [v1989]"
+    },
+    "metadata": {
+      "message_length": 44,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01232",
+    "timestamp": "2026-05-12T10:05:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (38) [v1232]",
+      "transliteration_roman": "Tujha project changla aahe (38)",
+      "english_translation": "I saw your project. It looks great! (38) [v1232]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01916",
+    "timestamp": "2026-05-12T10:33:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v1916]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v1916]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00785",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v785]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v785]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01342",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v1342]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v1342]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01786",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v1786]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v1786]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01599",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (11) [v1599]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (11)",
+      "english_translation": "I will meet you this evening. OK? (11) [v1599]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01899",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (11) [v1899]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (11)",
+      "english_translation": "I will meet you this evening. OK? (11) [v1899]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01222",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v1222]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v1222]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00692",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v692]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v692]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00572",
+    "timestamp": "2026-05-12T10:40:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v572]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v572]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00402",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v402]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v402]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00975",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (31) [v975]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (31)",
+      "english_translation": "I will meet you this evening. OK? (31) [v975]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00752",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v752]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v752]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00445",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (1) [v445]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (1)",
+      "english_translation": "I will meet you this evening. OK? (1) [v445]"
+    },
+    "metadata": {
+      "message_length": 44,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00665",
+    "timestamp": "2026-05-12T10:53:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v665]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v665]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01656",
+    "timestamp": "2026-05-12T10:10:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v1656]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v1656]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00502",
+    "timestamp": "2026-05-12T10:11:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v502]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v502]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01042",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v1042]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v1042]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00172",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v172]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v172]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00272",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v272]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v272]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00055",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (11) [v55]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (11)",
+      "english_translation": "I will meet you this evening. OK? (11) [v55]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01859",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v1859]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v1859]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01212",
+    "timestamp": "2026-05-12T10:16:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v1212]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v1212]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01335",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v1335]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v1335]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00395",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (1) [v395]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (1)",
+      "english_translation": "I will meet you this evening. OK? (1) [v395]"
+    },
+    "metadata": {
+      "message_length": 44,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01262",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v1262]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v1262]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00562",
+    "timestamp": "2026-05-12T10:05:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v562]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v562]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01542",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v1542]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v1542]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01015",
+    "timestamp": "2026-05-12T10:12:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v1015]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v1015]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00662",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v662]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v662]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01135",
+    "timestamp": "2026-05-12T10:29:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v1135]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v1135]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00642",
+    "timestamp": "2026-05-12T10:18:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v642]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v642]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01475",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (31) [v1475]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (31)",
+      "english_translation": "I will meet you this evening. OK? (31) [v1475]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01075",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (31) [v1075]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (31)",
+      "english_translation": "I will meet you this evening. OK? (31) [v1075]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01192",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v1192]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v1192]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00982",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (38) [v982]",
+      "transliteration_roman": "Tujha project changla aahe (38)",
+      "english_translation": "I saw your project. It looks great! (38) [v982]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01939",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (1) [v1939]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (1)",
+      "english_translation": "I will meet you this evening. OK? (1) [v1939]"
+    },
+    "metadata": {
+      "message_length": 44,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00925",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (31) [v925]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (31)",
+      "english_translation": "I will meet you this evening. OK? (31) [v925]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01515",
+    "timestamp": "2026-05-12T10:16:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v1515]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v1515]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00512",
+    "timestamp": "2026-05-12T10:25:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v512]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v512]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01072",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v1072]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v1072]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01686",
+    "timestamp": "2026-05-12T10:00:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v1686]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v1686]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01756",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v1756]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v1756]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00685",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v685]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v685]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01946",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v1946]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v1946]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00855",
+    "timestamp": "2026-05-12T10:09:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (11) [v855]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (11)",
+      "english_translation": "I will meet you this evening. OK? (11) [v855]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00765",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v765]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v765]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01465",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v1465]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v1465]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01092",
+    "timestamp": "2026-05-12T10:54:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v1092]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v1092]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00615",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v615]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v615]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01976",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (38) [v1976]",
+      "transliteration_roman": "Tujha project changla aahe (38)",
+      "english_translation": "I saw your project. It looks great! (38) [v1976]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00935",
+    "timestamp": "2026-05-12T10:05:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v935]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v935]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01142",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v1142]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v1142]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01022",
+    "timestamp": "2026-05-12T10:23:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v1022]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v1022]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01102",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v1102]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v1102]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00432",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (38) [v432]",
+      "transliteration_roman": "Tujha project changla aahe (38)",
+      "english_translation": "I saw your project. It looks great! (38) [v432]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00285",
+    "timestamp": "2026-05-12T10:08:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v285]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v285]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00832",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (38) [v832]",
+      "transliteration_roman": "Tujha project changla aahe (38)",
+      "english_translation": "I saw your project. It looks great! (38) [v832]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00945",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (1) [v945]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (1)",
+      "english_translation": "I will meet you this evening. OK? (1) [v945]"
+    },
+    "metadata": {
+      "message_length": 44,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00582",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (38) [v582]",
+      "transliteration_roman": "Tujha project changla aahe (38)",
+      "english_translation": "I saw your project. It looks great! (38) [v582]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00705",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (11) [v705]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (11)",
+      "english_translation": "I will meet you this evening. OK? (11) [v705]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01726",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (38) [v1726]",
+      "transliteration_roman": "Tujha project changla aahe (38)",
+      "english_translation": "I saw your project. It looks great! (38) [v1726]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00235",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v235]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v235]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01162",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v1162]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v1162]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01829",
+    "timestamp": "2026-05-12T10:08:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v1829]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v1829]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01779",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (41) [v1779]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (41)",
+      "english_translation": "I will meet you this evening. OK? (41) [v1779]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01739",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (1) [v1739]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (1)",
+      "english_translation": "I will meet you this evening. OK? (1) [v1739]"
+    },
+    "metadata": {
+      "message_length": 44,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00645",
+    "timestamp": "2026-05-12T10:00:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (1) [v645]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (1)",
+      "english_translation": "I will meet you this evening. OK? (1) [v645]"
+    },
+    "metadata": {
+      "message_length": 44,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00842",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (48) [v842]",
+      "transliteration_roman": "Tujha project changla aahe (48)",
+      "english_translation": "I saw your project. It looks great! (48) [v842]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01716",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v1716]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v1716]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01252",
+    "timestamp": "2026-05-12T10:25:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v1252]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v1252]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00922",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v922]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v922]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01422",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v1422]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v1422]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01172",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v1172]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v1172]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01322",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v1322]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v1322]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00195",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (1) [v195]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (1)",
+      "english_translation": "I will meet you this evening. OK? (1) [v195]"
+    },
+    "metadata": {
+      "message_length": 44,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00315",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v315]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v315]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00612",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v612]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v612]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00352",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v352]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v352]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00202",
+    "timestamp": "2026-05-12T10:31:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v202]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v202]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00762",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v762]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v762]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00952",
+    "timestamp": "2026-05-12T10:40:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v952]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v952]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00182",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (38) [v182]",
+      "transliteration_roman": "Tujha project changla aahe (38)",
+      "english_translation": "I saw your project. It looks great! (38) [v182]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01896",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v1896]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v1896]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00345",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (1) [v345]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (1)",
+      "english_translation": "I will meet you this evening. OK? (1) [v345]"
+    },
+    "metadata": {
+      "message_length": 44,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01272",
+    "timestamp": "2026-05-12T10:01:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v1272]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v1272]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01122",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (28) [v1122]",
+      "transliteration_roman": "Tujha project changla aahe (28)",
+      "english_translation": "I saw your project. It looks great! (28) [v1122]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00112",
+    "timestamp": "2026-05-12T10:10:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v112]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v112]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01365",
+    "timestamp": "2026-05-12T10:29:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v1365]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v1365]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00915",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v915]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v915]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01412",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v1412]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v1412]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01462",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (18) [v1462]",
+      "transliteration_roman": "Tujha project changla aahe (18)",
+      "english_translation": "I saw your project. It looks great! (18) [v1462]"
+    },
+    "metadata": {
+      "message_length": 39,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01065",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का? (21) [v1065]",
+      "transliteration_roman": "Mi tumhala sandhyakali bhetu. (21)",
+      "english_translation": "I will meet you this evening. OK? (21) [v1065]"
+    },
+    "metadata": {
+      "message_length": 45,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00152",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "marathi",
+    "message_content": {
+      "original": "तुझा प्रोजेक्ट मी पाहिला. छान आहे! (8) [v152]",
+      "transliteration_roman": "Tujha project changla aahe (8)",
+      "english_translation": "I saw your project. It looks great! (8) [v152]"
+    },
+    "metadata": {
+      "message_length": 38,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  }
+]

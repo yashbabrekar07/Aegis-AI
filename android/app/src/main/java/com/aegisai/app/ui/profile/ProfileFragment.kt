@@ -5,9 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.aegisai.app.AegisApp
+import com.aegisai.app.BuildConfig
+import com.aegisai.app.R
 import com.aegisai.app.data.ApiClient
 import com.aegisai.app.data.SessionHelper
 import com.aegisai.app.databinding.FragmentProfileBinding
@@ -57,7 +61,62 @@ class ProfileFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        val prefs = AegisApp.get(requireContext()).prefs
+        binding.profileBackendUrl.setText(prefs.apiBaseUrl)
         loadProfile()
+    }
+
+    private fun setupBackendUrlUi() {
+        val prefs = AegisApp.get(requireContext()).prefs
+        binding.profileBackendUrl.setText(prefs.apiBaseUrl)
+
+        binding.saveBackendBtn.setOnClickListener {
+            val raw = binding.profileBackendUrl.text?.toString()?.trim().orEmpty()
+            if (!raw.startsWith("http://") && !raw.startsWith("https://")) {
+                Toast.makeText(requireContext(), R.string.backend_url_invalid, Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+            prefs.apiBaseUrl = raw.trimEnd('/')
+            Toast.makeText(requireContext(), R.string.backend_url_saved, Toast.LENGTH_SHORT).show()
+            testBackendConnection()
+        }
+
+        binding.resetBackendBtn.setOnClickListener {
+            val defaultUrl = BuildConfig.API_BASE_URL.trimEnd('/')
+            prefs.apiBaseUrl = defaultUrl
+            binding.profileBackendUrl.setText(defaultUrl)
+            Toast.makeText(requireContext(), R.string.backend_url_saved, Toast.LENGTH_SHORT).show()
+            testBackendConnection()
+        }
+
+        binding.testBackendBtn.setOnClickListener { testBackendConnection() }
+    }
+
+    private fun testBackendConnection() {
+        val prefs = AegisApp.get(requireContext()).prefs
+        val url = binding.profileBackendUrl.text?.toString()?.trim().orEmpty().ifBlank { prefs.apiBaseUrl }
+        binding.profileBackendStatus.isVisible = true
+        binding.profileBackendStatus.text = "Checking…"
+        binding.profileBackendStatus.setTextColor(requireContext().getColor(R.color.aegis_text_muted))
+
+        lifecycleScope.launch {
+            val ok = withContext(Dispatchers.IO) {
+                try {
+                    ApiClient(url.trimEnd('/')).wakeBackend()
+                    true
+                } catch (_: Exception) {
+                    false
+                }
+            }
+            binding.profileBackendStatus.text = if (ok) {
+                getString(R.string.backend_connected)
+            } else {
+                getString(R.string.backend_unreachable)
+            }
+            binding.profileBackendStatus.setTextColor(
+                requireContext().getColor(if (ok) R.color.aegis_green else R.color.scam_red)
+            )
+        }
     }
 
     private fun loadProfile() {

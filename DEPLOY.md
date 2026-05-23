@@ -44,6 +44,7 @@ Commit the deployment files (`Dockerfile`, `render.yaml`, `frontend/src/lib/api.
    | `VIRUSTOTAL_API_KEY` | from your `.env` |
    | `WHISPER_MODEL` | `tiny` (required on free 512MB RAM) |
    | `ALLOWED_ORIGINS` | `https://YOUR-APP.vercel.app` (add custom domain later, comma-separated) |
+   | `DATASET_SOURCE` | `isdd` (optional; Docker build trains on ISDD; use `legacy` for old SMS dataset) |
 
 6. **Secret Files** — **optional**, only if you retrain on the server (each file must be **under 500KiB**):
 

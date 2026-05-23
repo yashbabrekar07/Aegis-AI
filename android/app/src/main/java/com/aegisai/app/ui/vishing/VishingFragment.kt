@@ -15,6 +15,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.aegisai.app.AegisApp
+import com.aegisai.app.R
 import com.aegisai.app.call.CallGuardController
 import com.aegisai.app.data.ApiClient
 import com.aegisai.app.data.ScanResult
@@ -95,7 +96,6 @@ class VishingFragment : Fragment() {
         val needed = mutableListOf(
             Manifest.permission.RECORD_AUDIO,
             Manifest.permission.READ_PHONE_STATE,
-            Manifest.permission.READ_CALL_LOG
         )
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             needed.add(Manifest.permission.POST_NOTIFICATIONS)
@@ -124,14 +124,29 @@ class VishingFragment : Fragment() {
     private fun startRecording() {
         val file = File(requireContext().cacheDir, "vishing_${System.currentTimeMillis()}.m4a")
         recordingFile = file
-        recorder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) MediaRecorder(requireContext()) else @Suppress("DEPRECATION") MediaRecorder()
-        recorder?.apply {
-            setAudioSource(MediaRecorder.AudioSource.MIC)
-            setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
-            setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
-            setOutputFile(file.absolutePath)
-            prepare()
-            start()
+        try {
+            recorder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                MediaRecorder(requireContext())
+            } else {
+                @Suppress("DEPRECATION")
+                MediaRecorder()
+            }
+            recorder?.apply {
+                setAudioSource(MediaRecorder.AudioSource.MIC)
+                setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
+                setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
+                setAudioSamplingRate(16_000)
+                setAudioEncodingBitRate(64_000)
+                setOutputFile(file.absolutePath)
+                prepare()
+                start()
+            }
+        } catch (e: Exception) {
+            recorder?.release()
+            recorder = null
+            recordingFile = null
+            Toast.makeText(requireContext(), "Could not start recording: ${e.message}", Toast.LENGTH_LONG).show()
+            return
         }
         binding.recordBtn.isEnabled = false
         binding.stopRecordBtn.isVisible = true
@@ -168,14 +183,22 @@ class VishingFragment : Fragment() {
     private fun showResult(result: ScanResult) {
         binding.vishingResultCard.isVisible = true
         if (result.error != null) {
-            binding.vishingResult.text = "Error: ${result.error}"
+            binding.vishingResult.text = getString(R.string.error_prefix, result.error)
             return
         }
         val conf = ((result.confidence ?: 0.0) * 100).toInt()
         val sb = StringBuilder()
-        sb.append("Risk: ${result.risk}\nConfidence: $conf%\n\n${result.reason}")
+        sb.append(getString(R.string.vishing_risk, result.risk))
+        sb.append("\n")
+        sb.append(getString(R.string.vishing_confidence, conf))
+        sb.append("\n\n")
+        sb.append(result.reason)
+
         result.transcription?.let {
-            sb.append("\n\nTranscription:\n$it")
+            sb.append("\n\n")
+            sb.append(getString(R.string.vishing_transcription_label))
+            sb.append("\n")
+            sb.append(it)
             binding.transcriptInput.setText(it)
         }
         binding.vishingResult.text = sb.toString()

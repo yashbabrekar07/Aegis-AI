@@ -53,6 +53,11 @@ android {
         viewBinding = true
         buildConfig = true
     }
+
+    lint {
+        abortOnError = true
+        checkReleaseBuilds = true
+    }
 }
 
 dependencies {

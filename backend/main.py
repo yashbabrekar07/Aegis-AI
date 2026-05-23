@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
@@ -11,7 +11,9 @@ import time
 from preprocess import translate_to_english
 from model import predict_text
 from utils import detect_scam_keywords, extract_links, flag_suspicious_links
-from speech import process_audio, save_uploaded_audio
+from speech import process_audio
+from audio_io import save_upload_async, cleanup_temp_dir
+from risk_engine import classify_risk
 
 app = FastAPI(title="Aegis AI Backend")
 
@@ -113,7 +115,10 @@ def verify_phone_otp(req: PhoneOtpVerifyRequest):
 
 @app.post("/api/scan")
 def scan_text(req: ScanRequest):
-    return analyze_text(req.text, scan_links=True)
+    try:
+        return analyze_text(req.text, scan_links=True)
+    except Exception as e:
+        return {"error": f"Scan failed: {e}", "risk": "ERROR", "label": "error", "confidence": 0}
 
 @app.post("/api/vishing/analyze-transcript")
 def analyze_vishing_transcript(req: VishingTranscriptRequest):
@@ -127,82 +132,156 @@ def analyze_vishing_transcript(req: VishingTranscriptRequest):
     return result
 
 
+async def _transcribe_upload(file: UploadFile, fast: bool = False):
+    import asyncio
+    from functools import partial
+
+    temp_dir = None
+    temp_path = None
+    try:
+        temp_path, temp_dir = await save_upload_async(file)
+        loop = asyncio.get_running_loop()
+        fn = partial(process_audio, temp_path, fast=fast)
+        audio_result = await loop.run_in_executor(None, fn)
+        text = audio_result[0]
+        method = audio_result[1] if len(audio_result) > 1 else ""
+        lang = audio_result[2] if len(audio_result) > 2 else ""
+        return text, method, lang, None
+    except ValueError as e:
+        return None, None, None, str(e)
+    except Exception as e:
+        return None, None, None, f"Audio processing failed: {e}"
+    finally:
+        if temp_dir:
+            cleanup_temp_dir(temp_dir)
+
+
+@app.post("/api/transcribe-audio")
+async def transcribe_audio(file: UploadFile = File(...), fast: bool = True):
+    """Transcribe only — fast=True uses Google Speech on a trimmed clip (Call Guard)."""
+    text, method, lang, err = await _transcribe_upload(file, fast=fast)
+    if err:
+        return {"error": err, "transcription": None, "status": 400}
+    if text and not str(text).startswith("Error"):
+        out = {"transcription": text, "method": method}
+        if lang:
+            out["detected_language"] = lang
+        return out
+    err_msg = text or "No speech detected. Use speakerphone during the call."
+    if str(err_msg).startswith("Error:"):
+        err_msg = str(err_msg)[6:].strip()
+    return {"error": err_msg, "transcription": None, "status": 400}
+
+
+@app.post("/api/call-guard/analyze")
+async def call_guard_analyze(
+    file: UploadFile = File(...),
+    phone: Optional[str] = Form(None),
+):
+    """One request: fast transcribe + scam analysis (avoids double round-trip timeouts)."""
+    text, method, lang, err = await _transcribe_upload(file, fast=True)
+    if err:
+        return {"error": err, "risk": "ERROR", "label": "error", "confidence": 0, "status": 400}
+    if not text or str(text).startswith("Error"):
+        err_msg = text or "No speech detected."
+        if str(err_msg).startswith("Error:"):
+            err_msg = str(err_msg)[6:].strip()
+        return {
+            "error": err_msg,
+            "risk": "ERROR",
+            "label": "error",
+            "confidence": 0,
+            "status": 400,
+            "transcription": None,
+        }
+    result = analyze_text(text, scan_links=False)
+    result["transcription"] = text
+    result["method"] = method
+    result["phone_number"] = phone
+    result["source"] = "call_guard"
+    if lang:
+        result["detected_language"] = lang
+    return result
+
+
 @app.post("/api/scan-audio")
 async def scan_audio(file: UploadFile = File(...)):
-    # Save the uploaded file temporarily using async read
-    temp_path = f"temp_{file.filename}"
-    with open(temp_path, "wb") as f:
-        content = await file.read()
-        f.write(content)
-        
-    try:
-        # Prevent Thread Blocking! 
-        # Whisper transcription is extremely CPU heavy and synchronous. 
-        # If we run it directly in an `async def` route, it freezes the entire FastAPI event loop,
-        # which causes the UI fetch to hang indefinitely!
-        import asyncio
-        loop = asyncio.get_running_loop()
-        transcribed_text, method = await loop.run_in_executor(None, process_audio, temp_path)
-    except Exception as e:
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
-        return {"error": str(e), "status": 500}
-        
-    if os.path.exists(temp_path):
-        os.remove(temp_path)
-        
-    if transcribed_text and not transcribed_text.startswith("Error"):
-        # Text analysis is fast enough, but we should probably background it too
-        result = analyze_text(transcribed_text, scan_links=False)
+    transcribed_text, method, detected_lang, err = await _transcribe_upload(file, fast=False)
+    if err:
+        return {
+            "error": err,
+            "risk": "ERROR",
+            "label": "error",
+            "confidence": 0,
+            "status": 400,
+        }
+
+    if transcribed_text and not str(transcribed_text).startswith("Error"):
+        try:
+            result = analyze_text(transcribed_text, scan_links=False)
+        except Exception as e:
+            return {
+                "error": f"Analysis failed after transcription: {e}",
+                "transcription": transcribed_text,
+                "method": method,
+                "risk": "ERROR",
+                "label": "error",
+                "confidence": 0,
+            }
         result["transcription"] = transcribed_text
         result["method"] = method
+        if detected_lang:
+            result["detected_language"] = detected_lang
         return result
-    else:
-        return {"error": transcribed_text, "status": 500}
+
+    err_msg = transcribed_text or "No speech detected in audio."
+    if str(err_msg).startswith("Error:"):
+        err_msg = str(err_msg)[6:].strip()
+    return {
+        "error": err_msg,
+        "risk": "ERROR",
+        "label": "error",
+        "confidence": 0,
+        "status": 400,
+    }
 
         
 
 def analyze_text(text: str, scan_links=False):
-    if not text.strip():
-        return {"error": "Empty text"}
-        
+    if not text or not str(text).strip():
+        return {"error": "Empty text", "risk": "ERROR", "label": "error", "confidence": 0}
+
     english_text = translate_to_english(text)
     is_translated = (english_text != text)
-    
-    # 1. ML Prediction
+
+    if not english_text or not str(english_text).strip():
+        return {"error": "Could not process text", "risk": "ERROR", "label": "error", "confidence": 0}
+
     prediction_label, confidence = predict_text(english_text)
-    
-    # 2. Keyword detection
     detected_keywords = detect_scam_keywords(english_text)
-    
-    # 3. Link Extraction
+
     suspicious_links = []
-    all_links = []
     if scan_links:
         all_links = extract_links(english_text)
         suspicious_links = flag_suspicious_links(all_links)
-        
-    # Determine Risk Status
-    final_status = "SAFE"
-    reason = "No malicious patterns or external links detected. Message appears genuine."
-    
-    if prediction_label == "phishing" or len(detected_keywords) > 2 or (scan_links and len(suspicious_links) > 0):
-        final_status = "SCAM"
-        reason = "Multiple high-risk fraud signatures identified including predatory phrasing or malicious links."
-    elif len(detected_keywords) > 0 or prediction_label == "phishing":
-        final_status = "SUSPICIOUS"
-        reason = "Some suspicious urgency or keywords detected. Exercise high caution."
-    elif confidence < 60:
-        final_status = "SUSPICIOUS"
-        reason = "AI confidence is low or slightly alarming phrasing detected."
-        
+
+    final_status, reason, display_label = classify_risk(
+        prediction_label,
+        confidence,
+        detected_keywords,
+        suspicious_links,
+        scan_links,
+        text,
+        english_text,
+    )
+
     return {
-        "label": prediction_label,
+        "label": display_label,
         "risk": final_status,
-        "confidence": confidence / 100.0, # Normalizing max 1.0 for frontend UI
+        "confidence": confidence / 100.0,
         "reason": reason,
         "detected_keywords": detected_keywords,
         "suspicious_links": suspicious_links,
         "is_translated": is_translated,
-        "english_text": english_text
+        "english_text": english_text,
     }

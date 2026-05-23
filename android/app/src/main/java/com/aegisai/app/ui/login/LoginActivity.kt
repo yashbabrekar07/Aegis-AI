@@ -3,10 +3,10 @@ package com.aegisai.app.ui.login
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.net.toUri
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.aegisai.app.AegisApp
@@ -108,7 +108,7 @@ class LoginActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
-                setLoading(true)
+                setLoading(loading = true)
                 app.supabase.auth.signInWith(Email) {
                     this.email = email
                     this.password = password
@@ -147,7 +147,7 @@ class LoginActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
-                setLoading(true)
+                setLoading(loading = true)
                 app.supabase.auth.signUpWith(Email) {
                     this.email = email
                     this.password = password
@@ -169,7 +169,7 @@ class LoginActivity : AppCompatActivity() {
         val redirect = URLEncoder.encode("com.aegisai.app://auth-callback", "UTF-8")
         val url =
             "${BuildConfig.SUPABASE_URL.trimEnd('/')}/auth/v1/authorize?provider=google&redirect_to=$redirect"
-        CustomTabsIntent.Builder().build().launchUrl(this, Uri.parse(url))
+        CustomTabsIntent.Builder().build().launchUrl(this, url.toUri())
     }
 
     private fun handleAuthCallback(intent: Intent?) {
@@ -193,7 +193,7 @@ class LoginActivity : AppCompatActivity() {
         prefs.refreshToken = refresh
 
         lifecycleScope.launch {
-            setLoading(true)
+            setLoading(loading = true)
             val user = SessionHelper.fetchUser(access)
             val email = user?.optString("email").orEmpty()
             if (email.isNotBlank()) prefs.email = email
@@ -205,12 +205,12 @@ class LoginActivity : AppCompatActivity() {
                 prefs.phone = it
                 prefs.phoneVerified = true
             }
-            setLoading(false)
+            setLoading(loading = false)
             routeAfterAuth()
         }
     }
 
-    private suspend fun persistSession(email: String) {
+    private fun persistSession(email: String) {
         val session = app.supabase.auth.currentSessionOrNull()
         prefs.accessToken = session?.accessToken
         prefs.refreshToken = session?.refreshToken
@@ -230,7 +230,7 @@ class LoginActivity : AppCompatActivity() {
         startActivity(
             Intent(this, VerifyEmailActivity::class.java)
                 .putExtra(VerifyEmailActivity.EXTRA_EMAIL, email)
-                .putExtra(VerifyEmailActivity.EXTRA_USERNAME, username)
+                .putExtra(VerifyEmailActivity.EXTRA_USERNAME, username),
         )
         AnimUtil.activityOpen(this)
         finish()

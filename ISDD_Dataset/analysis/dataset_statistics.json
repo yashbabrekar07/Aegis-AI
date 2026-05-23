@@ -1,0 +1,27 @@
+{
+  "total": 4000,
+  "scam": 2000,
+  "legitimate": 2000,
+  "by_language": {
+    "english": 1122,
+    "hindi": 1113,
+    "marathi": 700,
+    "hinglish": 683,
+    "tamil": 191,
+    "telugu": 191
+  },
+  "by_channel": {
+    "SMS": 1829,
+    "WHATSAPP": 1370,
+    "EMAIL": 801
+  },
+  "by_scam_type": {
+    "UPI_FRAUD": 719,
+    "KYC_FRAUD": 420,
+    "BANK_IMPERSONATION": 350,
+    "FAKE_JOB_OFFER": 280,
+    "LOTTERY_PRIZE_SCAM": 210,
+    "OTP_PASSWORD_THEFT": 21
+  },
+  "generated_at": "2026-05-23T07:56:18.023706+00:00"
+}

@@ -1,0 +1,5096 @@
+[
+  {
+    "message_id": "ISDD_WHATSAPP_01941",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v1941]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v1941]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00502",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://training-only.invalid/pay",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01971",
+    "timestamp": "2026-05-12T10:33:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v1971]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v1971]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01681",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (43) [v1681]",
+      "transliteration_roman": "Send project file when free (43)",
+      "english_translation": "Bro send me the project file when free, no rush. (43) [v1681]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01117",
+    "timestamp": "2026-05-12T10:44:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v1117]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v1117]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00216",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00377",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v377]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v377]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01661",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v1661]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v1661]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01601",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (13) [v1601]",
+      "transliteration_roman": "Send project file when free (13)",
+      "english_translation": "Bro send me the project file when free, no rush. (13) [v1601]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00637",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (43) [v637]",
+      "transliteration_roman": "Send project file when free (43)",
+      "english_translation": "Bro send me the project file when free, no rush. (43) [v637]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01067",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://isdd-synthetic.invalid/update",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem."
+    },
+    "metadata": {
+      "message_length": 91,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00264",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v264]",
+      "transliteration_roman": "Axis alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v264]"
+    },
+    "metadata": {
+      "message_length": 79,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01633",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://isdd-synthetic.invalid/update",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem."
+    },
+    "metadata": {
+      "message_length": 91,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01350",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://isdd-synthetic.invalid/update",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem."
+    },
+    "metadata": {
+      "message_length": 91,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01972",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1972]",
+      "transliteration_roman": "Kotak alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1972]"
+    },
+    "metadata": {
+      "message_length": 80,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Kotak_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01631",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01919",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 1,00,000. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 88,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01630",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://example-training.invalid/verify",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem."
+    },
+    "metadata": {
+      "message_length": 93,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00840",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v840]",
+      "transliteration_roman": "Kotak alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v840]"
+    },
+    "metadata": {
+      "message_length": 80,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Kotak_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00757",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (13) [v757]",
+      "transliteration_roman": "Send project file when free (13)",
+      "english_translation": "Bro send me the project file when free, no rush. (13) [v757]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01811",
+    "timestamp": "2026-05-12T10:00:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v1811]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v1811]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00219",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://training-only.invalid/pay",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01157",
+    "timestamp": "2026-05-12T10:44:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (13) [v1157]",
+      "transliteration_roman": "Send project file when free (13)",
+      "english_translation": "Bro send me the project file when free, no rush. (13) [v1157]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00215",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://example-training.invalid/verify",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem."
+    },
+    "metadata": {
+      "message_length": 93,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01634",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://training-only.invalid/pay",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00177",
+    "timestamp": "2026-05-12T10:40:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v177]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v177]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01517",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v1517]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v1517]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01109",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v1109]",
+      "transliteration_roman": "Axis alert verify: http://example-training.invalid/verify",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v1109]"
+    },
+    "metadata": {
+      "message_length": 84,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01679",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1679]",
+      "transliteration_roman": "Axis alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1679]"
+    },
+    "metadata": {
+      "message_length": 79,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00317",
+    "timestamp": "2026-05-12T10:14:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v317]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v317]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00221",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 1,00,000. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 88,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00627",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v627]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v627]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00785",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://training-only.invalid/pay",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01064",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://example-training.invalid/verify",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem."
+    },
+    "metadata": {
+      "message_length": 93,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01406",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1406]",
+      "transliteration_roman": "Kotak alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1406]"
+    },
+    "metadata": {
+      "message_length": 80,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Kotak_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00277",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v277]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v277]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01916",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://isdd-synthetic.invalid/update",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem."
+    },
+    "metadata": {
+      "message_length": 91,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00782",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01417",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v1417]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v1417]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00677",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v677]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v677]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00917",
+    "timestamp": "2026-05-12T10:20:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v917]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v917]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00537",
+    "timestamp": "2026-05-12T10:44:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (43) [v537]",
+      "transliteration_roman": "Send project file when free (43)",
+      "english_translation": "Bro send me the project file when free, no rush. (43) [v537]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01396",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1396]",
+      "transliteration_roman": "Axis alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1396]"
+    },
+    "metadata": {
+      "message_length": 79,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01437",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (43) [v1437]",
+      "transliteration_roman": "Send project file when free (43)",
+      "english_translation": "Bro send me the project file when free, no rush. (43) [v1437]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01861",
+    "timestamp": "2026-05-12T10:14:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v1861]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v1861]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01636",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 1,00,000. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 88,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01397",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v1397]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v1397]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00837",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (43) [v837]",
+      "transliteration_roman": "Send project file when free (43)",
+      "english_translation": "Bro send me the project file when free, no rush. (43) [v837]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00457",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (13) [v457]",
+      "transliteration_roman": "Send project file when free (13)",
+      "english_translation": "Bro send me the project file when free, no rush. (13) [v457]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00117",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v117]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v117]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00877",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v877]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v877]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01507",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (13) [v1507]",
+      "transliteration_roman": "Send project file when free (13)",
+      "english_translation": "Bro send me the project file when free, no rush. (13) [v1507]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01921",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v1921]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v1921]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01958",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v1958]",
+      "transliteration_roman": "Axis alert verify: http://example-training.invalid/verify",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v1958]"
+    },
+    "metadata": {
+      "message_length": 84,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00499",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01037",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (43) [v1037]",
+      "transliteration_roman": "Send project file when free (43)",
+      "english_translation": "Bro send me the project file when free, no rush. (43) [v1037]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01068",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://training-only.invalid/pay",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00830",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v830]",
+      "transliteration_roman": "Axis alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v830]"
+    },
+    "metadata": {
+      "message_length": 79,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01123",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1123]",
+      "transliteration_roman": "Kotak alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1123]"
+    },
+    "metadata": {
+      "message_length": 80,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Kotak_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01147",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v1147]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v1147]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01641",
+    "timestamp": "2026-05-12T10:31:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v1641]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v1641]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00427",
+    "timestamp": "2026-05-12T10:33:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v427]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v427]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01913",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://example-training.invalid/verify",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem."
+    },
+    "metadata": {
+      "message_length": 93,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01187",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (43) [v1187]",
+      "transliteration_roman": "Send project file when free (43)",
+      "english_translation": "Bro send me the project file when free, no rush. (43) [v1187]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01917",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://training-only.invalid/pay",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00057",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (13) [v57]",
+      "transliteration_roman": "Send project file when free (13)",
+      "english_translation": "Bro send me the project file when free, no rush. (13) [v57]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00487",
+    "timestamp": "2026-05-12T10:25:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (43) [v487]",
+      "transliteration_roman": "Send project file when free (43)",
+      "english_translation": "Bro send me the project file when free, no rush. (43) [v487]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00137",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (43) [v137]",
+      "transliteration_roman": "Send project file when free (43)",
+      "english_translation": "Bro send me the project file when free, no rush. (43) [v137]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00617",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v617]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v617]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00784",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://isdd-synthetic.invalid/update",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem."
+    },
+    "metadata": {
+      "message_length": 91,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01497",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v1497]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v1497]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00274",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v274]",
+      "transliteration_roman": "Kotak alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v274]"
+    },
+    "metadata": {
+      "message_length": 80,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Kotak_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01065",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00717",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v717]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v717]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00501",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://isdd-synthetic.invalid/update",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem."
+    },
+    "metadata": {
+      "message_length": 91,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00543",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v543]",
+      "transliteration_roman": "Axis alert verify: http://example-training.invalid/verify",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v543]"
+    },
+    "metadata": {
+      "message_length": 84,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00787",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 1,00,000. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 88,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01337",
+    "timestamp": "2026-05-12T10:16:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (43) [v1337]",
+      "transliteration_roman": "Send project file when free (43)",
+      "english_translation": "Bro send me the project file when free, no rush. (43) [v1337]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01821",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v1821]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v1821]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01871",
+    "timestamp": "2026-05-12T10:31:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v1871]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v1871]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01097",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v1097]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v1097]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01721",
+    "timestamp": "2026-05-12T10:40:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v1721]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v1721]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01347",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://example-training.invalid/verify",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem."
+    },
+    "metadata": {
+      "message_length": 93,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01351",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://training-only.invalid/pay",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://training-only.invalid/pay to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00477",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v477]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v477]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00597",
+    "timestamp": "2026-05-12T10:18:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v597]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v597]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01348",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00707",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (13) [v707]",
+      "transliteration_roman": "Send project file when free (13)",
+      "english_translation": "Bro send me the project file when free, no rush. (13) [v707]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01353",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 1,00,000. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 88,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01791",
+    "timestamp": "2026-05-12T10:16:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v1791]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v1791]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01387",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (43) [v1387]",
+      "transliteration_roman": "Send project file when free (43)",
+      "english_translation": "Bro send me the project file when free, no rush. (43) [v1387]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01057",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (13) [v1057]",
+      "transliteration_roman": "Send project file when free (13)",
+      "english_translation": "Bro send me the project file when free, no rush. (13) [v1057]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00267",
+    "timestamp": "2026-05-12T10:00:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v267]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v267]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_01741",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v1741]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v1741]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00867",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v867]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v867]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00247",
+    "timestamp": "2026-05-12T10:16:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v247]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v247]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01007",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (13) [v1007]",
+      "transliteration_roman": "Send project file when free (13)",
+      "english_translation": "Bro send me the project file when free, no rush. (13) [v1007]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00547",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v547]",
+      "transliteration_roman": "Axis alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v547]"
+    },
+    "metadata": {
+      "message_length": 79,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01689",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1689]",
+      "transliteration_roman": "Kotak alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1689]"
+    },
+    "metadata": {
+      "message_length": 80,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Kotak_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00097",
+    "timestamp": "2026-05-12T10:31:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v97]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v97]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00218",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://isdd-synthetic.invalid/update",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://isdd-synthetic.invalid/update to redeem."
+    },
+    "metadata": {
+      "message_length": 91,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00557",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v557]",
+      "transliteration_roman": "Kotak alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Kotak Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v557]"
+    },
+    "metadata": {
+      "message_length": 80,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Kotak_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00504",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 1,00,000. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 88,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01392",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v1392]",
+      "transliteration_roman": "Axis alert verify: http://example-training.invalid/verify",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v1392]"
+    },
+    "metadata": {
+      "message_length": 84,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01027",
+    "timestamp": "2026-05-12T10:23:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v1027]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v1027]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00498",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://example-training.invalid/verify",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem."
+    },
+    "metadata": {
+      "message_length": 93,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01070",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 1,00,000. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹1,00,000 prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 88,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_01914",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://demo-scam-lab.invalid/kyc",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://demo-scam-lab.invalid/kyc to redeem."
+    },
+    "metadata": {
+      "message_length": 87,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00327",
+    "timestamp": "2026-05-12T10:31:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v327]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v327]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01611",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v1611]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v1611]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01675",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v1675]",
+      "transliteration_roman": "Axis alert verify: http://example-training.invalid/verify",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v1675]"
+    },
+    "metadata": {
+      "message_length": 84,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01962",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1962]",
+      "transliteration_roman": "Axis alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1962]"
+    },
+    "metadata": {
+      "message_length": 79,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_SMS_00781",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "LOTTERY_PRIZE_SCAM",
+    "confidence": 0.87,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem.",
+      "transliteration_roman": "Amazon raffle winner Rs 50 Lakh. Click http://example-training.invalid/verify",
+      "english_translation": "Amazon raffle winner! ₹50 Lakh prize. Click http://example-training.invalid/verify to redeem."
+    },
+    "metadata": {
+      "message_length": 93,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "urgent_language",
+        "suspicious_link",
+        "impersonation"
+      ],
+      "target_entity": "LOTTERY_ORGANIZATION",
+      "attack_vector": "social_engineering",
+      "risk_severity": "medium",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.87,
+      "notes": "Synthetic LOTTERY_PRIZE_SCAM sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.85,
+      "impersonation_score": 0.9,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00826",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v826]",
+      "transliteration_roman": "Axis alert verify: http://example-training.invalid/verify",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v826]"
+    },
+    "metadata": {
+      "message_length": 84,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00067",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (23) [v67]",
+      "transliteration_roman": "Send project file when free (23)",
+      "english_translation": "Bro send me the project file when free, no rush. (23) [v67]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00977",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v977]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v977]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_00260",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v260]",
+      "transliteration_roman": "Axis alert verify: http://example-training.invalid/verify",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://example-training.invalid/verify [v260]"
+    },
+    "metadata": {
+      "message_length": 84,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00777",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v777]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v777]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00197",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v197]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v197]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_WHATSAPP_00397",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (3) [v397]",
+      "transliteration_roman": "Send project file when free (3)",
+      "english_translation": "Bro send me the project file when free, no rush. (3) [v397]"
+    },
+    "metadata": {
+      "message_length": 52,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01227",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "channel": "EMAIL",
+    "scam_label": 0,
+    "scam_type": "",
+    "confidence": 0.98,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Bro send me the project file when free, no rush. (33) [v1227]",
+      "transliteration_roman": "Send project file when free (33)",
+      "english_translation": "Bro send me the project file when free, no rush. (33) [v1227]"
+    },
+    "metadata": {
+      "message_length": 53,
+      "contains_url": false,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": false,
+      "sender_country_code": "91",
+      "sender_type": "personal",
+      "sender_pattern": "normal"
+    },
+    "annotations": {
+      "scam_indicators": [],
+      "target_entity": "NONE",
+      "attack_vector": "",
+      "risk_severity": "low",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.98,
+      "notes": "Legitimate communication sample"
+    },
+    "features": {
+      "urgency_score": 0.1,
+      "impersonation_score": 0.0,
+      "linguistic_anomalies": []
+    }
+  },
+  {
+    "message_id": "ISDD_EMAIL_01113",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "channel": "EMAIL",
+    "scam_label": 1,
+    "scam_type": "BANK_IMPERSONATION",
+    "confidence": 0.94,
+    "language": "hinglish",
+    "message_content": {
+      "original": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1113]",
+      "transliteration_roman": "Axis alert verify: http://sample-fraud.invalid/claim",
+      "english_translation": "Axis Alert: Unusual activity. Verify account: http://sample-fraud.invalid/claim [v1113]"
+    },
+    "metadata": {
+      "message_length": 79,
+      "contains_url": true,
+      "contains_urgency_words": false,
+      "contains_threat_words": false,
+      "contains_financial_keywords": true,
+      "sender_country_code": "91",
+      "sender_type": "unknown",
+      "sender_pattern": "spoofed"
+    },
+    "annotations": {
+      "scam_indicators": [
+        "banking_impersonation",
+        "account_threat",
+        "suspicious_link"
+      ],
+      "target_entity": "Axis_BANK",
+      "attack_vector": "social_engineering",
+      "risk_severity": "high",
+      "annotator_id": "SYNTH_ISDD",
+      "annotation_timestamp": "2026-05-12T10:00:00Z",
+      "confidence_score": 0.94,
+      "notes": "Synthetic BANK_IMPERSONATION sample for ISDD v1.0"
+    },
+    "features": {
+      "urgency_score": 0.4,
+      "impersonation_score": 0.3,
+      "linguistic_anomalies": [
+        "non_standard_hindi"
+      ]
+    }
+  }
+]

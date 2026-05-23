@@ -39,11 +39,18 @@ class ApiClient(private val baseUrl: String) {
         .writeTimeout(90, TimeUnit.SECONDS)
         .build()
 
-    /** Audio + Whisper on Render free tier can take several minutes on cold start. */
+    /** Call Guard: single upload + fast Google transcription on server. */
+    private val callGuardClient = OkHttpClient.Builder()
+        .connectTimeout(120, TimeUnit.SECONDS)
+        .readTimeout(600, TimeUnit.SECONDS)
+        .writeTimeout(600, TimeUnit.SECONDS)
+        .build()
+
+    /** Website audio upload — may use Whisper fallback (slower). */
     private val audioClient = OkHttpClient.Builder()
-        .connectTimeout(180, TimeUnit.SECONDS)
-        .readTimeout(300, TimeUnit.SECONDS)
-        .writeTimeout(300, TimeUnit.SECONDS)
+        .connectTimeout(120, TimeUnit.SECONDS)
+        .readTimeout(420, TimeUnit.SECONDS)
+        .writeTimeout(420, TimeUnit.SECONDS)
         .build()
 
     private val wakeClient = OkHttpClient.Builder()
@@ -65,19 +72,71 @@ class ApiClient(private val baseUrl: String) {
 
     fun scanAudio(file: File): ScanResult = scanAudioWithRetry(file, maxAttempts = 2)
 
+    /**
+     * Call Guard: transcribe first, then analyze transcript (shows what was heard even if scam scan fails).
+     */
+    fun analyzeCallRecording(file: File, phone: String?): ScanResult {
+        wakeBackend()
+        var lastError: Exception? = null
+        repeat(2) { attempt ->
+            try {
+                return postCallGuardMultipart(file, phone)
+            } catch (e: Exception) {
+                lastError = e
+                if (attempt == 0 && isRetryable(e)) {
+                    Thread.sleep(5_000)
+                    wakeBackend()
+                }
+            }
+        }
+        throw lastError ?: IOException("Call Guard analysis failed")
+    }
+
+    private fun postCallGuardMultipart(file: File, phone: String?): ScanResult {
+        val mime = if (file.name.endsWith(".wav", ignoreCase = true)) "audio/wav" else "audio/*"
+        val part = MultipartBody.Part.createFormData(
+            "file",
+            file.name,
+            file.asRequestBody(mime.toMediaType())
+        )
+        val bodyBuilder = MultipartBody.Builder().setType(MultipartBody.FORM).addPart(part)
+        if (!phone.isNullOrBlank()) {
+            bodyBuilder.addFormDataPart("phone", phone)
+        }
+        val req = Request.Builder()
+            .url("$baseUrl/api/call-guard/analyze")
+            .post(bodyBuilder.build())
+            .build()
+        return executeScan(req, callGuardClient)
+    }
+
+    fun transcribeAudioWithRetry(file: File, maxAttempts: Int = 2): ScanResult {
+        wakeBackend()
+        var last: ScanResult? = null
+        repeat(maxAttempts) { attempt ->
+            val r = postAudioMultipart(file, "$baseUrl/api/transcribe-audio")
+            last = r
+            val text = r.transcription?.trim().orEmpty()
+            if (text.isNotEmpty()) return r
+            val err = r.error?.lowercase().orEmpty()
+            val retryable = err.contains("timeout") || err.contains("waking") || err.contains("502") ||
+                err.contains("503") || err.contains("end of input") || err.contains("empty")
+            if (attempt < maxAttempts - 1 && retryable) {
+                Thread.sleep(4_000)
+                wakeBackend()
+            } else {
+                return r
+            }
+        }
+        return last ?: ScanResult(error = "Transcription failed")
+    }
+
     fun scanAudioWithRetry(file: File, maxAttempts: Int = 2): ScanResult {
         wakeBackend()
         var lastError: Exception? = null
         repeat(maxAttempts) { attempt ->
             try {
-                val part = MultipartBody.Part.createFormData(
-                    "file",
-                    file.name,
-                    file.asRequestBody("audio/*".toMediaType())
-                )
-                val body = MultipartBody.Builder().setType(MultipartBody.FORM).addPart(part).build()
-                val req = Request.Builder().url("$baseUrl/api/scan-audio").post(body).build()
-                return executeScan(req, audioClient)
+                return postAudioMultipart(file, "$baseUrl/api/scan-audio")
             } catch (e: Exception) {
                 lastError = e
                 if (attempt < maxAttempts - 1 && isRetryable(e)) {
@@ -87,6 +146,24 @@ class ApiClient(private val baseUrl: String) {
             }
         }
         throw lastError ?: IOException("Audio scan failed")
+    }
+
+    private fun postAudioMultipart(file: File, url: String): ScanResult {
+        val mime = when {
+            file.name.endsWith(".wav", ignoreCase = true) -> "audio/wav"
+            file.name.endsWith(".m4a", ignoreCase = true) -> "audio/mp4"
+            file.name.endsWith(".mp3", ignoreCase = true) -> "audio/mpeg"
+            file.name.endsWith(".ogg", ignoreCase = true) -> "audio/ogg"
+            else -> "audio/*"
+        }
+        val part = MultipartBody.Part.createFormData(
+            "file",
+            file.name,
+            file.asRequestBody(mime.toMediaType())
+        )
+        val body = MultipartBody.Builder().setType(MultipartBody.FORM).addPart(part).build()
+        val req = Request.Builder().url(url).post(body).build()
+        return executeScan(req, audioClient)
     }
 
     fun analyzeVishingTranscript(transcript: String, phone: String?): ScanResult {
@@ -169,9 +246,30 @@ class ApiClient(private val baseUrl: String) {
 
         fun friendlyError(e: Throwable): String {
             if (isRetryable(e)) {
-                return "Server took too long (Render may be waking up). Keep speakerphone on for short calls, or paste a transcript in Vishing."
+                return "Transcription timed out. Server may be busy — try a shorter call (under 1 min) with speakerphone on, or paste a transcript in Vishing."
             }
-            return e.message ?: "Analysis failed — check internet and backend."
+            return humanizeAudioError(e.message)
+        }
+
+        fun humanizeAudioError(message: String?): String {
+            val m = message?.trim().orEmpty()
+            if (m.isEmpty()) {
+                return "Could not transcribe call. Use speakerphone and talk for at least 5 seconds."
+            }
+            if (m.contains("end of input", ignoreCase = true) ||
+                m.contains("end of file", ignoreCase = true) ||
+                m.contains("truncated", ignoreCase = true)
+            ) {
+                return "Recording was empty or cut off. Turn on speakerphone during calls so the mic captures speech."
+            }
+            if (m.contains("No speech", ignoreCase = true) ||
+                m.contains("silent", ignoreCase = true) ||
+                m.contains("peak=", ignoreCase = true) ||
+                m.contains("speakerphone", ignoreCase = true)
+            ) {
+                return m.removePrefix("Error:").trim()
+            }
+            return m.removePrefix("Error:").trim()
         }
     }
 }

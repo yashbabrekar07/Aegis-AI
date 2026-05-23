@@ -8,6 +8,7 @@ __pycache__/
 *.pyc
 venv/
 *.csv
+!ISDD_Dataset/processed/*.csv
 *.enc
 backend/secret.key
 backend/phishing_model.pkl

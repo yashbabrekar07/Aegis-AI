@@ -36,9 +36,9 @@ object CallAnalysisNotifier {
             append("\n\n")
             append(result.reason ?: "Open Aegis AI for details.")
             result.transcription?.takeIf { it.isNotBlank() }?.let {
-                append("\n\nHeard: ")
-                append(it.take(120))
-                if (it.length > 120) append("…")
+                append("\n\nTranscript:\n")
+                append(it.take(500))
+                if (it.length > 500) append("…")
             }
         }
         val priority = if (risk == "SCAM") {
@@ -52,7 +52,8 @@ object CallAnalysisNotifier {
     fun showError(context: Context, phone: String?, message: String?) {
         val body = buildString {
             phone?.takeIf { it.isNotBlank() }?.let { append("From: $it\n") }
-            append(message ?: "Could not analyze this call.")
+            append(com.aegisai.app.data.ApiClient.humanizeAudioError(message))
+            append("\n\nTip: Enable speakerphone on calls so Call Guard can hear both sides.")
         }
         notify(context, "Call Guard — could not analyze", body, NotificationCompat.PRIORITY_DEFAULT)
     }

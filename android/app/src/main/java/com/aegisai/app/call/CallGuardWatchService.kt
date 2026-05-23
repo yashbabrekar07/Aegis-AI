@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.app.Service
 import android.content.Intent
 import android.content.pm.ServiceInfo
+import android.media.AudioManager
 import android.os.Build
 import android.os.IBinder
 import android.util.Log
@@ -29,6 +30,7 @@ class CallGuardWatchService : Service() {
     private val callRecorder by lazy { CallGuardRecorder(this) }
     private var currentPhone: String? = null
     private var isAnalyzing = false
+    private var previousAudioMode: Int = AudioManager.MODE_NORMAL
 
     override fun onCreate() {
         super.onCreate()
@@ -75,6 +77,11 @@ class CallGuardWatchService : Service() {
         if (isAnalyzing || callRecorder.isActive) return
 
         currentPhone = intent.getStringExtra(EXTRA_PHONE) ?: CallGuardState.lastCaller
+        try {
+            val am = getSystemService(AUDIO_SERVICE) as AudioManager
+            previousAudioMode = am.mode
+            am.mode = AudioManager.MODE_IN_COMMUNICATION
+        } catch (_: Exception) { }
         val file = callRecorder.start()
         if (file == null) {
             CallAnalysisNotifier.showError(
@@ -83,6 +90,11 @@ class CallGuardWatchService : Service() {
                 "Could not access the mic during this call. Try speakerphone."
             )
             return
+        }
+        scope.launch {
+            try {
+                ApiClient(AegisApp.get(applicationContext).prefs.apiBaseUrl).wakeBackend()
+            } catch (_: Exception) { }
         }
         promoteRecording()
     }
@@ -93,16 +105,42 @@ class CallGuardWatchService : Service() {
         promoteAnalyzing("Preparing analysis…")
 
         val phone = currentPhone
+        // Let AudioRecord flush the last buffers before closing the WAV file
+        Thread.sleep(350)
         val file = callRecorder.stop()
+        val durationMs = callRecorder.recordedDurationMs()
+        val peak = callRecorder.peakLevel()
+        try {
+            val am = getSystemService(AUDIO_SERVICE) as AudioManager
+            am.mode = previousAudioMode
+        } catch (_: Exception) { }
         promoteIdle()
 
         scope.launch {
             try {
-                if (file == null || !file.exists() || file.length() < MIN_BYTES) {
+                if (file == null || !file.exists()) {
                     CallAnalysisNotifier.showError(
                         applicationContext,
                         phone,
-                        "Not enough call audio captured. Use speakerphone or paste a transcript in Vishing."
+                        "No recording file. Enable mic permission and try again."
+                    )
+                    return@launch
+                }
+                if (durationMs < 800 || file.length() < MIN_BYTES) {
+                    CallAnalysisNotifier.showError(
+                        applicationContext,
+                        phone,
+                        "Call too short (${durationMs / 1000}s). Talk for at least 5 seconds with speakerphone on."
+                    )
+                    return@launch
+                }
+                if (!callRecorder.hasAudibleSignal()) {
+                    CallAnalysisNotifier.showError(
+                        applicationContext,
+                        phone,
+                        "Microphone captured only silence during this call (peak=$peak). " +
+                            "Your phone may block mic access during cellular calls — use speakerphone, " +
+                            "or after the call paste what was said in Vishing → Analyze transcript."
                     )
                     return@launch
                 }
@@ -116,10 +154,10 @@ class CallGuardWatchService : Service() {
                 }
 
                 withContext(Dispatchers.Main) {
-                    promoteAnalyzing("Transcribing… (can take 1–3 min on first try)")
+                    promoteAnalyzing("Transcribing call… (usually 15–45 sec)")
                 }
                 val api = ApiClient(AegisApp.get(applicationContext).prefs.apiBaseUrl)
-                val result = api.scanAudio(file)
+                val result = api.analyzeCallRecording(file, phone)
                 CallAnalysisNotifier.showResult(applicationContext, phone, result)
             } catch (e: Exception) {
                 CallAnalysisNotifier.showError(
@@ -210,6 +248,7 @@ class CallGuardWatchService : Service() {
         const val EXTRA_PHONE = "phone"
         private const val CHANNEL_ID = "call_guard_watch"
         private const val NOTIFICATION_ID = 4101
+        /** ~0.25s of 16 kHz mono WAV PCM */
         private const val MIN_BYTES = 8_000L
         private const val MAX_BYTES = 12 * 1024 * 1024L
     }
