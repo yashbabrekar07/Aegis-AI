@@ -80,7 +80,16 @@ class CallGuardWatchService : Service() {
         if (isAnalyzing || callRecorder.isActive) return
 
         currentPhone = intent.getStringExtra(EXTRA_PHONE) ?: CallGuardState.lastCaller
-        enableSpeakerphone()
+        val prefs = AegisApp.get(applicationContext).prefs
+        if (prefs.speakerRequired) {
+            enableSpeakerphone()
+        } else {
+            try {
+                val am = getSystemService(AUDIO_SERVICE) as AudioManager
+                previousAudioMode = am.mode
+                am.mode = AudioManager.MODE_IN_COMMUNICATION
+            } catch (_: Exception) { }
+        }
         val file = callRecorder.start()
         if (file == null) {
             CallAnalysisNotifier.showError(

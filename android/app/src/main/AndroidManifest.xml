@@ -55,5 +55,14 @@
             android:name=".call.CallGuardWatchService"
             android:exported="false"
             android:foregroundServiceType="microphone|dataSync" />
+
+        <service
+            android:name=".call.AegisCallScreeningService"
+            android:permission="android.permission.BIND_SCREENING_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.telecom.CallScreeningService" />
+            </intent-filter>
+        </service>
     </application>
 </manifest>

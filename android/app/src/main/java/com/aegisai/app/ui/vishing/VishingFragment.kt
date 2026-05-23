@@ -17,6 +17,7 @@ import androidx.lifecycle.lifecycleScope
 import com.aegisai.app.AegisApp
 import com.aegisai.app.R
 import com.aegisai.app.call.CallGuardController
+import com.aegisai.app.call.CallGuardDiagnostics
 import com.aegisai.app.data.ApiClient
 import com.aegisai.app.data.ScanResult
 import com.aegisai.app.databinding.FragmentVishingBinding
@@ -44,10 +45,20 @@ class VishingFragment : Fragment() {
         val allGranted = results.values.all { it }
         if (allGranted) {
             val ctx = requireContext().applicationContext
-            AegisApp.get(ctx).prefs.callGuardEnabled = true
+            val prefs = AegisApp.get(ctx).prefs
+            prefs.callGuardEnabled = true
             CallGuardController.enable(ctx)
             binding.callGuardSwitch.isChecked = true
-            Toast.makeText(requireContext(), "Call Guard enabled for all calls", Toast.LENGTH_LONG).show()
+            
+            if (!prefs.hasCheckedCompatibility) {
+                Toast.makeText(requireContext(), "Optimizing Call Guard audio routing for your device...", Toast.LENGTH_LONG).show()
+                lifecycleScope.launch {
+                    CallGuardDiagnostics.runCompatibilityTest(ctx)
+                    Toast.makeText(requireContext(), "Call Guard enabled and optimized for your device", Toast.LENGTH_LONG).show()
+                }
+            } else {
+                Toast.makeText(requireContext(), "Call Guard enabled for all calls", Toast.LENGTH_LONG).show()
+            }
         } else {
             binding.callGuardSwitch.isChecked = false
             Toast.makeText(requireContext(), "Phone, mic and notification permissions required", Toast.LENGTH_LONG).show()
@@ -105,9 +116,23 @@ class VishingFragment : Fragment() {
         }
         if (missing.isEmpty()) {
             val ctx = requireContext().applicationContext
-            AegisApp.get(ctx).prefs.callGuardEnabled = true
+            val prefs = AegisApp.get(ctx).prefs
+            prefs.callGuardEnabled = true
             CallGuardController.enable(ctx)
-            Toast.makeText(requireContext(), "Call Guard enabled — you will get an alert after each call", Toast.LENGTH_LONG).show()
+            
+            if (!prefs.hasCheckedCompatibility) {
+                Toast.makeText(requireContext(), "Optimizing Call Guard audio routing for your device...", Toast.LENGTH_LONG).show()
+                lifecycleScope.launch {
+                    val success = CallGuardDiagnostics.runCompatibilityTest(ctx)
+                    if (success) {
+                        Toast.makeText(requireContext(), "Call Guard audio optimized successfully!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(requireContext(), "Setup complete. Dynamic speaker fallback enabled.", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } else {
+                Toast.makeText(requireContext(), "Call Guard enabled — you will get an alert after each call", Toast.LENGTH_LONG).show()
+            }
         } else {
             binding.callGuardSwitch.isChecked = false
             callGuardPermissions.launch(missing.toTypedArray())

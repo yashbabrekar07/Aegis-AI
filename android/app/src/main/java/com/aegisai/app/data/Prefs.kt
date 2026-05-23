@@ -43,6 +43,18 @@ class Prefs(context: Context) {
         get() = sp.getBoolean(KEY_CALL_GUARD, false)
         set(v) = sp.edit().putBoolean(KEY_CALL_GUARD, v).apply()
 
+    var bestAudioSource: Int
+        get() = sp.getInt(KEY_BEST_SOURCE, 1) // default: MediaRecorder.AudioSource.MIC (1)
+        set(v) = sp.edit().putInt(KEY_BEST_SOURCE, v).apply()
+
+    var speakerRequired: Boolean
+        get() = sp.getBoolean(KEY_SPEAKER_REQUIRED, true)
+        set(v) = sp.edit().putBoolean(KEY_SPEAKER_REQUIRED, v).apply()
+
+    var hasCheckedCompatibility: Boolean
+        get() = sp.getBoolean(KEY_CHECKED_COMPATIBILITY, false)
+        set(v) = sp.edit().putBoolean(KEY_CHECKED_COMPATIBILITY, v).apply()
+
     fun clearSession() {
         sp.edit()
             .remove(KEY_ACCESS)
@@ -70,5 +82,8 @@ class Prefs(context: Context) {
         private const val KEY_PHONE_VERIFIED = "phone_verified"
         private const val KEY_PHONE_SKIPPED = "phone_verification_skipped"
         private const val KEY_CALL_GUARD = "call_guard_enabled"
+        private const val KEY_BEST_SOURCE = "best_audio_source"
+        private const val KEY_SPEAKER_REQUIRED = "speaker_required"
+        private const val KEY_CHECKED_COMPATIBILITY = "has_checked_compatibility"
     }
 }
