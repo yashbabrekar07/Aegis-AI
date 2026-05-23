@@ -132,38 +132,56 @@ def analyze_vishing_transcript(req: VishingTranscriptRequest):
     return result
 
 
-@app.post("/api/scan-audio")
-async def scan_audio(file: UploadFile = File(...)):
+async def _transcribe_upload(file: UploadFile):
+    import asyncio
+
     temp_dir = None
     temp_path = None
     try:
         temp_path, temp_dir = await save_upload_async(file)
-        import asyncio
-
         loop = asyncio.get_running_loop()
         audio_result = await loop.run_in_executor(None, process_audio, temp_path)
-        transcribed_text = audio_result[0]
+        text = audio_result[0]
         method = audio_result[1] if len(audio_result) > 1 else ""
-        detected_lang = audio_result[2] if len(audio_result) > 2 else ""
+        lang = audio_result[2] if len(audio_result) > 2 else ""
+        return text, method, lang, None
     except ValueError as e:
+        return None, None, None, str(e)
+    except Exception as e:
+        return None, None, None, f"Audio processing failed: {e}"
+    finally:
+        if temp_dir:
+            cleanup_temp_dir(temp_dir)
+
+
+@app.post("/api/transcribe-audio")
+async def transcribe_audio(file: UploadFile = File(...)):
+    """Transcribe only — used by Call Guard before scam analysis."""
+    text, method, lang, err = await _transcribe_upload(file)
+    if err:
+        return {"error": err, "transcription": None, "status": 400}
+    if text and not str(text).startswith("Error"):
+        out = {"transcription": text, "method": method}
+        if lang:
+            out["detected_language"] = lang
+        return out
+    err_msg = text or "No speech detected. Use speakerphone during the call."
+    if str(err_msg).startswith("Error:"):
+        err_msg = str(err_msg)[6:].strip()
+    return {"error": err_msg, "transcription": None, "status": 400}
+
+
+@app.post("/api/scan-audio")
+async def scan_audio(file: UploadFile = File(...)):
+    transcribed_text, method, detected_lang, err = await _transcribe_upload(file)
+    if err:
         return {
-            "error": str(e),
+            "error": err,
             "risk": "ERROR",
             "label": "error",
             "confidence": 0,
             "status": 400,
         }
-    except Exception as e:
-        return {
-            "error": f"Audio processing failed: {e}",
-            "risk": "ERROR",
-            "label": "error",
-            "confidence": 0,
-            "status": 500,
-        }
-    finally:
-        if temp_dir:
-            cleanup_temp_dir(temp_dir)
 
     if transcribed_text and not str(transcribed_text).startswith("Error"):
         try:

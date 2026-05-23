@@ -93,16 +93,28 @@ class CallGuardWatchService : Service() {
         promoteAnalyzing("Preparing analysis…")
 
         val phone = currentPhone
+        // Let AudioRecord flush the last buffers before closing the WAV file
+        Thread.sleep(350)
         val file = callRecorder.stop()
+        val durationMs = callRecorder.recordedDurationMs()
         promoteIdle()
 
         scope.launch {
             try {
-                if (file == null || !file.exists() || file.length() < MIN_BYTES) {
+                if (file == null || !file.exists()) {
                     CallAnalysisNotifier.showError(
                         applicationContext,
                         phone,
-                        "Not enough call audio captured. Use speakerphone or paste a transcript in Vishing."
+                        "No recording file. Enable mic permission and try again."
+                    )
+                    return@launch
+                }
+                if (durationMs < 800 || file.length() < MIN_BYTES) {
+                    CallAnalysisNotifier.showError(
+                        applicationContext,
+                        phone,
+                        "Call too short or no speech captured (${durationMs / 1000}s). " +
+                            "Use speakerphone during the call so the mic can hear both sides."
                     )
                     return@launch
                 }
@@ -119,7 +131,7 @@ class CallGuardWatchService : Service() {
                     promoteAnalyzing("Transcribing… (can take 1–3 min on first try)")
                 }
                 val api = ApiClient(AegisApp.get(applicationContext).prefs.apiBaseUrl)
-                val result = api.scanAudio(file)
+                val result = api.analyzeCallRecording(file, phone)
                 CallAnalysisNotifier.showResult(applicationContext, phone, result)
             } catch (e: Exception) {
                 CallAnalysisNotifier.showError(
@@ -210,8 +222,8 @@ class CallGuardWatchService : Service() {
         const val EXTRA_PHONE = "phone"
         private const val CHANNEL_ID = "call_guard_watch"
         private const val NOTIFICATION_ID = 4101
-        /** ~1s AAC at 16kHz; below this Whisper often returns empty / "end of input". */
-        private const val MIN_BYTES = 12_000L
+        /** ~0.25s of 16 kHz mono WAV PCM */
+        private const val MIN_BYTES = 8_000L
         private const val MAX_BYTES = 12 * 1024 * 1024L
     }
 }

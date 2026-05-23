@@ -65,26 +65,55 @@ class ApiClient(private val baseUrl: String) {
 
     fun scanAudio(file: File): ScanResult = scanAudioWithRetry(file, maxAttempts = 2)
 
+    /**
+     * Call Guard: transcribe first, then analyze transcript (shows what was heard even if scam scan fails).
+     */
+    fun analyzeCallRecording(file: File, phone: String?): ScanResult {
+        wakeBackend()
+        val transcriptResult = transcribeAudioWithRetry(file, maxAttempts = 2)
+        val text = transcriptResult.transcription?.trim().orEmpty()
+        if (text.isEmpty()) {
+            val err = humanizeAudioError(transcriptResult.error)
+            return ScanResult(
+                error = err,
+                transcription = null,
+                method = transcriptResult.method
+            )
+        }
+        val analysis = analyzeVishingTranscript(text, phone)
+        return analysis.copy(
+            transcription = text,
+            method = transcriptResult.method ?: analysis.method
+        )
+    }
+
+    fun transcribeAudioWithRetry(file: File, maxAttempts: Int = 2): ScanResult {
+        wakeBackend()
+        var last: ScanResult? = null
+        repeat(maxAttempts) { attempt ->
+            val r = postAudioMultipart(file, "$baseUrl/api/transcribe-audio")
+            last = r
+            val text = r.transcription?.trim().orEmpty()
+            if (text.isNotEmpty()) return r
+            val err = r.error?.lowercase().orEmpty()
+            val retryable = err.contains("timeout") || err.contains("waking") || err.contains("502") ||
+                err.contains("503") || err.contains("end of input") || err.contains("empty")
+            if (attempt < maxAttempts - 1 && retryable) {
+                Thread.sleep(4_000)
+                wakeBackend()
+            } else {
+                return r
+            }
+        }
+        return last ?: ScanResult(error = "Transcription failed")
+    }
+
     fun scanAudioWithRetry(file: File, maxAttempts: Int = 2): ScanResult {
         wakeBackend()
         var lastError: Exception? = null
         repeat(maxAttempts) { attempt ->
             try {
-                val mime = when {
-                    file.name.endsWith(".m4a", ignoreCase = true) -> "audio/mp4"
-                    file.name.endsWith(".wav", ignoreCase = true) -> "audio/wav"
-                    file.name.endsWith(".mp3", ignoreCase = true) -> "audio/mpeg"
-                    file.name.endsWith(".ogg", ignoreCase = true) -> "audio/ogg"
-                    else -> "audio/*"
-                }
-                val part = MultipartBody.Part.createFormData(
-                    "file",
-                    file.name,
-                    file.asRequestBody(mime.toMediaType())
-                )
-                val body = MultipartBody.Builder().setType(MultipartBody.FORM).addPart(part).build()
-                val req = Request.Builder().url("$baseUrl/api/scan-audio").post(body).build()
-                return executeScan(req, audioClient)
+                return postAudioMultipart(file, "$baseUrl/api/scan-audio")
             } catch (e: Exception) {
                 lastError = e
                 if (attempt < maxAttempts - 1 && isRetryable(e)) {
@@ -94,6 +123,24 @@ class ApiClient(private val baseUrl: String) {
             }
         }
         throw lastError ?: IOException("Audio scan failed")
+    }
+
+    private fun postAudioMultipart(file: File, url: String): ScanResult {
+        val mime = when {
+            file.name.endsWith(".wav", ignoreCase = true) -> "audio/wav"
+            file.name.endsWith(".m4a", ignoreCase = true) -> "audio/mp4"
+            file.name.endsWith(".mp3", ignoreCase = true) -> "audio/mpeg"
+            file.name.endsWith(".ogg", ignoreCase = true) -> "audio/ogg"
+            else -> "audio/*"
+        }
+        val part = MultipartBody.Part.createFormData(
+            "file",
+            file.name,
+            file.asRequestBody(mime.toMediaType())
+        )
+        val body = MultipartBody.Builder().setType(MultipartBody.FORM).addPart(part).build()
+        val req = Request.Builder().url(url).post(body).build()
+        return executeScan(req, audioClient)
     }
 
     fun analyzeVishingTranscript(transcript: String, phone: String?): ScanResult {
@@ -178,7 +225,24 @@ class ApiClient(private val baseUrl: String) {
             if (isRetryable(e)) {
                 return "Server took too long (Render may be waking up). Keep speakerphone on for short calls, or paste a transcript in Vishing."
             }
-            return e.message ?: "Analysis failed — check internet and backend."
+            return humanizeAudioError(e.message)
+        }
+
+        fun humanizeAudioError(message: String?): String {
+            val m = message?.trim().orEmpty()
+            if (m.isEmpty()) {
+                return "Could not transcribe call. Use speakerphone and talk for at least 5 seconds."
+            }
+            if (m.contains("end of input", ignoreCase = true) ||
+                m.contains("end of file", ignoreCase = true) ||
+                m.contains("truncated", ignoreCase = true)
+            ) {
+                return "Recording was empty or cut off. Turn on speakerphone during calls so the mic captures speech."
+            }
+            if (m.contains("No speech", ignoreCase = true)) {
+                return "No speech detected in the recording. Use speakerphone and speak clearly for a few seconds."
+            }
+            return m.removePrefix("Error:").trim()
         }
     }
 }

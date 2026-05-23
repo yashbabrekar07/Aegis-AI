@@ -5,7 +5,8 @@ import subprocess
 import tempfile
 
 ALLOWED_EXTENSIONS = {"wav", "mp3", "m4a", "ogg", "flac", "webm", "aac", "3gp", "amr"}
-MIN_AUDIO_BYTES = 2_000
+MIN_AUDIO_BYTES = 1_000
+CALL_GUARD_MIN_PCM_MS = 500  # minimum ~0.5s of audio
 _whisper_model = None
 
 # Google Speech language hints for Indian languages (fallback chain)
@@ -34,6 +35,18 @@ def _ffmpeg_executable():
     return shutil.which("ffmpeg") or "ffmpeg"
 
 
+def _wav_duration_ms(path: str) -> int:
+    try:
+        import wave
+
+        with wave.open(path, "rb") as w:
+            frames = w.getnframes()
+            rate = w.getframerate() or 16000
+            return int(frames * 1000 / rate)
+    except Exception:
+        return 0
+
+
 def validate_audio_file(path: str) -> None:
     if not os.path.isfile(path):
         raise ValueError("Audio file was not saved correctly. Please try again.")
@@ -43,6 +56,12 @@ def validate_audio_file(path: str) -> None:
             "Audio is too short or empty. Record at least 3–5 seconds of clear speech "
             "(use speakerphone for calls)."
         )
+    if path.lower().endswith(".wav"):
+        dur = _wav_duration_ms(path)
+        if dur < CALL_GUARD_MIN_PCM_MS:
+            raise ValueError(
+                f"Recording is only {dur}ms long. Use speakerphone and speak for at least 5 seconds."
+            )
 
 
 def convert_to_wav(input_path: str) -> str:
@@ -56,6 +75,8 @@ def convert_to_wav(input_path: str) -> str:
     cmd = [
         _ffmpeg_executable(),
         "-y",
+        "-err_detect",
+        "ignore_err",
         "-i",
         input_path,
         "-ar",
@@ -70,7 +91,7 @@ def convert_to_wav(input_path: str) -> str:
         err = (proc.stderr or proc.stdout or "").strip()
         if "end of file" in err.lower() or "end of input" in err.lower():
             raise ValueError(
-                "Audio file appears truncated or corrupt. Re-export as WAV/MP3 or record again."
+                "Recording was empty or cut off. Turn on speakerphone during the call."
             )
         raise ValueError(f"Could not read audio file. {(err or '')[-400:]}")
     validate_audio_file(wav_path)
@@ -202,9 +223,9 @@ def process_audio(audio_file_path: str):
                 return text, method, ""
         except Exception as sr_e:
             sr_error = str(sr_e)
-            if "end of input" in sr_error.lower():
+            if "end of input" in sr_error.lower() or "end of file" in sr_error.lower():
                 return (
-                    "Error: Audio file is empty or unreadable. Record 3–5 seconds with clear speech.",
+                    "Error: Recording was empty or cut off. Use speakerphone during the call.",
                     "Error",
                     "",
                 )

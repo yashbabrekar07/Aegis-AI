@@ -24,6 +24,7 @@ class IncomingCallReceiver : BroadcastReceiver() {
             }
             TelephonyManager.EXTRA_STATE_OFFHOOK -> {
                 if (CallGuardState.callPhase == CallGuardState.PHASE_OFFHOOK) return
+                // Covers incoming (RINGING→OFFHOOK) and outgoing (IDLE→OFFHOOK)
                 CallGuardState.callPhase = CallGuardState.PHASE_OFFHOOK
                 val phone = number?.takeIf { it.isNotBlank() } ?: CallGuardState.lastCaller
                 val start = Intent(appContext, CallGuardWatchService::class.java).apply {
