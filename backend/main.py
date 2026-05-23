@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
@@ -132,15 +132,17 @@ def analyze_vishing_transcript(req: VishingTranscriptRequest):
     return result
 
 
-async def _transcribe_upload(file: UploadFile):
+async def _transcribe_upload(file: UploadFile, fast: bool = False):
     import asyncio
+    from functools import partial
 
     temp_dir = None
     temp_path = None
     try:
         temp_path, temp_dir = await save_upload_async(file)
         loop = asyncio.get_running_loop()
-        audio_result = await loop.run_in_executor(None, process_audio, temp_path)
+        fn = partial(process_audio, temp_path, fast=fast)
+        audio_result = await loop.run_in_executor(None, fn)
         text = audio_result[0]
         method = audio_result[1] if len(audio_result) > 1 else ""
         lang = audio_result[2] if len(audio_result) > 2 else ""
@@ -155,9 +157,9 @@ async def _transcribe_upload(file: UploadFile):
 
 
 @app.post("/api/transcribe-audio")
-async def transcribe_audio(file: UploadFile = File(...)):
-    """Transcribe only — used by Call Guard before scam analysis."""
-    text, method, lang, err = await _transcribe_upload(file)
+async def transcribe_audio(file: UploadFile = File(...), fast: bool = True):
+    """Transcribe only — fast=True uses Google Speech on a trimmed clip (Call Guard)."""
+    text, method, lang, err = await _transcribe_upload(file, fast=fast)
     if err:
         return {"error": err, "transcription": None, "status": 400}
     if text and not str(text).startswith("Error"):
@@ -171,9 +173,39 @@ async def transcribe_audio(file: UploadFile = File(...)):
     return {"error": err_msg, "transcription": None, "status": 400}
 
 
+@app.post("/api/call-guard/analyze")
+async def call_guard_analyze(
+    file: UploadFile = File(...),
+    phone: Optional[str] = Form(None),
+):
+    """One request: fast transcribe + scam analysis (avoids double round-trip timeouts)."""
+    text, method, lang, err = await _transcribe_upload(file, fast=True)
+    if err:
+        return {"error": err, "risk": "ERROR", "label": "error", "confidence": 0, "status": 400}
+    if not text or str(text).startswith("Error"):
+        err_msg = text or "No speech detected."
+        if str(err_msg).startswith("Error:"):
+            err_msg = str(err_msg)[6:].strip()
+        return {
+            "error": err_msg,
+            "risk": "ERROR",
+            "label": "error",
+            "confidence": 0,
+            "status": 400,
+        }
+    result = analyze_text(text, scan_links=False)
+    result["transcription"] = text
+    result["method"] = method
+    result["phone_number"] = phone
+    result["source"] = "call_guard"
+    if lang:
+        result["detected_language"] = lang
+    return result
+
+
 @app.post("/api/scan-audio")
 async def scan_audio(file: UploadFile = File(...)):
-    transcribed_text, method, detected_lang, err = await _transcribe_upload(file)
+    transcribed_text, method, detected_lang, err = await _transcribe_upload(file, fast=False)
     if err:
         return {
             "error": err,

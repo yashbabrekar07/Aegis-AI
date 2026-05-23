@@ -39,11 +39,18 @@ class ApiClient(private val baseUrl: String) {
         .writeTimeout(90, TimeUnit.SECONDS)
         .build()
 
-    /** Audio + Whisper on Render free tier can take several minutes on cold start. */
+    /** Call Guard: single upload + fast Google transcription on server. */
+    private val callGuardClient = OkHttpClient.Builder()
+        .connectTimeout(120, TimeUnit.SECONDS)
+        .readTimeout(600, TimeUnit.SECONDS)
+        .writeTimeout(600, TimeUnit.SECONDS)
+        .build()
+
+    /** Website audio upload — may use Whisper fallback (slower). */
     private val audioClient = OkHttpClient.Builder()
-        .connectTimeout(180, TimeUnit.SECONDS)
-        .readTimeout(300, TimeUnit.SECONDS)
-        .writeTimeout(300, TimeUnit.SECONDS)
+        .connectTimeout(120, TimeUnit.SECONDS)
+        .readTimeout(420, TimeUnit.SECONDS)
+        .writeTimeout(420, TimeUnit.SECONDS)
         .build()
 
     private val wakeClient = OkHttpClient.Builder()
@@ -70,21 +77,37 @@ class ApiClient(private val baseUrl: String) {
      */
     fun analyzeCallRecording(file: File, phone: String?): ScanResult {
         wakeBackend()
-        val transcriptResult = transcribeAudioWithRetry(file, maxAttempts = 2)
-        val text = transcriptResult.transcription?.trim().orEmpty()
-        if (text.isEmpty()) {
-            val err = humanizeAudioError(transcriptResult.error)
-            return ScanResult(
-                error = err,
-                transcription = null,
-                method = transcriptResult.method
-            )
+        var lastError: Exception? = null
+        repeat(2) { attempt ->
+            try {
+                return postCallGuardMultipart(file, phone)
+            } catch (e: Exception) {
+                lastError = e
+                if (attempt == 0 && isRetryable(e)) {
+                    Thread.sleep(5_000)
+                    wakeBackend()
+                }
+            }
         }
-        val analysis = analyzeVishingTranscript(text, phone)
-        return analysis.copy(
-            transcription = text,
-            method = transcriptResult.method ?: analysis.method
+        throw lastError ?: IOException("Call Guard analysis failed")
+    }
+
+    private fun postCallGuardMultipart(file: File, phone: String?): ScanResult {
+        val mime = if (file.name.endsWith(".wav", ignoreCase = true)) "audio/wav" else "audio/*"
+        val part = MultipartBody.Part.createFormData(
+            "file",
+            file.name,
+            file.asRequestBody(mime.toMediaType())
         )
+        val bodyBuilder = MultipartBody.Builder().setType(MultipartBody.FORM).addPart(part)
+        if (!phone.isNullOrBlank()) {
+            bodyBuilder.addFormDataPart("phone", phone)
+        }
+        val req = Request.Builder()
+            .url("$baseUrl/api/call-guard/analyze")
+            .post(bodyBuilder.build())
+            .build()
+        return executeScan(req, callGuardClient)
     }
 
     fun transcribeAudioWithRetry(file: File, maxAttempts: Int = 2): ScanResult {
@@ -223,7 +246,7 @@ class ApiClient(private val baseUrl: String) {
 
         fun friendlyError(e: Throwable): String {
             if (isRetryable(e)) {
-                return "Server took too long (Render may be waking up). Keep speakerphone on for short calls, or paste a transcript in Vishing."
+                return "Transcription timed out. Server may be busy — try a shorter call (under 1 min) with speakerphone on, or paste a transcript in Vishing."
             }
             return humanizeAudioError(e.message)
         }

@@ -64,6 +64,32 @@ def validate_audio_file(path: str) -> None:
             )
 
 
+def trim_wav_max_seconds(wav_path: str, max_seconds: int = 60) -> str:
+    """Keep first N seconds — Call Guard clips stay under Render/time limits."""
+    dur_ms = _wav_duration_ms(wav_path)
+    if dur_ms <= 0 or dur_ms <= max_seconds * 1000:
+        return wav_path
+    out_dir = tempfile.mkdtemp(prefix="aegis_trim_")
+    trimmed = os.path.join(out_dir, f"{uuid.uuid4().hex}.wav")
+    cmd = [
+        _ffmpeg_executable(),
+        "-y",
+        "-i",
+        wav_path,
+        "-t",
+        str(max_seconds),
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        trimmed,
+    ]
+    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+    if proc.returncode == 0 and os.path.isfile(trimmed) and os.path.getsize(trimmed) > MIN_AUDIO_BYTES:
+        return trimmed
+    return wav_path
+
+
 def convert_to_wav(input_path: str) -> str:
     ext = os.path.splitext(input_path)[1].lower().lstrip(".")
     if ext == "wav":
@@ -197,12 +223,14 @@ def _google_multilingual(wav_path: str) -> tuple[str, str]:
     return "", ""
 
 
-def process_audio(audio_file_path: str):
+def process_audio(audio_file_path: str, fast: bool = False):
     """
     Returns (transcript_text, method, detected_language).
+    fast=True: trim clip, Google Speech first (Call Guard / quick scans on Render free tier).
     """
     wav_path = None
     created_wav = False
+    trimmed_path = None
     whisper_error = ""
 
     try:
@@ -210,13 +238,35 @@ def process_audio(audio_file_path: str):
         wav_path = convert_to_wav(audio_file_path)
         created_wav = wav_path != audio_file_path
 
-        try:
-            text, method, lang = _whisper_transcribe(wav_path)
-            if text:
-                return text, method, lang
-        except Exception as e:
-            whisper_error = str(e)
+        if fast:
+            max_sec = int(os.getenv("CALL_GUARD_MAX_AUDIO_SEC", "60"))
+            trimmed_path = trim_wav_max_seconds(wav_path, max_sec)
+            work_path = trimmed_path
 
+            text, method = _google_multilingual(work_path)
+            if text:
+                return text, method, ""
+
+            allow_whisper = os.getenv("CALL_GUARD_WHISPER_FALLBACK", "0").lower() in (
+                "1",
+                "true",
+                "yes",
+            )
+            if allow_whisper:
+                try:
+                    text, method, lang = _whisper_transcribe(work_path)
+                    if text:
+                        return text, method, lang
+                except Exception as e:
+                    whisper_error = str(e)
+
+            return (
+                "Error: No speech detected in the call clip. Keep speakerphone on and talk for at least 5 seconds.",
+                "Error",
+                "",
+            )
+
+        # Standard path: Google first (faster), Whisper fallback (better for long/multilingual uploads)
         try:
             text, method = _google_multilingual(wav_path)
             if text:
@@ -229,8 +279,13 @@ def process_audio(audio_file_path: str):
                     "Error",
                     "",
                 )
-            combined = f"Whisper: {whisper_error}; Google: {sr_error}" if whisper_error else sr_error
-            return f"Error: Transcription failed ({combined}).", "Error", ""
+
+        try:
+            text, method, lang = _whisper_transcribe(wav_path)
+            if text:
+                return text, method, lang
+        except Exception as e:
+            whisper_error = str(e)
 
         return (
             "Error: No speech detected. Speak clearly for at least 3–5 seconds (speakerphone helps).",
@@ -238,14 +293,15 @@ def process_audio(audio_file_path: str):
             "",
         )
     finally:
-        if created_wav and wav_path and os.path.isfile(wav_path):
-            try:
-                os.remove(wav_path)
-                parent = os.path.dirname(wav_path)
-                if parent and os.path.isdir(parent) and "aegis_audio_" in parent:
-                    os.rmdir(parent)
-            except OSError:
-                pass
+        for path, is_temp in [(trimmed_path, True), (wav_path, created_wav)]:
+            if is_temp and path and os.path.isfile(path):
+                try:
+                    parent = os.path.dirname(path)
+                    os.remove(path)
+                    if parent and os.path.isdir(parent) and "aegis_" in parent:
+                        os.rmdir(parent)
+                except OSError:
+                    pass
 
 
 def save_uploaded_audio(uploaded_file):

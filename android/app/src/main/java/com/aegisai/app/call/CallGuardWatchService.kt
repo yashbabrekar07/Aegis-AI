@@ -84,6 +84,11 @@ class CallGuardWatchService : Service() {
             )
             return
         }
+        scope.launch {
+            try {
+                ApiClient(AegisApp.get(applicationContext).prefs.apiBaseUrl).wakeBackend()
+            } catch (_: Exception) { }
+        }
         promoteRecording()
     }
 
@@ -128,7 +133,7 @@ class CallGuardWatchService : Service() {
                 }
 
                 withContext(Dispatchers.Main) {
-                    promoteAnalyzing("Transcribing… (can take 1–3 min on first try)")
+                    promoteAnalyzing("Transcribing call… (usually 15–45 sec)")
                 }
                 val api = ApiClient(AegisApp.get(applicationContext).prefs.apiBaseUrl)
                 val result = api.analyzeCallRecording(file, phone)
