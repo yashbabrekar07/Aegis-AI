@@ -15,7 +15,15 @@
     <string name="login_signup_subtitle">Pick a username. We verify Gmail with a 6-digit code, then your mobile number.</string>
     <string name="scan_text">Scan text</string>
     <string name="scan_audio">Scan audio</string>
-    <string name="backend_url_hint">API URL (change for LAN testing)</string>
+    <string name="backend_url_hint">Backend API URL</string>
+    <string name="backend_url_help">Scans and Call Guard use this server. Default is set when the app is built; change only if you run your own backend.</string>
+    <string name="backend_save">Save API URL</string>
+    <string name="backend_reset">Reset to default</string>
+    <string name="backend_test">Test connection</string>
+    <string name="backend_connected">Connected to backend</string>
+    <string name="backend_unreachable">Cannot reach backend — check URL or wait for Render to wake up</string>
+    <string name="backend_url_invalid">Enter a valid URL starting with https:// or http://</string>
+    <string name="backend_url_saved">API URL saved</string>
     <string name="error_prefix">Error: %1$s</string>
     <string name="vishing_risk">Risk: %1$s</string>
     <string name="vishing_confidence">Confidence: %1$d%%</string>
