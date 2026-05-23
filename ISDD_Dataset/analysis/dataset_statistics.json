@@ -1,27 +1,27 @@
 {
-  "total": 8000,
-  "scam": 4000,
-  "legitimate": 4000,
+  "total": 4000,
+  "scam": 2000,
+  "legitimate": 2000,
   "by_language": {
-    "hindi": 2211,
-    "english": 2194,
-    "marathi": 1430,
-    "hinglish": 1365,
-    "tamil": 400,
-    "telugu": 400
+    "english": 1122,
+    "hindi": 1113,
+    "marathi": 700,
+    "hinglish": 683,
+    "tamil": 191,
+    "telugu": 191
   },
   "by_channel": {
-    "SMS": 3587,
-    "WHATSAPP": 2716,
-    "EMAIL": 1697
+    "SMS": 1829,
+    "WHATSAPP": 1370,
+    "EMAIL": 801
   },
   "by_scam_type": {
-    "UPI_FRAUD": 1438,
-    "KYC_FRAUD": 840,
-    "BANK_IMPERSONATION": 700,
-    "FAKE_JOB_OFFER": 560,
-    "LOTTERY_PRIZE_SCAM": 420,
-    "OTP_PASSWORD_THEFT": 42
+    "UPI_FRAUD": 719,
+    "KYC_FRAUD": 420,
+    "BANK_IMPERSONATION": 350,
+    "FAKE_JOB_OFFER": 280,
+    "LOTTERY_PRIZE_SCAM": 210,
+    "OTP_PASSWORD_THEFT": 21
   },
-  "generated_at": "2026-05-20T16:22:32.156226+00:00"
+  "generated_at": "2026-05-23T07:56:18.023706+00:00"
 }

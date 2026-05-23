@@ -45,6 +45,22 @@ FAKE_LINKS = [
 UPI_APPS = ["Google Pay", "PhonePe", "Paytm", "WhatsApp Pay", "BHIM UPI"]
 BANKS = ["ICICI", "HDFC", "SBI", "Axis", "Kotak"]
 
+# Short genuine messages — critical for avoiding false positives (names, greetings)
+SHORT_LEGIT_NAMES = [
+    "Ayush", "Yash", "Rahul", "Priya", "Ananya", "Vikram", "Neha", "Arjun", "Aditya",
+    "Sneha", "Kavya", "Rohan", "Isha", "Dev", "Meera", "Karan", "Pooja", "Amit",
+]
+SHORT_LEGIT_PHRASES = [
+    ("english", "Hi", "Hi", "Hi"),
+    ("english", "Hello", "Hello", "Hello"),
+    ("english", "Thanks", "Thanks", "Thanks"),
+    ("english", "OK see you", "OK see you", "OK see you"),
+    ("hindi", "नमस्ते", "Hello", "Namaste"),
+    ("hindi", "ठीक है", "OK", "Theek hai"),
+    ("marathi", "धन्यवाद", "Thank you", "Dhanyavaad"),
+    ("hinglish", "On my way bro", "On my way bro", "On my way"),
+]
+
 
 def _ts(offset_min: int = 0) -> str:
     base = datetime(2026, 5, 12, 10, 0, 0, tzinfo=timezone.utc)
@@ -407,6 +423,16 @@ def expand_templates() -> list[dict]:
         )
 
     # --- LEGITIMATE ---
+    for name in SHORT_LEGIT_NAMES:
+        for ch in ("SMS", "WHATSAPP"):
+            records.append(
+                _legit_record(next_id(ch), ch, "english", name, name, name)
+            )
+    for lang, orig, eng, rom in SHORT_LEGIT_PHRASES:
+        records.append(
+            _legit_record(next_id("WHATSAPP"), "WHATSAPP", lang, orig, eng, rom)
+        )
+
     legit_pool = [
         ("hindi", "नमस्ते, कल मीटिंग 2 बजे है। कृपया आ जाइए।", "Hi, meeting tomorrow at 2 PM. Please come.", "Namaste, kal meeting 2 baje hai."),
         ("marathi", "मी तुम्हाला संध्याकाळी भेटू. ठीक आहे का?", "I will meet you this evening. OK?", "Mi tumhala sandhyakali bhetu."),
@@ -419,7 +445,7 @@ def expand_templates() -> list[dict]:
         ("marathi", "तुझा प्रोजेक्ट मी पाहिला. छान आहे!", "I saw your project. It looks great!", "Tujha project changla aahe"),
         ("english", "OTP for login to your trading app is 839201. Do not share with anyone.", "OTP for login is 839201. Do not share.", "OTP 839201 do not share"),
     ]
-    for i in range(800):
+    for i in range(1500):
         lang, orig, eng, rom = legit_pool[i % len(legit_pool)]
         suffix = f" ({i % 50})" if i >= len(legit_pool) else ""
         records.append(

@@ -93,7 +93,9 @@ export default function Home() {
       }
       
       if (data.transcription) {
-        setInput(data.transcription);
+        const langNote = data.detected_language ? ` [${data.detected_language}]` : '';
+        const methodNote = data.method ? ` (${data.method})` : '';
+        setInput(`${data.transcription}${langNote}${methodNote}`);
       }
       setResult(data);
       

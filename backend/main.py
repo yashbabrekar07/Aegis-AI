@@ -13,6 +13,7 @@ from model import predict_text
 from utils import detect_scam_keywords, extract_links, flag_suspicious_links
 from speech import process_audio
 from audio_io import save_upload_async, cleanup_temp_dir
+from risk_engine import classify_risk
 
 app = FastAPI(title="Aegis AI Backend")
 
@@ -140,7 +141,10 @@ async def scan_audio(file: UploadFile = File(...)):
         import asyncio
 
         loop = asyncio.get_running_loop()
-        transcribed_text, method = await loop.run_in_executor(None, process_audio, temp_path)
+        audio_result = await loop.run_in_executor(None, process_audio, temp_path)
+        transcribed_text = audio_result[0]
+        method = audio_result[1] if len(audio_result) > 1 else ""
+        detected_lang = audio_result[2] if len(audio_result) > 2 else ""
     except ValueError as e:
         return {
             "error": str(e),
@@ -175,6 +179,8 @@ async def scan_audio(file: UploadFile = File(...)):
             }
         result["transcription"] = transcribed_text
         result["method"] = method
+        if detected_lang:
+            result["detected_language"] = detected_lang
         return result
 
     err_msg = transcribed_text or "No speech detected in audio."
@@ -201,38 +207,30 @@ def analyze_text(text: str, scan_links=False):
         return {"error": "Could not process text", "risk": "ERROR", "label": "error", "confidence": 0}
 
     prediction_label, confidence = predict_text(english_text)
-    
-    # 2. Keyword detection
     detected_keywords = detect_scam_keywords(english_text)
-    
-    # 3. Link Extraction
+
     suspicious_links = []
-    all_links = []
     if scan_links:
         all_links = extract_links(english_text)
         suspicious_links = flag_suspicious_links(all_links)
-        
-    # Determine Risk Status
-    final_status = "SAFE"
-    reason = "No malicious patterns or external links detected. Message appears genuine."
-    
-    if prediction_label == "phishing" or len(detected_keywords) > 2 or (scan_links and len(suspicious_links) > 0):
-        final_status = "SCAM"
-        reason = "Multiple high-risk fraud signatures identified including predatory phrasing or malicious links."
-    elif len(detected_keywords) > 0 or prediction_label == "phishing":
-        final_status = "SUSPICIOUS"
-        reason = "Some suspicious urgency or keywords detected. Exercise high caution."
-    elif confidence < 60:
-        final_status = "SUSPICIOUS"
-        reason = "AI confidence is low or slightly alarming phrasing detected."
-        
+
+    final_status, reason, display_label = classify_risk(
+        prediction_label,
+        confidence,
+        detected_keywords,
+        suspicious_links,
+        scan_links,
+        text,
+        english_text,
+    )
+
     return {
-        "label": prediction_label,
+        "label": display_label,
         "risk": final_status,
-        "confidence": confidence / 100.0, # Normalizing max 1.0 for frontend UI
+        "confidence": confidence / 100.0,
         "reason": reason,
         "detected_keywords": detected_keywords,
         "suspicious_links": suspicious_links,
         "is_translated": is_translated,
-        "english_text": english_text
+        "english_text": english_text,
     }

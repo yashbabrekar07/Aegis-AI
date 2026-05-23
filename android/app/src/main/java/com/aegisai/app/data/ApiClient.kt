@@ -70,10 +70,17 @@ class ApiClient(private val baseUrl: String) {
         var lastError: Exception? = null
         repeat(maxAttempts) { attempt ->
             try {
+                val mime = when {
+                    file.name.endsWith(".m4a", ignoreCase = true) -> "audio/mp4"
+                    file.name.endsWith(".wav", ignoreCase = true) -> "audio/wav"
+                    file.name.endsWith(".mp3", ignoreCase = true) -> "audio/mpeg"
+                    file.name.endsWith(".ogg", ignoreCase = true) -> "audio/ogg"
+                    else -> "audio/*"
+                }
                 val part = MultipartBody.Part.createFormData(
                     "file",
                     file.name,
-                    file.asRequestBody("audio/*".toMediaType())
+                    file.asRequestBody(mime.toMediaType())
                 )
                 val body = MultipartBody.Builder().setType(MultipartBody.FORM).addPart(part).build()
                 val req = Request.Builder().url("$baseUrl/api/scan-audio").post(body).build()
