@@ -18,7 +18,13 @@ from pathlib import Path
 
 import pandas as pd
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+# Docker: /app/scripts/this.py -> /app ; Dev: repo/scripts/this.py -> repo
+_script = Path(__file__).resolve()
+_candidate = _script.parent.parent
+if (_candidate / "main.py").is_file() or (_candidate / "ISDD_Dataset").is_dir():
+    REPO_ROOT = _candidate
+else:
+    REPO_ROOT = _script.parents[1]
 ISDD_ROOT = REPO_ROOT / "ISDD_Dataset"
 
 SCAM_TYPES = [

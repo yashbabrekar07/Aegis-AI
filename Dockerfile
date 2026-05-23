@@ -15,15 +15,24 @@ RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/wh
 
 COPY backend/ .
 COPY scripts/ /app/scripts/
-# ISDD v1.0 training (legacy dataset.csv.enc kept for DATASET_SOURCE=legacy)
-RUN python /app/scripts/generate_isdd_dataset.py --total 4000 \
-    && DATASET_SOURCE=isdd python -c "from model import train_model; train_model()"
+COPY ISDD_Dataset/ /app/ISDD_Dataset/
+
+ENV AEGIS_REPO_ROOT=/app
+ENV DATASET_SOURCE=isdd
+ENV WHISPER_MODEL=tiny
+ENV PYTHONUNBUFFERED=1
+
+# Use committed ISDD CSVs when present; otherwise generate (dev/CI fallback)
+RUN if [ ! -f /app/ISDD_Dataset/processed/ISDD_train_split.csv ]; then \
+      python /app/scripts/generate_isdd_dataset.py --total 4000; \
+    else \
+      echo "Using pre-built ISDD processed splits from repo"; \
+    fi
+
+RUN python -c "from model import train_model; train_model()"
 
 COPY scripts/render-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-
-ENV WHISPER_MODEL=tiny
-ENV PYTHONUNBUFFERED=1
 
 EXPOSE 8000
 CMD ["/entrypoint.sh"]

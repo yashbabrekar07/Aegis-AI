@@ -2,15 +2,13 @@
 Load ISDD (Indian Scam Detection Dataset) for model training.
 Legacy Kaggle SMS dataset remains in model.py — use DATASET_SOURCE=isdd to train on ISDD.
 """
-import os
 from io import StringIO
-from pathlib import Path
 
 import pandas as pd
 
-# Repo root: backend/ -> parent
-REPO_ROOT = Path(__file__).resolve().parents[1]
-ISDD_PROCESSED = REPO_ROOT / "ISDD_Dataset" / "processed"
+from paths import isdd_processed_dir
+
+ISDD_PROCESSED = isdd_processed_dir()
 ISDD_COMBINED = ISDD_PROCESSED / "ISDD_combined_v1.0.csv"
 ISDD_TRAIN = ISDD_PROCESSED / "ISDD_train_split.csv"
 
