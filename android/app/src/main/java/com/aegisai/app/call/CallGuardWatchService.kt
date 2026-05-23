@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.app.Service
 import android.content.Intent
 import android.content.pm.ServiceInfo
+import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import android.os.Build
 import android.os.IBinder
@@ -31,6 +32,7 @@ class CallGuardWatchService : Service() {
     private var currentPhone: String? = null
     private var isAnalyzing = false
     private var previousAudioMode: Int = AudioManager.MODE_NORMAL
+    private var previousSpeakerphoneState: Boolean = false
 
     override fun onCreate() {
         super.onCreate()
@@ -40,6 +42,7 @@ class CallGuardWatchService : Service() {
     override fun onDestroy() {
         CallGuardState.watchServiceRunning = false
         callRecorder.stop()
+        restoreAudioSettings()
         super.onDestroy()
     }
 
@@ -77,11 +80,7 @@ class CallGuardWatchService : Service() {
         if (isAnalyzing || callRecorder.isActive) return
 
         currentPhone = intent.getStringExtra(EXTRA_PHONE) ?: CallGuardState.lastCaller
-        try {
-            val am = getSystemService(AUDIO_SERVICE) as AudioManager
-            previousAudioMode = am.mode
-            am.mode = AudioManager.MODE_IN_COMMUNICATION
-        } catch (_: Exception) { }
+        enableSpeakerphone()
         val file = callRecorder.start()
         if (file == null) {
             CallAnalysisNotifier.showError(
@@ -110,10 +109,7 @@ class CallGuardWatchService : Service() {
         val file = callRecorder.stop()
         val durationMs = callRecorder.recordedDurationMs()
         val peak = callRecorder.peakLevel()
-        try {
-            val am = getSystemService(AUDIO_SERVICE) as AudioManager
-            am.mode = previousAudioMode
-        } catch (_: Exception) { }
+        restoreAudioSettings()
         promoteIdle()
 
         scope.launch {
@@ -214,8 +210,51 @@ class CallGuardWatchService : Service() {
 
     private fun stopGuard() {
         callRecorder.stop()
+        restoreAudioSettings()
         stopForeground(STOP_FOREGROUND_REMOVE)
         stopSelf()
+    }
+
+    private fun enableSpeakerphone() {
+        try {
+            val am = getSystemService(AUDIO_SERVICE) as AudioManager
+            previousAudioMode = am.mode
+            
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                val devices = am.availableCommunicationDevices
+                val speakerDevice = devices.find { it.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER }
+                if (speakerDevice != null) {
+                    am.mode = AudioManager.MODE_IN_COMMUNICATION
+                    am.setCommunicationDevice(speakerDevice)
+                } else {
+                    am.mode = AudioManager.MODE_IN_COMMUNICATION
+                    @Suppress("DEPRECATION")
+                    am.isSpeakerphoneOn = true
+                }
+            } else {
+                previousSpeakerphoneState = am.isSpeakerphoneOn
+                am.mode = AudioManager.MODE_IN_COMMUNICATION
+                @Suppress("DEPRECATION")
+                am.isSpeakerphoneOn = true
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to enable speakerphone", e)
+        }
+    }
+
+    private fun restoreAudioSettings() {
+        try {
+            val am = getSystemService(AUDIO_SERVICE) as AudioManager
+            am.mode = previousAudioMode
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                am.clearCommunicationDevice()
+            } else {
+                @Suppress("DEPRECATION")
+                am.isSpeakerphoneOn = previousSpeakerphoneState
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to restore audio settings", e)
+        }
     }
 
     private fun buildNotification(title: String, text: String): Notification {
