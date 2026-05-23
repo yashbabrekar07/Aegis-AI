@@ -16,3 +16,6 @@ services:
         sync: false
       - key: ALLOWED_ORIGINS
         sync: false
+      # Optional: host phishing_model.pkl elsewhere (GitHub release, S3) if not using Docker-built model
+      - key: PHISHING_MODEL_URL
+        sync: false

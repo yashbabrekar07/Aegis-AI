@@ -129,7 +129,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun signUpEmail() {
         val username = binding.usernameInput.text?.toString()?.trim().orEmpty()
-        val email = binding.emailInput.text?.toString()?.trim().lowercase().orEmpty()
+        val email = binding.emailInput.text?.toString()?.trim().orEmpty().lowercase()
         val password = binding.passwordInput.text?.toString().orEmpty()
         val confirm = binding.confirmPasswordInput.text?.toString().orEmpty()
 

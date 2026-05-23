@@ -34,7 +34,7 @@ class VerifyPhoneActivity : AppCompatActivity() {
 
         binding.sendOtpBtn.setOnClickListener { sendOtp() }
         binding.verifyPhoneBtn.setOnClickListener { verifyOtp() }
-        binding.skipPhoneBtn.setOnClickListener { goMain() }
+        binding.skipPhoneBtn.setOnClickListener { skipAndGoMain() }
     }
 
     private fun normalizePhone(raw: String): String {
@@ -97,6 +97,7 @@ class VerifyPhoneActivity : AppCompatActivity() {
                 }
                 prefs.phone = phone
                 prefs.phoneVerified = true
+                prefs.phoneVerificationSkipped = false
                 Toast.makeText(this@VerifyPhoneActivity, "Mobile verified", Toast.LENGTH_SHORT).show()
                 goMain()
             } catch (e: Exception) {
@@ -107,8 +108,17 @@ class VerifyPhoneActivity : AppCompatActivity() {
         }
     }
 
+    private fun skipAndGoMain() {
+        prefs.phoneVerificationSkipped = true
+        Toast.makeText(this, "You can verify your number later in Profile", Toast.LENGTH_SHORT).show()
+        goMain()
+    }
+
     private fun goMain() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(
+            Intent(this, MainActivity::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+        )
         AnimUtil.activityOpen(this)
         finish()
     }

@@ -38,7 +38,11 @@ class VerifyEmailActivity : AppCompatActivity() {
         lifecycleScope.launch {
             try {
                 binding.verifyBtn.isEnabled = false
-                app.supabase.auth.verifyEmailOtp(OtpType.Email, email, token)
+                app.supabase.auth.verifyEmailOtp(
+                    type = OtpType.Email.SIGNUP,
+                    email = email,
+                    token = token
+                )
                 val session = app.supabase.auth.currentSessionOrNull()
                 app.prefs.accessToken = session?.accessToken
                 app.prefs.refreshToken = session?.refreshToken
@@ -58,7 +62,7 @@ class VerifyEmailActivity : AppCompatActivity() {
     private fun resend() {
         lifecycleScope.launch {
             try {
-                app.supabase.auth.resendEmail(OtpType.Email, email)
+                app.supabase.auth.resendEmail(OtpType.Email.SIGNUP, email)
                 Toast.makeText(this@VerifyEmailActivity, "Code resent", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
                 Toast.makeText(this@VerifyEmailActivity, e.message ?: "Could not resend", Toast.LENGTH_LONG).show()

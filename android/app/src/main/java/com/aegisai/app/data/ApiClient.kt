@@ -10,6 +10,8 @@ import okhttp3.Request
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.File
+import java.io.IOException
+import java.net.SocketTimeoutException
 import java.util.concurrent.TimeUnit
 
 @JsonClass(generateAdapter = true)
@@ -32,9 +34,21 @@ data class OtpResponse(val ok: Boolean = false, val message: String? = null, val
 
 class ApiClient(private val baseUrl: String) {
     private val client = OkHttpClient.Builder()
-        .connectTimeout(120, TimeUnit.SECONDS)
-        .readTimeout(120, TimeUnit.SECONDS)
-        .writeTimeout(120, TimeUnit.SECONDS)
+        .connectTimeout(60, TimeUnit.SECONDS)
+        .readTimeout(90, TimeUnit.SECONDS)
+        .writeTimeout(90, TimeUnit.SECONDS)
+        .build()
+
+    /** Audio + Whisper on Render free tier can take several minutes on cold start. */
+    private val audioClient = OkHttpClient.Builder()
+        .connectTimeout(180, TimeUnit.SECONDS)
+        .readTimeout(300, TimeUnit.SECONDS)
+        .writeTimeout(300, TimeUnit.SECONDS)
+        .build()
+
+    private val wakeClient = OkHttpClient.Builder()
+        .connectTimeout(45, TimeUnit.SECONDS)
+        .readTimeout(45, TimeUnit.SECONDS)
         .build()
 
     private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
@@ -46,18 +60,33 @@ class ApiClient(private val baseUrl: String) {
     fun scanText(text: String): ScanResult {
         val body = org.json.JSONObject().put("text", text).toString().toRequestBody(jsonType)
         val req = Request.Builder().url("$baseUrl/api/scan").post(body).build()
-        return executeScan(req)
+        return executeScan(req, client)
     }
 
-    fun scanAudio(file: File): ScanResult {
-        val part = MultipartBody.Part.createFormData(
-            "file",
-            file.name,
-            file.asRequestBody("audio/*".toMediaType())
-        )
-        val body = MultipartBody.Builder().setType(MultipartBody.FORM).addPart(part).build()
-        val req = Request.Builder().url("$baseUrl/api/scan-audio").post(body).build()
-        return executeScan(req)
+    fun scanAudio(file: File): ScanResult = scanAudioWithRetry(file, maxAttempts = 2)
+
+    fun scanAudioWithRetry(file: File, maxAttempts: Int = 2): ScanResult {
+        wakeBackend()
+        var lastError: Exception? = null
+        repeat(maxAttempts) { attempt ->
+            try {
+                val part = MultipartBody.Part.createFormData(
+                    "file",
+                    file.name,
+                    file.asRequestBody("audio/*".toMediaType())
+                )
+                val body = MultipartBody.Builder().setType(MultipartBody.FORM).addPart(part).build()
+                val req = Request.Builder().url("$baseUrl/api/scan-audio").post(body).build()
+                return executeScan(req, audioClient)
+            } catch (e: Exception) {
+                lastError = e
+                if (attempt < maxAttempts - 1 && isRetryable(e)) {
+                    Thread.sleep(4_000)
+                    wakeBackend()
+                }
+            }
+        }
+        throw lastError ?: IOException("Audio scan failed")
     }
 
     fun analyzeVishingTranscript(transcript: String, phone: String?): ScanResult {
@@ -68,7 +97,7 @@ class ApiClient(private val baseUrl: String) {
             .url("$baseUrl/api/vishing/analyze-transcript")
             .post(payload.toRequestBody(jsonType))
             .build()
-        return executeScan(req)
+        return executeScan(req, client)
     }
 
     fun fetchProfile(email: String, phone: String? = null): ProfileResponse? {
@@ -108,23 +137,41 @@ class ApiClient(private val baseUrl: String) {
         }
     }
 
-    fun healthCheck(): Boolean {
+    /** Ping Render so the next scan-audio request is less likely to cold-start timeout. */
+    fun wakeBackend(): Boolean {
         val req = Request.Builder().url("$baseUrl/").get().build()
         return try {
-            client.newCall(req).execute().use { it.isSuccessful }
+            wakeClient.newCall(req).execute().use { it.isSuccessful }
         } catch (_: Exception) {
             false
         }
     }
 
-    private fun executeScan(req: Request): ScanResult {
-        client.newCall(req).execute().use { resp ->
+    fun healthCheck(): Boolean = wakeBackend()
+
+    private fun executeScan(req: Request, http: OkHttpClient): ScanResult {
+        http.newCall(req).execute().use { resp ->
             val json = resp.body?.string() ?: "{}"
             val parsed = scanAdapter.fromJson(json) ?: ScanResult(error = "Invalid response")
             if (!resp.isSuccessful && parsed.error == null) {
                 return parsed.copy(error = "HTTP ${resp.code}")
             }
             return parsed
+        }
+    }
+
+    companion object {
+        fun isRetryable(e: Throwable): Boolean {
+            if (e is SocketTimeoutException) return true
+            val msg = e.message?.lowercase().orEmpty()
+            return msg.contains("timeout") || msg.contains("timed out")
+        }
+
+        fun friendlyError(e: Throwable): String {
+            if (isRetryable(e)) {
+                return "Server took too long (Render may be waking up). Keep speakerphone on for short calls, or paste a transcript in Vishing."
+            }
+            return e.message ?: "Analysis failed — check internet and backend."
         }
     }
 }
