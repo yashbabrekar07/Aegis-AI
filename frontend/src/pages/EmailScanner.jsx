@@ -1,50 +1,59 @@
 import { useState, useEffect } from 'react';
-import { Mail, ShieldAlert, CheckCircle, AlertTriangle, RefreshCw, ChevronDown, ChevronUp, Link as LinkIcon, Key } from 'lucide-react';
+import { Mail, ShieldAlert, CheckCircle, AlertTriangle, RefreshCw, ChevronDown, ChevronUp, Link as LinkIcon, Key, Lock, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { apiUrl } from '../lib/api';
 
-const MOCK_DATASET = [
-  {
-    "from": "bank-support@gmail.com",
-    "subject": "Urgent: Verify your account",
-    "body": "Your bank account will be blocked. Click here to verify immediately: http://fake-bank-login.com"
-  },
-  {
-    "from": "friend@gmail.com",
-    "subject": "Meeting tomorrow",
-    "body": "Hey, are we still meeting tomorrow at 10?"
-  },
-  {
-    "from": "lottery@win.com",
-    "subject": "Congratulations! You won",
-    "body": "You have won ₹10,000 lottery. Claim now: http://bit.ly/win-money"
-  },
-  {
-    "from": "hr@company.com",
-    "subject": "Job Offer",
-    "body": "We are pleased to offer you a job. Please review the attached details."
-  },
-  {
-    "from": "kyc-update@bank.com",
-    "subject": "KYC Update Required",
-    "body": "Update your KYC immediately or your account will be suspended. Visit http://secure-bank-update.com"
-  }
-];
+
 
 export default function EmailScanner() {
   const [emails, setEmails] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   const [expandedId, setExpandedId] = useState(null);
 
+  // Real Gmail Sync States
+  const [gmailAddress, setGmailAddress] = useState(() => localStorage.getItem('aegis_gmail_address') || '');
+  const [appPassword, setAppPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [syncError, setSyncError] = useState(null);
+
   const fetchEmails = () => {
+    handleRealGmailFetch();
+  };
+
+  const handleRealGmailFetch = async () => {
+    if (!gmailAddress || !appPassword) {
+      setSyncError("Gmail address and App Password are required.");
+      return;
+    }
+
     setIsFetching(true);
+    setSyncError(null);
     setEmails([]);
-    
-    // Simulate initial loading from 'inbox'
-    setTimeout(() => {
-      const initialized = MOCK_DATASET.map((e, idx) => ({ ...e, id: idx, status: 'PENDING', result: null }));
-      setEmails(initialized);
+
+    try {
+      const response = await fetch(apiUrl('/api/gmail/fetch'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: gmailAddress, app_password: appPassword })
+      });
+
+      const data = await response.json();
+
+      if (data.error) {
+        setSyncError(data.error);
+        setIsFetching(false);
+      } else if (data.emails) {
+        localStorage.setItem('aegis_gmail_address', gmailAddress);
+        setEmails(data.emails);
+        setIsFetching(false);
+      } else {
+        setSyncError("Failed to fetch emails. Unknown error occurred.");
+        setIsFetching(false);
+      }
+    } catch (err) {
+      console.error(err);
+      setSyncError("Could not connect to the backend server. Make sure the backend server is running.");
       setIsFetching(false);
-    }, 1000);
+    }
   };
 
   useEffect(() => {
@@ -55,7 +64,7 @@ export default function EmailScanner() {
 
       // Update state to scanning
       setEmails(prev => prev.map(e => e.id === pendingEmail.id ? { ...e, status: 'SCANNING' } : e));
-      
+
       // Artificial delay so the user can visually see the AI "thinking" 
       await new Promise(r => setTimeout(r, 800));
 
@@ -67,14 +76,14 @@ export default function EmailScanner() {
           body: JSON.stringify({ text: payload })
         });
         const data = await response.json();
-        
+
         setEmails(prev => prev.map(e => e.id === pendingEmail.id ? { ...e, status: 'DONE', result: data } : e));
       } catch (err) {
         console.error("Scan error:", err);
         setEmails(prev => prev.map(e => e.id === pendingEmail.id ? { ...e, status: 'ERROR', result: { risk: "ERROR", reason: "Backend connection failed" } } : e));
       }
     };
-    
+
     scanNext();
   }, [emails]);
 
@@ -84,126 +93,232 @@ export default function EmailScanner() {
 
   return (
     <div className="animate-slide-up">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px' }}>
+      {/* Page Header */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '30px', flexWrap: 'wrap', gap: '20px' }}>
         <div>
           <h1 style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <Mail size={32} color="#3b82f6" /> Simulated Email Fetching
+            <Mail size={32} color="#FF6B00" /> Inbox Sandbox
           </h1>
-          <p>Mock inbox integrated with our TF-IDF + Naive Bayes ML model.</p>
+          <p style={{ color: 'var(--text-muted)' }}>Scan your emails with Aegis AI NLP engines to flag phishing attempts and scams instantly.</p>
         </div>
-        
-        <button className="btn btn-primary" onClick={fetchEmails} disabled={isFetching} style={{ width: 'auto', padding: '12px 24px' }}>
-          <RefreshCw size={18} className={isFetching ? "animate-spin" : ""} />
-          {isFetching ? "Syncing..." : "Fetch Emails"}
-        </button>
-      </div>
 
-      <div className="card" style={{ padding: '0', overflow: 'hidden' }}>
-        {emails.length === 0 ? (
-          <div style={{ padding: '60px', textAlign: 'center', color: 'var(--text-muted)' }}>
-            <Mail size={48} style={{ opacity: 0.2, marginBottom: '16px' }} />
-            <h3>Inbox Empty</h3>
-            <p>Click "Fetch Emails" to load the dataset and begin automatic ML analysis.</p>
-          </div>
-        ) : (
-          <div>
-            {emails.map((email) => (
-              <div key={email.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', transition: 'all 0.3s ease' }}>
-                {/* Header Row */}
-                <div 
-                  onClick={() => toggleExpand(email.id)}
-                  style={{ 
-                    padding: '24px', display: 'flex', alignItems: 'center', gap: '20px', 
-                    cursor: 'pointer', background: expandedId === email.id ? 'rgba(255,255,255,0.02)' : 'transparent' 
-                  }}
-                  className="list-item"
-                >
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '4px' }}>From: {email.from}</div>
-                    <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-main)' }}>{email.subject}</div>
-                  </div>
-                  
-                  <div style={{ width: '150px', display: 'flex', justifyContent: 'center' }}>
-                    {email.status === 'PENDING' && <span className="badge" style={{ background: '#334155', color: '#94a3b8' }}>Queued</span>}
-                    {email.status === 'SCANNING' && <span className="badge animate-pulse-glow" style={{ background: 'rgba(59, 130, 246, 0.2)', color: '#60a5fa' }}>Analyzing...</span>}
-                    {email.status === 'DONE' && (
-                      <span className={`badge ${email.result?.risk === 'SAFE' ? 'safe' : email.result?.risk === 'SCAM' ? 'scam' : 'suspicious'}`}>
-                         {email.result?.risk}
-                      </span>
-                    )}
-                  </div>
-                  
-                  <div style={{ color: 'var(--text-muted)' }}>
-                     {expandedId === email.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                  </div>
-                </div>
-
-                {/* Expanded Detail View */}
-                {expandedId === email.id && (
-                  <div style={{ padding: '0 24px 24px', borderTop: '1px solid rgba(255,255,255,0.02)' }}>
-                    <div style={{ padding: '20px', background: '#0f172a', borderRadius: '12px', marginTop: '16px', fontSize: '15px', lineHeight: '1.6' }}>
-                      {email.body}
-                    </div>
-                    
-                    {email.status === 'DONE' && email.result && (
-                      <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
-                        <div>
-                          <div style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)', marginBottom: '12px', fontWeight: 600 }}>ML Classification</div>
-                          <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                            {email.result.risk === 'SAFE' ? <CheckCircle size={32} color="var(--safe-green)" /> : 
-                             email.result.risk === 'SCAM' ? <ShieldAlert size={32} color="var(--scam-red)" /> : 
-                             <AlertTriangle size={32} color="#FF9500" />}
-                             <div>
-                               <strong style={{ color: email.result.risk === 'SAFE' ? 'var(--safe-green)' : email.result.risk === 'SCAM' ? 'var(--scam-red)' : '#FF9500' }}>
-                                 Risk Level: {email.result.risk}
-                               </strong>
-                               <p style={{ marginTop: '4px', fontSize: '14px' }}>{email.result.reason}</p>
-                             </div>
-                          </div>
-                        </div>
-                        
-                        <div>
-                          <div style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)', marginBottom: '12px', fontWeight: 600 }}>Detected Signatures</div>
-                          
-                          {email.result.detected_keywords?.length > 0 && (
-                            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
-                              <Key size={16} color="var(--warning-yellow)" />
-                              <span style={{ fontSize: '14px', color: 'var(--text-muted)' }}>Suspicious Keywords:</span>
-                              <div style={{ display: 'flex', gap: '6px' }}>
-                                {email.result.detected_keywords.map(kw => (
-                                  <span key={kw} style={{ background: 'rgba(245, 158, 11, 0.1)', color: 'var(--warning-yellow)', padding: '2px 8px', borderRadius: '10px', fontSize: '12px' }}>{kw}</span>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-
-                          {email.result.suspicious_links?.length > 0 ? (
-                            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                              <LinkIcon size={16} color="var(--scam-red)" />
-                              <span style={{ fontSize: '14px', color: 'var(--scam-red)' }}>Malicious Link Found: {email.result.suspicious_links[0]}</span>
-                            </div>
-                          ) : (
-                            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                              <LinkIcon size={16} color="var(--safe-green)" />
-                              <span style={{ fontSize: '14px', color: 'var(--text-muted)' }}>No malicious links detected.</span>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+        {/* Only show refresh button if we already have emails loaded */}
+        {emails.length > 0 && (
+          <button className="btn btn-primary" onClick={fetchEmails} disabled={isFetching} style={{ width: 'auto', padding: '12px 24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <RefreshCw size={18} className={isFetching ? "animate-spin" : ""} />
+            {isFetching ? "Syncing..." : "Resync Gmail"}
+          </button>
         )}
       </div>
-      
+
+
+
+      {/* Main Content Area */}
+      {emails.length === 0 ? (
+        /* Real Gmail Login Form */
+        <div className="card" style={{ maxWidth: '600px', margin: '0 auto', padding: '32px', textAlign: 'left', background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px' }}>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '24px' }}>
+            <div style={{ background: 'rgba(255, 107, 0, 0.1)', padding: '12px', borderRadius: '12px', color: '#FF6B00', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <Lock size={28} />
+            </div>
+            <div>
+              <h3 style={{ fontSize: '18px', fontWeight: 600, margin: 0, color: 'var(--text-main)' }}>Secure Gmail Connection</h3>
+              <p style={{ fontSize: '13px', color: 'var(--text-muted)', margin: '4px 0 0' }}>Connect your personal Gmail inbox to run real-time local scam checks.</p>
+            </div>
+          </div>
+
+          {syncError && (
+            <div style={{ background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.2)', padding: '12px 16px', borderRadius: '8px', color: '#f87171', fontSize: '14px', marginBottom: '20px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+              <ShieldAlert size={18} style={{ flexShrink: 0 }} />
+              <span>{syncError}</span>
+            </div>
+          )}
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <div>
+              <label style={{ display: 'block', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.75px', color: 'var(--text-muted)', marginBottom: '8px' }}>Gmail Address</label>
+              <input
+                type="email"
+                placeholder="your.email@gmail.com"
+                value={gmailAddress}
+                onChange={(e) => setGmailAddress(e.target.value)}
+                style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '14px', outline: 'none' }}
+              />
+            </div>
+
+            <div>
+              <label style={{ display: 'block', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.75px', color: 'var(--text-muted)', marginBottom: '8px' }}>Google App Password</label>
+              <div style={{ position: 'relative' }}>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="xxxx xxxx xxxx xxxx"
+                  value={appPassword}
+                  onChange={(e) => setAppPassword(e.target.value)}
+                  style={{ width: '100%', padding: '12px 48px 12px 16px', borderRadius: '8px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '14px', letterSpacing: showPassword ? 'normal' : '4px', outline: 'none' }}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '4px', display: 'flex', alignItems: 'center' }}
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '12px', padding: '16px', marginTop: '4px' }}>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px', color: '#FF6B00', fontWeight: 600, fontSize: '13px' }}>
+                <HelpCircle size={16} /> How do I get a Google App Password?
+              </div>
+              <ol style={{ margin: 0, paddingLeft: '20px', fontSize: '12.5px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
+                <li>Go to your <a href="https://myaccount.google.com/" target="_blank" rel="noreferrer" style={{ color: '#FF6B00', textDecoration: 'underline' }}>Google Account settings</a>.</li>
+                <li>Enable <strong>2-Step Verification</strong> under the Security section.</li>
+                <li>Search for <strong>"App passwords"</strong> in the search bar.</li>
+                <li>Create a password: select <em>Other</em>, name it <em>Aegis AI</em>.</li>
+                <li>Copy the <strong>16-character code</strong> and paste it above!</li>
+              </ol>
+            </div>
+
+            <button
+              onClick={handleRealGmailFetch}
+              disabled={isFetching || !gmailAddress || !appPassword}
+              className="btn btn-primary"
+              style={{ width: '100%', padding: '14px', borderRadius: '8px', marginTop: '8px', fontWeight: 600, fontSize: '15px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}
+            >
+              {isFetching ? <RefreshCw size={18} className="animate-spin" /> : "Connect & Scan Gmail Inbox"}
+            </button>
+          </div>
+        </div>
+      ) : (
+        /* Email List Card */
+        <div className="card" style={{ padding: '0', overflow: 'hidden' }}>
+          {emails.length === 0 ? (
+            <div style={{ padding: '80px 40px', textAlign: 'center', color: 'var(--text-muted)' }}>
+              <Mail size={48} style={{ opacity: 0.2, marginBottom: '16px' }} />
+              <h3>Inbox Empty</h3>
+              <p>Click "Fetch Emails" to load the dataset and begin automatic ML analysis.</p>
+            </div>
+          ) : (
+            <div>
+              {/* Dynamic stats bar in premium aesthetics */}
+              <div style={{ padding: '16px 24px', background: 'rgba(255,255,255,0.02)', borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '13px', color: 'var(--text-muted)' }}>
+                <span>Loaded {emails.length} emails from {gmailAddress}</span>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  Status:
+                  <span style={{
+                    display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%',
+                    background: emails.some(e => e.status !== 'DONE') ? 'var(--accent-primary)' : 'var(--safe-green)',
+                    boxShadow: emails.some(e => e.status !== 'DONE') ? '0 0 8px var(--accent-primary)' : '0 0 8px var(--safe-green)'
+                  }} />
+                  {emails.some(e => e.status !== 'DONE') ? 'Scanning...' : 'All Scanned'}
+                </span>
+              </div>
+
+              {emails.map((email) => (
+                <div key={email.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', transition: 'all 0.3s ease' }}>
+                  {/* Header Row */}
+                  <div
+                    onClick={() => toggleExpand(email.id)}
+                    style={{
+                      padding: '24px', display: 'flex', alignItems: 'center', gap: '20px',
+                      cursor: 'pointer', background: expandedId === email.id ? 'rgba(255,255,255,0.02)' : 'transparent'
+                    }}
+                    className="list-item"
+                  >
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '4px', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>From: {email.from}</div>
+                      <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-main)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{email.subject}</div>
+                    </div>
+
+                    <div style={{ width: '150px', display: 'flex', justifyContent: 'center', flexShrink: 0 }}>
+                      {email.status === 'PENDING' && <span className="badge" style={{ background: '#334155', color: '#94a3b8' }}>Queued</span>}
+                      {email.status === 'SCANNING' && <span className="badge animate-pulse-glow" style={{ background: 'rgba(59, 130, 246, 0.2)', color: '#60a5fa' }}>Analyzing...</span>}
+                      {email.status === 'DONE' && (
+                        <span className={`badge ${email.result?.risk === 'SAFE' ? 'safe' : email.result?.risk === 'SCAM' ? 'scam' : 'suspicious'}`}>
+                          {email.result?.risk}
+                        </span>
+                      )}
+                    </div>
+
+                    <div style={{ color: 'var(--text-muted)', flexShrink: 0 }}>
+                      {expandedId === email.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    </div>
+                  </div>
+
+                  {/* Expanded Detail View */}
+                  {expandedId === email.id && (
+                    <div style={{ padding: '0 24px 24px', borderTop: '1px solid rgba(255,255,255,0.02)' }}>
+                      <div style={{ padding: '20px', background: '#0f172a', borderRadius: '12px', marginTop: '16px', fontSize: '15px', lineHeight: '1.6', wordBreak: 'break-word', color: 'rgba(255, 255, 255, 0.85)' }}>
+                        {email.body}
+                      </div>
+
+                      {email.status === 'DONE' && email.result && (
+                        <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
+                          <div>
+                            <div style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)', marginBottom: '12px', fontWeight: 600 }}>Aegis Model Classification</div>
+                            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                              {email.result.risk === 'SAFE' ? <CheckCircle size={32} color="var(--safe-green)" /> :
+                                email.result.risk === 'SCAM' ? <ShieldAlert size={32} color="var(--scam-red)" /> :
+                                  <AlertTriangle size={32} color="#FF9500" />}
+                              <div>
+                                <strong style={{ color: email.result.risk === 'SAFE' ? 'var(--safe-green)' : email.result.risk === 'SCAM' ? 'var(--scam-red)' : '#FF9500', fontSize: '16px' }}>
+                                  Risk Level: {email.result.risk} ({Math.round(email.result.confidence * 100)}%)
+                                </strong>
+                                <p style={{ marginTop: '6px', fontSize: '14px', lineHeight: '1.5', color: 'var(--text-muted)' }}>{email.result.reason}</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div>
+                            <div style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)', marginBottom: '12px', fontWeight: 600 }}>Detected Signatures</div>
+
+                            {email.result.detected_keywords?.length > 0 ? (
+                              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '12px', flexWrap: 'wrap' }}>
+                                <Key size={16} color="var(--warning-yellow)" />
+                                <span style={{ fontSize: '14px', color: 'var(--text-muted)' }}>Keywords:</span>
+                                <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                                  {email.result.detected_keywords.map(kw => (
+                                    <span key={kw} style={{ background: 'rgba(245, 158, 11, 0.1)', color: 'var(--warning-yellow)', padding: '2px 8px', borderRadius: '10px', fontSize: '12px', fontWeight: 500 }}>{kw}</span>
+                                  ))}
+                                </div>
+                              </div>
+                            ) : (
+                              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '12px' }}>
+                                <Key size={16} color="var(--safe-green)" />
+                                <span style={{ fontSize: '14px', color: 'var(--text-muted)' }}>No suspicious terms found.</span>
+                              </div>
+                            )}
+
+                            {email.result.suspicious_links?.length > 0 ? (
+                              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+                                <LinkIcon size={16} color="var(--scam-red)" />
+                                <span style={{ fontSize: '14px', color: 'var(--scam-red)', fontWeight: 500 }}>Malicious Link Found: {email.result.suspicious_links[0]}</span>
+                              </div>
+                            ) : (
+                              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                <LinkIcon size={16} color="var(--safe-green)" />
+                                <span style={{ fontSize: '14px', color: 'var(--text-muted)' }}>No malicious links detected.</span>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Quick spin animation override for refresh button */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes spin { 100% { transform: rotate(360deg); } }
         .animate-spin { animation: spin 1s linear infinite; }
       `}} />
     </div>
   );
 }
+

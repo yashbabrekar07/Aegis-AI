@@ -120,6 +120,190 @@ def scan_text(req: ScanRequest):
     except Exception as e:
         return {"error": f"Scan failed: {e}", "risk": "ERROR", "label": "error", "confidence": 0}
 
+
+class FetchGmailRequest(BaseModel):
+    email: str
+    app_password: str
+
+
+@app.post("/api/gmail/fetch")
+def fetch_gmail_emails(req: FetchGmailRequest):
+    import imaplib
+    import email
+    from email.header import decode_header
+
+    username = req.email.strip()
+    app_password = req.app_password.strip()
+
+    if not username or not app_password:
+        return {"error": "Gmail address and App Password are required.", "emails": []}
+
+    try:
+        # Establish SSL connection to Gmail IMAP
+        mail = imaplib.IMAP4_SSL("imap.gmail.com")
+        mail.login(username, app_password)
+    except Exception as e:
+        return {"error": f"Failed to login: {str(e)}", "emails": []}
+
+    try:
+        mail.select("inbox")
+        # Search for all emails
+        status, messages = mail.search(None, "ALL")
+        email_ids = messages[0].split()
+
+        if not email_ids:
+            mail.close()
+            mail.logout()
+            return {"emails": []}
+
+        # Fetch the last 5 emails
+        latest_email_ids = email_ids[-5:]
+        fetched_emails = []
+
+        for idx, e_id in enumerate(reversed(latest_email_ids)):
+            res, msg_data = mail.fetch(e_id, "(RFC822)")
+            for response_part in msg_data:
+                if isinstance(response_part, tuple):
+                    msg = email.message_from_bytes(response_part[1])
+                    
+                    # Decode subject
+                    subject = "No Subject"
+                    if msg["Subject"]:
+                        try:
+                            subject_parts = decode_header(msg["Subject"])
+                            decoded_parts = []
+                            for part, encoding in subject_parts:
+                                if isinstance(part, bytes):
+                                    decoded_parts.append(part.decode(encoding if encoding else "utf-8", errors="ignore"))
+                                else:
+                                    decoded_parts.append(str(part))
+                            subject = "".join(decoded_parts)
+                        except Exception:
+                            subject = str(msg["Subject"])
+                    
+                    # Decode from address
+                    from_address = "Unknown Sender"
+                    if msg["From"]:
+                        try:
+                            from_parts = decode_header(msg["From"])
+                            decoded_parts = []
+                            for part, encoding in from_parts:
+                                if isinstance(part, bytes):
+                                    decoded_parts.append(part.decode(encoding if encoding else "utf-8", errors="ignore"))
+                                else:
+                                    decoded_parts.append(str(part))
+                            from_address = "".join(decoded_parts)
+                        except Exception:
+                            from_address = str(msg["From"])
+                    
+                    # Get email body
+                    body = ""
+                    if msg.is_multipart():
+                        for part in msg.walk():
+                            content_type = part.get_content_type()
+                            content_disposition = str(part.get("Content-Disposition"))
+                            if content_type == "text/plain" and "attachment" not in content_disposition:
+                                try:
+                                    body = part.get_payload(decode=True).decode("utf-8", errors="ignore")
+                                except Exception:
+                                    pass
+                                break
+                    else:
+                        try:
+                            body = msg.get_payload(decode=True).decode("utf-8", errors="ignore")
+                        except Exception:
+                            pass
+
+                    # Limit the body length for scan preview
+                    snippet = body[:500] if body else "No readable text content."
+                    
+                    fetched_emails.append({
+                        "id": f"gmail_{idx}_{e_id.decode()}",
+                        "from": from_address,
+                        "subject": subject,
+                        "body": snippet,
+                        "status": "PENDING",
+                        "result": None
+                    })
+        mail.close()
+        mail.logout()
+        return {"emails": fetched_emails}
+    except Exception as e:
+        try:
+            mail.close()
+            mail.logout()
+        except Exception:
+            pass
+        return {"error": f"Failed to fetch emails: {str(e)}", "emails": []}
+
+
+class FetchGmailOAuthRequest(BaseModel):
+    access_token: str
+
+
+@app.post("/api/gmail/fetch-oauth")
+def fetch_gmail_emails_oauth(req: FetchGmailOAuthRequest):
+    import requests
+
+    access_token = req.access_token.strip()
+    if not access_token:
+        return {"error": "Access token is required.", "emails": []}
+
+    headers = {"Authorization": f"Bearer {access_token}"}
+
+    try:
+        # Step 1: List the latest 5 messages from Gmail inbox
+        list_url = "https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=5&q=is:inbox"
+        res = requests.get(list_url, headers=headers)
+        if res.status_code != 200:
+            return {"error": f"Failed to list messages: {res.json().get('error', {}).get('message', 'Unknown error')}", "emails": []}
+
+        messages_data = res.json()
+        messages = messages_data.get("messages", [])
+
+        if not messages:
+            return {"emails": []}
+
+        fetched_emails = []
+
+        # Step 2: Fetch details for each message
+        for idx, msg_meta in enumerate(messages):
+            msg_id = msg_meta["id"]
+            detail_url = f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}?format=full"
+            detail_res = requests.get(detail_url, headers=headers)
+            
+            if detail_res.status_code == 200:
+                msg_data = detail_res.json()
+                
+                # Extract headers
+                headers_list = msg_data.get("payload", {}).get("headers", [])
+                subject = "No Subject"
+                from_address = "Unknown Sender"
+                
+                for h in headers_list:
+                    if h["name"].lower() == "subject":
+                        subject = h["value"]
+                    elif h["name"].lower() == "from":
+                        from_address = h["value"]
+                
+                # Extract body snippet
+                body_snippet = msg_data.get("snippet", "No preview available.")
+                
+                fetched_emails.append({
+                    "id": f"gmail_oauth_{idx}_{msg_id}",
+                    "from": from_address,
+                    "subject": subject,
+                    "body": body_snippet,
+                    "status": "PENDING",
+                    "result": None
+                })
+        
+        return {"emails": fetched_emails}
+
+    except Exception as e:
+        return {"error": f"Failed to fetch Gmail REST API: {str(e)}", "emails": []}
+
+
 @app.post("/api/vishing/analyze-transcript")
 def analyze_vishing_transcript(req: VishingTranscriptRequest):
     """Analyze call transcript for vishing (mobile-friendly, no large audio upload)."""
