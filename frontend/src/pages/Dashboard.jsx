@@ -15,10 +15,12 @@ export default function Dashboard() {
   
   const hasHistory = history.length > 0;
 
-  const [toggles, setToggles] = useState({
-    sms: true,
-    calls: false,
-    whatsapp: true
+  const [toggles, setToggles] = useState(() => {
+    const saved = localStorage.getItem('aegis_smart_alerts');
+    if (saved) {
+      try { return JSON.parse(saved); } catch { /* ignore */ }
+    }
+    return { sms: true, calls: false, whatsapp: true };
   });
 
   const [profile, setProfile] = useState({ userId: 'Loading...', phone: '' });
@@ -194,7 +196,11 @@ export default function Dashboard() {
     setPhoneVerified(false);
   };
 
-  const toggleSetting = (key) => setToggles(p => ({ ...p, [key]: !p[key] }));
+  const toggleSetting = (key) => setToggles(p => {
+    const updated = { ...p, [key]: !p[key] };
+    localStorage.setItem('aegis_smart_alerts', JSON.stringify(updated));
+    return updated;
+  });
 
   // Shared styles
   const btnPrimary = {

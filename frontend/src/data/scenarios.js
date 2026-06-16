@@ -12,7 +12,7 @@ export const scenariosSet1 = [
   {
     type: 'SMS',
     sender: 'VD-PROMO',
-    message: 'Congratulations! Your mobile number won ₹25,00,000 in the lucky draw. Click here to claim your prize: http://claim-prize-today.com',
+    message: 'Congratulations! Your mobile number won ₹25,00,000 in the lucky draw. Click here to claim your prize: hxxp://claim-prize-today[.]com',
     options: [
       { text: 'Click to see if it is real', correct: false, feedback: 'This is a classic lottery scam using greed tactics.' },
       { text: 'Ignore and delete', correct: true, feedback: 'Spot on! If you didn\'t enter a lottery, you didn\'t win.' }
@@ -32,7 +32,7 @@ export const scenariosSet1 = [
   {
     type: 'WhatsApp (Marathi)',
     sender: 'MSEB Official',
-    message: 'Priya grahak, tumche light bill update nahi zale ahe. Aaj ratri 9:30 vajta tumchi light cut keli jail. Tondit bill bharanyasathi link var click kara: http://mseb-update-quick.in',
+    message: 'Priya grahak, tumche light bill update nahi zale ahe. Aaj ratri 9:30 vajta tumchi light cut keli jail. Tondit bill bharanyasathi link var click kara: hxxp://mseb-update-quick[.]in',
     options: [
       { text: 'Pay the bill immediately via the link', correct: false, feedback: 'Threatening to cut power at night is a common MSEB scam tactic.' },
       { text: 'Check the official MSEB app', correct: true, feedback: 'Excellent. Official electricity boards never send unverified SMS links threatening immediate disconnection.' }
@@ -95,9 +95,9 @@ export const scenariosSet1 = [
   {
     type: 'SMS Notification',
     sender: 'V-HDFCBK',
-    message: 'Dear Customer, your NetBanking will be BLOCKED in 15 mins due to pending KYC. Update PAN immediately: http://hdfc.kyc-update-net.com',
+    message: 'Dear Customer, your NetBanking will be BLOCKED in 15 mins due to pending KYC. Update PAN immediately: hxxp://hdfc[.]kyc-update-net[.]com',
     options: [
-      { text: 'Click the link out of panic', correct: false, feedback: 'Panic makes you miss the fake URL: hdfc.kyc-update-net.com' },
+      { text: 'Click the link out of panic', correct: false, feedback: 'Panic makes you miss the fake URL: hdfc[.]kyc-update-net[.]com' },
       { text: 'Do nothing', correct: true, feedback: 'Banks never threaten blockages with 15-minute deadlines.' }
     ],
     isTimed: true
@@ -118,7 +118,7 @@ export const scenariosSet2 = [
   {
     type: 'Email',
     sender: 'HR Department <hr@company-update.com>',
-    message: 'Mandatory: Complete your annual security training by EOD or your access will be suspended. Click here: bit.ly/sec-train-44',
+    message: 'Mandatory: Complete your annual security training by EOD or your access will be suspended. Click here: bit[.]ly/sec-train-44',
     options: [
       { text: 'Click immediately to keep access', correct: false, feedback: 'Urgency + shortened link + spoofed domain = Phishing.' },
       { text: 'Verify with HR directly', correct: true, feedback: 'Always verify threatening internal emails via a different channel.' }
@@ -128,7 +128,7 @@ export const scenariosSet2 = [
   {
     type: 'SMS (Hindi)',
     sender: 'SBI-ALERT',
-    message: 'Priya grahak, aapka SBI Yono account block kar diya gaya hai. Apna PAN card update karne ke liye link par click karein: http://sbi-pan-kyc.in',
+    message: 'Priya grahak, aapka SBI Yono account block kar diya gaya hai. Apna PAN card update karne ke liye link par click karein: hxxp://sbi-pan-kyc[.]in',
     options: [
       { text: 'Click link to unblock Yono', correct: false, feedback: 'Fake domains and urgency are hallmarks of SMS phishing.' },
       { text: 'Open the Yono app to check', correct: true, feedback: 'Always use the official app to verify account status.' }
@@ -200,7 +200,7 @@ export const scenariosSet2 = [
   {
     type: 'SMS Notification',
     sender: 'NHAI-FASTAG',
-    message: 'Your FASTag has been BLACKLISTED due to low balance. Recharge immediately via this link to avoid ₹1000 penalty at next toll: bit.ly/fastag-update',
+    message: 'Your FASTag has been BLACKLISTED due to low balance. Recharge immediately via this link to avoid ₹1000 penalty at next toll: bit[.]ly/fastag-update',
     options: [
       { text: 'Recharge via the link to avoid penalty', correct: false, feedback: 'Urgency + shortened link = FASTag scam.' },
       { text: 'Check the official FASTag app or bank portal', correct: true, feedback: 'Always verify through your official banking app.' }
@@ -233,7 +233,7 @@ export const scenariosSet3 = [
   {
     type: 'SMS',
     sender: 'E-CHALLAN',
-    message: 'Your vehicle has a pending traffic violation challan of ₹2000. Pay immediately to avoid court case: http://e-challan-parivahan.in.net',
+    message: 'Your vehicle has a pending traffic violation challan of ₹2000. Pay immediately to avoid court case: hxxp://e-challan-parivahan[.]in[.]net',
     options: [
       { text: 'Pay the challan to avoid court', correct: false, feedback: 'The URL uses a fake domain (.in.net). Official sites use .gov.in.' },
       { text: 'Ignore or check official parivahan.gov.in', correct: true, feedback: 'Always look for the official .gov.in domain.' }
@@ -305,7 +305,7 @@ export const scenariosSet3 = [
   {
     type: 'SMS Notification',
     sender: 'APK-ALERT',
-    message: 'Your electricity bill for last month is updated. Please download our new billing app directly from this link to pay: http://mseb-app-download.com/app.apk',
+    message: 'Your electricity bill for last month is updated. Please download our new billing app directly from this link to pay: hxxp://mseb-app-download[.]com/app.apk',
     options: [
       { text: 'Download the APK to pay', correct: false, feedback: 'Sideloading APKs from SMS links will install spyware that reads your OTPs.' },
       { text: 'Only download apps from the official Play Store / App Store', correct: true, feedback: 'Always stick to official app stores.' }
