@@ -4,7 +4,6 @@ import { Shield } from 'lucide-react';
 import { supabase } from '../supabaseClient';
 import { saveUsername } from '../utils/userStorage';
 import { isGmailAddress, mapAuthError, isEmailVerified, getPostLoginPath } from '../utils/authHelpers';
-import appleLogo from '../assets/apple-sign-in.svg';
 import '../styles/login.css';
 
 export default function Login({ isSignup }) {
@@ -183,10 +182,6 @@ export default function Login({ isSignup }) {
             <button type="button" onClick={() => handleOAuthLogin('google')} className="login-social-btn login-oauth-btn">
               <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" style={{ width: '20px' }} />
               Sign {isSignup ? 'up' : 'in'} with Google
-            </button>
-            <button type="button" onClick={() => handleOAuthLogin('apple')} className="login-social-btn login-social-btn apple login-oauth-btn">
-              <img src={appleLogo} alt="" className="apple-logo-img" aria-hidden="true" />
-              Sign {isSignup ? 'up' : 'in'} with Apple
             </button>
           </div>
 

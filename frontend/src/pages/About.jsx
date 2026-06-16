@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Shield, BookOpen, Users, Github, Lock } from 'lucide-react';
+import { ArrowLeft, Shield, BookOpen, Users, ExternalLink, Lock } from 'lucide-react';
 
 export default function About() {
   const navigate = useNavigate();
