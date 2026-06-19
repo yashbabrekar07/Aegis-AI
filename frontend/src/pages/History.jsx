@@ -57,7 +57,7 @@ export default function History() {
                     <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px' }}>
                       <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '4px' }}>Confidence Score</div>
                       <div style={{ fontWeight: 600, color: item.confidence > 0.8 ? 'var(--safe-green)' : 'var(--warning-yellow)' }}>
-                        {item.confidence ? `${(item.confidence * 100).toFixed(1)}%` : 'N/A'}
+                        {item.confidence !== undefined && item.confidence !== null ? `${(item.confidence * 100).toFixed(1)}%` : 'N/A'}
                       </div>
                     </div>
                     

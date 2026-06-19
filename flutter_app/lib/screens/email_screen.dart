@@ -299,6 +299,14 @@ class _EmailScreenState extends State<EmailScreen> {
                                     risk ?? 'UNKNOWN',
                                     style: TextStyle(color: statusColor, fontWeight: FontWeight.bold, fontSize: 12),
                                   ),
+                                  if (email['result']?['confidence'] != null)
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 4.0),
+                                      child: Text(
+                                        '(${(email['result']['confidence'] * 100).round()}%)',
+                                        style: TextStyle(color: statusColor.withOpacity(0.8), fontSize: 11),
+                                      ),
+                                    ),
                                 ],
                               )
                           ],

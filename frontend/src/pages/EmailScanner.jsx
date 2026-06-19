@@ -118,6 +118,26 @@ export default function EmailScanner() {
         const data = await response.json();
 
         setEmails(prev => prev.map(e => e.id === pendingEmail.id ? { ...e, status: 'DONE', result: data } : e));
+        
+        // Save to History
+        try {
+          const safeData = {
+            id: Date.now() + Math.random(),
+            text: `Subject: ${pendingEmail.subject}`,
+            type: "Email",
+            date: new Date().toLocaleString(),
+            risk: data.risk,
+            label: data.label,
+            reason: data.reason || '',
+            confidence: data.confidence !== undefined ? data.confidence : 0,
+            detected_keywords: data.detected_keywords || [],
+            suspicious_links: data.suspicious_links || []
+          };
+          const existing = JSON.parse(localStorage.getItem('aegis_scan_history') || '[]');
+          localStorage.setItem('aegis_scan_history', JSON.stringify([safeData, ...existing]));
+        } catch (e) {
+          console.error("Failed to save to history", e);
+        }
       } catch (err) {
         console.error("Scan error:", err);
         setEmails(prev => prev.map(e => e.id === pendingEmail.id ? { ...e, status: 'ERROR', result: { risk: "ERROR", reason: "Backend connection failed" } } : e));
