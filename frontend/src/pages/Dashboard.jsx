@@ -1,9 +1,54 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getRankFromXp } from './Simulate';
 import { apiUrl } from '../lib/api';
 import { getStoredUsername, getStoredEmail, getEmailLocalPart } from '../utils/userStorage';
 
+const QUICK_TEST_PRESETS = [
+  {
+    title: 'SBI Urgency',
+    tag: 'SCAM',
+    text: 'URGENT: Your SBI bank account has been suspended due to unusual activity. Click here to verify your identity immediately or your account will be permanently blocked: http://sbi-secure-verify.xyz/login',
+  },
+  {
+    title: 'Lottery Win',
+    tag: 'SCAM',
+    text: 'Congratulations! You have won a cash lottery of ₹25,00,000 from Google India. To claim your prize, send your bank details and Aadhaar number to claims@googlelottery-win.com within 24 hours.',
+  },
+  {
+    title: 'KYC Expiry',
+    tag: 'SCAM',
+    text: 'Dear Customer, your KYC verification has expired. Your account will be frozen within 24 hours. Update KYC now: http://paytm-kyc-update.co.in/verify. Do not share this link.',
+  },
+  {
+    title: 'Job Offer',
+    tag: 'SCAM',
+    text: 'Hi, we found your resume on Naukri.com. We are offering ₹85,000/month work-from-home job. No experience needed. Pay ₹500 registration fee to start immediately. WhatsApp: +91 98765 43210',
+  },
+  {
+    title: 'Tax Refund',
+    tag: 'SCAM',
+    text: 'Income Tax Department: You are eligible for a tax refund of ₹15,490. Please submit your bank account and PAN details at http://incometax-refund-gov.in/claim to process your refund.',
+  },
+  {
+    title: 'Delivery OTP',
+    tag: 'SAFE',
+    text: 'Your Amazon delivery agent is nearby. Please share OTP 4829 to receive your package. Order #402-8891347-2234.',
+  },
+  {
+    title: 'Casual Chat',
+    tag: 'SAFE',
+    text: 'Hey friend, did you get a chance to review the document I shared yesterday? Let me know your thoughts when you have time. No rush!',
+  },
+  {
+    title: 'Meeting Invite',
+    tag: 'SAFE',
+    text: 'Reminder: Team standup meeting tomorrow at 10:30 AM IST on Google Meet. Agenda: Sprint review and Q3 planning. See you there!',
+  },
+];
+
 export default function Dashboard() {
+  const navigate = useNavigate();
   const displayUsername = getStoredUsername();
   const emailLocal = getEmailLocalPart(getStoredEmail());
   const userEmail = getStoredEmail() || 'Not provided';
@@ -15,13 +60,7 @@ export default function Dashboard() {
   
   const hasHistory = history.length > 0;
 
-  const [toggles, setToggles] = useState(() => {
-    const saved = localStorage.getItem('aegis_smart_alerts');
-    if (saved) {
-      try { return JSON.parse(saved); } catch { /* ignore */ }
-    }
-    return { sms: true, calls: false, whatsapp: true };
-  });
+
 
   const [profile, setProfile] = useState({ userId: 'Loading...', phone: '' });
   const [phoneVerified, setPhoneVerified] = useState(false);
@@ -196,11 +235,7 @@ export default function Dashboard() {
     setPhoneVerified(false);
   };
 
-  const toggleSetting = (key) => setToggles(p => {
-    const updated = { ...p, [key]: !p[key] };
-    localStorage.setItem('aegis_smart_alerts', JSON.stringify(updated));
-    return updated;
-  });
+
 
   // Shared styles
   const btnPrimary = {
@@ -456,22 +491,72 @@ export default function Dashboard() {
         </div>
 
         <div className="card" style={{ gridColumn: 'span 2' }}>
-          <h2 className="card-title">Smart Alerts</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            <div className="list-item" style={{ border: 'none' }} onClick={() => toggleSetting('sms')}>
-              <span style={{ fontWeight: 500, color: 'var(--text-main)' }}>Auto-scan SMS</span>
-              <div className={`toggle-switch ${toggles.sms ? 'on' : ''}`}></div>
-            </div>
-            <div className="list-item" style={{ border: 'none' }} onClick={() => toggleSetting('calls')}>
-              <span style={{ fontWeight: 500, color: 'var(--text-main)' }}>Call recording AI</span>
-              <div className={`toggle-switch ${toggles.calls ? 'on' : ''}`}></div>
-            </div>
-            <div className="list-item" style={{ border: 'none' }} onClick={() => toggleSetting('whatsapp')}>
-              <span style={{ fontWeight: 500, color: 'var(--text-main)' }}>WhatsApp Watch</span>
-              <div className={`toggle-switch ${toggles.whatsapp ? 'on' : ''}`}></div>
-            </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+            <h2 className="card-title" style={{ margin: 0 }}>Quick Test Presets</h2>
+            <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Click any card to scan it</span>
+          </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+            gap: '12px',
+          }}>
+            {QUICK_TEST_PRESETS.map((preset, i) => {
+              const isScam = preset.tag === 'SCAM';
+              const tagColor = isScam ? '#ef4444' : '#10b981';
+              const tagBg = isScam ? 'rgba(239,68,68,0.15)' : 'rgba(16,185,129,0.15)';
+              const borderColor = isScam ? 'rgba(239,68,68,0.25)' : 'rgba(16,185,129,0.25)';
+              const hoverBg = isScam ? 'rgba(239,68,68,0.06)' : 'rgba(16,185,129,0.06)';
+              return (
+                <div
+                  key={i}
+                  onClick={() => {
+                    localStorage.setItem('aegis_prefill_scan', preset.text);
+                    navigate('/home');
+                  }}
+                  style={{
+                    background: 'rgba(255,255,255,0.03)',
+                    border: `1px solid ${borderColor}`,
+                    borderRadius: '14px',
+                    padding: '16px',
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease',
+                    position: 'relative',
+                    overflow: 'hidden',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = hoverBg;
+                    e.currentTarget.style.borderColor = tagColor;
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = `0 6px 20px ${isScam ? 'rgba(239,68,68,0.12)' : 'rgba(16,185,129,0.12)'}`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
+                    e.currentTarget.style.borderColor = borderColor;
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 600, fontSize: '15px', color: 'var(--text-main)' }}>{preset.title}</span>
+                    <span style={{
+                      fontSize: '11px', fontWeight: 700,
+                      color: tagColor, background: tagBg,
+                      padding: '3px 10px', borderRadius: '20px',
+                      letterSpacing: '0.5px',
+                    }}>{preset.tag}</span>
+                  </div>
+                  <p style={{
+                    fontSize: '13px', color: 'var(--text-muted)',
+                    lineHeight: 1.5, margin: 0,
+                    display: '-webkit-box', WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical', overflow: 'hidden',
+                  }}>{preset.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
+
       </div>
     </div>
   );

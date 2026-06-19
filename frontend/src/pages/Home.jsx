@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ShieldAlert, CheckCircle, FileAudio, AlertTriangle } from 'lucide-react';
 import { playSound } from '../utils/audio';
 import { apiUrl } from '../lib/api';
@@ -21,6 +21,15 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const fileInputRef = useRef(null);
   const userName = localStorage.getItem('aegis_user_name');
+
+  // Check for prefilled text from Dashboard Quick Test Presets
+  useEffect(() => {
+    const prefill = localStorage.getItem('aegis_prefill_scan');
+    if (prefill) {
+      setInput(prefill);
+      localStorage.removeItem('aegis_prefill_scan');
+    }
+  }, []);
 
   const handleScan = async () => {
     if (!input.trim()) return;
