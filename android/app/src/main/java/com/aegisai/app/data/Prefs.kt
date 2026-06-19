@@ -57,7 +57,7 @@ class Prefs(context: Context) {
 
     /** How long to poll MediaStore for a dialer recording after call ends (ms). */
     var callGuardDiscoveryWindowMs: Long
-        get() = sp.getLong(KEY_DISCOVERY_WINDOW, 90_000L)
+        get() = sp.getLong(KEY_DISCOVERY_WINDOW, 120_000L)
         set(v) = sp.edit().putLong(KEY_DISCOVERY_WINDOW, v.coerceIn(15_000L, 120_000L)).apply()
 
     var callGuardAutoAnalyze: Boolean

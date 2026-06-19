@@ -7,7 +7,9 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.aegisai.app.AegisApp
 import com.aegisai.app.call.CallAnalysisNotifier
+import com.aegisai.app.call.CallAnalysisService
 import com.aegisai.app.call.CallGuardCoordinator
 import com.aegisai.app.call.CallSession
 import com.aegisai.app.call.CallSessionStore
@@ -16,12 +18,13 @@ import com.aegisai.app.databinding.ActivityCallAnalysisResultBinding
 class CallAnalysisResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCallAnalysisResultBinding
     private var sessionId: String? = null
+    private var staleRecoveryAttempted = false
     private val refreshHandler = Handler(Looper.getMainLooper())
     private val refreshRunnable = object : Runnable {
         override fun run() {
             renderSession()
             if (shouldKeepPolling()) {
-                refreshHandler.postDelayed(this, 2000L)
+                refreshHandler.postDelayed(this, 1500L)
             }
         }
     }
@@ -41,20 +44,25 @@ class CallAnalysisResultActivity : AppCompatActivity() {
         }
         binding.retryDiscoveryBtn.setOnClickListener {
             sessionId?.let { id ->
+                staleRecoveryAttempted = false
                 CallGuardCoordinator.retryDiscovery(this, id)
-                finish()
+                renderSession()
+                refreshHandler.removeCallbacks(refreshRunnable)
+                refreshHandler.postDelayed(refreshRunnable, 1500L)
             }
         }
 
+        sessionId?.let { CallGuardCoordinator.ensureDiscoveryRunning(this, it) }
         renderSession()
     }
 
     override fun onResume() {
         super.onResume()
+        sessionId?.let { CallGuardCoordinator.ensureDiscoveryRunning(this, it) }
         renderSession()
         refreshHandler.removeCallbacks(refreshRunnable)
         if (shouldKeepPolling()) {
-            refreshHandler.postDelayed(refreshRunnable, 2000L)
+            refreshHandler.postDelayed(refreshRunnable, 1500L)
         }
     }
 
@@ -65,7 +73,7 @@ class CallAnalysisResultActivity : AppCompatActivity() {
 
     private fun shouldKeepPolling(): Boolean {
         val id = sessionId ?: return false
-        val session = CallSessionStore.getSession(this, id) ?: return false
+        val session = resolveSession(id) ?: return false
         return session.status in listOf(
             CallSession.STATUS_ACTIVE,
             CallSession.STATUS_DISCOVERING,
@@ -73,12 +81,62 @@ class CallAnalysisResultActivity : AppCompatActivity() {
         )
     }
 
+    private fun resolveSession(id: String): CallSession? {
+        val session = CallSessionStore.getSession(this, id) ?: return null
+        return recoverIfStale(session)
+    }
+
+    /** Unstick sessions when the background service was killed mid-discovery. */
+    private fun recoverIfStale(session: CallSession): CallSession {
+        if (session.status != CallSession.STATUS_DISCOVERING &&
+            session.status != CallSession.STATUS_ANALYZING
+        ) {
+            return session
+        }
+
+        val prefs = AegisApp.get(this).prefs
+        val anchor = session.endedAt ?: session.startedAt
+        val elapsed = System.currentTimeMillis() - anchor
+        val discoveryLimit = prefs.callGuardDiscoveryWindowMs + 20_000L
+        val analysisLimit = discoveryLimit + 660_000L // ~11 min for upload + transcribe
+
+        if (session.status == CallSession.STATUS_DISCOVERING) {
+            if (elapsed > 15_000L && !CallAnalysisService.isRunning(session.id)) {
+                CallGuardCoordinator.ensureDiscoveryRunning(this, session.id)
+            }
+            if (elapsed > discoveryLimit) {
+                if (!staleRecoveryAttempted) {
+                    staleRecoveryAttempted = true
+                    CallGuardCoordinator.retryDiscovery(this, session.id)
+                    return CallSessionStore.getSession(this, session.id) ?: session
+                }
+                val updated = session.copy(
+                    status = CallSession.STATUS_NO_RECORDING,
+                    errorMessage = "Could not find a dialer recording automatically. Pick the file below or enable call recording in your Phone app.",
+                )
+                CallSessionStore.saveSession(this, updated)
+                return updated
+            }
+        }
+
+        if (session.status == CallSession.STATUS_ANALYZING && elapsed > analysisLimit) {
+            val updated = session.copy(
+                status = CallSession.STATUS_FAILED,
+                errorMessage = "Analysis timed out. Try a shorter recording or pick the file again.",
+            )
+            CallSessionStore.saveSession(this, updated)
+            return updated
+        }
+
+        return session
+    }
+
     private fun renderSession() {
         val id = sessionId ?: run {
             binding.resultBody.text = getString(com.aegisai.app.R.string.call_guard_session_missing)
             return
         }
-        val session = CallSessionStore.getSession(this, id) ?: run {
+        val session = resolveSession(id) ?: run {
             binding.resultBody.text = getString(com.aegisai.app.R.string.call_guard_session_missing)
             return
         }
@@ -93,10 +151,14 @@ class CallAnalysisResultActivity : AppCompatActivity() {
 
         binding.resultBody.text = formatSessionBody(session)
 
+        val discovering = session.status == CallSession.STATUS_DISCOVERING
         val needsManual = session.status == CallSession.STATUS_NO_RECORDING ||
-            (session.status == CallSession.STATUS_FAILED && session.recordingUri == null)
+            (session.status == CallSession.STATUS_FAILED && session.recordingUri == null) ||
+            (discovering && staleRecoveryAttempted)
+
         binding.pickRecordingBtn.isVisible = needsManual
-        binding.retryDiscoveryBtn.isVisible = session.status == CallSession.STATUS_NO_RECORDING
+        binding.retryDiscoveryBtn.isVisible =
+            session.status == CallSession.STATUS_NO_RECORDING || discovering
 
         binding.resultTitle.text = when (session.status) {
             CallSession.STATUS_DONE -> {
@@ -105,10 +167,14 @@ class CallAnalysisResultActivity : AppCompatActivity() {
             }
             CallSession.STATUS_ACTIVE ->
                 getString(com.aegisai.app.R.string.call_guard_result_waiting_call)
-            CallSession.STATUS_ANALYZING, CallSession.STATUS_DISCOVERING ->
+            CallSession.STATUS_ANALYZING ->
+                getString(com.aegisai.app.R.string.call_guard_result_analyzing)
+            CallSession.STATUS_DISCOVERING ->
                 getString(com.aegisai.app.R.string.call_guard_result_analyzing)
             CallSession.STATUS_NO_RECORDING ->
                 getString(com.aegisai.app.R.string.call_guard_no_recording_title)
+            CallSession.STATUS_FAILED ->
+                getString(com.aegisai.app.R.string.call_guard_error_title)
             else -> getString(com.aegisai.app.R.string.call_guard_result_title)
         }
     }
@@ -117,8 +183,21 @@ class CallAnalysisResultActivity : AppCompatActivity() {
         when (session.status) {
             CallSession.STATUS_ACTIVE ->
                 return getString(com.aegisai.app.R.string.call_guard_result_active_hint)
-            CallSession.STATUS_DISCOVERING ->
-                return getString(com.aegisai.app.R.string.call_guard_discovering_body)
+            CallSession.STATUS_DISCOVERING -> {
+                val elapsedSec = ((System.currentTimeMillis() - (session.endedAt ?: session.startedAt)) / 1000)
+                    .coerceAtLeast(0)
+                return buildString {
+                    append(getString(com.aegisai.app.R.string.call_guard_discovering_body))
+                    append("\n\n")
+                    append("Searching (${elapsedSec}s)…")
+                    if (CallAnalysisService.isRunning(session.id)) {
+                        append("\nBackground scan is running.")
+                    } else {
+                        append("\nRestarting scan…")
+                    }
+                    append("\n\nTip: Enable call recording in your Phone app, then use speakerphone during suspicious calls.")
+                }
+            }
             CallSession.STATUS_ANALYZING ->
                 return getString(com.aegisai.app.R.string.call_guard_analyzing_body)
         }

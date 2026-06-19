@@ -30,15 +30,7 @@ object CallGuardCoordinator {
         )
         CallSessionStore.saveSession(appContext, updated)
 
-        val intent = Intent(appContext, CallAnalysisService::class.java).apply {
-            action = CallAnalysisService.ACTION_DISCOVER_AND_ANALYZE
-            putExtra(CallAnalysisService.EXTRA_SESSION_ID, sessionId)
-        }
-        try {
-            ContextCompat.startForegroundService(appContext, intent)
-        } catch (_: Exception) {
-            appContext.startService(intent)
-        }
+        startDiscoveryService(appContext, sessionId)
     }
 
     fun analyzeManualRecording(context: Context, sessionId: String, uri: Uri) {
@@ -60,13 +52,48 @@ object CallGuardCoordinator {
         val session = CallSessionStore.getSession(appContext, sessionId) ?: return
         CallSessionStore.saveSession(
             appContext,
-            session.copy(status = CallSession.STATUS_DISCOVERING, errorMessage = null),
+            session.copy(
+                status = CallSession.STATUS_DISCOVERING,
+                errorMessage = null,
+                recordingUri = null,
+                recordingDisplayName = null,
+                result = null,
+                endedAt = System.currentTimeMillis(),
+            ),
         )
+        startDiscoveryService(appContext, sessionId)
+    }
+
+    /** Restart discovery if the UI is open but the background service died. */
+    fun ensureDiscoveryRunning(context: Context, sessionId: String) {
+        if (CallAnalysisService.isRunning(sessionId)) return
+        val session = CallSessionStore.getSession(context.applicationContext, sessionId) ?: return
+        if (session.status != CallSession.STATUS_DISCOVERING) return
+        startDiscoveryService(context.applicationContext, sessionId)
+    }
+
+    private fun startDiscoveryService(appContext: Context, sessionId: String) {
         val intent = Intent(appContext, CallAnalysisService::class.java).apply {
             action = CallAnalysisService.ACTION_DISCOVER_AND_ANALYZE
             putExtra(CallAnalysisService.EXTRA_SESSION_ID, sessionId)
         }
-        ContextCompat.startForegroundService(appContext, intent)
+        try {
+            ContextCompat.startForegroundService(appContext, intent)
+        } catch (e: Exception) {
+            try {
+                appContext.startService(intent)
+            } catch (_: Exception) {
+                CallSessionStore.getSession(appContext, sessionId)?.let { session ->
+                    CallSessionStore.saveSession(
+                        appContext,
+                        session.copy(
+                            status = CallSession.STATUS_FAILED,
+                            errorMessage = "Could not start analysis service. Open the app and try again.",
+                        ),
+                    )
+                }
+            }
+        }
     }
 
     internal fun startAnalysisService(context: Context, sessionId: String) {

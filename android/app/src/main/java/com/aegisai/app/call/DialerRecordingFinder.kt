@@ -108,21 +108,22 @@ object DialerRecordingFinder {
         durationMs: Long,
         sinceSec: Long,
     ): Int {
-        var score = 10
+        val ageSec = dateAddedSec - sinceSec
         val combined = "$name $path".lowercase()
         val matchedHints = PATH_HINTS.count { combined.contains(it) }
+
         if (matchedHints == 0) {
-            // Accept recent audio files with plausible call duration even without path hints
-            if (durationMs in 5_000..3_600_000 && ageSec in 0..180) {
-                return 5
+            // Recent audio with call-like duration — many OEMs omit "call" in filenames
+            if (durationMs in 5_000..3_600_000 && ageSec in 0..300) {
+                return 8
             }
             return 0
         }
-        score += matchedHints * 15
+
+        var score = 10 + matchedHints * 15
         if (combined.contains("call")) score += 20
         if (combined.contains("record")) score += 15
         if (durationMs in 3_000..3_600_000) score += 10
-        val ageSec = dateAddedSec - sinceSec
         if (ageSec in 0..120) score += 25
         else if (ageSec in 0..300) score += 10
         return score

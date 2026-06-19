@@ -32,7 +32,7 @@ object CallGuardPermissions {
             PackageManager.PERMISSION_GRANTED
 
     fun canRunCallGuard(context: Context): Boolean =
-        hasPhoneState(context) && hasAudioRead(context) && hasNotifications(context)
+        hasPhoneState(context) && hasAudioRead(context)
 
     fun requiredPermissions(): Array<String> {
         val perms = mutableListOf(

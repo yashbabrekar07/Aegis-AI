@@ -129,10 +129,10 @@ export default function Dashboard() {
         setOtpDigits(['', '', '', '', '', '']);
         setPhoneStatus('');
         startCooldown(60);
-        // In dev mode the backend returns the OTP — show a hint
         if (data.dev_otp) {
-          setPhoneError('');
           setPhoneStatus(`Dev mode — your OTP is: ${data.dev_otp}`);
+        } else {
+          setPhoneStatus('OTP sent! Check your SMS.');
         }
         // Focus first OTP box
         setTimeout(() => otpRefs.current[0]?.focus(), 100);

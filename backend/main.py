@@ -4,9 +4,16 @@ from pydantic import BaseModel
 from typing import Optional
 import os
 import io
+import re
 import hashlib
 import random
 import time
+
+from dotenv import load_dotenv
+
+# Load repo-root .env when running locally (Render uses dashboard env vars)
+load_dotenv()
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 
 from preprocess import translate_to_english
 from model import predict_text
@@ -14,6 +21,7 @@ from utils import detect_scam_keywords, extract_links, flag_suspicious_links
 from speech import process_audio
 from audio_io import save_upload_async, cleanup_temp_dir
 from risk_engine import classify_risk
+from sms_msg91 import normalize_phone_key, send_otp_sms
 
 app = FastAPI(title="Aegis AI Backend")
 
@@ -81,38 +89,76 @@ def get_user_profile(email: str = "guest@example.com", phone: Optional[str] = No
 @app.post("/api/auth/send-phone-otp")
 def send_phone_otp(req: PhoneOtpSendRequest):
     phone = (req.phone or "").strip()
-    if len(phone) < 10:
-        return {"ok": False, "error": "Invalid phone number"}
+    if len(re.sub(r"\D", "", phone)) < 10:
+        return {"ok": False, "error": "Invalid phone number — enter a 10-digit mobile number"}
 
+    phone_key = normalize_phone_key(phone)
     code = f"{random.randint(100000, 999999)}"
-    _phone_otp_store[phone] = (code, time.time() + 600)
+    _phone_otp_store[phone_key] = (code, time.time() + 600)
 
-    # TODO: integrate Twilio / MSG91 when credentials are set
+    msg91_key = os.getenv("MSG91_AUTH_KEY")
     twilio_sid = os.getenv("TWILIO_ACCOUNT_SID")
-    if twilio_sid:
-        pass  # send_sms(phone, f"Your Aegis AI code is {code}")
 
-    resp = {"ok": True, "message": "OTP sent"}
-    if os.getenv("OTP_DEV_MODE", "true").lower() in ("1", "true", "yes"):
+    if msg91_key:
+        sent, err = send_otp_sms(phone, code)
+        if not sent:
+            _phone_otp_store.pop(phone_key, None)
+            return {"ok": False, "error": err or "Failed to send OTP via SMS"}
+    elif twilio_sid:
+        sent, err = _send_twilio_sms(phone, code)
+        if not sent:
+            _phone_otp_store.pop(phone_key, None)
+            return {"ok": False, "error": err or "Failed to send OTP via SMS"}
+
+    resp = {"ok": True, "message": "OTP sent to your phone"}
+    if os.getenv("OTP_DEV_MODE", "false").lower() in ("1", "true", "yes"):
         resp["dev_otp"] = code
     return resp
 
 
+def _send_twilio_sms(phone: str, code: str) -> tuple[bool, str | None]:
+    """Optional Twilio fallback if MSG91 is not configured."""
+    try:
+        from twilio.rest import Client
+
+        sid = os.getenv("TWILIO_ACCOUNT_SID")
+        token = os.getenv("TWILIO_AUTH_TOKEN")
+        from_number = os.getenv("TWILIO_PHONE_NUMBER")
+        if not all([sid, token, from_number]):
+            return False, "Twilio is not fully configured."
+
+        mobile = normalize_phone_key(phone)
+        to_number = f"+{mobile}" if not phone.strip().startswith("+") else phone.strip()
+
+        client = Client(sid, token)
+        client.messages.create(
+            body=f"Your Aegis AI verification code is {code}. Valid for 10 minutes.",
+            from_=from_number,
+            to=to_number,
+        )
+        return True, None
+    except ImportError:
+        return False, "Twilio library not installed."
+    except Exception as e:
+        return False, str(e)
+
+
 @app.post("/api/auth/verify-phone-otp")
 def verify_phone_otp(req: PhoneOtpVerifyRequest):
-    phone = (req.phone or "").strip()
+    phone = normalize_phone_key((req.phone or "").strip())
     otp = (req.otp or "").strip()
     stored = _phone_otp_store.get(phone)
     if not stored:
-        return {"ok": False, "error": "No OTP requested for this number"}
+        return {"ok": False, "error": "No OTP requested for this number. Send OTP again."}
     code, expires = stored
     if time.time() > expires:
         del _phone_otp_store[phone]
-        return {"ok": False, "error": "OTP expired"}
+        return {"ok": False, "error": "OTP expired. Request a new code."}
     if otp != code:
         return {"ok": False, "error": "Invalid OTP"}
     del _phone_otp_store[phone]
-    return {"ok": True, "message": "Phone verified", "phone": phone}
+    display = phone[2:] if phone.startswith("91") and len(phone) == 12 else phone
+    return {"ok": True, "message": "Phone verified", "phone": display}
 
 @app.post("/api/scan")
 def scan_text(req: ScanRequest):

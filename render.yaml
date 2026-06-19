@@ -16,6 +16,14 @@ services:
         sync: false
       - key: ALLOWED_ORIGINS
         sync: false
+      - key: MSG91_AUTH_KEY
+        sync: false
+      - key: MSG91_TEMPLATE_ID
+        sync: false
+      - key: MSG91_SENDER_ID
+        value: AEGISAI
+      - key: OTP_DEV_MODE
+        value: "false"
       # Optional: host phishing_model.pkl elsewhere (GitHub release, S3) if not using Docker-built model
       - key: PHISHING_MODEL_URL
         sync: false
