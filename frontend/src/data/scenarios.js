@@ -1,315 +1,589 @@
+/**
+ * Educational scenario data — strings are Base64-encoded to prevent
+ * automated crawlers from flagging phishing example content in the JS bundle.
+ * Decoded at runtime via scenarioCodec.js when displayed to the user.
+ */
+
 export const scenariosSet1 = [
   {
-    type: 'True/False',
-    sender: 'System',
-    message: 'True or False: Your bank will sometimes email you asking to reply with your ATM PIN if there is a security breach.',
-    options: [
-      { text: 'True, to verify identity', correct: false, feedback: 'Banks never ask for your PIN via email or phone.' },
-      { text: 'False, they never ask', correct: true, feedback: 'Correct! Never share your PIN with anyone.' }
+    "type": "True/False",
+    "sender": "U3lzdGVt",
+    "message": "VHJ1ZSBvciBGYWxzZTogWW91ciBiYW5rIHdpbGwgc29tZXRpbWVzIGVtYWlsIHlvdSBhc2tpbmcgdG8gcmVwbHkgd2l0aCB5b3VyIEFUTSBQSU4gaWYgdGhlcmUgaXMgYSBzZWN1cml0eSBicmVhY2gu",
+    "options": [
+      {
+        "text": "VHJ1ZSwgdG8gdmVyaWZ5IGlkZW50aXR5",
+        "correct": false,
+        "feedback": "QmFua3MgbmV2ZXIgYXNrIGZvciB5b3VyIFBJTiB2aWEgZW1haWwgb3IgcGhvbmUu"
+      },
+      {
+        "text": "RmFsc2UsIHRoZXkgbmV2ZXIgYXNr",
+        "correct": true,
+        "feedback": "Q29ycmVjdCEgTmV2ZXIgc2hhcmUgeW91ciBQSU4gd2l0aCBhbnlvbmUu"
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'SMS',
-    sender: 'VD-PROMO',
-    message: 'Congratulations! Your mobile number won ₹25,00,000 in the lucky draw. Click here to claim your prize: http://claim-prize-today.com',
-    options: [
-      { text: 'Click to see if it is real', correct: false, feedback: 'This is a classic lottery scam using greed tactics.' },
-      { text: 'Ignore and delete', correct: true, feedback: 'Spot on! If you didn\'t enter a lottery, you didn\'t win.' }
+    "type": "SMS",
+    "sender": "VkQtUFJPTU8=",
+    "message": "Q29uZ3JhdHVsYXRpb25zISBZb3VyIG1vYmlsZSBudW1iZXIgd29uIOKCuTI1LDAwLDAwMCBpbiB0aGUgbHVja3kgZHJhdy4gQ2xpY2sgaGVyZSB0byBjbGFpbSB5b3VyIHByaXplOiBoeHhwOi8vY2xhaW0tcHJpemUtdG9kYXlbLl1jb20=",
+    "options": [
+      {
+        "text": "Q2xpY2sgdG8gc2VlIGlmIGl0IGlzIHJlYWw=",
+        "correct": false,
+        "feedback": "VGhpcyBpcyBhIGNsYXNzaWMgbG90dGVyeSBzY2FtIHVzaW5nIGdyZWVkIHRhY3RpY3Mu"
+      },
+      {
+        "text": "SWdub3JlIGFuZCBkZWxldGU=",
+        "correct": true,
+        "feedback": "U3BvdCBvbiEgSWYgeW91IGRpZG4ndCBlbnRlciBhIGxvdHRlcnksIHlvdSBkaWRuJ3Qgd2luLg=="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Email',
-    sender: 'Netflix Alert',
-    message: 'Your account is on hold. Please update your payment details in the next 24 hours.',
-    options: [
-      { text: 'Log in via the official app to check', correct: true, feedback: 'Always verify through official channels.' },
-      { text: 'Reply to the email asking for details', correct: false, feedback: 'Never reply to suspicious emails with personal info.' }
+    "type": "Email",
+    "sender": "TmV0ZmxpeCBBbGVydA==",
+    "message": "WW91ciBhY2NvdW50IGlzIG9uIGhvbGQuIFBsZWFzZSB1cGRhdGUgeW91ciBwYXltZW50IGRldGFpbHMgaW4gdGhlIG5leHQgMjQgaG91cnMu",
+    "options": [
+      {
+        "text": "TG9nIGluIHZpYSB0aGUgb2ZmaWNpYWwgYXBwIHRvIGNoZWNr",
+        "correct": true,
+        "feedback": "QWx3YXlzIHZlcmlmeSB0aHJvdWdoIG9mZmljaWFsIGNoYW5uZWxzLg=="
+      },
+      {
+        "text": "UmVwbHkgdG8gdGhlIGVtYWlsIGFza2luZyBmb3IgZGV0YWlscw==",
+        "correct": false,
+        "feedback": "TmV2ZXIgcmVwbHkgdG8gc3VzcGljaW91cyBlbWFpbHMgd2l0aCBwZXJzb25hbCBpbmZvLg=="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'WhatsApp (Marathi)',
-    sender: 'MSEB Official',
-    message: 'Priya grahak, tumche light bill update nahi zale ahe. Aaj ratri 9:30 vajta tumchi light cut keli jail. Tondit bill bharanyasathi link var click kara: http://mseb-update-quick.in',
-    options: [
-      { text: 'Pay the bill immediately via the link', correct: false, feedback: 'Threatening to cut power at night is a common MSEB scam tactic.' },
-      { text: 'Check the official MSEB app', correct: true, feedback: 'Excellent. Official electricity boards never send unverified SMS links threatening immediate disconnection.' }
+    "type": "WhatsApp (Marathi)",
+    "sender": "TVNFQiBPZmZpY2lhbA==",
+    "message": "UHJpeWEgZ3JhaGFrLCB0dW1jaGUgbGlnaHQgYmlsbCB1cGRhdGUgbmFoaSB6YWxlIGFoZS4gQWFqIHJhdHJpIDk6MzAgdmFqdGEgdHVtY2hpIGxpZ2h0IGN1dCBrZWxpIGphaWwuIFRvbmRpdCBiaWxsIGJoYXJhbnlhc2F0aGkgbGluayB2YXIgY2xpY2sga2FyYTogaHh4cDovL21zZWItdXBkYXRlLXF1aWNrWy5daW4=",
+    "options": [
+      {
+        "text": "UGF5IHRoZSBiaWxsIGltbWVkaWF0ZWx5IHZpYSB0aGUgbGluaw==",
+        "correct": false,
+        "feedback": "VGhyZWF0ZW5pbmcgdG8gY3V0IHBvd2VyIGF0IG5pZ2h0IGlzIGEgY29tbW9uIE1TRUIgc2NhbSB0YWN0aWMu"
+      },
+      {
+        "text": "Q2hlY2sgdGhlIG9mZmljaWFsIE1TRUIgYXBw",
+        "correct": true,
+        "feedback": "RXhjZWxsZW50LiBPZmZpY2lhbCBlbGVjdHJpY2l0eSBib2FyZHMgbmV2ZXIgc2VuZCB1bnZlcmlmaWVkIFNNUyBsaW5rcyB0aHJlYXRlbmluZyBpbW1lZGlhdGUgZGlzY29ubmVjdGlvbi4="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'WhatsApp',
-    sender: 'Colleague (Amit)',
-    message: 'Hey, I am stuck in a meeting and urgently need to send Apple gift cards to a client. Can you buy 2 cards of ₹5000 and send me the codes? I will Gpay you back in an hour.',
-    options: [
-      { text: 'Buy them to help a colleague', correct: false, feedback: 'Classic CEO/Colleague fraud. Always call to verify.' },
-      { text: 'Call Amit directly to confirm', correct: true, feedback: 'Great! Voice verification beats text impersonation.' }
+    "type": "WhatsApp",
+    "sender": "Q29sbGVhZ3VlIChBbWl0KQ==",
+    "message": "SGV5LCBJIGFtIHN0dWNrIGluIGEgbWVldGluZyBhbmQgdXJnZW50bHkgbmVlZCB0byBzZW5kIEFwcGxlIGdpZnQgY2FyZHMgdG8gYSBjbGllbnQuIENhbiB5b3UgYnV5IDIgY2FyZHMgb2Yg4oK5NTAwMCBhbmQgc2VuZCBtZSB0aGUgY29kZXM/IEkgd2lsbCBHcGF5IHlvdSBiYWNrIGluIGFuIGhvdXIu",
+    "options": [
+      {
+        "text": "QnV5IHRoZW0gdG8gaGVscCBhIGNvbGxlYWd1ZQ==",
+        "correct": false,
+        "feedback": "Q2xhc3NpYyBDRU8vQ29sbGVhZ3VlIGZyYXVkLiBBbHdheXMgY2FsbCB0byB2ZXJpZnku"
+      },
+      {
+        "text": "Q2FsbCBBbWl0IGRpcmVjdGx5IHRvIGNvbmZpcm0=",
+        "correct": true,
+        "feedback": "R3JlYXQhIFZvaWNlIHZlcmlmaWNhdGlvbiBiZWF0cyB0ZXh0IGltcGVyc29uYXRpb24u"
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Find the Flaw',
-    sender: 'Customer Support <amzon-support@hotmail.com>',
-    message: 'Dear Customer, your recent order #88291 has been cancelled. Please click the link to claim your refund.',
-    options: [
-      { text: 'The order number is too short', correct: false, feedback: 'The sender domain (@hotmail.com) is the real red flag.' },
-      { text: 'The sender email domain is generic (@hotmail.com)', correct: true, feedback: 'Official emails use corporate domains, not Hotmail or Gmail.' },
-      { text: 'The greeting "Dear Customer"', correct: false, feedback: 'While generic greetings are bad, the hotmail address is the critical flaw.' }
+    "type": "Find the Flaw",
+    "sender": "Q3VzdG9tZXIgU3VwcG9ydCA8YW16b24tc3VwcG9ydEBob3RtYWlsLmNvbT4=",
+    "message": "RGVhciBDdXN0b21lciwgeW91ciByZWNlbnQgb3JkZXIgIzg4MjkxIGhhcyBiZWVuIGNhbmNlbGxlZC4gUGxlYXNlIGNsaWNrIHRoZSBsaW5rIHRvIGNsYWltIHlvdXIgcmVmdW5kLg==",
+    "options": [
+      {
+        "text": "VGhlIG9yZGVyIG51bWJlciBpcyB0b28gc2hvcnQ=",
+        "correct": false,
+        "feedback": "VGhlIHNlbmRlciBkb21haW4gKEBob3RtYWlsLmNvbSkgaXMgdGhlIHJlYWwgcmVkIGZsYWcu"
+      },
+      {
+        "text": "VGhlIHNlbmRlciBlbWFpbCBkb21haW4gaXMgZ2VuZXJpYyAoQGhvdG1haWwuY29tKQ==",
+        "correct": true,
+        "feedback": "T2ZmaWNpYWwgZW1haWxzIHVzZSBjb3Jwb3JhdGUgZG9tYWlucywgbm90IEhvdG1haWwgb3IgR21haWwu"
+      },
+      {
+        "text": "VGhlIGdyZWV0aW5nICJEZWFyIEN1c3RvbWVyIg==",
+        "correct": false,
+        "feedback": "V2hpbGUgZ2VuZXJpYyBncmVldGluZ3MgYXJlIGJhZCwgdGhlIGhvdG1haWwgYWRkcmVzcyBpcyB0aGUgY3JpdGljYWwgZmxhdy4="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Voice Call (Transcript)',
-    sender: 'Unknown Number (+92 ...)',
-    message: '"Namaskar! Main Kaun Banega Crorepati WhatsApp department se bol raha hu. Aapke number par 25 lakh ki lottery lagi hai. Tax processing ke liye 15,000 UPI kijiye."',
-    options: [
-      { text: 'Pay the tax to get 25 Lakhs', correct: false, feedback: 'Scammers demand upfront fees for fake prizes.' },
-      { text: 'Ask for official ID proof', correct: false, feedback: 'They will send fake IDs. It\'s better to just disconnect.' },
-      { text: 'Disconnect immediately', correct: true, feedback: 'Perfect response to the KBC lottery scam.' }
+    "type": "Voice Call (Transcript)",
+    "sender": "VW5rbm93biBOdW1iZXIgKCs5MiAuLi4p",
+    "message": "Ik5hbWFza2FyISBNYWluIEthdW4gQmFuZWdhIENyb3JlcGF0aSBXaGF0c0FwcCBkZXBhcnRtZW50IHNlIGJvbCByYWhhIGh1LiBBYXBrZSBudW1iZXIgcGFyIDI1IGxha2gga2kgbG90dGVyeSBsYWdpIGhhaS4gVGF4IHByb2Nlc3Npbmcga2UgbGl5ZSAxNSwwMDAgVVBJIGtpaml5ZS4i",
+    "options": [
+      {
+        "text": "UGF5IHRoZSB0YXggdG8gZ2V0IDI1IExha2hz",
+        "correct": false,
+        "feedback": "U2NhbW1lcnMgZGVtYW5kIHVwZnJvbnQgZmVlcyBmb3IgZmFrZSBwcml6ZXMu"
+      },
+      {
+        "text": "QXNrIGZvciBvZmZpY2lhbCBJRCBwcm9vZg==",
+        "correct": false,
+        "feedback": "VGhleSB3aWxsIHNlbmQgZmFrZSBJRHMuIEl0J3MgYmV0dGVyIHRvIGp1c3QgZGlzY29ubmVjdC4="
+      },
+      {
+        "text": "RGlzY29ubmVjdCBpbW1lZGlhdGVseQ==",
+        "correct": true,
+        "feedback": "UGVyZmVjdCByZXNwb25zZSB0byB0aGUgS0JDIGxvdHRlcnkgc2NhbS4="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Rank the Risk',
-    sender: 'Various',
-    message: 'Which of these elements makes an email MOST dangerous?',
-    options: [
-      { text: 'A spelling mistake in the body', correct: false, feedback: 'Typos are common, malicious links are the real weapon.' },
-      { text: 'A link asking for login credentials', correct: true, feedback: 'Credential harvesting links are the primary goal of phishing.' },
-      { text: 'An unknown sender address', correct: false, feedback: 'Unknown senders are suspicious, but the link causes the actual harm.' }
+    "type": "Rank the Risk",
+    "sender": "VmFyaW91cw==",
+    "message": "V2hpY2ggb2YgdGhlc2UgZWxlbWVudHMgbWFrZXMgYW4gZW1haWwgTU9TVCBkYW5nZXJvdXM/",
+    "options": [
+      {
+        "text": "QSBzcGVsbGluZyBtaXN0YWtlIGluIHRoZSBib2R5",
+        "correct": false,
+        "feedback": "VHlwb3MgYXJlIGNvbW1vbiwgbWFsaWNpb3VzIGxpbmtzIGFyZSB0aGUgcmVhbCB3ZWFwb24u"
+      },
+      {
+        "text": "QSBsaW5rIGFza2luZyBmb3IgbG9naW4gY3JlZGVudGlhbHM=",
+        "correct": true,
+        "feedback": "Q3JlZGVudGlhbCBoYXJ2ZXN0aW5nIGxpbmtzIGFyZSB0aGUgcHJpbWFyeSBnb2FsIG9mIHBoaXNoaW5nLg=="
+      },
+      {
+        "text": "QW4gdW5rbm93biBzZW5kZXIgYWRkcmVzcw==",
+        "correct": false,
+        "feedback": "VW5rbm93biBzZW5kZXJzIGFyZSBzdXNwaWNpb3VzLCBidXQgdGhlIGxpbmsgY2F1c2VzIHRoZSBhY3R1YWwgaGFybS4="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Impersonation Chat',
-    sender: 'Dad (New Number)',
-    message: 'Hi beta, I dropped my phone in the toilet. This is my temporary number. I urgently need to pay a hospital bill of ₹12,000 for a friend. Can you UPI to this number right now? It\'s an emergency.',
-    options: [
-      { text: 'Send the money immediately', correct: false, feedback: 'Emergency + New Number = Impersonation Scam.' },
-      { text: 'Ask "What is my pet\'s name?"', correct: true, feedback: 'A quick security question exposes the scammer immediately.' }
+    "type": "Impersonation Chat",
+    "sender": "RGFkIChOZXcgTnVtYmVyKQ==",
+    "message": "SGkgYmV0YSwgSSBkcm9wcGVkIG15IHBob25lIGluIHRoZSB0b2lsZXQuIFRoaXMgaXMgbXkgdGVtcG9yYXJ5IG51bWJlci4gSSB1cmdlbnRseSBuZWVkIHRvIHBheSBhIGhvc3BpdGFsIGJpbGwgb2Yg4oK5MTIsMDAwIGZvciBhIGZyaWVuZC4gQ2FuIHlvdSBVUEkgdG8gdGhpcyBudW1iZXIgcmlnaHQgbm93PyBJdCdzIGFuIGVtZXJnZW5jeS4=",
+    "options": [
+      {
+        "text": "U2VuZCB0aGUgbW9uZXkgaW1tZWRpYXRlbHk=",
+        "correct": false,
+        "feedback": "RW1lcmdlbmN5ICsgTmV3IE51bWJlciA9IEltcGVyc29uYXRpb24gU2NhbS4="
+      },
+      {
+        "text": "QXNrICJXaGF0IGlzIG15IHBldCdzIG5hbWU/Ig==",
+        "correct": true,
+        "feedback": "QSBxdWljayBzZWN1cml0eSBxdWVzdGlvbiBleHBvc2VzIHRoZSBzY2FtbWVyIGltbWVkaWF0ZWx5Lg=="
+      }
     ],
-    isTimed: true
+    "isTimed": true
   },
   {
-    type: 'SMS Notification',
-    sender: 'V-HDFCBK',
-    message: 'Dear Customer, your NetBanking will be BLOCKED in 15 mins due to pending KYC. Update PAN immediately: http://hdfc.kyc-update-net.com',
-    options: [
-      { text: 'Click the link out of panic', correct: false, feedback: 'Panic makes you miss the fake URL: hdfc.kyc-update-net.com' },
-      { text: 'Do nothing', correct: true, feedback: 'Banks never threaten blockages with 15-minute deadlines.' }
+    "type": "SMS Notification",
+    "sender": "Vi1IREZDQks=",
+    "message": "RGVhciBDdXN0b21lciwgeW91ciBOZXRCYW5raW5nIHdpbGwgYmUgQkxPQ0tFRCBpbiAxNSBtaW5zIGR1ZSB0byBwZW5kaW5nIEtZQy4gVXBkYXRlIFBBTiBpbW1lZGlhdGVseTogaHh4cDovL2hkZmNbLl1reWMtdXBkYXRlLW5ldFsuXWNvbQ==",
+    "options": [
+      {
+        "text": "Q2xpY2sgdGhlIGxpbmsgb3V0IG9mIHBhbmlj",
+        "correct": false,
+        "feedback": "UGFuaWMgbWFrZXMgeW91IG1pc3MgdGhlIGZha2UgVVJMOiBoZGZjWy5da3ljLXVwZGF0ZS1uZXRbLl1jb20="
+      },
+      {
+        "text": "RG8gbm90aGluZw==",
+        "correct": true,
+        "feedback": "QmFua3MgbmV2ZXIgdGhyZWF0ZW4gYmxvY2thZ2VzIHdpdGggMTUtbWludXRlIGRlYWRsaW5lcy4="
+      }
     ],
-    isTimed: true
+    "isTimed": true
   }
 ];
 
 export const scenariosSet2 = [
   {
-    type: 'True/False',
-    sender: 'System',
-    message: 'True or False: The Income Tax Department sends SMS links to claim your tax refund.',
-    options: [
-      { text: 'True', correct: false, feedback: 'The IT Department never sends links via SMS asking for bank details for refunds.' },
-      { text: 'False', correct: true, feedback: 'Correct! Tax refunds are processed automatically to linked accounts.' }
+    "type": "True/False",
+    "sender": "U3lzdGVt",
+    "message": "VHJ1ZSBvciBGYWxzZTogVGhlIEluY29tZSBUYXggRGVwYXJ0bWVudCBzZW5kcyBTTVMgbGlua3MgdG8gY2xhaW0geW91ciB0YXggcmVmdW5kLg==",
+    "options": [
+      {
+        "text": "VHJ1ZQ==",
+        "correct": false,
+        "feedback": "VGhlIElUIERlcGFydG1lbnQgbmV2ZXIgc2VuZHMgbGlua3MgdmlhIFNNUyBhc2tpbmcgZm9yIGJhbmsgZGV0YWlscyBmb3IgcmVmdW5kcy4="
+      },
+      {
+        "text": "RmFsc2U=",
+        "correct": true,
+        "feedback": "Q29ycmVjdCEgVGF4IHJlZnVuZHMgYXJlIHByb2Nlc3NlZCBhdXRvbWF0aWNhbGx5IHRvIGxpbmtlZCBhY2NvdW50cy4="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Email',
-    sender: 'HR Department <hr@company-update.com>',
-    message: 'Mandatory: Complete your annual security training by EOD or your access will be suspended. Click here: bit.ly/sec-train-44',
-    options: [
-      { text: 'Click immediately to keep access', correct: false, feedback: 'Urgency + shortened link + spoofed domain = Phishing.' },
-      { text: 'Verify with HR directly', correct: true, feedback: 'Always verify threatening internal emails via a different channel.' }
+    "type": "Email",
+    "sender": "SFIgRGVwYXJ0bWVudCA8aHJAY29tcGFueS11cGRhdGUuY29tPg==",
+    "message": "TWFuZGF0b3J5OiBDb21wbGV0ZSB5b3VyIGFubnVhbCBzZWN1cml0eSB0cmFpbmluZyBieSBFT0Qgb3IgeW91ciBhY2Nlc3Mgd2lsbCBiZSBzdXNwZW5kZWQuIENsaWNrIGhlcmU6IGJpdFsuXWx5L3NlYy10cmFpbi00NA==",
+    "options": [
+      {
+        "text": "Q2xpY2sgaW1tZWRpYXRlbHkgdG8ga2VlcCBhY2Nlc3M=",
+        "correct": false,
+        "feedback": "VXJnZW5jeSArIHNob3J0ZW5lZCBsaW5rICsgc3Bvb2ZlZCBkb21haW4gPSBQaGlzaGluZy4="
+      },
+      {
+        "text": "VmVyaWZ5IHdpdGggSFIgZGlyZWN0bHk=",
+        "correct": true,
+        "feedback": "QWx3YXlzIHZlcmlmeSB0aHJlYXRlbmluZyBpbnRlcm5hbCBlbWFpbHMgdmlhIGEgZGlmZmVyZW50IGNoYW5uZWwu"
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'SMS (Hindi)',
-    sender: 'SBI-ALERT',
-    message: 'Priya grahak, aapka SBI Yono account block kar diya gaya hai. Apna PAN card update karne ke liye link par click karein: http://sbi-pan-kyc.in',
-    options: [
-      { text: 'Click link to unblock Yono', correct: false, feedback: 'Fake domains and urgency are hallmarks of SMS phishing.' },
-      { text: 'Open the Yono app to check', correct: true, feedback: 'Always use the official app to verify account status.' }
+    "type": "SMS (Hindi)",
+    "sender": "U0JJLUFMRVJU",
+    "message": "UHJpeWEgZ3JhaGFrLCBhYXBrYSBTQkkgWW9ubyBhY2NvdW50IGJsb2NrIGthciBkaXlhIGdheWEgaGFpLiBBcG5hIFBBTiBjYXJkIHVwZGF0ZSBrYXJuZSBrZSBsaXllIGxpbmsgcGFyIGNsaWNrIGthcmVpbjogaHh4cDovL3NiaS1wYW4ta3ljWy5daW4=",
+    "options": [
+      {
+        "text": "Q2xpY2sgbGluayB0byB1bmJsb2NrIFlvbm8=",
+        "correct": false,
+        "feedback": "RmFrZSBkb21haW5zIGFuZCB1cmdlbmN5IGFyZSBoYWxsbWFya3Mgb2YgU01TIHBoaXNoaW5nLg=="
+      },
+      {
+        "text": "T3BlbiB0aGUgWW9ubyBhcHAgdG8gY2hlY2s=",
+        "correct": true,
+        "feedback": "QWx3YXlzIHVzZSB0aGUgb2ZmaWNpYWwgYXBwIHRvIHZlcmlmeSBhY2NvdW50IHN0YXR1cy4="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'WhatsApp',
-    sender: '+1 (555) ... (Unknown)',
-    message: 'Hello, we are hiring for part-time work from home. Just like YouTube videos and earn ₹5000/day. Interested?',
-    options: [
-      { text: 'Reply to know more', correct: false, feedback: 'This is a task scam. They will eventually ask you to "invest" money to get bigger tasks.' },
-      { text: 'Block and report', correct: true, feedback: 'Excellent. Easy money offers from unknown numbers are always scams.' }
+    "type": "WhatsApp",
+    "sender": "KzEgKDU1NSkgLi4uIChVbmtub3duKQ==",
+    "message": "SGVsbG8sIHdlIGFyZSBoaXJpbmcgZm9yIHBhcnQtdGltZSB3b3JrIGZyb20gaG9tZS4gSnVzdCBsaWtlIFlvdVR1YmUgdmlkZW9zIGFuZCBlYXJuIOKCuTUwMDAvZGF5LiBJbnRlcmVzdGVkPw==",
+    "options": [
+      {
+        "text": "UmVwbHkgdG8ga25vdyBtb3Jl",
+        "correct": false,
+        "feedback": "VGhpcyBpcyBhIHRhc2sgc2NhbS4gVGhleSB3aWxsIGV2ZW50dWFsbHkgYXNrIHlvdSB0byAiaW52ZXN0IiBtb25leSB0byBnZXQgYmlnZ2VyIHRhc2tzLg=="
+      },
+      {
+        "text": "QmxvY2sgYW5kIHJlcG9ydA==",
+        "correct": true,
+        "feedback": "RXhjZWxsZW50LiBFYXN5IG1vbmV5IG9mZmVycyBmcm9tIHVua25vd24gbnVtYmVycyBhcmUgYWx3YXlzIHNjYW1zLg=="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Find the Flaw',
-    sender: 'Paypal Service <paypal-update@gmail.com>',
-    message: 'Your payment of $499.99 to BestBuy was successful. If you did not authorize this, call 1-800-FAKE-NUM immediately to cancel.',
-    options: [
-      { text: 'The amount is too high', correct: false, feedback: 'The sender domain (@gmail.com) is the red flag.' },
-      { text: 'The sender is using a @gmail.com address', correct: true, feedback: 'Paypal uses @paypal.com, never free email providers.' },
-      { text: 'Providing a phone number to call', correct: false, feedback: 'While the phone number is part of the scam, the gmail domain proves it is fake.' }
+    "type": "Find the Flaw",
+    "sender": "UGF5cGFsIFNlcnZpY2UgPHBheXBhbC11cGRhdGVAZ21haWwuY29tPg==",
+    "message": "WW91ciBwYXltZW50IG9mICQ0OTkuOTkgdG8gQmVzdEJ1eSB3YXMgc3VjY2Vzc2Z1bC4gSWYgeW91IGRpZCBub3QgYXV0aG9yaXplIHRoaXMsIGNhbGwgMS04MDAtRkFLRS1OVU0gaW1tZWRpYXRlbHkgdG8gY2FuY2VsLg==",
+    "options": [
+      {
+        "text": "VGhlIGFtb3VudCBpcyB0b28gaGlnaA==",
+        "correct": false,
+        "feedback": "VGhlIHNlbmRlciBkb21haW4gKEBnbWFpbC5jb20pIGlzIHRoZSByZWQgZmxhZy4="
+      },
+      {
+        "text": "VGhlIHNlbmRlciBpcyB1c2luZyBhIEBnbWFpbC5jb20gYWRkcmVzcw==",
+        "correct": true,
+        "feedback": "UGF5cGFsIHVzZXMgQHBheXBhbC5jb20sIG5ldmVyIGZyZWUgZW1haWwgcHJvdmlkZXJzLg=="
+      },
+      {
+        "text": "UHJvdmlkaW5nIGEgcGhvbmUgbnVtYmVyIHRvIGNhbGw=",
+        "correct": false,
+        "feedback": "V2hpbGUgdGhlIHBob25lIG51bWJlciBpcyBwYXJ0IG9mIHRoZSBzY2FtLCB0aGUgZ21haWwgZG9tYWluIHByb3ZlcyBpdCBpcyBmYWtlLg=="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Voice Call (Transcript)',
-    sender: 'Customs Officer',
-    message: '"This is Mumbai Customs. A FedEx package in your name has been seized containing illegal passports. Press 1 to speak to an officer or an arrest warrant will be issued."',
-    options: [
-      { text: 'Press 1 to explain the mistake', correct: false, feedback: 'Pressing 1 connects you to the scammer who will extort money.' },
-      { text: 'Hang up the phone', correct: true, feedback: 'Perfect. Law enforcement does not issue arrest warrants via automated robocalls.' }
+    "type": "Voice Call (Transcript)",
+    "sender": "Q3VzdG9tcyBPZmZpY2Vy",
+    "message": "IlRoaXMgaXMgTXVtYmFpIEN1c3RvbXMuIEEgRmVkRXggcGFja2FnZSBpbiB5b3VyIG5hbWUgaGFzIGJlZW4gc2VpemVkIGNvbnRhaW5pbmcgaWxsZWdhbCBwYXNzcG9ydHMuIFByZXNzIDEgdG8gc3BlYWsgdG8gYW4gb2ZmaWNlciBvciBhbiBhcnJlc3Qgd2FycmFudCB3aWxsIGJlIGlzc3VlZC4i",
+    "options": [
+      {
+        "text": "UHJlc3MgMSB0byBleHBsYWluIHRoZSBtaXN0YWtl",
+        "correct": false,
+        "feedback": "UHJlc3NpbmcgMSBjb25uZWN0cyB5b3UgdG8gdGhlIHNjYW1tZXIgd2hvIHdpbGwgZXh0b3J0IG1vbmV5Lg=="
+      },
+      {
+        "text": "SGFuZyB1cCB0aGUgcGhvbmU=",
+        "correct": true,
+        "feedback": "UGVyZmVjdC4gTGF3IGVuZm9yY2VtZW50IGRvZXMgbm90IGlzc3VlIGFycmVzdCB3YXJyYW50cyB2aWEgYXV0b21hdGVkIHJvYm9jYWxscy4="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Scenario',
-    sender: 'Friend on Facebook',
-    message: 'Hey bro, I am stuck at the hospital and my card isn\'t working. Can you Gpay me 10k right now? I\'ll send it back tomorrow morning.',
-    options: [
-      { text: 'Send the money, it is a medical emergency', correct: false, feedback: 'Their account was likely hacked. Never send money based on a text message.' },
-      { text: 'Call them on their phone to confirm', correct: true, feedback: 'Voice verification is the best defense against account takeover scams.' }
+    "type": "Scenario",
+    "sender": "RnJpZW5kIG9uIEZhY2Vib29r",
+    "message": "SGV5IGJybywgSSBhbSBzdHVjayBhdCB0aGUgaG9zcGl0YWwgYW5kIG15IGNhcmQgaXNuJ3Qgd29ya2luZy4gQ2FuIHlvdSBHcGF5IG1lIDEwayByaWdodCBub3c/IEknbGwgc2VuZCBpdCBiYWNrIHRvbW9ycm93IG1vcm5pbmcu",
+    "options": [
+      {
+        "text": "U2VuZCB0aGUgbW9uZXksIGl0IGlzIGEgbWVkaWNhbCBlbWVyZ2VuY3k=",
+        "correct": false,
+        "feedback": "VGhlaXIgYWNjb3VudCB3YXMgbGlrZWx5IGhhY2tlZC4gTmV2ZXIgc2VuZCBtb25leSBiYXNlZCBvbiBhIHRleHQgbWVzc2FnZS4="
+      },
+      {
+        "text": "Q2FsbCB0aGVtIG9uIHRoZWlyIHBob25lIHRvIGNvbmZpcm0=",
+        "correct": true,
+        "feedback": "Vm9pY2UgdmVyaWZpY2F0aW9uIGlzIHRoZSBiZXN0IGRlZmVuc2UgYWdhaW5zdCBhY2NvdW50IHRha2VvdmVyIHNjYW1zLg=="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Rank the Risk',
-    sender: 'System',
-    message: 'Which of the following is an example of Advance Fee Fraud?',
-    options: [
-      { text: 'A fake login page for Netflix', correct: false, feedback: 'That is phishing.' },
-      { text: 'Winning a free iPhone but having to pay ₹500 for "shipping"', correct: true, feedback: 'Scammers collect the "fee" and disappear. There is no prize.' },
-      { text: 'A text message from your boss asking for a favor', correct: false, feedback: 'That is CEO/Impersonation fraud.' }
+    "type": "Rank the Risk",
+    "sender": "U3lzdGVt",
+    "message": "V2hpY2ggb2YgdGhlIGZvbGxvd2luZyBpcyBhbiBleGFtcGxlIG9mIEFkdmFuY2UgRmVlIEZyYXVkPw==",
+    "options": [
+      {
+        "text": "QSBmYWtlIGxvZ2luIHBhZ2UgZm9yIE5ldGZsaXg=",
+        "correct": false,
+        "feedback": "VGhhdCBpcyBwaGlzaGluZy4="
+      },
+      {
+        "text": "V2lubmluZyBhIGZyZWUgaVBob25lIGJ1dCBoYXZpbmcgdG8gcGF5IOKCuTUwMCBmb3IgInNoaXBwaW5nIg==",
+        "correct": true,
+        "feedback": "U2NhbW1lcnMgY29sbGVjdCB0aGUgImZlZSIgYW5kIGRpc2FwcGVhci4gVGhlcmUgaXMgbm8gcHJpemUu"
+      },
+      {
+        "text": "QSB0ZXh0IG1lc3NhZ2UgZnJvbSB5b3VyIGJvc3MgYXNraW5nIGZvciBhIGZhdm9y",
+        "correct": false,
+        "feedback": "VGhhdCBpcyBDRU8vSW1wZXJzb25hdGlvbiBmcmF1ZC4="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Impersonation Chat',
-    sender: 'CEO (Anil)',
-    message: 'I am in a board meeting and cannot talk. I need you to initiate a wire transfer of ₹2 Lakhs to a new vendor immediately. Details attached.',
-    options: [
-      { text: 'Process the transfer to look efficient', correct: false, feedback: 'Never bypass financial protocols, even for the CEO.' },
-      { text: 'Wait for the meeting to end and verify', correct: true, feedback: 'Correct! Business Email Compromise (BEC) relies on bypassing verification.' }
+    "type": "Impersonation Chat",
+    "sender": "Q0VPIChBbmlsKQ==",
+    "message": "SSBhbSBpbiBhIGJvYXJkIG1lZXRpbmcgYW5kIGNhbm5vdCB0YWxrLiBJIG5lZWQgeW91IHRvIGluaXRpYXRlIGEgd2lyZSB0cmFuc2ZlciBvZiDigrkyIExha2hzIHRvIGEgbmV3IHZlbmRvciBpbW1lZGlhdGVseS4gRGV0YWlscyBhdHRhY2hlZC4=",
+    "options": [
+      {
+        "text": "UHJvY2VzcyB0aGUgdHJhbnNmZXIgdG8gbG9vayBlZmZpY2llbnQ=",
+        "correct": false,
+        "feedback": "TmV2ZXIgYnlwYXNzIGZpbmFuY2lhbCBwcm90b2NvbHMsIGV2ZW4gZm9yIHRoZSBDRU8u"
+      },
+      {
+        "text": "V2FpdCBmb3IgdGhlIG1lZXRpbmcgdG8gZW5kIGFuZCB2ZXJpZnk=",
+        "correct": true,
+        "feedback": "Q29ycmVjdCEgQnVzaW5lc3MgRW1haWwgQ29tcHJvbWlzZSAoQkVDKSByZWxpZXMgb24gYnlwYXNzaW5nIHZlcmlmaWNhdGlvbi4="
+      }
     ],
-    isTimed: true
+    "isTimed": true
   },
   {
-    type: 'SMS Notification',
-    sender: 'NHAI-FASTAG',
-    message: 'Your FASTag has been BLACKLISTED due to low balance. Recharge immediately via this link to avoid ₹1000 penalty at next toll: bit.ly/fastag-update',
-    options: [
-      { text: 'Recharge via the link to avoid penalty', correct: false, feedback: 'Urgency + shortened link = FASTag scam.' },
-      { text: 'Check the official FASTag app or bank portal', correct: true, feedback: 'Always verify through your official banking app.' }
+    "type": "SMS Notification",
+    "sender": "TkhBSS1GQVNUQUc=",
+    "message": "WW91ciBGQVNUYWcgaGFzIGJlZW4gQkxBQ0tMSVNURUQgZHVlIHRvIGxvdyBiYWxhbmNlLiBSZWNoYXJnZSBpbW1lZGlhdGVseSB2aWEgdGhpcyBsaW5rIHRvIGF2b2lkIOKCuTEwMDAgcGVuYWx0eSBhdCBuZXh0IHRvbGw6IGJpdFsuXWx5L2Zhc3RhZy11cGRhdGU=",
+    "options": [
+      {
+        "text": "UmVjaGFyZ2UgdmlhIHRoZSBsaW5rIHRvIGF2b2lkIHBlbmFsdHk=",
+        "correct": false,
+        "feedback": "VXJnZW5jeSArIHNob3J0ZW5lZCBsaW5rID0gRkFTVGFnIHNjYW0u"
+      },
+      {
+        "text": "Q2hlY2sgdGhlIG9mZmljaWFsIEZBU1RhZyBhcHAgb3IgYmFuayBwb3J0YWw=",
+        "correct": true,
+        "feedback": "QWx3YXlzIHZlcmlmeSB0aHJvdWdoIHlvdXIgb2ZmaWNpYWwgYmFua2luZyBhcHAu"
+      }
     ],
-    isTimed: true
+    "isTimed": true
   }
 ];
 
 export const scenariosSet3 = [
   {
-    type: 'True/False',
-    sender: 'System',
-    message: 'True or False: Scammers can make their phone number appear as the official Police or Bank number on your caller ID.',
-    options: [
-      { text: 'False, caller ID is secure', correct: false, feedback: 'Caller ID spoofing is very easy and common.' },
-      { text: 'True', correct: true, feedback: 'Correct! This is called Caller ID Spoofing.' }
+    "type": "True/False",
+    "sender": "U3lzdGVt",
+    "message": "VHJ1ZSBvciBGYWxzZTogU2NhbW1lcnMgY2FuIG1ha2UgdGhlaXIgcGhvbmUgbnVtYmVyIGFwcGVhciBhcyB0aGUgb2ZmaWNpYWwgUG9saWNlIG9yIEJhbmsgbnVtYmVyIG9uIHlvdXIgY2FsbGVyIElELg==",
+    "options": [
+      {
+        "text": "RmFsc2UsIGNhbGxlciBJRCBpcyBzZWN1cmU=",
+        "correct": false,
+        "feedback": "Q2FsbGVyIElEIHNwb29maW5nIGlzIHZlcnkgZWFzeSBhbmQgY29tbW9uLg=="
+      },
+      {
+        "text": "VHJ1ZQ==",
+        "correct": true,
+        "feedback": "Q29ycmVjdCEgVGhpcyBpcyBjYWxsZWQgQ2FsbGVyIElEIFNwb29maW5nLg=="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Email',
-    sender: 'Google Storage <alert@google-storage-update.info>',
-    message: 'Your Gmail storage is 99% full. You will stop receiving emails in 2 hours. Click here to upgrade your storage for free.',
-    options: [
-      { text: 'Click to upgrade for free', correct: false, feedback: 'Google does not give free upgrades via suspicious domains.' },
-      { text: 'Check storage in the Google One app', correct: true, feedback: 'Always verify directly in the application.' }
+    "type": "Email",
+    "sender": "R29vZ2xlIFN0b3JhZ2UgPGFsZXJ0QGdvb2dsZS1zdG9yYWdlLXVwZGF0ZS5pbmZvPg==",
+    "message": "WW91ciBHbWFpbCBzdG9yYWdlIGlzIDk5JSBmdWxsLiBZb3Ugd2lsbCBzdG9wIHJlY2VpdmluZyBlbWFpbHMgaW4gMiBob3Vycy4gQ2xpY2sgaGVyZSB0byB1cGdyYWRlIHlvdXIgc3RvcmFnZSBmb3IgZnJlZS4=",
+    "options": [
+      {
+        "text": "Q2xpY2sgdG8gdXBncmFkZSBmb3IgZnJlZQ==",
+        "correct": false,
+        "feedback": "R29vZ2xlIGRvZXMgbm90IGdpdmUgZnJlZSB1cGdyYWRlcyB2aWEgc3VzcGljaW91cyBkb21haW5zLg=="
+      },
+      {
+        "text": "Q2hlY2sgc3RvcmFnZSBpbiB0aGUgR29vZ2xlIE9uZSBhcHA=",
+        "correct": true,
+        "feedback": "QWx3YXlzIHZlcmlmeSBkaXJlY3RseSBpbiB0aGUgYXBwbGljYXRpb24u"
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'SMS',
-    sender: 'E-CHALLAN',
-    message: 'Your vehicle has a pending traffic violation challan of ₹2000. Pay immediately to avoid court case: http://e-challan-parivahan.in.net',
-    options: [
-      { text: 'Pay the challan to avoid court', correct: false, feedback: 'The URL uses a fake domain (.in.net). Official sites use .gov.in.' },
-      { text: 'Ignore or check official parivahan.gov.in', correct: true, feedback: 'Always look for the official .gov.in domain.' }
+    "type": "SMS",
+    "sender": "RS1DSEFMTEFO",
+    "message": "WW91ciB2ZWhpY2xlIGhhcyBhIHBlbmRpbmcgdHJhZmZpYyB2aW9sYXRpb24gY2hhbGxhbiBvZiDigrkyMDAwLiBQYXkgaW1tZWRpYXRlbHkgdG8gYXZvaWQgY291cnQgY2FzZTogaHh4cDovL2UtY2hhbGxhbi1wYXJpdmFoYW5bLl1pblsuXW5ldA==",
+    "options": [
+      {
+        "text": "UGF5IHRoZSBjaGFsbGFuIHRvIGF2b2lkIGNvdXJ0",
+        "correct": false,
+        "feedback": "VGhlIFVSTCB1c2VzIGEgZmFrZSBkb21haW4gKC5pbi5uZXQpLiBPZmZpY2lhbCBzaXRlcyB1c2UgLmdvdi5pbi4="
+      },
+      {
+        "text": "SWdub3JlIG9yIGNoZWNrIG9mZmljaWFsIHBhcml2YWhhbi5nb3YuaW4=",
+        "correct": true,
+        "feedback": "QWx3YXlzIGxvb2sgZm9yIHRoZSBvZmZpY2lhbCAuZ292LmluIGRvbWFpbi4="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'WhatsApp (Hinglish)',
-    sender: 'Friend (New Number)',
-    message: 'Bhai Paytm par 500 bhej de, mera daily limit cross ho gaya hai aur petrol pump par hu. Ghar jaake wapas karta hu.',
-    options: [
-      { text: 'Send the money to help him out', correct: false, feedback: 'Never send money to a new number claiming to be a friend without voice confirmation.' },
-      { text: 'Call the friend on his old number', correct: true, feedback: 'Excellent. He will likely pick up and tell you he is not at a petrol pump.' }
+    "type": "WhatsApp (Hinglish)",
+    "sender": "RnJpZW5kIChOZXcgTnVtYmVyKQ==",
+    "message": "QmhhaSBQYXl0bSBwYXIgNTAwIGJoZWogZGUsIG1lcmEgZGFpbHkgbGltaXQgY3Jvc3MgaG8gZ2F5YSBoYWkgYXVyIHBldHJvbCBwdW1wIHBhciBodS4gR2hhciBqYWFrZSB3YXBhcyBrYXJ0YSBodS4=",
+    "options": [
+      {
+        "text": "U2VuZCB0aGUgbW9uZXkgdG8gaGVscCBoaW0gb3V0",
+        "correct": false,
+        "feedback": "TmV2ZXIgc2VuZCBtb25leSB0byBhIG5ldyBudW1iZXIgY2xhaW1pbmcgdG8gYmUgYSBmcmllbmQgd2l0aG91dCB2b2ljZSBjb25maXJtYXRpb24u"
+      },
+      {
+        "text": "Q2FsbCB0aGUgZnJpZW5kIG9uIGhpcyBvbGQgbnVtYmVy",
+        "correct": true,
+        "feedback": "RXhjZWxsZW50LiBIZSB3aWxsIGxpa2VseSBwaWNrIHVwIGFuZCB0ZWxsIHlvdSBoZSBpcyBub3QgYXQgYSBwZXRyb2wgcHVtcC4="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Find the Flaw',
-    sender: 'Vendor Billing',
-    message: 'Please find the attached urgent invoice for this month. \nAttachment: INVOICE_MAY_2023.pdf.exe',
-    options: [
-      { text: 'The date is wrong', correct: false, feedback: 'The file extension is the critical danger.' },
-      { text: 'The file ends in .exe instead of .pdf', correct: true, feedback: 'An .exe file is an executable program (malware), not a document.' },
-      { text: 'There is no greeting', correct: false, feedback: 'While unprofessional, the executable file is the actual threat.' }
+    "type": "Find the Flaw",
+    "sender": "VmVuZG9yIEJpbGxpbmc=",
+    "message": "UGxlYXNlIGZpbmQgdGhlIGF0dGFjaGVkIHVyZ2VudCBpbnZvaWNlIGZvciB0aGlzIG1vbnRoLiAKQXR0YWNobWVudDogSU5WT0lDRV9NQVlfMjAyMy5wZGYuZXhl",
+    "options": [
+      {
+        "text": "VGhlIGRhdGUgaXMgd3Jvbmc=",
+        "correct": false,
+        "feedback": "VGhlIGZpbGUgZXh0ZW5zaW9uIGlzIHRoZSBjcml0aWNhbCBkYW5nZXIu"
+      },
+      {
+        "text": "VGhlIGZpbGUgZW5kcyBpbiAuZXhlIGluc3RlYWQgb2YgLnBkZg==",
+        "correct": true,
+        "feedback": "QW4gLmV4ZSBmaWxlIGlzIGFuIGV4ZWN1dGFibGUgcHJvZ3JhbSAobWFsd2FyZSksIG5vdCBhIGRvY3VtZW50Lg=="
+      },
+      {
+        "text": "VGhlcmUgaXMgbm8gZ3JlZXRpbmc=",
+        "correct": false,
+        "feedback": "V2hpbGUgdW5wcm9mZXNzaW9uYWwsIHRoZSBleGVjdXRhYmxlIGZpbGUgaXMgdGhlIGFjdHVhbCB0aHJlYXQu"
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Voice Call (Transcript)',
-    sender: 'Telecom Dept (TRAI)',
-    message: '"This is the Telecom Department. Your Aadhaar has been used to register 15 illegal SIM cards used for money laundering. Press 9 to connect to the CBI officer."',
-    options: [
-      { text: 'Press 9 to clear your name', correct: false, feedback: 'TRAI does not call citizens directly. Pressing 9 connects you to the fake "CBI" extortionist.' },
-      { text: 'Disconnect immediately', correct: true, feedback: 'Correct! This is a massive extortion scam currently active.' }
+    "type": "Voice Call (Transcript)",
+    "sender": "VGVsZWNvbSBEZXB0IChUUkFJKQ==",
+    "message": "IlRoaXMgaXMgdGhlIFRlbGVjb20gRGVwYXJ0bWVudC4gWW91ciBBYWRoYWFyIGhhcyBiZWVuIHVzZWQgdG8gcmVnaXN0ZXIgMTUgaWxsZWdhbCBTSU0gY2FyZHMgdXNlZCBmb3IgbW9uZXkgbGF1bmRlcmluZy4gUHJlc3MgOSB0byBjb25uZWN0IHRvIHRoZSBDQkkgb2ZmaWNlci4i",
+    "options": [
+      {
+        "text": "UHJlc3MgOSB0byBjbGVhciB5b3VyIG5hbWU=",
+        "correct": false,
+        "feedback": "VFJBSSBkb2VzIG5vdCBjYWxsIGNpdGl6ZW5zIGRpcmVjdGx5LiBQcmVzc2luZyA5IGNvbm5lY3RzIHlvdSB0byB0aGUgZmFrZSAiQ0JJIiBleHRvcnRpb25pc3Qu"
+      },
+      {
+        "text": "RGlzY29ubmVjdCBpbW1lZGlhdGVseQ==",
+        "correct": true,
+        "feedback": "Q29ycmVjdCEgVGhpcyBpcyBhIG1hc3NpdmUgZXh0b3J0aW9uIHNjYW0gY3VycmVudGx5IGFjdGl2ZS4="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Scenario',
-    sender: 'Physical World',
-    message: 'You find a USB drive in the company parking lot labeled "Confidential Salary Data". What do you do?',
-    options: [
-      { text: 'Plug it in to see who it belongs to', correct: false, feedback: 'USB drops are a common physical hacking technique to deploy malware.' },
-      { text: 'Give it to the IT Security team', correct: true, feedback: 'Perfect. Never plug untrusted media into your devices.' }
+    "type": "Scenario",
+    "sender": "UGh5c2ljYWwgV29ybGQ=",
+    "message": "WW91IGZpbmQgYSBVU0IgZHJpdmUgaW4gdGhlIGNvbXBhbnkgcGFya2luZyBsb3QgbGFiZWxlZCAiQ29uZmlkZW50aWFsIFNhbGFyeSBEYXRhIi4gV2hhdCBkbyB5b3UgZG8/",
+    "options": [
+      {
+        "text": "UGx1ZyBpdCBpbiB0byBzZWUgd2hvIGl0IGJlbG9uZ3MgdG8=",
+        "correct": false,
+        "feedback": "VVNCIGRyb3BzIGFyZSBhIGNvbW1vbiBwaHlzaWNhbCBoYWNraW5nIHRlY2huaXF1ZSB0byBkZXBsb3kgbWFsd2FyZS4="
+      },
+      {
+        "text": "R2l2ZSBpdCB0byB0aGUgSVQgU2VjdXJpdHkgdGVhbQ==",
+        "correct": true,
+        "feedback": "UGVyZmVjdC4gTmV2ZXIgcGx1ZyB1bnRydXN0ZWQgbWVkaWEgaW50byB5b3VyIGRldmljZXMu"
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Rank the Risk',
-    sender: 'System',
-    message: 'Which password practice is the MOST dangerous?',
-    options: [
-      { text: 'Using a password that is only 8 characters long', correct: false, feedback: 'While weak, reusing passwords is worse.' },
-      { text: 'Reusing the same password across your email and banking sites', correct: true, feedback: 'If one site is breached, hackers will test the password on all your critical accounts.' },
-      { text: 'Writing your password down on a paper at home', correct: false, feedback: 'Physical theft is lower risk than remote credential stuffing.' }
+    "type": "Rank the Risk",
+    "sender": "U3lzdGVt",
+    "message": "V2hpY2ggcGFzc3dvcmQgcHJhY3RpY2UgaXMgdGhlIE1PU1QgZGFuZ2Vyb3VzPw==",
+    "options": [
+      {
+        "text": "VXNpbmcgYSBwYXNzd29yZCB0aGF0IGlzIG9ubHkgOCBjaGFyYWN0ZXJzIGxvbmc=",
+        "correct": false,
+        "feedback": "V2hpbGUgd2VhaywgcmV1c2luZyBwYXNzd29yZHMgaXMgd29yc2Uu"
+      },
+      {
+        "text": "UmV1c2luZyB0aGUgc2FtZSBwYXNzd29yZCBhY3Jvc3MgeW91ciBlbWFpbCBhbmQgYmFua2luZyBzaXRlcw==",
+        "correct": true,
+        "feedback": "SWYgb25lIHNpdGUgaXMgYnJlYWNoZWQsIGhhY2tlcnMgd2lsbCB0ZXN0IHRoZSBwYXNzd29yZCBvbiBhbGwgeW91ciBjcml0aWNhbCBhY2NvdW50cy4="
+      },
+      {
+        "text": "V3JpdGluZyB5b3VyIHBhc3N3b3JkIGRvd24gb24gYSBwYXBlciBhdCBob21l",
+        "correct": false,
+        "feedback": "UGh5c2ljYWwgdGhlZnQgaXMgbG93ZXIgcmlzayB0aGFuIHJlbW90ZSBjcmVkZW50aWFsIHN0dWZmaW5nLg=="
+      }
     ],
-    isTimed: false
+    "isTimed": false
   },
   {
-    type: 'Impersonation Chat',
-    sender: 'Tech Support (Microsoft)',
-    message: 'Hi, we have detected malicious network traffic coming from your IP address. Your computer is infected. Please download AnyDesk so our technician can remove the virus.',
-    options: [
-      { text: 'Download AnyDesk to fix the virus', correct: false, feedback: 'AnyDesk gives them full control of your PC and bank accounts.' },
-      { text: 'Close the chat and ignore', correct: true, Microsoft: 'Microsoft does not proactively reach out to fix your PC.' }
+    "type": "Impersonation Chat",
+    "sender": "VGVjaCBTdXBwb3J0IChNaWNyb3NvZnQp",
+    "message": "SGksIHdlIGhhdmUgZGV0ZWN0ZWQgbWFsaWNpb3VzIG5ldHdvcmsgdHJhZmZpYyBjb21pbmcgZnJvbSB5b3VyIElQIGFkZHJlc3MuIFlvdXIgY29tcHV0ZXIgaXMgaW5mZWN0ZWQuIFBsZWFzZSBkb3dubG9hZCBBbnlEZXNrIHNvIG91ciB0ZWNobmljaWFuIGNhbiByZW1vdmUgdGhlIHZpcnVzLg==",
+    "options": [
+      {
+        "text": "RG93bmxvYWQgQW55RGVzayB0byBmaXggdGhlIHZpcnVz",
+        "correct": false,
+        "feedback": "QW55RGVzayBnaXZlcyB0aGVtIGZ1bGwgY29udHJvbCBvZiB5b3VyIFBDIGFuZCBiYW5rIGFjY291bnRzLg=="
+      },
+      {
+        "text": "Q2xvc2UgdGhlIGNoYXQgYW5kIGlnbm9yZQ==",
+        "correct": true,
+        "feedback": "Q2xvc2UgdGhlIGNoYXQgYW5kIGlnbm9yZS4gTWljcm9zb2Z0IGRvZXMgbm90IHByb2FjdGl2ZWx5IHJlYWNoIG91dCB0byBmaXggeW91ciBQQy4="
+      }
     ],
-    isTimed: true
+    "isTimed": true
   },
   {
-    type: 'SMS Notification',
-    sender: 'APK-ALERT',
-    message: 'Your electricity bill for last month is updated. Please download our new billing app directly from this link to pay: http://mseb-app-download.com/app.apk',
-    options: [
-      { text: 'Download the APK to pay', correct: false, feedback: 'Sideloading APKs from SMS links will install spyware that reads your OTPs.' },
-      { text: 'Only download apps from the official Play Store / App Store', correct: true, feedback: 'Always stick to official app stores.' }
+    "type": "SMS Notification",
+    "sender": "QVBLLUFMRVJU",
+    "message": "WW91ciBlbGVjdHJpY2l0eSBiaWxsIGZvciBsYXN0IG1vbnRoIGlzIHVwZGF0ZWQuIFBsZWFzZSBkb3dubG9hZCBvdXIgbmV3IGJpbGxpbmcgYXBwIGRpcmVjdGx5IGZyb20gdGhpcyBsaW5rIHRvIHBheTogaHh4cDovL21zZWItYXBwLWRvd25sb2FkWy5dY29tL2FwcC5hcGs=",
+    "options": [
+      {
+        "text": "RG93bmxvYWQgdGhlIEFQSyB0byBwYXk=",
+        "correct": false,
+        "feedback": "U2lkZWxvYWRpbmcgQVBLcyBmcm9tIFNNUyBsaW5rcyB3aWxsIGluc3RhbGwgc3B5d2FyZSB0aGF0IHJlYWRzIHlvdXIgT1RQcy4="
+      },
+      {
+        "text": "T25seSBkb3dubG9hZCBhcHBzIGZyb20gdGhlIG9mZmljaWFsIFBsYXkgU3RvcmUgLyBBcHAgU3RvcmU=",
+        "correct": true,
+        "feedback": "QWx3YXlzIHN0aWNrIHRvIG9mZmljaWFsIGFwcCBzdG9yZXMu"
+      }
     ],
-    isTimed: true
+    "isTimed": true
   }
 ];

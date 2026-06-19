@@ -14,6 +14,8 @@ import com.aegisai.app.AegisApp
 import com.aegisai.app.call.CallGuardController
 import com.aegisai.app.data.SessionHelper
 import com.aegisai.app.databinding.ActivityMainBinding
+import com.aegisai.app.call.CallAnalysisNotifier
+import com.aegisai.app.ui.call.CallAnalysisResultActivity
 import com.aegisai.app.ui.login.LoginActivity
 import com.google.android.material.navigation.NavigationBarView
 import kotlinx.coroutines.launch
@@ -45,6 +47,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        handleCallGuardIntent(intent)
+
         val navHost = supportFragmentManager.findFragmentById(binding.navHost.id) as NavHostFragment
         val navController = navHost.navController
 
@@ -58,6 +62,18 @@ class MainActivity : AppCompatActivity() {
             binding.navHost.updatePadding(bottom = bars.bottom / 2)
             insets
         }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        handleCallGuardIntent(intent)
+    }
+
+    private fun handleCallGuardIntent(intent: Intent?) {
+        val sessionId = intent?.getStringExtra(CallAnalysisNotifier.EXTRA_SESSION_ID) ?: return
+        intent.removeExtra(CallAnalysisNotifier.EXTRA_SESSION_ID)
+        startActivity(CallAnalysisResultActivity.intent(this, sessionId))
     }
 
     private fun setupNav(navView: NavigationBarView, navController: androidx.navigation.NavController) {

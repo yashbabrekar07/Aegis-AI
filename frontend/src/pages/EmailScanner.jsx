@@ -153,6 +153,32 @@ export default function EmailScanner() {
 
 
 
+      {/* Educational disclaimer — not a credential harvest */}
+      <div
+        data-educational="true"
+        style={{
+          background: 'rgba(16, 185, 129, 0.08)',
+          border: '1px solid rgba(16, 185, 129, 0.25)',
+          borderRadius: '12px',
+          padding: '14px 18px',
+          marginBottom: '24px',
+          display: 'flex',
+          alignItems: 'flex-start',
+          gap: '12px',
+          fontSize: '14px',
+          lineHeight: 1.5,
+          maxWidth: '900px',
+        }}
+      >
+        <ShieldAlert size={20} color="var(--accent-primary)" style={{ flexShrink: 0, marginTop: '2px' }} />
+        <p style={{ margin: 0, color: 'var(--text-muted)' }}>
+          <strong style={{ color: 'var(--text-main)' }}>This is not a login page.</strong>{' '}
+          Aegis AI is an educational tool. Your Gmail App Password is sent directly to our backend
+          to read inbox messages for scam analysis — it is never stored or shared. You can revoke
+          the App Password at any time from your Google Account settings.
+        </p>
+      </div>
+
       {/* Main Content Area */}
       {emails.length === 0 ? (
         /* Real Gmail Login Form */
@@ -182,6 +208,8 @@ export default function EmailScanner() {
                 placeholder="your.email@gmail.com"
                 value={gmailAddress}
                 onChange={(e) => setGmailAddress(e.target.value)}
+                autoComplete="off"
+                name="aegis-gmail-address"
                 style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '14px', outline: 'none' }}
               />
             </div>
@@ -194,6 +222,8 @@ export default function EmailScanner() {
                   placeholder="xxxx xxxx xxxx xxxx"
                   value={appPassword}
                   onChange={(e) => setAppPassword(e.target.value)}
+                  autoComplete="off"
+                  name="aegis-app-password"
                   style={{ width: '100%', padding: '12px 48px 12px 16px', borderRadius: '8px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '14px', letterSpacing: showPassword ? 'normal' : '4px', outline: 'none' }}
                 />
                 <button
@@ -351,13 +381,6 @@ export default function EmailScanner() {
           )}
         </div>
       )}
-
-      {/* Quick spin animation override for refresh button */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        .animate-spin { animation: spin 1s linear infinite; }
-      `}} />
     </div>
   );
 }

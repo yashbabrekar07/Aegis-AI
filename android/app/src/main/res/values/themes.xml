@@ -13,6 +13,12 @@
         <item name="android:windowAnimationStyle">@style/AegisWindowAnimation</item>
     </style>
 
+    <style name="Theme.AegisAI.Transparent" parent="Theme.AegisAI">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
     <style name="AegisWindowAnimation" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
         <item name="android:activityOpenExitAnimation">@anim/fade_out</item>

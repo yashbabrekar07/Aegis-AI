@@ -4,9 +4,9 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.telephony.TelephonyManager
-import androidx.core.content.ContextCompat
 import com.aegisai.app.AegisApp
 
+/** Fallback for API 26–28 or when call screening role is not granted. */
 class IncomingCallReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent?) {
         if (intent?.action != TelephonyManager.ACTION_PHONE_STATE_CHANGED) return
@@ -21,25 +21,27 @@ class IncomingCallReceiver : BroadcastReceiver() {
             TelephonyManager.EXTRA_STATE_RINGING -> {
                 CallGuardState.callPhase = CallGuardState.PHASE_RINGING
                 CallGuardState.lastCaller = number?.takeIf { it.isNotBlank() }
+                if (CallGuardState.activeSessionId == null) {
+                    CallGuardCoordinator.onIncomingCallScreened(
+                        appContext,
+                        number ?: CallGuardState.lastCaller,
+                    )
+                }
             }
             TelephonyManager.EXTRA_STATE_OFFHOOK -> {
-                if (CallGuardState.callPhase == CallGuardState.PHASE_OFFHOOK) return
-                // Covers incoming (RINGING→OFFHOOK) and outgoing (IDLE→OFFHOOK)
                 CallGuardState.callPhase = CallGuardState.PHASE_OFFHOOK
-                val phone = number?.takeIf { it.isNotBlank() } ?: CallGuardState.lastCaller
-                val start = Intent(appContext, CallGuardWatchService::class.java).apply {
-                    action = CallGuardWatchService.ACTION_START_RECORDING
-                    putExtra(CallGuardWatchService.EXTRA_PHONE, phone)
-                }
-                dispatchToWatch(appContext, start)
             }
             TelephonyManager.EXTRA_STATE_IDLE -> {
-                if (CallGuardState.callPhase != CallGuardState.PHASE_OFFHOOK) return
-                CallGuardState.callPhase = CallGuardState.PHASE_IDLE
-                val analyze = Intent(appContext, CallGuardWatchService::class.java).apply {
-                    action = CallGuardWatchService.ACTION_ANALYZE
+                if (CallGuardState.callPhase == CallGuardState.PHASE_OFFHOOK ||
+                    CallGuardState.callPhase == CallGuardState.PHASE_RINGING
+                ) {
+                    CallGuardState.activeSessionId?.let { sessionId ->
+                        CallGuardCoordinator.onCallEnded(appContext, sessionId)
+                    }
                 }
-                dispatchToWatch(appContext, analyze)
+                CallGuardState.callPhase = CallGuardState.PHASE_IDLE
+                CallGuardState.activeSessionId = null
+                CallGuardState.lastCaller = null
             }
         }
     }
@@ -57,19 +59,8 @@ object CallGuardState {
     var callPhase: Int = PHASE_IDLE
 
     @Volatile
-    var watchServiceRunning: Boolean = false
-}
+    var activeSessionId: String? = null
 
-private fun dispatchToWatch(context: Context, intent: Intent) {
-    try {
-        if (CallGuardState.watchServiceRunning) {
-            context.startService(intent)
-        } else {
-            ContextCompat.startForegroundService(context, intent)
-        }
-    } catch (_: Exception) {
-        try {
-            ContextCompat.startForegroundService(context, intent)
-        } catch (_: Exception) { }
-    }
+    @Volatile
+    var watchServiceRunning: Boolean = false
 }

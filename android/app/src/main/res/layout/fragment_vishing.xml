@@ -54,9 +54,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:lineSpacingMultiplier="1.35"
-                    android:text="When enabled, Aegis listens via your mic during each call and alerts you when the call ends. Use speakerphone for better capture. One notification per call."
+                    android:text="@string/call_guard_card_body"
                     android:textColor="@color/aegis_text_muted"
                     android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/callGuardStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/aegis_green"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.materialswitch.MaterialSwitch
                     android:id="@+id/callGuardSwitch"
@@ -65,6 +74,41 @@
                     android:layout_marginTop="12dp"
                     android:text="Protect my calls"
                     android:textColor="@color/aegis_text_main" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/callHistoryCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/aegis_card"
+            app:cardCornerRadius="@dimen/card_radius"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/aegis_border"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    style="@style/AegisCardTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/call_guard_history_title" />
+
+                <TextView
+                    android:id="@+id/callHistoryList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingMultiplier="1.35"
+                    android:textColor="@color/aegis_text_muted"
+                    android:textSize="13sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

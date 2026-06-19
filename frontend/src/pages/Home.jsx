@@ -39,13 +39,13 @@ export default function Home() {
         throw new Error(data.error);
       }
       setResult(data);
-      
+
       if (data.risk === 'SAFE') {
         playSound('safe');
       } else {
         playSound('scam');
       }
-      
+
       // Save to History
       const safeData = {
         id: Date.now(),
@@ -53,11 +53,15 @@ export default function Home() {
         type: "Text",
         date: new Date().toLocaleString(),
         risk: data.risk,
-        label: data.label
+        label: data.label,
+        reason: data.reason || '',
+        confidence: data.confidence || 0,
+        detected_keywords: data.detected_keywords || [],
+        suspicious_links: data.suspicious_links || []
       };
       const existing = JSON.parse(localStorage.getItem('aegis_scan_history') || '[]');
       localStorage.setItem('aegis_scan_history', JSON.stringify([safeData, ...existing]));
-      
+
     } catch (err) {
       console.error(err);
       setResult({ risk: 'ERROR', confidence: 0, label: 'error', reason: 'Failed to connect to backend server.' });
@@ -70,15 +74,15 @@ export default function Home() {
   const handleAudioUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
-    
+
     setLoading(true);
     setResult(null);
     setInput("Processing audio file...");
     playSound('scan');
-    
+
     const formData = new FormData();
     formData.append('file', file);
-    
+
     try {
       const response = await fetch(apiUrl('/api/scan-audio'), {
         method: 'POST',
@@ -91,20 +95,20 @@ export default function Home() {
         playSound('scam');
         return;
       }
-      
+
       if (data.transcription) {
         const langNote = data.detected_language ? ` [${data.detected_language}]` : '';
         const methodNote = data.method ? ` (${data.method})` : '';
         setInput(`${data.transcription}${langNote}${methodNote}`);
       }
       setResult(data);
-      
+
       if (data.risk === 'SAFE') {
         playSound('safe');
       } else {
         playSound('scam');
       }
-      
+
       // Save to History
       const safeData = {
         id: Date.now(),
@@ -112,11 +116,15 @@ export default function Home() {
         type: "Audio",
         date: new Date().toLocaleString(),
         risk: data.risk,
-        label: data.label
+        label: data.label,
+        reason: data.reason || '',
+        confidence: data.confidence || 0,
+        detected_keywords: data.detected_keywords || [],
+        suspicious_links: data.suspicious_links || []
       };
       const existing = JSON.parse(localStorage.getItem('aegis_scan_history') || '[]');
       localStorage.setItem('aegis_scan_history', JSON.stringify([safeData, ...existing]));
-      
+
     } catch (err) {
       console.error(err);
       setInput('Error: Connection failed. The backend server might be offline.');
@@ -132,15 +140,29 @@ export default function Home() {
       <h1 style={{ marginBottom: '8px' }}>
         {userName ? `Welcome, ${userName}` : 'Scan Center'}
       </h1>
-      <p style={{ marginBottom: '40px' }}>Analyze any message, email, or audio file for social engineering threats.</p>
-      
+      <p style={{ marginBottom: '16px' }}>Analyze any message, email, or audio file for social engineering threats.</p>
+
+      {/* Educational disclaimer for Safe Browsing compliance */}
+      <div style={{
+        background: 'rgba(16, 185, 129, 0.06)',
+        border: '1px solid rgba(16, 185, 129, 0.12)',
+        borderRadius: '10px',
+        padding: '10px 16px',
+        marginBottom: '32px',
+        fontSize: '12px',
+        color: '#64748b',
+        lineHeight: 1.5,
+      }}>
+        🎓 <strong style={{ color: '#94a3b8' }}>Educational Tool</strong> — This analysis is for cybersecurity awareness purposes only. No data is stored on our servers.
+      </div>
+
       <div className="home-grid">
         <div className="card">
           <h2 className="card-title">New Scan</h2>
           <div className="scanner-container">
             {loading && <div className="scanner-laser"></div>}
-            <textarea 
-              className="input-field" 
+            <textarea
+              className="input-field"
               placeholder="Paste suspicious text, SMS, or email here..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -148,17 +170,17 @@ export default function Home() {
               style={{ border: loading ? '1px solid var(--accent-primary)' : '' }}
             ></textarea>
           </div>
-          
+
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px' }}>
-            <input 
-              type="file" 
-              accept="audio/*" 
-              style={{ display: 'none' }} 
-              ref={fileInputRef} 
-              onChange={handleAudioUpload} 
+            <input
+              type="file"
+              accept="audio/*"
+              style={{ display: 'none' }}
+              ref={fileInputRef}
+              onChange={handleAudioUpload}
             />
-            <button 
-              className="btn" 
+            <button
+              className="btn"
               style={{ background: '#f5f5f5', color: '#333', display: 'flex', gap: '8px', alignItems: 'center' }}
               onClick={() => fileInputRef.current?.click()}
               disabled={loading}
@@ -175,12 +197,12 @@ export default function Home() {
           {result && (
             <div className={`card`} style={{ borderTop: `4px solid ${result.risk === 'SAFE' ? 'var(--safe-green)' : result.risk === 'SCAM' ? 'var(--scam-red)' : '#FF9500'}` }}>
               <h2 className="card-title">Analysis Result</h2>
-              
+
               <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '24px' }}>
-                {result.risk === 'SAFE' ? <CheckCircle size={48} color="var(--safe-green)" /> : 
-                 result.risk === 'SCAM' ? <ShieldAlert size={48} color="var(--scam-red)" /> : 
-                 <AlertTriangle size={48} color="#FF9500" />}
-                
+                {result.risk === 'SAFE' ? <CheckCircle size={48} color="var(--safe-green)" /> :
+                  result.risk === 'SCAM' ? <ShieldAlert size={48} color="var(--scam-red)" /> :
+                    <AlertTriangle size={48} color="#FF9500" />}
+
                 <div>
                   <div style={{ fontSize: '24px', fontWeight: 700, color: result.risk === 'SAFE' ? 'var(--safe-green)' : result.risk === 'SCAM' ? 'var(--scam-red)' : '#FF9500' }}>
                     {result.risk}

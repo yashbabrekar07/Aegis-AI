@@ -1,10 +1,9 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Shield } from 'lucide-react';
 import { supabase } from '../supabaseClient';
 import { saveUsername } from '../utils/userStorage';
 import { isGmailAddress, mapAuthError, isEmailVerified, getPostLoginPath } from '../utils/authHelpers';
-import appleLogo from '../assets/apple-sign-in.svg';
 import '../styles/login.css';
 
 export default function Login({ isSignup }) {
@@ -149,7 +148,7 @@ export default function Login({ isSignup }) {
             Detect. Prevent.<br />Secure.
           </h2>
           <p style={{ fontSize: '18px', opacity: 0.9, lineHeight: 1.5, fontWeight: 400 }}>
-            Advanced multi-channel phishing detection powered by real-time artificial intelligence. Join thousands protecting their digital footprint today.
+            Advanced multi-channel threat detection powered by real-time artificial intelligence. An educational cybersecurity awareness platform for everyone.
           </p>
         </div>
 
@@ -183,10 +182,6 @@ export default function Login({ isSignup }) {
             <button type="button" onClick={() => handleOAuthLogin('google')} className="login-social-btn login-oauth-btn">
               <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" style={{ width: '20px' }} />
               Sign {isSignup ? 'up' : 'in'} with Google
-            </button>
-            <button type="button" onClick={() => handleOAuthLogin('apple')} className="login-social-btn login-social-btn apple login-oauth-btn">
-              <img src={appleLogo} alt="" className="apple-logo-img" aria-hidden="true" />
-              Sign {isSignup ? 'up' : 'in'} with Apple
             </button>
           </div>
 
@@ -289,6 +284,20 @@ export default function Login({ isSignup }) {
               {loading ? 'Please wait...' : isSignup ? 'Send verification code' : 'Sign In'}
             </button>
           </form>
+
+          {/* Trust & transparency notice */}
+          <div style={{ marginTop: '24px', fontSize: '12px', color: '#475569', lineHeight: 1.6, textAlign: 'center' }}>
+            🔒 Authentication is powered by{' '}
+            <a href="https://supabase.com" target="_blank" rel="noreferrer" style={{ color: '#10b981', textDecoration: 'underline' }}>Supabase</a>.
+            Aegis AI never sees or stores your password.
+          </div>
+
+          {/* Legal links */}
+          <div style={{ marginTop: '16px', display: 'flex', justifyContent: 'center', gap: '16px', fontSize: '12px' }}>
+            <Link to="/privacy" style={{ color: '#475569', textDecoration: 'underline' }}>Privacy Policy</Link>
+            <Link to="/terms" style={{ color: '#475569', textDecoration: 'underline' }}>Terms of Service</Link>
+            <Link to="/about" style={{ color: '#475569', textDecoration: 'underline' }}>About</Link>
+          </div>
 
         </div>
       </div>

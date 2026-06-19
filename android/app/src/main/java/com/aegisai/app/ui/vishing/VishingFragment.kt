@@ -16,11 +16,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.aegisai.app.AegisApp
 import com.aegisai.app.R
+import com.aegisai.app.call.CallAnalysisNotifier
 import com.aegisai.app.call.CallGuardController
-import com.aegisai.app.call.CallGuardDiagnostics
+import com.aegisai.app.call.CallGuardPermissions
+import com.aegisai.app.call.CallScreeningRoleHelper
+import com.aegisai.app.call.CallSession
+import com.aegisai.app.call.CallSessionStore
 import com.aegisai.app.data.ApiClient
 import com.aegisai.app.data.ScanResult
 import com.aegisai.app.databinding.FragmentVishingBinding
+import com.aegisai.app.ui.call.CallAnalysisResultActivity
 import com.aegisai.app.util.AnimUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -42,27 +47,17 @@ class VishingFragment : Fragment() {
         ActivityResultContracts.RequestMultiplePermissions()
     ) { results ->
         if (!isAdded || _binding == null) return@registerForActivityResult
-        val allGranted = results.values.all { it }
-        if (allGranted) {
-            val ctx = requireContext().applicationContext
-            val prefs = AegisApp.get(ctx).prefs
-            prefs.callGuardEnabled = true
-            CallGuardController.enable(ctx)
-            binding.callGuardSwitch.isChecked = true
-            
-            if (!prefs.hasCheckedCompatibility) {
-                Toast.makeText(requireContext(), "Optimizing Call Guard audio routing for your device...", Toast.LENGTH_LONG).show()
-                lifecycleScope.launch {
-                    CallGuardDiagnostics.runCompatibilityTest(ctx)
-                    Toast.makeText(requireContext(), "Call Guard enabled and optimized for your device", Toast.LENGTH_LONG).show()
-                }
-            } else {
-                Toast.makeText(requireContext(), "Call Guard enabled for all calls", Toast.LENGTH_LONG).show()
-            }
+        if (results.values.all { it }) {
+            requestCallScreeningRoleIfNeeded()
         } else {
             binding.callGuardSwitch.isChecked = false
-            Toast.makeText(requireContext(), "Phone, mic and notification permissions required", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), R.string.call_guard_need_permissions, Toast.LENGTH_LONG).show()
         }
+    }
+
+    private val callScreeningRole = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        if (!isAdded || _binding == null) return@registerForActivityResult
+        finalizeCallGuardEnable()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -101,41 +96,67 @@ class VishingFragment : Fragment() {
         }
 
         binding.stopRecordBtn.setOnClickListener { stopAndScan() }
+
+        handleSessionDeepLink()
+        refreshCallGuardStatus()
+        refreshCallHistory()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        refreshCallGuardStatus()
+        refreshCallHistory()
+    }
+
+    private fun handleSessionDeepLink() {
+        val sessionId = activity?.intent?.getStringExtra(CallAnalysisNotifier.EXTRA_SESSION_ID)
+            ?: return
+        activity?.intent?.removeExtra(CallAnalysisNotifier.EXTRA_SESSION_ID)
+        startActivity(CallAnalysisResultActivity.intent(requireContext(), sessionId))
     }
 
     private fun enableCallGuard() {
-        val needed = mutableListOf(
-            Manifest.permission.RECORD_AUDIO,
-            Manifest.permission.READ_PHONE_STATE,
-        )
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            needed.add(Manifest.permission.POST_NOTIFICATIONS)
-        }
-        val missing = needed.filter {
+        val missing = CallGuardPermissions.requiredPermissions().filter {
             ContextCompat.checkSelfPermission(requireContext(), it) != PackageManager.PERMISSION_GRANTED
         }
         if (missing.isEmpty()) {
-            val ctx = requireContext().applicationContext
-            val prefs = AegisApp.get(ctx).prefs
-            prefs.callGuardEnabled = true
-            CallGuardController.enable(ctx)
-            
-            if (!prefs.hasCheckedCompatibility) {
-                Toast.makeText(requireContext(), "Optimizing Call Guard audio routing for your device...", Toast.LENGTH_LONG).show()
-                lifecycleScope.launch {
-                    val success = CallGuardDiagnostics.runCompatibilityTest(ctx)
-                    if (success) {
-                        Toast.makeText(requireContext(), "Call Guard audio optimized successfully!", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(requireContext(), "Setup complete. Dynamic speaker fallback enabled.", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            } else {
-                Toast.makeText(requireContext(), "Call Guard enabled — you will get an alert after each call", Toast.LENGTH_LONG).show()
-            }
+            requestCallScreeningRoleIfNeeded()
         } else {
             binding.callGuardSwitch.isChecked = false
             callGuardPermissions.launch(missing.toTypedArray())
+        }
+    }
+
+    private fun requestCallScreeningRoleIfNeeded() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q &&
+            CallScreeningRoleHelper.isRoleAvailable(requireContext()) &&
+            !CallScreeningRoleHelper.holdsRole(requireContext())
+        ) {
+            CallScreeningRoleHelper.createRequestIntent(requireContext())?.let { intent ->
+                callScreeningRole.launch(intent)
+                return
+            }
+        }
+        finalizeCallGuardEnable()
+    }
+
+    private fun finalizeCallGuardEnable() {
+        val ctx = requireContext().applicationContext
+        val prefs = AegisApp.get(ctx).prefs
+        prefs.callGuardEnabled = true
+        CallGuardController.enable(ctx)
+        binding.callGuardSwitch.isChecked = true
+        refreshCallGuardStatus()
+        Toast.makeText(requireContext(), R.string.call_guard_enabled, Toast.LENGTH_LONG).show()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q &&
+            CallScreeningRoleHelper.isRoleAvailable(requireContext()) &&
+            CallScreeningRoleHelper.holdsRole(requireContext())
+        ) {
+            Toast.makeText(requireContext(), R.string.call_guard_role_granted, Toast.LENGTH_SHORT).show()
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q &&
+            CallScreeningRoleHelper.isRoleAvailable(requireContext())
+        ) {
+            Toast.makeText(requireContext(), R.string.call_guard_need_role, Toast.LENGTH_LONG).show()
         }
     }
 
@@ -143,7 +164,41 @@ class VishingFragment : Fragment() {
         val ctx = requireContext().applicationContext
         AegisApp.get(ctx).prefs.callGuardEnabled = false
         CallGuardController.disable(ctx)
+        refreshCallGuardStatus()
         Toast.makeText(requireContext(), "Call Guard disabled", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun refreshCallGuardStatus() {
+        if (_binding == null) return
+        val configured = CallGuardController.isFullyConfigured(requireContext())
+        binding.callGuardStatus.isVisible = binding.callGuardSwitch.isChecked
+        binding.callGuardStatus.text = when {
+            !binding.callGuardSwitch.isChecked -> ""
+            configured -> getString(R.string.call_guard_enabled)
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q &&
+                CallScreeningRoleHelper.isRoleAvailable(requireContext()) ->
+                getString(R.string.call_guard_need_role)
+            else -> getString(R.string.call_guard_enabled)
+        }
+    }
+
+    private fun refreshCallHistory() {
+        if (_binding == null) return
+        val sessions = CallSessionStore.recentSessions(requireContext(), 5)
+        if (sessions.isEmpty()) {
+            binding.callHistoryCard.isVisible = false
+            return
+        }
+        binding.callHistoryCard.isVisible = true
+        binding.callHistoryList.text = sessions.joinToString("\n\n") { formatHistoryLine(it) }
+    }
+
+    private fun formatHistoryLine(session: CallSession): String {
+        val phone = session.phoneNumber ?: "Unknown"
+        val risk = session.result?.risk ?: session.status
+        val time = session.endedAt ?: session.startedAt
+        val formatted = android.text.format.DateFormat.format("MMM d, HH:mm", time)
+        return "$formatted · $phone · $risk"
     }
 
     private fun startRecording() {

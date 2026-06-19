@@ -12,6 +12,9 @@ import History from './pages/History';
 import Simulate from './pages/Simulate';
 import Dashboard from './pages/Dashboard';
 import VerifyEmail from './pages/VerifyEmail';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import About from './pages/About';
 import { isEmailVerified, isOAuthSession } from './utils/authHelpers';
 
 function ProtectedRoute({ session, children }) {
@@ -98,6 +101,9 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/about" element={<About />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route
           path="/login"
