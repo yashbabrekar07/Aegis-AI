@@ -51,10 +51,27 @@
             android:name=".ui.main.MainActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".ui.call.CallAnalysisResultActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AegisAI" />
+
+        <activity
+            android:name=".ui.call.CallRecordingPickerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AegisAI.Transparent"
+            android:excludeFromRecents="true" />
+
+        <service
+            android:name=".call.CallAnalysisService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
         <service
             android:name=".call.CallGuardWatchService"
             android:exported="false"
-            android:foregroundServiceType="microphone|dataSync" />
+            android:foregroundServiceType="microphone|dataSync"
+            android:enabled="false" />
 
         <service
             android:name=".call.AegisCallScreeningService"

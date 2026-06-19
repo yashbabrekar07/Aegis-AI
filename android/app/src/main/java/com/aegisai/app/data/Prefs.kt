@@ -55,6 +55,15 @@ class Prefs(context: Context) {
         get() = sp.getBoolean(KEY_CHECKED_COMPATIBILITY, false)
         set(v) = sp.edit().putBoolean(KEY_CHECKED_COMPATIBILITY, v).apply()
 
+    /** How long to poll MediaStore for a dialer recording after call ends (ms). */
+    var callGuardDiscoveryWindowMs: Long
+        get() = sp.getLong(KEY_DISCOVERY_WINDOW, 60_000L)
+        set(v) = sp.edit().putLong(KEY_DISCOVERY_WINDOW, v.coerceIn(15_000L, 120_000L)).apply()
+
+    var callGuardAutoAnalyze: Boolean
+        get() = sp.getBoolean(KEY_AUTO_ANALYZE, true)
+        set(v) = sp.edit().putBoolean(KEY_AUTO_ANALYZE, v).apply()
+
     fun clearSession() {
         sp.edit()
             .remove(KEY_ACCESS)
@@ -85,5 +94,7 @@ class Prefs(context: Context) {
         private const val KEY_BEST_SOURCE = "best_audio_source"
         private const val KEY_SPEAKER_REQUIRED = "speaker_required"
         private const val KEY_CHECKED_COMPATIBILITY = "has_checked_compatibility"
+        private const val KEY_DISCOVERY_WINDOW = "call_guard_discovery_window_ms"
+        private const val KEY_AUTO_ANALYZE = "call_guard_auto_analyze"
     }
 }

@@ -28,4 +28,34 @@
     <string name="vishing_risk">Risk: %1$s</string>
     <string name="vishing_confidence">Confidence: %1$d%%</string>
     <string name="vishing_transcription_label">Transcription:</string>
+
+    <string name="call_guard_incoming_title">Incoming call: %1$s</string>
+    <string name="call_guard_incoming_body">If this seems suspicious, tap Record in your phone dialer during the call. Aegis will analyze it automatically when you hang up.</string>
+    <string name="call_guard_discovering_title">Looking for call recording…</string>
+    <string name="call_guard_discovering_body">Scanning your dialer recordings folder.</string>
+    <string name="call_guard_discovering_progress">Scan attempt %1$d of %2$d…</string>
+    <string name="call_guard_analyzing_title">Analyzing call recording</string>
+    <string name="call_guard_analyzing_body">Transcribing and checking for scam patterns…</string>
+    <string name="call_guard_analyzing_from">Analyzing call from %1$s…</string>
+    <string name="call_guard_no_recording_title">No recording found</string>
+    <string name="call_guard_no_recording_body">We could not find a new dialer recording. Tap to select the file manually.</string>
+    <string name="call_guard_pick_recording">Select recording</string>
+    <string name="call_guard_retry_discovery">Search again</string>
+    <string name="call_guard_error_title">Call Guard — could not analyze</string>
+    <string name="call_guard_error_tip">Tip: Enable call recording in your phone dialer (Samsung, Pixel, etc.) before the call ends.</string>
+    <string name="call_guard_channel_incoming">Incoming call alerts</string>
+    <string name="call_guard_channel_alerts">Call analysis results</string>
+    <string name="call_guard_channel_analysis">Call analysis progress</string>
+    <string name="call_guard_result_title">Call analysis</string>
+    <string name="call_guard_result_title_risk">Call analysis — %1$s</string>
+    <string name="call_guard_result_analyzing">Analysis in progress…</string>
+    <string name="call_guard_result_pending">Analysis is still running. Check back in a moment.</string>
+    <string name="call_guard_session_missing">Session not found. It may have expired.</string>
+    <string name="call_guard_manual_upload_started">Uploading recording for analysis…</string>
+    <string name="call_guard_enabled">Call Guard enabled — recordings are analyzed automatically after each call.</string>
+    <string name="call_guard_need_role">Set Aegis AI as your call screening app to enable automatic call detection.</string>
+    <string name="call_guard_need_permissions">Phone, audio file access, and notification permissions are required.</string>
+    <string name="call_guard_role_granted">Call screening role granted.</string>
+    <string name="call_guard_history_title">Recent call analyses</string>
+    <string name="call_guard_card_body">When enabled, Aegis alerts you on incoming calls. Record suspicious calls with your phone dialer — we detect and analyze the recording automatically when the call ends. Zero battery drain while idle.</string>
 </resources>
