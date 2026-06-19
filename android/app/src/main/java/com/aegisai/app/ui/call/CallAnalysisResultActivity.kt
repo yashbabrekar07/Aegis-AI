@@ -126,12 +126,16 @@ class CallAnalysisResultActivity : AppCompatActivity() {
         val result = session.result ?: return getString(com.aegisai.app.R.string.call_guard_result_pending)
         if (result.error != null) return result.error
 
-        val conf = ((result.confidence ?: 0.0) * 100).toInt()
+        val conf = result.confidence?.let { (it * 100).toInt() }
         return buildString {
             append(getString(com.aegisai.app.R.string.vishing_risk, result.risk ?: "UNKNOWN"))
             append("\n")
-            append(getString(com.aegisai.app.R.string.vishing_confidence, conf))
-            append("\n\n")
+            if (conf != null) {
+                append(getString(com.aegisai.app.R.string.vishing_confidence, conf))
+                append("\n\n")
+            } else {
+                append("\n")
+            }
             append(result.reason ?: "")
             result.transcription?.takeIf { it.isNotBlank() }?.let {
                 append("\n\n")

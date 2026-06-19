@@ -95,7 +95,7 @@ object CallAnalysisNotifier {
         }
 
         val risk = resolveRisk(result)
-        val conf = ((result.confidence ?: 0.0) * 100).toInt()
+        val conf = result.confidence?.let { (it * 100).toInt() }
         val title = when (risk) {
             "SCAM" -> "Scam call detected"
             "SAFE" -> "Call looks safe"
@@ -104,7 +104,7 @@ object CallAnalysisNotifier {
         val body = buildString {
             phone?.takeIf { it.isNotBlank() }?.let { append("From: $it\n") }
             append("Risk: $risk")
-            if (conf > 0) append(" · $conf% confidence")
+            if (conf != null) append(" · $conf% confidence")
             append("\n\n")
             append(result.reason ?: "Open Aegis AI for details.")
             result.transcription?.takeIf { it.isNotBlank() }?.let {

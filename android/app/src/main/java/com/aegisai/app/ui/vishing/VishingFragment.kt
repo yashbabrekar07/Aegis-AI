@@ -196,9 +196,10 @@ class VishingFragment : Fragment() {
     private fun formatHistoryLine(session: CallSession): String {
         val phone = session.phoneNumber ?: "Unknown"
         val risk = session.result?.risk ?: session.status
+        val conf = session.result?.confidence?.let { " (${(it * 100).toInt()}%)" } ?: ""
         val time = session.endedAt ?: session.startedAt
         val formatted = android.text.format.DateFormat.format("MMM d, HH:mm", time)
-        return "$formatted · $phone · $risk"
+        return "$formatted · $phone · $risk$conf"
     }
 
     private fun startRecording() {

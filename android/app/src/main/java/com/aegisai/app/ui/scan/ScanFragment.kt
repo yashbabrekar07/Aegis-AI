@@ -82,12 +82,14 @@ class ScanFragment : Fragment() {
             binding.scanResult.text = getString(R.string.error_prefix, result.error)
             return
         }
-        val conf = ((result.confidence ?: 0.0) * 100).toInt()
+        val conf = result.confidence?.let { (it * 100).toInt() }
         val sb = StringBuilder()
         sb.append(getString(R.string.vishing_risk, result.risk))
         sb.append("\n")
-        sb.append(getString(R.string.vishing_confidence, conf))
-        sb.append("\n")
+        if (conf != null) {
+            sb.append(getString(R.string.vishing_confidence, conf))
+            sb.append("\n")
+        }
         sb.append("Reason: ${result.reason}\n")
         result.transcription?.let {
             sb.append("\n")
