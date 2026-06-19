@@ -65,7 +65,7 @@ _LEGIT_TRANSACTIONAL_PATTERNS = [
 # Telecom / carrier usage alerts and recharge reminders (not credential theft)
 _LEGIT_TELECOM_PATTERNS = [
     r"\b(data|internet|high[- ]?speed)\b.{0,50}\b(consumed|used|exhausted|remaining|left|balance)\b",
-    r"\b\d+\s*%\s*(of\s+)?(daily|monthly)?\s*(data|internet|high[- ]?speed)\b",
+    r"\b\d+\s*%\s*[:\-]?\s*(of\s+)?(daily|monthly)?\s*(data|internet|high[- ]?speed)\b",
     r"\b\d+\s*(gb|mb)\b.{0,40}\b(remaining|left|consumed|used|valid|per day)\b",
     r"\b(recharge|top[- ]?up|renew|validity|plan)\b.{0,50}\b(now|today|before|expires|expiring)\b",
     r"\b(recharge successful|recharge done|pack activated|plan activated)\b",
@@ -76,6 +76,7 @@ _LEGIT_TELECOM_PATTERNS = [
     r"\b(free|bonus|extra)\s+\d+\s*(gb|mb|sms|min)\b",
     r"\b(unlimited|daily)\s+(data|calls|sms)\b",
     r"\bi\.airtel\.in\b",
+    r"\bairtel\.in\b",
     r"\bjio\.com\b",
     r"\bmyvi\.in\b",
     # Hindi / Hinglish carrier templates

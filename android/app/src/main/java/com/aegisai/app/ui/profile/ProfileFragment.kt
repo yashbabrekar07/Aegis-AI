@@ -34,6 +34,7 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.logoutBtn.setOnClickListener { logout() }
         binding.editProfileBtn.setOnClickListener { showEditProfileDialog() }
+        setupBackendUrlUi()
         loadProfile()
     }
 
