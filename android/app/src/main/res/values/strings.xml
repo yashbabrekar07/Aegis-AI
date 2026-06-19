@@ -3,6 +3,7 @@
     <string name="app_name">Aegis AI</string>
     <string name="nav_scan">Scan</string>
     <string name="nav_vishing">Vishing</string>
+    <string name="nav_sms">SMS</string>
     <string name="nav_training">Training</string>
     <string name="nav_profile">Profile</string>
     <string name="sign_in">Sign in</string>
@@ -60,4 +61,10 @@
     <string name="call_guard_role_granted">Call screening role granted.</string>
     <string name="call_guard_history_title">Recent call analyses</string>
     <string name="call_guard_card_body">When enabled, Aegis alerts you on incoming calls. Record suspicious calls with your phone dialer — we detect and analyze the recording automatically when the call ends. Zero battery drain while idle.</string>
+    <string name="sms_title">SMS Threat Scanner</string>
+    <string name="sms_subtitle">Automatically scans incoming text messages for scams and phishing.</string>
+    <string name="sms_permission_needed">SMS permissions are required to automatically scan incoming messages.</string>
+    <string name="sms_grant_btn">Grant Permissions</string>
+    <string name="sms_no_history">No recent messages scanned.</string>
+    <string name="sms_history_title">Recent Scans</string>
 </resources>

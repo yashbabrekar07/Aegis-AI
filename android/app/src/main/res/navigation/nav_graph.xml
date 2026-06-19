@@ -23,6 +23,11 @@
         android:label="@string/nav_vishing" />
 
     <fragment
+        android:id="@+id/smsFragment"
+        android:name="com.aegisai.app.ui.sms.SmsFragment"
+        android:label="@string/nav_sms" />
+
+    <fragment
         android:id="@+id/trainingFragment"
         android:name="com.aegisai.app.ui.training.TrainingFragment"
         android:label="@string/nav_training" />

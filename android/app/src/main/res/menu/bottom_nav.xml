@@ -9,6 +9,10 @@
         android:icon="@drawable/ic_nav_vishing"
         android:title="@string/nav_vishing" />
     <item
+        android:id="@+id/smsFragment"
+        android:icon="@drawable/ic_nav_sms"
+        android:title="@string/nav_sms" />
+    <item
         android:id="@+id/trainingFragment"
         android:icon="@drawable/ic_nav_training"
         android:title="@string/nav_training" />
