@@ -129,8 +129,13 @@ class FetchGmailRequest(BaseModel):
 @app.post("/api/gmail/fetch")
 def fetch_gmail_emails(req: FetchGmailRequest):
     import imaplib
-    import email
+    import email as email_lib
     from email.header import decode_header
+    import socket
+    import traceback
+    import logging
+
+    logger = logging.getLogger("aegis.gmail")
 
     username = req.email.strip()
     app_password = req.app_password.strip()
@@ -138,17 +143,48 @@ def fetch_gmail_emails(req: FetchGmailRequest):
     if not username or not app_password:
         return {"error": "Gmail address and App Password are required.", "emails": []}
 
+    # Validate email format
+    if "@" not in username:
+        return {"error": "Please enter a valid email address.", "emails": []}
+
+    mail = None
     try:
-        # Establish SSL connection to Gmail IMAP
-        mail = imaplib.IMAP4_SSL("imap.gmail.com")
+        # Establish SSL connection to Gmail IMAP with timeout
+        mail = imaplib.IMAP4_SSL("imap.gmail.com", timeout=30)
         mail.login(username, app_password)
+    except imaplib.IMAP4.error as e:
+        err_msg = str(e)
+        logger.warning(f"IMAP login failed for {username}: {err_msg}")
+        if "AUTHENTICATIONFAILED" in err_msg.upper() or "Invalid credentials" in err_msg:
+            return {
+                "error": "Authentication failed. Please check your Gmail address and App Password. "
+                         "Make sure you're using a 16-character App Password, not your regular Gmail password.",
+                "emails": []
+            }
+        return {"error": f"Gmail login failed: {err_msg}", "emails": []}
+    except socket.timeout:
+        logger.warning(f"IMAP connection timed out for {username}")
+        return {"error": "Connection to Gmail timed out. Please try again.", "emails": []}
+    except socket.gaierror as e:
+        logger.warning(f"DNS resolution failed for imap.gmail.com: {e}")
+        return {"error": "Cannot resolve imap.gmail.com. Server may have network restrictions.", "emails": []}
+    except ConnectionRefusedError:
+        logger.warning("IMAP connection refused")
+        return {"error": "Connection to Gmail was refused. The server may block outbound IMAP connections.", "emails": []}
+    except OSError as e:
+        logger.warning(f"IMAP OS-level connection error: {e}")
+        return {"error": f"Network error connecting to Gmail: {str(e)}", "emails": []}
     except Exception as e:
-        return {"error": f"Failed to login: {str(e)}", "emails": []}
+        logger.error(f"Unexpected IMAP connection error: {traceback.format_exc()}")
+        return {"error": f"Failed to connect to Gmail: {str(e)}", "emails": []}
 
     try:
         mail.select("inbox")
         # Search for all emails
         status, messages = mail.search(None, "ALL")
+        if status != "OK":
+            return {"error": "Failed to search inbox.", "emails": []}
+
         email_ids = messages[0].split()
 
         if not email_ids:
@@ -161,80 +197,92 @@ def fetch_gmail_emails(req: FetchGmailRequest):
         fetched_emails = []
 
         for idx, e_id in enumerate(reversed(latest_email_ids)):
-            res, msg_data = mail.fetch(e_id, "(RFC822)")
-            for response_part in msg_data:
-                if isinstance(response_part, tuple):
-                    msg = email.message_from_bytes(response_part[1])
-                    
-                    # Decode subject
-                    subject = "No Subject"
-                    if msg["Subject"]:
-                        try:
-                            subject_parts = decode_header(msg["Subject"])
-                            decoded_parts = []
-                            for part, encoding in subject_parts:
-                                if isinstance(part, bytes):
-                                    decoded_parts.append(part.decode(encoding if encoding else "utf-8", errors="ignore"))
-                                else:
-                                    decoded_parts.append(str(part))
-                            subject = "".join(decoded_parts)
-                        except Exception:
-                            subject = str(msg["Subject"])
-                    
-                    # Decode from address
-                    from_address = "Unknown Sender"
-                    if msg["From"]:
-                        try:
-                            from_parts = decode_header(msg["From"])
-                            decoded_parts = []
-                            for part, encoding in from_parts:
-                                if isinstance(part, bytes):
-                                    decoded_parts.append(part.decode(encoding if encoding else "utf-8", errors="ignore"))
-                                else:
-                                    decoded_parts.append(str(part))
-                            from_address = "".join(decoded_parts)
-                        except Exception:
-                            from_address = str(msg["From"])
-                    
-                    # Get email body
-                    body = ""
-                    if msg.is_multipart():
-                        for part in msg.walk():
-                            content_type = part.get_content_type()
-                            content_disposition = str(part.get("Content-Disposition"))
-                            if content_type == "text/plain" and "attachment" not in content_disposition:
-                                try:
-                                    body = part.get_payload(decode=True).decode("utf-8", errors="ignore")
-                                except Exception:
-                                    pass
-                                break
-                    else:
-                        try:
-                            body = msg.get_payload(decode=True).decode("utf-8", errors="ignore")
-                        except Exception:
-                            pass
+            try:
+                res, msg_data = mail.fetch(e_id, "(RFC822)")
+                if res != "OK":
+                    continue
+                for response_part in msg_data:
+                    if isinstance(response_part, tuple):
+                        msg = email_lib.message_from_bytes(response_part[1])
 
-                    # Limit the body length for scan preview
-                    snippet = body[:500] if body else "No readable text content."
-                    
-                    fetched_emails.append({
-                        "id": f"gmail_{idx}_{e_id.decode()}",
-                        "from": from_address,
-                        "subject": subject,
-                        "body": snippet,
-                        "status": "PENDING",
-                        "result": None
-                    })
+                        # Decode subject
+                        subject = "No Subject"
+                        if msg["Subject"]:
+                            try:
+                                subject_parts = decode_header(msg["Subject"])
+                                decoded_parts = []
+                                for part, encoding in subject_parts:
+                                    if isinstance(part, bytes):
+                                        decoded_parts.append(part.decode(encoding if encoding else "utf-8", errors="ignore"))
+                                    else:
+                                        decoded_parts.append(str(part))
+                                subject = "".join(decoded_parts)
+                            except Exception:
+                                subject = str(msg["Subject"])
+
+                        # Decode from address
+                        from_address = "Unknown Sender"
+                        if msg["From"]:
+                            try:
+                                from_parts = decode_header(msg["From"])
+                                decoded_parts = []
+                                for part, encoding in from_parts:
+                                    if isinstance(part, bytes):
+                                        decoded_parts.append(part.decode(encoding if encoding else "utf-8", errors="ignore"))
+                                    else:
+                                        decoded_parts.append(str(part))
+                                from_address = "".join(decoded_parts)
+                            except Exception:
+                                from_address = str(msg["From"])
+
+                        # Get email body
+                        body = ""
+                        if msg.is_multipart():
+                            for part in msg.walk():
+                                content_type = part.get_content_type()
+                                content_disposition = str(part.get("Content-Disposition"))
+                                if content_type == "text/plain" and "attachment" not in content_disposition:
+                                    try:
+                                        payload = part.get_payload(decode=True)
+                                        if payload:
+                                            body = payload.decode("utf-8", errors="ignore")
+                                    except Exception:
+                                        pass
+                                    break
+                        else:
+                            try:
+                                payload = msg.get_payload(decode=True)
+                                if payload:
+                                    body = payload.decode("utf-8", errors="ignore")
+                            except Exception:
+                                pass
+
+                        # Limit the body length for scan preview
+                        snippet = body[:500] if body else "No readable text content."
+
+                        fetched_emails.append({
+                            "id": f"gmail_{idx}_{e_id.decode()}",
+                            "from": from_address,
+                            "subject": subject,
+                            "body": snippet,
+                            "status": "PENDING",
+                            "result": None
+                        })
+            except Exception as inner_e:
+                logger.warning(f"Failed to parse email {e_id}: {inner_e}")
+                continue
+
         mail.close()
         mail.logout()
         return {"emails": fetched_emails}
     except Exception as e:
+        logger.error(f"Failed to fetch emails: {traceback.format_exc()}")
         try:
             mail.close()
             mail.logout()
         except Exception:
             pass
-        return {"error": f"Failed to fetch emails: {str(e)}", "emails": []}
+        return {"error": f"Failed to fetch emails: {type(e).__name__}: {str(e)}", "emails": []}
 
 
 class FetchGmailOAuthRequest(BaseModel):

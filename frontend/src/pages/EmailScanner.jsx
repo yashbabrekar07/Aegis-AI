@@ -29,29 +29,69 @@ export default function EmailScanner() {
     setSyncError(null);
     setEmails([]);
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 60000);
+
     try {
       const response = await fetch(apiUrl('/api/gmail/fetch'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: gmailAddress, app_password: appPassword })
+        body: JSON.stringify({ email: gmailAddress, app_password: appPassword }),
+        signal: controller.signal
       });
 
-      const data = await response.json();
+      clearTimeout(timeoutId);
 
-      if (data.error) {
+      // Safely parse JSON — some errors return HTML or plain text
+      let data;
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        try {
+          data = await response.json();
+        } catch (parseErr) {
+          console.error('JSON parse error:', parseErr);
+          setSyncError('Server returned an invalid response. It may be restarting — please try again in 30 seconds.');
+          setIsFetching(false);
+          return;
+        }
+      } else {
+        // Non-JSON response (e.g., Render cold start HTML page, 502 proxy error)
+        const text = await response.text();
+        console.error('Non-JSON response:', response.status, text.substring(0, 200));
+        setSyncError(`Server returned an unexpected response (HTTP ${response.status}). The backend may be starting up — please try again in 30 seconds.`);
+        setIsFetching(false);
+        return;
+      }
+
+      if (!response.ok) {
+        // Non-200 status with JSON body
+        setSyncError(data?.error || data?.detail || `Server error (HTTP ${response.status})`);
+        setIsFetching(false);
+      } else if (data.error) {
         setSyncError(data.error);
         setIsFetching(false);
       } else if (data.emails) {
         localStorage.setItem('aegis_gmail_address', gmailAddress);
         setEmails(data.emails);
+        if (data.emails.length === 0) {
+          setSyncError('No emails found in your inbox.');
+        }
         setIsFetching(false);
       } else {
-        setSyncError("Failed to fetch emails. Unknown error occurred.");
+        setSyncError("Received an unexpected response format from the server.");
         setIsFetching(false);
       }
     } catch (err) {
-      console.error(err);
-      setSyncError("Could not connect to the backend server. Make sure the backend server is running.");
+      clearTimeout(timeoutId);
+      console.error('Gmail fetch error:', err);
+
+      if (err.name === 'AbortError') {
+        setSyncError('Request timed out. The server may be waking up (free tier cold start). Please try again in 30 seconds.');
+      } else if (err.message?.includes('Failed to fetch') || err.message?.includes('NetworkError')) {
+        setSyncError('Cannot reach the backend server. Check your internet connection or ensure the backend is running.');
+      } else {
+        setSyncError(`Connection error: ${err.message || 'Unknown error'}. Please try again.`);
+      }
       setIsFetching(false);
     }
   };
