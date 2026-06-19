@@ -78,16 +78,32 @@ class CallAnalysisService : Service() {
                 return finish(sessionId)
             }
 
-            val sinceMs = session.startedAt
+            val startedAtMs = session.startedAt
+            val endedAtMs = session.endedAt ?: System.currentTimeMillis()
             val windowMs = prefs.callGuardDiscoveryWindowMs
             val pollIntervalMs = 3_000L
             val maxAttempts = (windowMs / pollIntervalMs).toInt().coerceAtLeast(1)
 
-            var found = DialerRecordingFinder.findBestMatchDetailed(appContext, sinceMs)
+            val learnedPath = prefs.learnedRecordingPath
+            val learnedExt = prefs.learnedRecordingExtension
+
+            var found = DialerRecordingFinder.findBestMatchDetailed(
+                context = appContext,
+                startedAtMs = startedAtMs,
+                endedAtMs = endedAtMs,
+                learnedPath = learnedPath,
+                learnedExt = learnedExt
+            )
             var attempt = 0
             while (found == null && attempt < maxAttempts) {
                 delay(pollIntervalMs)
-                found = DialerRecordingFinder.findBestMatchDetailed(appContext, sinceMs)
+                found = DialerRecordingFinder.findBestMatchDetailed(
+                    context = appContext,
+                    startedAtMs = startedAtMs,
+                    endedAtMs = endedAtMs,
+                    learnedPath = learnedPath,
+                    learnedExt = learnedExt
+                )
                 attempt++
                 withContext(Dispatchers.Main) {
                     promoteForeground(
@@ -108,6 +124,10 @@ class CallAnalysisService : Service() {
                 CallAnalysisNotifier.openResultActivity(appContext, sessionId)
                 return finish(sessionId)
             }
+
+            // Temporarily store path/extension details of the candidate for potential learning
+            val ext = found.displayName.substringAfterLast('.', "").lowercase()
+            pendingLearnedData[sessionId] = Pair(found.pathHint, ext)
 
             val withRecording = session.copy(
                 recordingUri = found.uri.toString(),
@@ -175,6 +195,18 @@ class CallAnalysisService : Service() {
                 endedAt = session.endedAt ?: System.currentTimeMillis(),
             )
             CallSessionStore.saveSession(appContext, done)
+
+            if (result.error == null) {
+                pendingLearnedData[sessionId]?.let { pair ->
+                    val path = pair.first
+                    val ext = pair.second
+                    val prefs = AegisApp.get(appContext).prefs
+                    prefs.learnedRecordingPath = path
+                    prefs.learnedRecordingExtension = ext
+                    Log.i(TAG, "Learned device behavior: path=$path, ext=$ext")
+                }
+            }
+
             if (result.error != null) {
                 CallAnalysisNotifier.showError(appContext, session.phoneNumber, result.error, sessionId)
             } else {
@@ -184,6 +216,7 @@ class CallAnalysisService : Service() {
         } catch (e: Exception) {
             markFailed(appContext, session, ApiClient.friendlyError(e), sessionId)
         } finally {
+            pendingLearnedData.remove(sessionId)
             cacheFile.delete()
             finish(sessionId)
         }
@@ -252,7 +285,9 @@ class CallAnalysisService : Service() {
         private const val MAX_BYTES = 12 * 1024 * 1024L
 
         private val runningSessions = mutableSetOf<String>()
+        private val pendingLearnedData = mutableMapOf<String, Pair<String, String>>()
 
         fun isRunning(sessionId: String): Boolean = runningSessions.contains(sessionId)
     }
 }
+

@@ -64,6 +64,14 @@ class Prefs(context: Context) {
         get() = sp.getBoolean(KEY_AUTO_ANALYZE, true)
         set(v) = sp.edit().putBoolean(KEY_AUTO_ANALYZE, v).apply()
 
+    var learnedRecordingPath: String?
+        get() = sp.getString(KEY_LEARNED_PATH, null)
+        set(v) = sp.edit().putString(KEY_LEARNED_PATH, v).apply()
+
+    var learnedRecordingExtension: String?
+        get() = sp.getString(KEY_LEARNED_EXT, null)
+        set(v) = sp.edit().putString(KEY_LEARNED_EXT, v).apply()
+
     fun clearSession() {
         sp.edit()
             .remove(KEY_ACCESS)
@@ -96,5 +104,7 @@ class Prefs(context: Context) {
         private const val KEY_CHECKED_COMPATIBILITY = "has_checked_compatibility"
         private const val KEY_DISCOVERY_WINDOW = "call_guard_discovery_window_ms"
         private const val KEY_AUTO_ANALYZE = "call_guard_auto_analyze"
+        private const val KEY_LEARNED_PATH = "learned_recording_path"
+        private const val KEY_LEARNED_EXT = "learned_recording_ext"
     }
 }
