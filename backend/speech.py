@@ -4,13 +4,58 @@ import shutil
 import subprocess
 import tempfile
 import struct
+import re
 
 ALLOWED_EXTENSIONS = {"wav", "mp3", "m4a", "ogg", "flac", "webm", "aac", "3gp", "amr"}
 MIN_AUDIO_BYTES = 1_000
 CALL_GUARD_MIN_PCM_MS = 400
 _whisper_model = None
 
-_GOOGLE_LANG_CHAIN = ["hi-IN", "mr-IN", "ta-IN", "te-IN", "en-IN", "en-US"]
+_GOOGLE_LANG_CHAIN = [
+    "hi-IN", "mr-IN", "bn-IN", "gu-IN", "kn-IN", "ml-IN", "pa-IN",
+    "ta-IN", "te-IN", "en-IN", "en-US", "en-GB",
+]
+
+
+def _transcript_quality_score(text: str) -> float:
+    """Score transcript candidates — prefer longer, word-rich, non-garbage output."""
+    t = (text or "").strip()
+    if not t or len(t) < 2:
+        return 0.0
+    words = re.findall(r"[\w\u0900-\u097F\u0980-\u09FF\u0A80-\u0AFF\u0B80-\u0BFF\u0C00-\u0C7F]+", t)
+    if len(words) < 1:
+        return 0.0
+    alpha = sum(c.isalnum() or c.isspace() for c in t) / max(len(t), 1)
+    if alpha < 0.5:
+        return 0.0
+    # Penalize obvious hallucinations
+    lower = t.lower()
+    if lower in {"thank you", "thanks for watching", "subtitle", "music"}:
+        return 0.0
+    return len(words) * 2.0 + min(len(t), 200) * 0.05 + alpha * 10
+
+
+def _enhance_call_audio(wav_path: str) -> str:
+    """Normalize phone call audio without clipping (better for multilingual ASR)."""
+    out_dir = tempfile.mkdtemp(prefix="aegis_enh_")
+    out = os.path.join(out_dir, f"{uuid.uuid4().hex}.wav")
+    cmd = [
+        _ffmpeg_executable(),
+        "-y",
+        "-i",
+        wav_path,
+        "-af",
+        "highpass=f=80,lowpass=f=3800,dynaudnorm=f=50:g=7",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        out,
+    ]
+    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
+    if proc.returncode == 0 and os.path.isfile(out) and os.path.getsize(out) > MIN_AUDIO_BYTES:
+        return out
+    return amplify_wav(wav_path, gain_db=12.0)
 
 
 def _ensure_ffmpeg_on_path():
@@ -187,7 +232,7 @@ def _whisper_transcribe(wav_path: str, max_seconds: int | None = None) -> tuple[
 
     warnings.filterwarnings("ignore")
     if _whisper_model is None:
-        model_name = os.getenv("WHISPER_MODEL", "tiny")
+        model_name = os.getenv("WHISPER_MODEL", "base")
         _whisper_model = whisper.load_model(model_name)
 
     work = trim_wav_max_seconds(wav_path, max_seconds) if max_seconds else wav_path
@@ -195,35 +240,43 @@ def _whisper_transcribe(wav_path: str, max_seconds: int | None = None) -> tuple[
     tr = _whisper_model.transcribe(
         work,
         fp16=False,
+        task="transcribe",
+        language=None,
+        temperature=(0.0, 0.2, 0.4),
+        best_of=3,
+        beam_size=5,
+        condition_on_previous_text=True,
+        no_speech_threshold=0.45,
+        initial_prompt=(
+            "Phone call in Hindi, English, Marathi, Tamil, Telugu, Bengali, or mixed Hinglish. "
+            "Bank, OTP, scam, lottery, KYC, UPI, police, customs."
+        ),
+    )
+    lang = tr.get("language") or ""
+    native = _normalize_transcript(tr.get("text", ""))
+    if native:
+        from preprocess import translate_to_english
+
+        if lang.startswith("en") or (native.isascii() and len(native) > 10):
+            return native, f"Whisper ({lang or 'en'})", lang
+        english = translate_to_english(native)
+        if english and english.strip() and english.strip() != native.strip():
+            return english.strip(), f"Whisper ({lang or 'auto'}) + translation", lang
+        return native, f"Whisper ({lang or 'auto'})", lang
+
+    tr_en = _whisper_model.transcribe(
+        work,
+        fp16=False,
         task="translate",
         language=None,
         temperature=0.0,
         condition_on_previous_text=False,
-        no_speech_threshold=0.35,
+        no_speech_threshold=0.45,
     )
-    lang = tr.get("language") or ""
-    en = _normalize_transcript(tr.get("text", ""))
+    lang2 = tr_en.get("language") or lang
+    en = _normalize_transcript(tr_en.get("text", ""))
     if en:
-        return en, "Whisper (multilingual → English)", lang
-
-    tr2 = _whisper_model.transcribe(
-        work,
-        fp16=False,
-        task="transcribe",
-        language=None,
-        temperature=0.0,
-        condition_on_previous_text=False,
-        no_speech_threshold=0.35,
-    )
-    lang2 = tr2.get("language") or lang
-    native = _normalize_transcript(tr2.get("text", ""))
-    if native:
-        from preprocess import translate_to_english
-
-        english = translate_to_english(native)
-        if english and english.strip():
-            return english.strip(), f"Whisper ({lang2 or 'auto'}) + translation", lang2
-        return native, f"Whisper ({lang2 or 'auto'})", lang2
+        return en, "Whisper (multilingual → English)", lang2
 
     return "", "", lang2 or lang
 
@@ -233,34 +286,47 @@ def _google_multilingual(wav_path: str, for_call_guard: bool = False) -> tuple[s
 
     recognizer = sr.Recognizer()
     if for_call_guard:
-        recognizer.energy_threshold = 80
-        recognizer.dynamic_energy_threshold = False
-        recognizer.pause_threshold = 0.6
+        recognizer.energy_threshold = 100
+        recognizer.dynamic_energy_threshold = True
+        recognizer.pause_threshold = 0.7
     else:
         recognizer.energy_threshold = 200
         recognizer.dynamic_energy_threshold = True
 
     with sr.AudioFile(wav_path) as source:
         if not for_call_guard:
-            recognizer.adjust_for_ambient_noise(source, duration=0.2)
+            recognizer.adjust_for_ambient_noise(source, duration=0.25)
         audio_data = recognizer.record(source)
+
+    best_text = ""
+    best_score = 0.0
+    best_lang = ""
+    best_method = ""
 
     for lang_code in _GOOGLE_LANG_CHAIN:
         try:
             text = recognizer.recognize_google(audio_data, language=lang_code)
             text = _normalize_transcript(text)
-            if text:
-                if lang_code.startswith("en"):
-                    return text, f"Google Speech ({lang_code})"
-                from preprocess import translate_to_english
-
-                en = translate_to_english(text)
-                return (en or text).strip(), f"Google Speech ({lang_code}) + translation"
+            score = _transcript_quality_score(text)
+            if score > best_score:
+                best_score = score
+                best_text = text
+                best_lang = lang_code
         except sr.UnknownValueError:
             continue
         except sr.RequestError:
             break
-    return "", ""
+
+    if not best_text:
+        return "", ""
+
+    if best_lang.startswith("en"):
+        return best_text, f"Google Speech ({best_lang})"
+
+    from preprocess import translate_to_english
+
+    en = translate_to_english(best_text)
+    return (en or best_text).strip(), f"Google Speech ({best_lang}) + translation"
 
 
 def _no_speech_message(peak: int, dur_ms: int) -> str:
@@ -288,35 +354,58 @@ def process_audio(audio_file_path: str, fast: bool = False):
         created_wav = wav_path != audio_file_path
 
         if fast:
-            max_sec = int(os.getenv("CALL_GUARD_MAX_AUDIO_SEC", "90"))
+            max_sec = int(os.getenv("CALL_GUARD_MAX_AUDIO_SEC", "120"))
             trimmed_path = trim_wav_max_seconds(wav_path, max_sec)
-            amplified_path = amplify_wav(trimmed_path, gain_db=20.0)
+            amplified_path = _enhance_call_audio(trimmed_path)
             work_path = amplified_path
 
             dur_ms = _wav_duration_ms(work_path)
             peak = _wav_peak_amplitude(work_path)
-            whisper_sec = int(os.getenv("CALL_GUARD_WHISPER_SEC", "45"))
+            whisper_sec = int(os.getenv("CALL_GUARD_WHISPER_SEC", "90"))
+            whisper_first = os.getenv("CALL_GUARD_WHISPER_FIRST", "true").lower() in (
+                "1", "true", "yes",
+            )
             use_whisper = os.getenv("CALL_GUARD_WHISPER_FALLBACK", "true").lower() in (
-                "1",
-                "true",
-                "yes",
+                "1", "true", "yes",
             )
 
-            try:
-                text, method = _google_multilingual(work_path, for_call_guard=True)
-                if text:
-                    return text, method, ""
-            except Exception as e:
-                whisper_error = str(e)
-
-            if use_whisper:
+            def _try_whisper():
+                nonlocal whisper_error
                 try:
                     text, method, lang = _whisper_transcribe(work_path, max_seconds=whisper_sec)
                     if text:
                         return text, method, lang
                 except Exception as e:
+                    whisper_error = str(e)
+                return None
+
+            def _try_google():
+                try:
+                    text, method = _google_multilingual(work_path, for_call_guard=True)
+                    if text:
+                        return text, method, ""
+                except Exception as e:
+                    nonlocal whisper_error
                     if not whisper_error:
                         whisper_error = str(e)
+                return None
+
+            whisper_error = ""
+            if whisper_first and use_whisper:
+                hit = _try_whisper()
+                if hit:
+                    return hit
+                hit = _try_google()
+                if hit:
+                    return hit
+            else:
+                hit = _try_google()
+                if hit:
+                    return hit
+                if use_whisper:
+                    hit = _try_whisper()
+                    if hit:
+                        return hit
 
             msg = _no_speech_message(peak, dur_ms)
             if whisper_error:
@@ -324,18 +413,18 @@ def process_audio(audio_file_path: str, fast: bool = False):
             return f"Error: {msg}", "Error", ""
 
         try:
-            text, method = _google_multilingual(wav_path)
-            if text:
-                return text, method, ""
-        except Exception:
-            pass
-
-        try:
             text, method, lang = _whisper_transcribe(wav_path)
             if text:
                 return text, method, lang
         except Exception as e:
             whisper_error = str(e)
+
+        try:
+            text, method = _google_multilingual(wav_path)
+            if text:
+                return text, method, ""
+        except Exception:
+            pass
 
         return (
             "Error: No speech detected. Speak clearly for at least 3–5 seconds (speakerphone helps).",

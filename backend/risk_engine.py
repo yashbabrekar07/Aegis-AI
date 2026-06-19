@@ -6,6 +6,8 @@ import json
 import os
 import re
 
+from message_patterns import is_legitimate_service_message, is_scam_credential_request
+
 CONFIG_FILE = "model_config.json"
 
 DEFAULT_CONFIG = {
@@ -57,8 +59,8 @@ def _is_neutral_short(text: str) -> bool:
         return False
     lower = t.lower()
     scam_hints = (
-        "otp", "bank", "upi", "kyc", "lottery", "winner", "verify", "block",
-        "urgent", "pin", "cvv", "aadhar", "suspend", "click here", "claim prize",
+        "share otp", "send otp", "lottery", "winner", "claim prize",
+        "click here", "verify now", "free money", "gift card",
     )
     if any(kw in lower for kw in scam_hints):
         return False
@@ -93,9 +95,26 @@ def classify_risk(
     cfg = load_config()
     conf = confidence_pct / 100.0
     text_for_heuristics = english_text or original_text
+    combined = f"{original_text or ''} {english_text or ''}".strip()
     n_words = _word_count(text_for_heuristics)
     n_kw = len(detected_keywords or [])
     n_links = len(suspicious_links or []) if scan_links else 0
+
+    # Legitimate OTP, UPI, delivery, bill notifications
+    if is_legitimate_service_message(combined) and n_links == 0:
+        return (
+            "SAFE",
+            "Recognized as a standard service notification (OTP, payment, delivery, or bill alert).",
+            "safe",
+        )
+
+    # Explicit scam credential request in call transcript or message
+    if is_scam_credential_request(combined):
+        return (
+            "SCAM",
+            "Message asks you to share OTP, PIN, or credentials — a classic fraud tactic.",
+            "phishing",
+        )
 
     if _is_neutral_short(text_for_heuristics) and n_kw == 0 and n_links == 0:
         return (
@@ -123,13 +142,21 @@ def classify_risk(
     min_words = cfg["min_words_for_ml_scam"]
 
     if ml_phishing and conf >= cfg["scam_ml_confidence"] and (n_words >= min_words or n_kw >= 1):
-        return (
-            "SCAM",
-            "AI model identified strong phishing patterns in this message.",
-            "phishing",
-        )
+        # Don't override legitimate service messages with ML alone
+        if not is_legitimate_service_message(combined):
+            return (
+                "SCAM",
+                "AI model identified strong phishing patterns in this message.",
+                "phishing",
+            )
 
     if ml_phishing and conf >= cfg["suspicious_ml_confidence"]:
+        if is_legitimate_service_message(combined):
+            return (
+                "SAFE",
+                "Model flagged patterns but message matches a legitimate service notification.",
+                "safe",
+            )
         return (
             "SUSPICIOUS",
             "Some phishing-like patterns detected. Verify through official channels.",
@@ -139,7 +166,7 @@ def classify_risk(
     if n_kw == 1:
         return (
             "SUSPICIOUS",
-            f"Contains caution word: '{detected_keywords[0]}'. May be legitimate context — verify sender.",
+            f"Contains caution phrase: '{detected_keywords[0]}'. Verify sender through official app or website.",
             prediction_label,
         )
 

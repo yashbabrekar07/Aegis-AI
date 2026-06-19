@@ -4,6 +4,7 @@ import requests
 import base64
 from cryptography.fernet import Fernet
 from dotenv import load_dotenv
+from message_patterns import filter_keywords_for_context, is_legitimate_service_message
 
 load_dotenv()
 VT_API_KEY = os.getenv("VIRUSTOTAL_API_KEY")
@@ -46,22 +47,75 @@ def decrypt_file_to_memory(filename):
 
 # --- Keyword & Link Extraction Utils ---
 
-SCAM_KEYWORDS = [
-    "otp", "urgent", "verify now", "bank account", "lottery", "kyc", 
-    "password", "winner", "claim", "free money", "act now", "suspended",
-    "limited time", "gift card", "crypto", "bitcoin",
-    "scan to receive", "enter pin to receive", "verification fee",
-    "cashback claim", "refund failure", "qr code verification",
-    "merchant payment failed", "pay to open account"
+# High-confidence scam phrases (substring match)
+HIGH_RISK_PHRASES = [
+    "share your otp", "send otp", "send your otp", "tell me your otp",
+    "reply with otp", "forward the otp", "verify now", "click here immediately",
+    "you have won", "lottery winner", "claim your prize", "claim prize",
+    "free money", "act now", "limited time offer", "gift card",
+    "verification fee", "pay to unlock", "pay to open account",
+    "enter pin to receive", "scan to receive payment", "qr code verification",
+    "cashback claim", "refund failure", "merchant payment failed",
+    "account suspended", "account blocked", "legal action",
+    "customs seized", "arrest warrant", "press 1 to",
+    "remote access", "anydesk", "teamviewer",
+    "bitcoin transfer", "crypto wallet",
+    "bank account details", "share your pin", "share your cvv",
+    "transfer immediately", "wire transfer urgently",
+]
+
+# Secondary signals — only counted when paired with another signal or strong ML
+CONTEXT_KEYWORDS = [
+    "kyc update", "update kyc", "verify account", "verify identity",
+    "urgent action", "immediate action", "winner", "congratulations you won",
 ]
 
 SUSPICIOUS_DOMAINS = ["bit.ly", "tinyurl.com", "goo.gl", "t.co", "ow.ly", "is.gd"]
 
 def detect_scam_keywords(text):
-    """Detect common scam keywords in text."""
+    """Detect high-risk scam phrases; skip legitimate OTP/transactional messages."""
+    if not text or not str(text).strip():
+        return []
+    if is_legitimate_service_message(text):
+        return []
+
     text_lower = text.lower()
-    detected = [word for word in SCAM_KEYWORDS if word in text_lower]
-    return detected
+    detected = []
+
+    for phrase in HIGH_RISK_PHRASES:
+        if phrase in text_lower:
+            detected.append(phrase)
+
+    # "share otp" only when NOT a bank warning (never/do not share)
+    if re.search(r"share\s+(your\s+)?otp", text_lower):
+        is_bank_warning = bool(re.search(
+            r"(never share|do not share|don't share|not share|never ask|do not disclose).{0,20}otp|"
+            r"otp.{0,40}(never share|do not share|don't share|not share|confidential)",
+            text_lower,
+        ))
+        if not is_bank_warning and "share otp" not in detected and "share your otp" not in detected:
+            detected.append("share otp")
+
+    for phrase in CONTEXT_KEYWORDS:
+        if phrase in text_lower and phrase not in detected:
+            detected.append(phrase)
+
+    # Standalone "otp" only when message asks for it (not official notification)
+    if "otp" in text_lower and not detected:
+        asks_for_otp = re.search(
+            r"(share|send|reply|forward|tell|give|enter|provide|bhejo|bhej).{0,25}otp|"
+            r"otp.{0,25}(share|send|reply|forward|bhejo|bhej)",
+            text_lower,
+        )
+        is_bank_warning = re.search(
+            r"(never share|do not share|don't share|not share).{0,20}otp|"
+            r"otp.{0,40}(never share|do not share|don't share|valid for)",
+            text_lower,
+        )
+        if asks_for_otp and not is_bank_warning:
+            detected.append("otp request")
+
+    return filter_keywords_for_context(text, detected)
 
 def extract_links(text):
     """Extract URLs from text using regex."""

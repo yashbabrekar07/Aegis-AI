@@ -49,7 +49,9 @@
     <string name="call_guard_result_title">Call analysis</string>
     <string name="call_guard_result_title_risk">Call analysis — %1$s</string>
     <string name="call_guard_result_analyzing">Analysis in progress…</string>
-    <string name="call_guard_result_pending">Analysis is still running. Check back in a moment.</string>
+    <string name="call_guard_result_waiting_call">Waiting for call to end…</string>
+    <string name="call_guard_result_active_hint">Call is still active. When you hang up, Aegis will automatically find your dialer recording and analyze it. This screen updates every few seconds.</string>
+    <string name="call_guard_result_pending">Analysis is still running. This screen refreshes automatically.</string>
     <string name="call_guard_session_missing">Session not found. It may have expired.</string>
     <string name="call_guard_manual_upload_started">Uploading recording for analysis…</string>
     <string name="call_guard_enabled">Call Guard enabled — recordings are analyzed automatically after each call.</string>

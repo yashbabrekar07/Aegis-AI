@@ -3,6 +3,8 @@ package com.aegisai.app.ui.call
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.aegisai.app.call.CallAnalysisNotifier
@@ -14,6 +16,15 @@ import com.aegisai.app.databinding.ActivityCallAnalysisResultBinding
 class CallAnalysisResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCallAnalysisResultBinding
     private var sessionId: String? = null
+    private val refreshHandler = Handler(Looper.getMainLooper())
+    private val refreshRunnable = object : Runnable {
+        override fun run() {
+            renderSession()
+            if (shouldKeepPolling()) {
+                refreshHandler.postDelayed(this, 2000L)
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +52,25 @@ class CallAnalysisResultActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         renderSession()
+        refreshHandler.removeCallbacks(refreshRunnable)
+        if (shouldKeepPolling()) {
+            refreshHandler.postDelayed(refreshRunnable, 2000L)
+        }
+    }
+
+    override fun onPause() {
+        refreshHandler.removeCallbacks(refreshRunnable)
+        super.onPause()
+    }
+
+    private fun shouldKeepPolling(): Boolean {
+        val id = sessionId ?: return false
+        val session = CallSessionStore.getSession(this, id) ?: return false
+        return session.status in listOf(
+            CallSession.STATUS_ACTIVE,
+            CallSession.STATUS_DISCOVERING,
+            CallSession.STATUS_ANALYZING,
+        )
     }
 
     private fun renderSession() {
@@ -73,6 +103,8 @@ class CallAnalysisResultActivity : AppCompatActivity() {
                 val risk = session.result?.risk ?: "Result"
                 getString(com.aegisai.app.R.string.call_guard_result_title_risk, risk)
             }
+            CallSession.STATUS_ACTIVE ->
+                getString(com.aegisai.app.R.string.call_guard_result_waiting_call)
             CallSession.STATUS_ANALYZING, CallSession.STATUS_DISCOVERING ->
                 getString(com.aegisai.app.R.string.call_guard_result_analyzing)
             CallSession.STATUS_NO_RECORDING ->
@@ -82,6 +114,14 @@ class CallAnalysisResultActivity : AppCompatActivity() {
     }
 
     private fun formatSessionBody(session: CallSession): String {
+        when (session.status) {
+            CallSession.STATUS_ACTIVE ->
+                return getString(com.aegisai.app.R.string.call_guard_result_active_hint)
+            CallSession.STATUS_DISCOVERING ->
+                return getString(com.aegisai.app.R.string.call_guard_discovering_body)
+            CallSession.STATUS_ANALYZING ->
+                return getString(com.aegisai.app.R.string.call_guard_analyzing_body)
+        }
         session.errorMessage?.takeIf { session.result == null }?.let { return it }
         val result = session.result ?: return getString(com.aegisai.app.R.string.call_guard_result_pending)
         if (result.error != null) return result.error
