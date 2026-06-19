@@ -23,7 +23,11 @@ data class ScanResult(
     val transcription: String? = null,
     val method: String? = null,
     val error: String? = null,
-    val detected_keywords: List<String>? = null
+    val detected_keywords: List<String>? = null,
+    val detected_language: String? = null,
+    val is_translated: Boolean? = null,
+    val english_text: String? = null,
+    val sender: String? = null,
 )
 
 @JsonClass(generateAdapter = true)
@@ -64,8 +68,10 @@ class ApiClient(private val baseUrl: String) {
     private val otpAdapter = moshi.adapter(OtpResponse::class.java)
     private val jsonType = "application/json; charset=utf-8".toMediaType()
 
-    fun scanText(text: String): ScanResult {
-        val body = org.json.JSONObject().put("text", text).toString().toRequestBody(jsonType)
+    fun scanText(text: String, sender: String? = null): ScanResult {
+        val json = org.json.JSONObject().put("text", text)
+        if (!sender.isNullOrBlank()) json.put("sender", sender)
+        val body = json.toString().toRequestBody(jsonType)
         val req = Request.Builder().url("$baseUrl/api/scan").post(body).build()
         return executeScan(req, client)
     }

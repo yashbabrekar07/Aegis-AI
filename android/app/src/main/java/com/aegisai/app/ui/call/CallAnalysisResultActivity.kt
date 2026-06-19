@@ -127,11 +127,19 @@ class CallAnalysisResultActivity : AppCompatActivity() {
         if (result.error != null) return result.error
 
         val conf = result.confidence?.let { (it * 100).toInt() }
+        val lang = result.detected_language?.replaceFirstChar {
+            if (it.isLowerCase()) it.titlecase() else it.toString()
+        }
         return buildString {
             append(getString(com.aegisai.app.R.string.vishing_risk, result.risk ?: "UNKNOWN"))
             append("\n")
             if (conf != null) {
                 append(getString(com.aegisai.app.R.string.vishing_confidence, conf))
+                append("\n")
+            }
+            if (!lang.isNullOrBlank()) {
+                append("Language: $lang")
+                if (result.is_translated == true) append(" (translated for analysis)")
                 append("\n\n")
             } else {
                 append("\n")

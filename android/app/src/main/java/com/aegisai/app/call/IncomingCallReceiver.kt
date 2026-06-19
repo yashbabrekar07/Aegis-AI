@@ -32,13 +32,7 @@ class IncomingCallReceiver : BroadcastReceiver() {
                 CallGuardState.callPhase = CallGuardState.PHASE_OFFHOOK
             }
             TelephonyManager.EXTRA_STATE_IDLE -> {
-                if (CallGuardState.callPhase == CallGuardState.PHASE_OFFHOOK ||
-                    CallGuardState.callPhase == CallGuardState.PHASE_RINGING
-                ) {
-                    CallGuardState.activeSessionId?.let { sessionId ->
-                        CallGuardCoordinator.onCallEnded(appContext, sessionId)
-                    }
-                }
+                // CallSessionTracker handles call end when a session is active
                 CallGuardState.callPhase = CallGuardState.PHASE_IDLE
                 CallGuardState.activeSessionId = null
                 CallGuardState.lastCaller = null

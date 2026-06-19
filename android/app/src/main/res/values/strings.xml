@@ -60,6 +60,7 @@
     <string name="call_guard_need_permissions">Phone, audio file access, and notification permissions are required.</string>
     <string name="call_guard_role_granted">Call screening role granted.</string>
     <string name="call_guard_history_title">Recent call analyses</string>
+    <string name="call_guard_history_pick">Open call analysis</string>
     <string name="call_guard_card_body">When enabled, Aegis alerts you on incoming calls. Record suspicious calls with your phone dialer — we detect and analyze the recording automatically when the call ends. Zero battery drain while idle.</string>
     <string name="sms_title">SMS Threat Scanner</string>
     <string name="sms_subtitle">Automatically scans incoming text messages for scams and phishing.</string>

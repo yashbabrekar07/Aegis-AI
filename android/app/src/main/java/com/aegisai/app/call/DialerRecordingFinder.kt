@@ -16,6 +16,8 @@ object DialerRecordingFinder {
     private val PATH_HINTS = listOf(
         "call", "record", "soundrecorder", "sound recorder", "miui",
         "samsung", "dialer", "phone", "voice", "recorder", "calls",
+        "realme", "oppo", "vivo", "oneplus", "coloros", "oxygen",
+        "recording", "callrecord", "call_rec", "telephony", "audio",
     )
 
     data class Candidate(
@@ -109,7 +111,13 @@ object DialerRecordingFinder {
         var score = 10
         val combined = "$name $path".lowercase()
         val matchedHints = PATH_HINTS.count { combined.contains(it) }
-        if (matchedHints == 0) return 0
+        if (matchedHints == 0) {
+            // Accept recent audio files with plausible call duration even without path hints
+            if (durationMs in 5_000..3_600_000 && ageSec in 0..180) {
+                return 5
+            }
+            return 0
+        }
         score += matchedHints * 15
         if (combined.contains("call")) score += 20
         if (combined.contains("record")) score += 15

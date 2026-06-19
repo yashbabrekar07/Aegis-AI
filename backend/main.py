@@ -34,6 +34,7 @@ app.add_middleware(
 
 class ScanRequest(BaseModel):
     text: str
+    sender: Optional[str] = None
 
 
 class VishingTranscriptRequest(BaseModel):
@@ -116,7 +117,7 @@ def verify_phone_otp(req: PhoneOtpVerifyRequest):
 @app.post("/api/scan")
 def scan_text(req: ScanRequest):
     try:
-        return analyze_text(req.text, scan_links=True)
+        return analyze_text(req.text, scan_links=True, sender=req.sender)
     except Exception as e:
         return {"error": f"Scan failed: {e}", "risk": "ERROR", "label": "error", "confidence": 0}
 
@@ -358,7 +359,7 @@ def analyze_vishing_transcript(req: VishingTranscriptRequest):
     t = (req.transcript or "").strip()
     if len(t) < 3:
         return {"error": "Transcript too short", "status": 400}
-    result = analyze_text(t, scan_links=False)
+    result = analyze_text(t, scan_links=False, source="vishing")
     result["phone_number"] = req.phone_number
     result["source"] = "vishing_transcript"
     return result
@@ -426,13 +427,15 @@ async def call_guard_analyze(
             "status": 400,
             "transcription": None,
         }
-    result = analyze_text(text, scan_links=False)
+    result = analyze_text(text, scan_links=False, source="call_guard")
     result["transcription"] = text
     result["method"] = method
     result["phone_number"] = phone
     result["source"] = "call_guard"
-    if lang:
-        result["detected_language"] = lang
+    if lang or text:
+        from language_utils import normalize_stt_language
+
+        result["detected_language"] = normalize_stt_language(lang, text)
     return result
 
 
@@ -450,7 +453,7 @@ async def scan_audio(file: UploadFile = File(...)):
 
     if transcribed_text and not str(transcribed_text).startswith("Error"):
         try:
-            result = analyze_text(transcribed_text, scan_links=False)
+            result = analyze_text(transcribed_text, scan_links=False, source="vishing")
         except Exception as e:
             return {
                 "error": f"Analysis failed after transcription: {e}",
@@ -462,8 +465,10 @@ async def scan_audio(file: UploadFile = File(...)):
             }
         result["transcription"] = transcribed_text
         result["method"] = method
-        if detected_lang:
-            result["detected_language"] = detected_lang
+        if detected_lang or transcribed_text:
+            from language_utils import normalize_stt_language
+
+            result["detected_language"] = normalize_stt_language(detected_lang, transcribed_text)
         return result
 
     err_msg = transcribed_text or "No speech detected in audio."
@@ -479,9 +484,11 @@ async def scan_audio(file: UploadFile = File(...)):
 
         
 
-def analyze_text(text: str, scan_links=False):
+def analyze_text(text: str, scan_links=False, sender: str | None = None, source: str | None = None):
     if not text or not str(text).strip():
         return {"error": "Empty text", "risk": "ERROR", "label": "error", "confidence": 0}
+
+    from language_utils import detect_text_language
 
     english_text = translate_to_english(text)
     is_translated = (english_text != text)
@@ -490,11 +497,15 @@ def analyze_text(text: str, scan_links=False):
         return {"error": "Could not process text", "risk": "ERROR", "label": "error", "confidence": 0}
 
     prediction_label, confidence = predict_text(english_text)
-    detected_keywords = detect_scam_keywords(english_text)
+    # Scan both original and translated text for regional scam phrases
+    kw_en = detect_scam_keywords(english_text)
+    kw_orig = detect_scam_keywords(text) if text != english_text else []
+    detected_keywords = list(dict.fromkeys(kw_en + kw_orig))
 
     suspicious_links = []
     if scan_links:
-        all_links = extract_links(english_text)
+        all_links = extract_links(english_text) + extract_links(text)
+        all_links = list(dict.fromkeys(all_links))
         suspicious_links = flag_suspicious_links(all_links)
 
     final_status, reason, display_label = classify_risk(
@@ -505,7 +516,11 @@ def analyze_text(text: str, scan_links=False):
         scan_links,
         text,
         english_text,
+        sender=sender,
+        source=source,
     )
+
+    detected_language = detect_text_language(text)
 
     return {
         "label": display_label,
@@ -516,4 +531,6 @@ def analyze_text(text: str, scan_links=False):
         "suspicious_links": suspicious_links,
         "is_translated": is_translated,
         "english_text": english_text,
+        "detected_language": detected_language,
+        "sender": sender,
     }

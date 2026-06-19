@@ -56,7 +56,7 @@ class SmsAnalysisService : Service() {
         try {
             val api = ApiClient(AegisApp.get(appContext).prefs.apiBaseUrl)
             // Just scan text since SMS is just text
-            val result = api.scanText(body)
+            val result = api.scanText(body, sender)
             
             val updated = record.copy(result = result)
             SmsStore.saveRecord(appContext, updated)

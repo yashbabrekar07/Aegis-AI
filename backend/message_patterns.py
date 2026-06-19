@@ -62,6 +62,42 @@ _LEGIT_TRANSACTIONAL_PATTERNS = [
     r"\b(aadhaar|pan)\b.{0,40}\b(updated|linked|verified)\b.{0,30}\b(successfully|complete)\b",
 ]
 
+# Telecom / carrier usage alerts and recharge reminders (not credential theft)
+_LEGIT_TELECOM_PATTERNS = [
+    r"\b(data|internet|high[- ]?speed)\b.{0,50}\b(consumed|used|exhausted|remaining|left|balance)\b",
+    r"\b\d+\s*%\s*(of\s+)?(daily|monthly)?\s*(data|internet|high[- ]?speed)\b",
+    r"\b\d+\s*(gb|mb)\b.{0,40}\b(remaining|left|consumed|used|valid|per day)\b",
+    r"\b(recharge|top[- ]?up|renew|validity|plan)\b.{0,50}\b(now|today|before|expires|expiring)\b",
+    r"\b(recharge successful|recharge done|pack activated|plan activated)\b",
+    r"\b(valid (till|until|upto|for)|validity)\b.{0,30}\b(\d|day|month|year)\b",
+    r"\b(airtel|jio|vi\b|vodafone|idea|bsnl)\b.{0,60}\b(data|recharge|plan|offer|pack|bill)\b",
+    r"\b(alert|notification|reminder)\b.{0,40}\b(data|recharge|validity|bill|usage)\b",
+    r"\bpostpaid|prepaid\b.{0,40}\b(bill|due|payment|recharge)\b",
+    r"\b(free|bonus|extra)\s+\d+\s*(gb|mb|sms|min)\b",
+    r"\b(unlimited|daily)\s+(data|calls|sms)\b",
+    r"\bi\.airtel\.in\b",
+    r"\bjio\.com\b",
+    r"\bmyvi\.in\b",
+    # Hindi / Hinglish carrier templates
+    r"data.{0,30}(khatam|khatm|khatam ho|khatam ho gaya|use ho gaya|bacha|baki)",
+    r"recharge.{0,30}(karo|kar lo|karein|abhi)",
+    r"pack.{0,30}(expire|khatam|renew)",
+    r"validity.{0,20}(khatam|expire|baki)",
+    # Marathi carrier templates
+    r"data.{0,30}(संप|संपला|उरले|वापर)",
+    r"recharge.{0,30}(करा|लवकर)",
+]
+
+# Brand offers / marketing — informational, not scam alerts
+_PROMOTIONAL_PATTERNS = [
+    r"\b(special offer|exclusive offer|limited offer|festive offer|mega offer)\b",
+    r"\b(\d+\s*%\s*off|flat \d+%|upto \d+%|up to \d+%)\b",
+    r"\b(sale|discount|cashback|deal of the day|flash sale)\b",
+    r"\bshop now\b",
+    r"\b(buy now|order now)\b.{0,30}\b(offer|sale|discount)\b",
+    r"\b(new plan|new pack|upgrade plan|add[- ]?on)\b",
+]
+
 # Hindi / Marathi transactional
 _LEGIT_REGIONAL_PATTERNS = [
     r"delivery",
@@ -109,12 +145,40 @@ def is_legitimate_otp_notification(text: str) -> bool:
     return _matches_any(text, _LEGIT_OTP_PATTERNS)
 
 
+def is_legitimate_telecom_message(text: str) -> bool:
+    """Carrier data usage, recharge reminders, plan validity — not scams."""
+    if not text or not text.strip():
+        return False
+    if is_scam_credential_request(text):
+        return False
+    return _matches_any(text, _LEGIT_TELECOM_PATTERNS)
+
+
+def is_promotional_only(text: str) -> bool:
+    """Marketing / offers without credential theft signals."""
+    if not text or not text.strip():
+        return False
+    if is_scam_credential_request(text):
+        return False
+    lower = text.lower()
+    scam_combo = (
+        "share otp", "send otp", "verify account", "account blocked",
+        "account suspended", "kyc expired", "legal action", "arrest",
+        "customs seized", "lottery winner", "claim prize",
+    )
+    if any(s in lower for s in scam_combo):
+        return False
+    return _matches_any(text, _PROMOTIONAL_PATTERNS) or is_legitimate_telecom_message(text)
+
+
 def is_legitimate_transactional(text: str) -> bool:
     """Delivery, payment, bill, booking confirmations."""
     if not text or not text.strip():
         return False
     if is_scam_credential_request(text):
         return False
+    if is_legitimate_telecom_message(text):
+        return True
     if _matches_any(text, _LEGIT_TRANSACTIONAL_PATTERNS):
         return True
     # Short informational with amount + no links asking action
@@ -138,6 +202,10 @@ def is_legitimate_service_message(text: str) -> bool:
     if is_legitimate_otp_notification(text):
         return True
     if is_legitimate_transactional(text):
+        return True
+    if is_legitimate_telecom_message(text):
+        return True
+    if is_promotional_only(text):
         return True
     return False
 

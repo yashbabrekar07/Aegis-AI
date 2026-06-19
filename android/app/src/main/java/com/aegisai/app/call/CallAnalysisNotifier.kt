@@ -41,23 +41,36 @@ object CallAnalysisNotifier {
         )
     }
 
-    fun showAnalyzingProgress(context: Context, phone: String?) {
+    fun showAnalyzingProgress(context: Context, phone: String?, sessionId: String? = null) {
         val title = context.getString(R.string.call_guard_analyzing_title)
         val body = phone?.let {
             context.getString(R.string.call_guard_analyzing_from, it)
         } ?: context.getString(R.string.call_guard_analyzing_body)
+        val contentIntent = sessionId?.let {
+            pendingActivity(context, CallAnalysisResultActivity.intent(context, it), REQUEST_VIEW_RESULT)
+        }
         notify(
             context,
             channelId = CHANNEL_ALERTS,
             channelName = context.getString(R.string.call_guard_channel_alerts),
             importance = NotificationManager.IMPORTANCE_DEFAULT,
-            notificationId = nextId.incrementAndGet(),
+            notificationId = sessionId?.hashCode() ?: nextId.incrementAndGet(),
             title = title,
             body = body,
             priority = NotificationCompat.PRIORITY_DEFAULT,
-            contentIntent = null,
+            contentIntent = contentIntent,
             ongoing = false,
         )
+    }
+
+    /** Opens result screen directly — used when notifications are blocked or analysis completes. */
+    fun openResultActivity(context: Context, sessionId: String) {
+        try {
+            val intent = CallAnalysisResultActivity.intent(context, sessionId)
+            context.startActivity(intent)
+        } catch (_: Exception) {
+            // Background activity start may be blocked on some OEMs — notification is fallback
+        }
     }
 
     fun showNoRecordingFound(context: Context, session: CallSession) {
@@ -103,6 +116,9 @@ object CallAnalysisNotifier {
         }
         val body = buildString {
             phone?.takeIf { it.isNotBlank() }?.let { append("From: $it\n") }
+            result.detected_language?.takeIf { it.isNotBlank() }?.let {
+                append("Language: ${it.replaceFirstChar { c -> if (c.isLowerCase()) c.titlecase() else c.toString() }}\n")
+            }
             append("Risk: $risk")
             if (conf != null) append(" · $conf% confidence")
             append("\n\n")
@@ -197,6 +213,7 @@ object CallAnalysisNotifier {
             if (ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS)
                 != PackageManager.PERMISSION_GRANTED
             ) {
+                // Notifications blocked — caller should use openResultActivity() as fallback
                 return
             }
         }

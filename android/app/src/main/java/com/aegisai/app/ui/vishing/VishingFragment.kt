@@ -182,15 +182,35 @@ class VishingFragment : Fragment() {
         }
     }
 
+    private var recentSessions: List<CallSession> = emptyList()
+
     private fun refreshCallHistory() {
         if (_binding == null) return
         val sessions = CallSessionStore.recentSessions(requireContext(), 5)
+        recentSessions = sessions
         if (sessions.isEmpty()) {
             binding.callHistoryCard.isVisible = false
             return
         }
         binding.callHistoryCard.isVisible = true
         binding.callHistoryList.text = sessions.joinToString("\n\n") { formatHistoryLine(it) }
+        binding.callHistoryList.setOnClickListener { openCallHistoryPicker() }
+        binding.callHistoryCard.setOnClickListener { openCallHistoryPicker() }
+    }
+
+    private fun openCallHistoryPicker() {
+        if (recentSessions.isEmpty()) return
+        if (recentSessions.size == 1) {
+            startActivity(CallAnalysisResultActivity.intent(requireContext(), recentSessions[0].id))
+            return
+        }
+        val labels = recentSessions.map { formatHistoryLine(it) }.toTypedArray()
+        androidx.appcompat.app.AlertDialog.Builder(requireContext())
+            .setTitle(R.string.call_guard_history_pick)
+            .setItems(labels) { _, which ->
+                startActivity(CallAnalysisResultActivity.intent(requireContext(), recentSessions[which].id))
+            }
+            .show()
     }
 
     private fun formatHistoryLine(session: CallSession): String {

@@ -1,8 +1,9 @@
 {
-  "scam_ml_confidence": 0.7,
-  "suspicious_ml_confidence": 0.55,
+  "scam_ml_confidence": 0.82,
+  "suspicious_ml_confidence": 0.65,
   "short_text_max_words": 5,
   "min_words_for_ml_scam": 6,
+  "min_words_for_call_scam": 3,
   "scam_keyword_count": 2,
   "validation_accuracy": 99.72
 }

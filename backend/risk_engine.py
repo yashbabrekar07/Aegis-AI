@@ -6,7 +6,13 @@ import json
 import os
 import re
 
-from message_patterns import is_legitimate_service_message, is_scam_credential_request
+from message_patterns import (
+    is_legitimate_service_message,
+    is_legitimate_telecom_message,
+    is_promotional_only,
+    is_scam_credential_request,
+)
+from sender_trust import is_trusted_sender, sender_category
 
 CONFIG_FILE = "model_config.json"
 
@@ -15,6 +21,7 @@ DEFAULT_CONFIG = {
     "suspicious_ml_confidence": 0.62,
     "short_text_max_words": 5,
     "min_words_for_ml_scam": 6,
+    "min_words_for_call_scam": 3,
     "scam_keyword_count": 2,
 }
 
@@ -87,6 +94,8 @@ def classify_risk(
     scan_links: bool,
     original_text: str,
     english_text: str,
+    sender: str | None = None,
+    source: str | None = None,
 ) -> tuple[str, str, str]:
     """
     Returns (risk, reason, display_label).
@@ -99,12 +108,31 @@ def classify_risk(
     n_words = _word_count(text_for_heuristics)
     n_kw = len(detected_keywords or [])
     n_links = len(suspicious_links or []) if scan_links else 0
+    trusted_sender = is_trusted_sender(sender)
+    sender_cat = sender_category(sender)
 
-    # Legitimate OTP, UPI, delivery, bill notifications
+    # Trusted telecom sender + usage/recharge message → always safe
+    if trusted_sender and sender_cat == "telecom":
+        if is_legitimate_telecom_message(combined) or is_promotional_only(combined):
+            return (
+                "SAFE",
+                "Recognized as a legitimate telecom notification from a verified sender.",
+                "safe",
+            )
+
+    # Trusted sender + legitimate service patterns
+    if trusted_sender and is_legitimate_service_message(combined) and n_links == 0:
+        return (
+            "SAFE",
+            f"Recognized as a standard {sender_cat or 'service'} notification from a verified sender.",
+            "safe",
+        )
+
+    # Legitimate OTP, UPI, delivery, bill, telecom notifications
     if is_legitimate_service_message(combined) and n_links == 0:
         return (
             "SAFE",
-            "Recognized as a standard service notification (OTP, payment, delivery, or bill alert).",
+            "Recognized as a standard service notification (OTP, payment, delivery, telecom, or bill alert).",
             "safe",
         )
 
@@ -123,8 +151,16 @@ def classify_risk(
             "safe",
         )
 
+    # Promotional / marketing without scam signals — safe for auto-scan
+    if is_promotional_only(combined) and n_kw == 0 and n_links == 0:
+        return (
+            "SAFE",
+            "Promotional or service update message — no fraud indicators detected.",
+            "safe",
+        )
+
     # Strong rule-based scam signals
-    if n_links > 0 and n_kw >= 1:
+    if n_links > 0 and n_kw >= 1 and not (trusted_sender and n_links == 0):
         return (
             "SCAM",
             "Suspicious links combined with high-risk scam phrases detected.",
@@ -139,7 +175,10 @@ def classify_risk(
 
     # ML — require confidence + enough context (reduces 'Ayush' false positives)
     ml_phishing = prediction_label == "phishing"
-    min_words = cfg["min_words_for_ml_scam"]
+    min_words = cfg.get(
+        "min_words_for_call_scam" if source == "call_guard" else "min_words_for_ml_scam",
+        cfg["min_words_for_ml_scam"],
+    )
 
     if ml_phishing and conf >= cfg["scam_ml_confidence"] and (n_words >= min_words or n_kw >= 1):
         # Don't override legitimate service messages with ML alone

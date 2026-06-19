@@ -255,14 +255,17 @@ def _whisper_transcribe(wav_path: str, max_seconds: int | None = None) -> tuple[
     lang = tr.get("language") or ""
     native = _normalize_transcript(tr.get("text", ""))
     if native:
+        from language_utils import normalize_stt_language
+
+        lang_key = normalize_stt_language(lang, native)
         from preprocess import translate_to_english
 
         if lang.startswith("en") or (native.isascii() and len(native) > 10):
-            return native, f"Whisper ({lang or 'en'})", lang
+            return native, f"Whisper ({lang or 'en'})", lang_key
         english = translate_to_english(native)
         if english and english.strip() and english.strip() != native.strip():
-            return english.strip(), f"Whisper ({lang or 'auto'}) + translation", lang
-        return native, f"Whisper ({lang or 'auto'})", lang
+            return english.strip(), f"Whisper ({lang or 'auto'}) + translation", lang_key
+        return native, f"Whisper ({lang or 'auto'})", lang_key
 
     tr_en = _whisper_model.transcribe(
         work,
@@ -276,12 +279,14 @@ def _whisper_transcribe(wav_path: str, max_seconds: int | None = None) -> tuple[
     lang2 = tr_en.get("language") or lang
     en = _normalize_transcript(tr_en.get("text", ""))
     if en:
-        return en, "Whisper (multilingual → English)", lang2
+        from language_utils import normalize_stt_language
+
+        return en, "Whisper (multilingual → English)", normalize_stt_language(lang2, en)
 
     return "", "", lang2 or lang
 
 
-def _google_multilingual(wav_path: str, for_call_guard: bool = False) -> tuple[str, str]:
+def _google_multilingual(wav_path: str, for_call_guard: bool = False) -> tuple[str, str, str]:
     import speech_recognition as sr
 
     recognizer = sr.Recognizer()
@@ -303,7 +308,12 @@ def _google_multilingual(wav_path: str, for_call_guard: bool = False) -> tuple[s
     best_lang = ""
     best_method = ""
 
-    for lang_code in _GOOGLE_LANG_CHAIN:
+    # Prioritize Hindi, Marathi, English for Indian scam calls
+    lang_chain = ["hi-IN", "mr-IN", "en-IN", "en-US"] + [
+        lc for lc in _GOOGLE_LANG_CHAIN if lc not in ("hi-IN", "mr-IN", "en-IN", "en-US")
+    ]
+
+    for lang_code in lang_chain:
         try:
             text = recognizer.recognize_google(audio_data, language=lang_code)
             text = _normalize_transcript(text)
@@ -318,15 +328,19 @@ def _google_multilingual(wav_path: str, for_call_guard: bool = False) -> tuple[s
             break
 
     if not best_text:
-        return "", ""
+        return "", "", ""
+
+    from language_utils import normalize_stt_language
+
+    lang_key = normalize_stt_language(best_lang, best_text)
 
     if best_lang.startswith("en"):
-        return best_text, f"Google Speech ({best_lang})"
+        return best_text, f"Google Speech ({best_lang})", lang_key
 
     from preprocess import translate_to_english
 
     en = translate_to_english(best_text)
-    return (en or best_text).strip(), f"Google Speech ({best_lang}) + translation"
+    return (en or best_text).strip(), f"Google Speech ({best_lang}) + translation", lang_key
 
 
 def _no_speech_message(peak: int, dur_ms: int) -> str:
@@ -381,9 +395,9 @@ def process_audio(audio_file_path: str, fast: bool = False):
 
             def _try_google():
                 try:
-                    text, method = _google_multilingual(work_path, for_call_guard=True)
+                    text, method, lang = _google_multilingual(work_path, for_call_guard=True)
                     if text:
-                        return text, method, ""
+                        return text, method, lang
                 except Exception as e:
                     nonlocal whisper_error
                     if not whisper_error:
@@ -420,9 +434,9 @@ def process_audio(audio_file_path: str, fast: bool = False):
             whisper_error = str(e)
 
         try:
-            text, method = _google_multilingual(wav_path)
+            text, method, lang = _google_multilingual(wav_path)
             if text:
-                return text, method, ""
+                return text, method, lang
         except Exception:
             pass
 

@@ -4,7 +4,8 @@ import requests
 import base64
 from cryptography.fernet import Fernet
 from dotenv import load_dotenv
-from message_patterns import filter_keywords_for_context, is_legitimate_service_message
+from message_patterns import filter_keywords_for_context, is_legitimate_service_message, is_promotional_only
+from sender_trust import is_trusted_link
 
 load_dotenv()
 VT_API_KEY = os.getenv("VIRUSTOTAL_API_KEY")
@@ -50,9 +51,9 @@ def decrypt_file_to_memory(filename):
 # High-confidence scam phrases (substring match)
 HIGH_RISK_PHRASES = [
     "share your otp", "send otp", "send your otp", "tell me your otp",
-    "reply with otp", "forward the otp", "verify now", "click here immediately",
+    "reply with otp", "forward the otp", "click here immediately",
     "you have won", "lottery winner", "claim your prize", "claim prize",
-    "free money", "act now", "limited time offer", "gift card",
+    "free money", "gift card",
     "verification fee", "pay to unlock", "pay to open account",
     "enter pin to receive", "scan to receive payment", "qr code verification",
     "cashback claim", "refund failure", "merchant payment failed",
@@ -62,21 +63,31 @@ HIGH_RISK_PHRASES = [
     "bitcoin transfer", "crypto wallet",
     "bank account details", "share your pin", "share your cvv",
     "transfer immediately", "wire transfer urgently",
+    # Hindi / Hinglish vishing phrases
+    "otp bhejo", "otp bhej do", "turant verify karo", "account block ho gaya",
+    "paisa transfer karo", "upi pin bhejo", "aadhaar number bhejo",
+    "police case register", "customs ne pakda", "lottery jeet gaye",
+    "kyc update karo turant", "link pe click karo",
+    # Marathi vishing phrases
+    "otp पाठवा", "otp पाठव", "खाते बंद", "पैसे हवे", "तातडीने verify",
 ]
 
-# Secondary signals — only counted when paired with another signal or strong ML
-CONTEXT_KEYWORDS = [
-    "kyc update", "update kyc", "verify account", "verify identity",
-    "urgent action", "immediate action", "winner", "congratulations you won",
+# Promotional urgency — only risky when paired with credential/link scam signals
+PROMO_PHRASES = [
+    "limited time offer", "act now", "verify now", "winner",
+    "congratulations you won", "urgent action", "immediate action",
+    "verify account", "verify identity", "kyc update", "update kyc",
 ]
 
 SUSPICIOUS_DOMAINS = ["bit.ly", "tinyurl.com", "goo.gl", "t.co", "ow.ly", "is.gd"]
 
 def detect_scam_keywords(text):
-    """Detect high-risk scam phrases; skip legitimate OTP/transactional messages."""
+    """Detect high-risk scam phrases; skip legitimate OTP/transactional/telecom messages."""
     if not text or not str(text).strip():
         return []
     if is_legitimate_service_message(text):
+        return []
+    if is_promotional_only(text):
         return []
 
     text_lower = text.lower()
@@ -85,6 +96,17 @@ def detect_scam_keywords(text):
     for phrase in HIGH_RISK_PHRASES:
         if phrase in text_lower:
             detected.append(phrase)
+
+    # Promotional phrases only count when message also has scam combo signals
+    scam_combo = (
+        "share otp", "send otp", "account blocked", "account suspended",
+        "kyc expired", "legal action", "lottery", "claim prize", "verify link",
+    )
+    has_scam_combo = any(s in text_lower for s in scam_combo)
+    for phrase in PROMO_PHRASES:
+        if phrase in text_lower and (has_scam_combo or "http" in text_lower):
+            if phrase not in detected:
+                detected.append(phrase)
 
     # "share otp" only when NOT a bank warning (never/do not share)
     if re.search(r"share\s+(your\s+)?otp", text_lower):
@@ -95,10 +117,6 @@ def detect_scam_keywords(text):
         ))
         if not is_bank_warning and "share otp" not in detected and "share your otp" not in detected:
             detected.append("share otp")
-
-    for phrase in CONTEXT_KEYWORDS:
-        if phrase in text_lower and phrase not in detected:
-            detected.append(phrase)
 
     # Standalone "otp" only when message asks for it (not official notification)
     if "otp" in text_lower and not detected:
@@ -127,8 +145,10 @@ def flag_suspicious_links(links):
     """Check if links belong to known suspicious domains / link shorteners, or flag via VirusTotal."""
     suspicious = []
     
-    # Fast check known dangerous/shortened domains
+    # Fast check known dangerous/shortened domains (skip official brand/carrier domains)
     for link in links:
+        if is_trusted_link(link):
+            continue
         if any(domain in link for domain in SUSPICIOUS_DOMAINS):
             if link not in suspicious:
                 suspicious.append(link)

@@ -95,7 +95,7 @@ class CallAnalysisService : Service() {
             endedAt = session.endedAt ?: System.currentTimeMillis(),
         )
         CallSessionStore.saveSession(appContext, withRecording)
-        CallAnalysisNotifier.showAnalyzingProgress(appContext, withRecording.phoneNumber)
+        CallAnalysisNotifier.showAnalyzingProgress(appContext, withRecording.phoneNumber, sessionId)
         analyzeSession(sessionId)
     }
 
@@ -138,10 +138,11 @@ class CallAnalysisService : Service() {
             )
             CallSessionStore.saveSession(appContext, done)
             if (result.error != null) {
-                CallAnalysisNotifier.showError(appContext, session.phoneNumber, result.error)
+                CallAnalysisNotifier.showError(appContext, session.phoneNumber, result.error, sessionId)
             } else {
                 CallAnalysisNotifier.showResult(appContext, done)
             }
+            CallAnalysisNotifier.openResultActivity(appContext, sessionId)
         } catch (e: Exception) {
             markFailed(appContext, session, ApiClient.friendlyError(e))
         } finally {
