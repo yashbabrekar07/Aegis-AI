@@ -8,26 +8,18 @@
     <meta name="theme-color" content="#000000" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Aegis AI — Open Source Educational Project" />
+    <meta name="classification" content="Education, Cybersecurity Training" />
+    <meta name="category" content="Education" />
     <title>Aegis AI — Cybersecurity Awareness &amp; Education Platform</title>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Aegis AI",
-      "url": "https://aegis-ai-three.vercel.app",
-      "description": "A free, open-source educational cybersecurity awareness platform that helps users identify online threats through interactive training simulations and AI-powered message analysis.",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Web",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "creator": {
-        "@type": "EducationalOrganization",
-        "name": "Aegis AI Project",
-        "url": "https://github.com/ayushmore007/Aegis-AI"
-      }
-    }
-    </script>
+    <script type="application/ld+json" src="/educational-schema.json"></script>
   </head>
   <body>
+    <noscript>
+      <div style="max-width:600px;margin:40px auto;padding:24px;font-family:sans-serif;text-align:center;">
+        <h1>Aegis AI — Cybersecurity Education Platform</h1>
+        <p>This is a free, open-source educational tool that teaches users how to identify online scams and phishing attempts through interactive training simulations. No real credentials are collected. JavaScript is required to run the training modules.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

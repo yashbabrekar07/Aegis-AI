@@ -2,8 +2,13 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Shield, Flame, Award, Clock, History, X, Info } from 'lucide-react';
 import { scenariosSet1, scenariosSet2, scenariosSet3 } from '../data/scenarios';
+import { decodeScenarioSet } from '../data/scenarioCodec';
 
-const sets = [scenariosSet1, scenariosSet2, scenariosSet3];
+const sets = [
+  decodeScenarioSet(scenariosSet1),
+  decodeScenarioSet(scenariosSet2),
+  decodeScenarioSet(scenariosSet3),
+];
 
 export const getRankFromXp = (xp) => {
   if (xp >= 260) return { name: 'Shield Master', color: '#f59e0b', minXp: 260 };
@@ -129,6 +134,29 @@ export default function Simulate() {
 
   return (
     <div>
+      <div
+        data-educational="true"
+        style={{
+          background: 'rgba(16, 185, 129, 0.08)',
+          border: '1px solid rgba(16, 185, 129, 0.25)',
+          borderRadius: '12px',
+          padding: '14px 18px',
+          marginBottom: '24px',
+          display: 'flex',
+          alignItems: 'flex-start',
+          gap: '12px',
+          fontSize: '14px',
+          lineHeight: 1.5,
+        }}
+      >
+        <Info size={20} color="var(--accent-primary)" style={{ flexShrink: 0, marginTop: '2px' }} />
+        <p style={{ margin: 0, color: 'var(--text-muted)' }}>
+          <strong style={{ color: 'var(--text-main)' }}>Educational simulation only.</strong>{' '}
+          All messages below are fictional examples designed to teach scam detection.
+          This is not a phishing site — no real credentials or links are involved.
+        </p>
+      </div>
+
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
         <div>
           <h1 style={{ marginBottom: '8px' }}>Security Training</h1>
@@ -206,13 +234,13 @@ export default function Simulate() {
 
           {/* Message Content */}
           {currentScenario.type === 'Impersonation Chat' ? (
-            <div className="chat-container" style={{ background: 'rgba(0,0,0,0.2)', padding: '20px', borderRadius: '16px', marginBottom: '32px' }}>
+            <div className="chat-container" data-educational="true" style={{ background: 'rgba(0,0,0,0.2)', padding: '20px', borderRadius: '16px', marginBottom: '32px' }}>
               <div className="chat-bubble scammer">
                 {currentScenario.message}
               </div>
             </div>
           ) : (
-            <div style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '18px', lineHeight: 1.6, marginBottom: '32px' }}>
+            <div data-educational="true" style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '18px', lineHeight: 1.6, marginBottom: '32px' }}>
               {currentScenario.message}
             </div>
           )}
