@@ -48,7 +48,7 @@ export default function About() {
             Aegis AI was created to <strong style={{ color: '#e2e8f0' }}>empower everyday users</strong> to
             recognize and defend against online scams, phishing attacks, and social engineering. In a world
             where digital threats evolve daily, we believe that <strong style={{ color: '#e2e8f0' }}>awareness
-            is the strongest defense</strong>.
+              is the strongest defense</strong>.
             <br /><br />
             Our platform uses machine learning models trained on real-world datasets to analyze suspicious
             content in real-time, and provides interactive training simulations to build practical
@@ -122,7 +122,7 @@ export default function About() {
         {/* Open Source */}
         <Section title="Open Source">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <Github size={20} color="#94a3b8" />
+            <ExternalLink size={20} color="#94a3b8" />
             <span style={{ fontSize: '15px', color: '#94a3b8' }}>
               The full source code is publicly available on{' '}
               <a href="https://github.com/ayushmore007/Aegis-AI" target="_blank" rel="noreferrer" style={{ color: '#10b981', textDecoration: 'underline' }}>
