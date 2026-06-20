@@ -70,6 +70,8 @@ class SmsFragment : Fragment() {
         updateUiState()
     }
 
+    private var hasLoadedInbox = false
+
     private fun updateUiState() {
         if (_binding == null) return
 
@@ -80,6 +82,10 @@ class SmsFragment : Fragment() {
         binding.smsHistoryCard.isVisible = hasPermissions
 
         if (hasPermissions) {
+            if (!hasLoadedInbox) {
+                hasLoadedInbox = true
+                loadInboxAndScan()
+            }
             refreshHistory()
         }
     }
@@ -102,14 +108,18 @@ class SmsFragment : Fragment() {
             val existing = SmsStore.recentRecords(requireContext(), 50)
             val existingBodies = existing.map { it.body.trim() }.toSet()
 
+            var addedNew = false
             for (msg in inboxMessages) {
                 if (msg.body.trim() in existingBodies) continue
                 val record = SmsStore.createRecord(requireContext(), msg.sender, msg.body)
                 // Scan each message asynchronously
                 scanRecordInBackground(record)
+                addedNew = true
             }
 
-            refreshHistory()
+            if (addedNew) {
+                refreshHistory()
+            }
         }
     }
 
@@ -171,10 +181,6 @@ class SmsFragment : Fragment() {
         if (records.isEmpty()) {
             binding.smsNoHistory.isVisible = true
             binding.smsHistoryList.isVisible = false
-            // If we have SMS permission but no records, try loading from inbox
-            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED) {
-                loadInboxAndScan()
-            }
             return
         }
 
