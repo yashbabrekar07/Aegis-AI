@@ -219,7 +219,7 @@ class CallAnalysisService : Service() {
             markFailed(appContext, session, ApiClient.friendlyError(e), sessionId)
         } finally {
             pendingLearnedData.remove(sessionId)
-            cacheFile.delete()
+            cacheFile?.delete()
             finish(sessionId)
         }
     }

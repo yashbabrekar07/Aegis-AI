@@ -376,7 +376,7 @@ def process_audio(audio_file_path: str, fast: bool = False):
             dur_ms = _wav_duration_ms(work_path)
             peak = _wav_peak_amplitude(work_path)
             whisper_sec = int(os.getenv("CALL_GUARD_WHISPER_SEC", "90"))
-            whisper_first = os.getenv("CALL_GUARD_WHISPER_FIRST", "true").lower() in (
+            whisper_first = os.getenv("CALL_GUARD_WHISPER_FIRST", "false").lower() in (
                 "1", "true", "yes",
             )
             use_whisper = os.getenv("CALL_GUARD_WHISPER_FALLBACK", "true").lower() in (
@@ -427,18 +427,18 @@ def process_audio(audio_file_path: str, fast: bool = False):
             return f"Error: {msg}", "Error", ""
 
         try:
-            text, method, lang = _whisper_transcribe(wav_path)
-            if text:
-                return text, method, lang
-        except Exception as e:
-            whisper_error = str(e)
-
-        try:
             text, method, lang = _google_multilingual(wav_path)
             if text:
                 return text, method, lang
         except Exception:
             pass
+
+        try:
+            text, method, lang = _whisper_transcribe(wav_path, max_seconds=120)
+            if text:
+                return text, method, lang
+        except Exception as e:
+            whisper_error = str(e)
 
         return (
             "Error: No speech detected. Speak clearly for at least 3–5 seconds (speakerphone helps).",
