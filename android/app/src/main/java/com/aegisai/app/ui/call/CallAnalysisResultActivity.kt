@@ -154,11 +154,11 @@ class CallAnalysisResultActivity : AppCompatActivity() {
         val discovering = session.status == CallSession.STATUS_DISCOVERING
         val needsManual = session.status == CallSession.STATUS_NO_RECORDING ||
             (session.status == CallSession.STATUS_FAILED && session.recordingUri == null) ||
-            (discovering && staleRecoveryAttempted)
+            discovering
 
         binding.pickRecordingBtn.isVisible = needsManual
         binding.retryDiscoveryBtn.isVisible =
-            session.status == CallSession.STATUS_NO_RECORDING || discovering
+            session.status == CallSession.STATUS_NO_RECORDING || (discovering && staleRecoveryAttempted)
 
         binding.resultTitle.text = when (session.status) {
             CallSession.STATUS_DONE -> {

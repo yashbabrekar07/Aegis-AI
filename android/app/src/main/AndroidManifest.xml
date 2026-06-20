@@ -70,11 +70,6 @@
             android:foregroundServiceType="dataSync" />
 
         <service
-            android:name=".sms.SmsAnalysisService"
-            android:exported="false"
-            android:foregroundServiceType="dataSync" />
-
-        <service
             android:name=".call.CallGuardWatchService"
             android:exported="false"
             android:foregroundServiceType="microphone|dataSync"

@@ -60,6 +60,38 @@ class VishingFragment : Fragment() {
         finalizeCallGuardEnable()
     }
 
+    private val audioPicker = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+        if (uri == null) return@registerForActivityResult
+        
+        val ctx = requireContext().applicationContext
+        val contentResolver = ctx.contentResolver
+        val cacheDir = ctx.cacheDir
+        
+        var fileName = "manual_upload_${System.currentTimeMillis()}.audio"
+        contentResolver.query(uri, null, null, null, null)?.use { cursor ->
+            val nameIndex = cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME)
+            if (nameIndex != -1 && cursor.moveToFirst()) {
+                val n = cursor.getString(nameIndex)
+                if (!n.isNullOrBlank()) fileName = n
+            }
+        }
+
+        Toast.makeText(ctx, "Uploading and analyzing audio...", Toast.LENGTH_LONG).show()
+
+        runJob {
+            val file = File(cacheDir, fileName)
+            contentResolver.openInputStream(uri)?.use { input ->
+                file.outputStream().use { output ->
+                    input.copyTo(output)
+                }
+            }
+            if (!file.exists() || file.length() == 0L) {
+                throw Exception("Could not read selected file")
+            }
+            api.scanAudio(file)
+        }
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentVishingBinding.inflate(inflater, container, false)
         return binding.root
@@ -96,6 +128,10 @@ class VishingFragment : Fragment() {
         }
 
         binding.stopRecordBtn.setOnClickListener { stopAndScan() }
+
+        binding.uploadAudioBtn.setOnClickListener {
+            audioPicker.launch("audio/*")
+        }
 
         handleSessionDeepLink()
         refreshCallGuardStatus()
@@ -268,13 +304,14 @@ class VishingFragment : Fragment() {
 
     private fun runJob(block: suspend () -> ScanResult) {
         binding.vishingProgress.isVisible = true
-        binding.vishingResultCard.isVisible = false
+        binding.vishingResultCard.isVisible = true
+        binding.vishingResult.text = "Uploading and analyzing... This may take up to 2-3 minutes for large files or if the server is waking up."
         lifecycleScope.launch {
             try {
                 val result = withContext(Dispatchers.IO) { block() }
                 showResult(result)
             } catch (e: Exception) {
-                showResult(ScanResult(error = e.message))
+                showResult(ScanResult(error = e.message ?: "Unknown error occurred: ${e.javaClass.simpleName}"))
             } finally {
                 binding.vishingProgress.isVisible = false
             }

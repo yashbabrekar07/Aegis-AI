@@ -172,6 +172,14 @@
                     android:text="Record &amp; upload audio" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/uploadAudioBtn"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Upload audio file" />
+
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/stopRecordBtn"
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="match_parent"
