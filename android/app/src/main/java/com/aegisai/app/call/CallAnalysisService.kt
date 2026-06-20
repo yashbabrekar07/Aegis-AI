@@ -174,6 +174,8 @@ class CallAnalysisService : Service() {
         }
 
         val uri = android.net.Uri.parse(uriString)
+        waitUntilFileStable(appContext, uri)
+        
         val cacheFile = AudioFileHelper.copyUriToCache(appContext, uri)
         if (cacheFile == null || cacheFile.length() < MIN_BYTES) {
             markFailed(appContext, session, "Could not read the recording file.")
@@ -271,6 +273,26 @@ class CallAnalysisService : Service() {
         runningSessions.remove(sessionId)
         stopForeground(STOP_FOREGROUND_REMOVE)
         stopSelf()
+    }
+
+    private suspend fun waitUntilFileStable(context: Context, uri: android.net.Uri) {
+        var lastSize = -1L
+        var stableChecks = 0
+        for (i in 0 until 10) {
+            val currentSize = try {
+                context.contentResolver.openFileDescriptor(uri, "r")?.use { it.statSize } ?: -1L
+            } catch (e: Exception) {
+                -1L
+            }
+            if (currentSize > 0 && currentSize == lastSize) {
+                stableChecks++
+                if (stableChecks >= 2) return
+            } else {
+                stableChecks = 0
+            }
+            lastSize = currentSize
+            delay(1000L)
+        }
     }
 
     companion object {
