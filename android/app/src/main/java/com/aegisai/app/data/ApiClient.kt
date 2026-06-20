@@ -211,8 +211,12 @@ class ApiClient(private val baseUrl: String) {
     private fun postOtp(url: String, body: String): OtpResponse {
         val req = Request.Builder().url(url).post(body.toRequestBody(jsonType)).build()
         client.newCall(req).execute().use { resp ->
-            val parsed = otpAdapter.fromJson(resp.body?.string() ?: "{}")
-                ?: OtpResponse(error = "Invalid response")
+            val json = resp.body?.string()?.takeIf { it.isNotBlank() } ?: "{}"
+            val parsed = try {
+                otpAdapter.fromJson(json) ?: OtpResponse(error = "Invalid response")
+            } catch (e: Exception) {
+                OtpResponse(error = "Invalid response format: ${e.message ?: "Unknown error"}")
+            }
             if (!resp.isSuccessful && parsed.error == null) {
                 return parsed.copy(error = "HTTP ${resp.code}")
             }
@@ -234,12 +238,17 @@ class ApiClient(private val baseUrl: String) {
 
     private fun executeScan(req: Request, http: OkHttpClient): ScanResult {
         http.newCall(req).execute().use { resp ->
-            val json = resp.body?.string() ?: "{}"
-            val parsed = scanAdapter.fromJson(json) ?: ScanResult(error = "Invalid response")
-            if (!resp.isSuccessful && parsed.error == null) {
-                return parsed.copy(error = "HTTP ${resp.code}")
+            val json = resp.body?.string()?.takeIf { it.isNotBlank() } ?: "{}"
+            return try {
+                val parsed = scanAdapter.fromJson(json) ?: ScanResult(error = "Invalid response")
+                if (!resp.isSuccessful && parsed.error == null) {
+                    parsed.copy(error = "HTTP ${resp.code}")
+                } else {
+                    parsed
+                }
+            } catch (e: Exception) {
+                ScanResult(error = "Invalid response format: ${e.message ?: "Unknown error"}")
             }
-            return parsed
         }
     }
 

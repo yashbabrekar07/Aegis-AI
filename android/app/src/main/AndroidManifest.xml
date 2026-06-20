@@ -69,11 +69,7 @@
             android:exported="false"
             android:foregroundServiceType="dataSync" />
 
-        <service
-            android:name=".call.CallGuardWatchService"
-            android:exported="false"
-            android:foregroundServiceType="microphone|dataSync"
-            android:enabled="false" />
+
 
         <service
             android:name=".call.AegisCallScreeningService"

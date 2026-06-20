@@ -29,14 +29,12 @@ object CallGuardController {
         } else {
             unregisterFallbackReceiver(appContext)
         }
-        stopLegacyWatchService(appContext)
     }
 
     fun disable(context: Context) {
         val appContext = context.applicationContext
         unregisterFallbackReceiver(appContext)
         CallSessionTracker.stop(appContext)
-        stopLegacyWatchService(appContext)
     }
 
     fun isFullyConfigured(context: Context): Boolean {
@@ -70,11 +68,5 @@ object CallGuardController {
             } catch (_: IllegalArgumentException) { }
         }
         fallbackReceiver = null
-    }
-
-    private fun stopLegacyWatchService(appContext: Context) {
-        try {
-            appContext.stopService(Intent(appContext, CallGuardWatchService::class.java))
-        } catch (_: Exception) { }
     }
 }
